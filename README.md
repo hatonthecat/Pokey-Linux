@@ -25,7 +25,8 @@ The build system is downloaded with Poky build instruction “files” called re
 
 https://docs.yoctoproject.org/dev/ref-manual/terms.html#term-Poky
 
-"Poky
+"Poky
+
 Poky, which is pronounced Pock-ee, is a reference embedded distribution and a reference test configuration. Poky provides the following:
 
 A base-level functional distro used to illustrate how to customize a distribution.
