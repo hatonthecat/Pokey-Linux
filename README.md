@@ -49,12 +49,16 @@ Pokey Linux
 --
 Pokey is pronounced Poke-ee. It is not affiliated in any official way with any Yocto project. But is open to partnerships.
 
-Which boards do I want to develop for? Ideally something like the Quark:
+Which boards do I want to develop for? Ideally something like the Quark/Edison:
 
 https://git.yoctoproject.org/meta-intel-quark/
 https://git.yoctoproject.org/meta-intel-edison/
 https://layers.openembedded.org/layerindex/branch/master/layers/
 
-Though it doesn't aim to be board-centric, and could be more IP-centric, as [J-core](https://j-core.org/) is leaning to be. That said, it's also to benchmark the minimum memory requirements for each app, which could be tested in a VM, but then ported to a board once it is manufactured. Questions were raised as early as 2013 whether the 386 and 486 were out of patent (see [https://www.eetimes.com/intel-quark-runs-on-roof-raises-questions/**](https://www.eetimes.com/intel-quark-runs-on-roof-raises-questions/)) so it might be a productive avenue to develop lowRAM BSP packages in the [8-16MB](https://inavoyage.blogspot.com/2025/09/the-future-of-32-bit-linux-support.html) size.  
+Though it doesn't aim to be board-centric, and could be more IP-centric, as [J-core](https://j-core.org/) is leaning to be. That said, it's also to benchmark the minimum memory requirements for each app, which could be tested in a VM, but then ported to a board once it is manufactured. Questions were raised as early as 2013 whether the 386 and 486 were out of patent (see [https://www.eetimes.com/intel-quark-runs-on-roof-raises-questions/**](https://www.eetimes.com/intel-quark-runs-on-roof-raises-questions/)) :
+
+"Alternatively, it could be the world's smallest 64-bit x86. In this scenario Intel could make the point the future belongs to an all 64-bit world — a compelling argument coming the same day Apple announced it is moving the iPhone to 64-bit addressability with an iPhone 5S coming this year with a native 64-bit A7 processor, kernel, and software stack."
+
+So, it might be a productive avenue to develop lowRAM BSP packages in the [8-16MB](https://inavoyage.blogspot.com/2025/09/the-future-of-32-bit-linux-support.html) size. 
 
 Vedula and I are also working an an ARM9 board called [FemtoTX](https://github.com/EI2030/FemtoTX) and he has recently completed Ethernet tests. We are looking into WB adapters but also FIFO drivers. Our test bench is an Arty A7 with 256MB, so smaller systems can be explored once verification/validation is complete. 
