@@ -45,7 +45,9 @@ Note
 
 Poky began as an open-source project initially developed by OpenedHand. OpenedHand developed Poky from the existing OpenEmbedded build system to create a commercially supportable build system for embedded Linux. After Intel Corporation acquired OpenedHand, the poky project became the basis for the Yocto Project’s build system."
 
-Pokey is pronounced Poke-ee.
+Pokey Linux
+--
+Pokey is pronounced Poke-ee. It is not affiliated in any official way with any Yocto project. But is open to partnerships.
 
 Which boards do I want to develop for? Ideally something like the Quark:
 
