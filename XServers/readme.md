@@ -102,3 +102,13 @@ https://archive.org/details/Puppy_Linux_pUPnGO
 https://oldforum.puppylinux.com/viewtopic.php?t=51478&start=860
 
 https://www.youtube.com/watch?v=I99tDDB_upE
+
+https://archive.org/details/linux_distributions
+
+https://archive.org/details/cd-roms
+
+https://archive.org/details/vintagesoftware
+
+https://www.skamilinux.hu/2016/04/01/skamilinux-live-cd/ 
+
+https://github.com/ivandavidov/minimal
