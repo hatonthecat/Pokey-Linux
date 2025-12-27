@@ -8,6 +8,9 @@ https://bbs.archlinux.org/viewtopic.php?id=56816
 
 https://copy.sh/v86/?profile=xwoaf
 
+<img width="800" height="600" alt="Untitled" src="https://github.com/user-attachments/assets/a2059b34-3955-4b48-aec6-6e70fb9e46ba" />
+
+
 https://github.com/copy/v86
 
 https://lwn.net/Articles/76339/
