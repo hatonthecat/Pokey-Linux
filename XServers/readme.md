@@ -197,4 +197,26 @@ Just like Series 2.x, there where community members who hold steadfastly to this
 https://www.youtube.com/watch?v=T9XlAres7tc pUPnGO_V412_041210.iso - 27.9mb Basic Building Block Puplet
 [https://www.youtube.com/watch?v=I99tDDB_upE](https://youtu.be/I99tDDB_upE?t=71) https://oldforum.puppylinux.com/viewtopic.php?t=51478
 
+**xWoaf**
+https://web.archive.org/web/20120115041947/http://www.goingnuts.dk/linux.asp#XWOAF
 
+xwoaf - x windows on a floppy - stuff:
+xwoaf - a 1 floppy distro booting into X. Original web-site has gone away. I found a copy of the site in the web archive and now have access to the original material.
+If you just want the floppy image you can download it here. Use the following command to write image to floppy:
+
+     dd if=woafnew.img of=/dev/fd0 bs=1k;sync
+For convenience an image for booting in qemu is for download here. Start qemu with the following command:
+
+     qemu -m 12 -boot a -fda xwoaf_flp_for_qemu.img -no-kqemu
+Building on xwoaf:
+Step 1: Changed kernel and net-modules to P412, included depmod and modprobe from P412. Created bootable iso [2,8Mb]. Seems that only top stopped working (different format in /proc/meminfo for the two kernels). 
+
+Step 2: New full BusyBox included. This repairs the top not working and add over 100 additional programs. Static build of depmod and modprobe is out again. Modified slightly in some scripts but only for cosmetic reasons. Download iso [3.2MB] - still boots into GUI with 16Mb ram in qemu.
+
+Step 3: Next one is less polished - do not expect everything works although it seems so. Introduced a two step boot - a cut down initrd.gz from Puppy 412 and after that switch_root to xwoaf. Now  including all drivers for qemu, a static udev and country keyboard layout. You can save to a personal file on hd. All modules normally inside initrd.gz compiled into kernel - reduce total size and makes boot faster. Its like xwoaf with (part of) Puppys engine below. Download iso [6,0Mb] - still boots into GUI with 16Mb ram in qemu.
+
+Further steps could be made but then we would move away from the original purpose - a revival of xwoaf. You can have a modern libc or libX coexist with xwoaf´s cut down ones - or you can hunt static compiled applications (or create youself) and use them to expand xwoaf. 
+
+Update after pUPnGO_041210: Created a "dress-up"-sfs file of the xwoaf-core that can be loaded/installed in pUPnGO_041210:  pupngo041210_xwoaf_dress.tar.gz [876Kb]
+
+This illustrates the power of the new pUPnGO being able to run xwoaf as an sfs-extension - xwoaf fueled by ulibc and tinyX...and powered by pUPnGO_041210.
