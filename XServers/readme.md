@@ -95,3 +95,4 @@ https://deadlinux.fandom.com/wiki/Mungkie
 
 https://bkhome.org/archive/blog2/201206/linux--x-on-one-floppy.html
 
+https://bodhilinux.boards.net/thread/953/depreciated-browsers-2
