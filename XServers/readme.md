@@ -118,3 +118,7 @@ https://github.com/ivandavidov/minimal
 testing on Virtualbox 5.2.44r139111 (Qt5.6.2) x32 on my Acer Aspire One 
 
 loads window manager. i set up a 50MB virtual disk. Loading kernel modules... depmod running a little slow, or stalling. possibly unpacking. 
+
+167MB loads installation menu. I also increased RAM from 16 to 32.
+
+I tried boot to ram but it wouldn't load X. (060611). Though it might not have X. Trying JWM distro.
