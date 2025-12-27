@@ -41,7 +41,7 @@ https://github.com/copy/v86
 
 https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board
 
-Paul Stoffregen wrote 03/19/2020 at 11:43 • 1 point
+*Paul Stoffregen wrote 03/19/2020 at 11:43 • 1 point*
 
 How much RAM did your Pentium machine have?  And how much is inside that tiny chip?
 
@@ -89,10 +89,16 @@ Legacy:
 
     Enthusiasts, such as Terry Loveall, adapted its concepts to create even more functional, yet still small, distributions like Woaf (a Puppy Linux descendant). 
 
-In essence, 1diskxwin was a pioneering effort in creating extremely lean operating systems for the early internet era, showing what could be done with limited resources. 
+*In essence, 1diskxwin was a pioneering effort in creating extremely lean operating systems for the early internet era, showing what could be done with limited resources.* 
 
 https://deadlinux.fandom.com/wiki/Mungkie 
 
 https://bkhome.org/archive/blog2/201206/linux--x-on-one-floppy.html
 
 https://bodhilinux.boards.net/thread/953/depreciated-browsers-2
+
+https://archive.org/details/Puppy_Linux_pUPnGO
+
+https://oldforum.puppylinux.com/viewtopic.php?t=51478&start=860
+
+https://www.youtube.com/watch?v=I99tDDB_upE
