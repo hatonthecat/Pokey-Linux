@@ -72,3 +72,26 @@ https://www.minimalinux.org/ttylinux/
 https://web.archive.org/web/20050206183102/https://www.modest-proposals.com/Hacklin.htm
 
 https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/Hacklin.htm
+
+https://oldforum.puppylinux.com/viewtopic.php?t=21737&start=60
+
+1diskxwin was
+a super-minimalist, single-floppy Linux distribution from the 90s, packing a basic X Window System (GUI) and apps into one tiny binary for a very efficient, net-focused OS on old hardware, a precursor to lightweight Linux systems like Puppy Linux, often adapted by enthusiasts like Terry Loveall for new versions. 
+Key Characteristics:
+
+    Tiny Footprint: Designed to run from one (or maybe two) floppy disks.
+    Integrated Binary: The server, X, and applications were all linked into one single file for efficiency.
+    X Windows: Included a basic graphical user interface (GUI) environment.
+    Linux Kernel: Used a stripped-down version of an early Linux kernel (like Linux 1.0).
+    Legacy System: Represents early efforts to make Linux extremely small and usable on very limited hardware. 
+
+Legacy:
+
+    Enthusiasts, such as Terry Loveall, adapted its concepts to create even more functional, yet still small, distributions like Woaf (a Puppy Linux descendant). 
+
+In essence, 1diskxwin was a pioneering effort in creating extremely lean operating systems for the early internet era, showing what could be done with limited resources. 
+
+https://deadlinux.fandom.com/wiki/Mungkie 
+
+https://bkhome.org/archive/blog2/201206/linux--x-on-one-floppy.html
+
