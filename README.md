@@ -47,7 +47,7 @@ Poky began as an open-source project initially developed by OpenedHand. OpenedHa
 
 Pokey Linux
 --
-Pokey is pronounced Poke-ee. It is not affiliated in any official way with any Yocto project. But is open to partnerships.
+Pokey is pronounced Poke-ee. It is not affiliated in any official way with any Yocto project (other than my own). But is open to partnerships.
 
 Which boards do I want to develop for? Ideally something like the Quark/Edison:
 
