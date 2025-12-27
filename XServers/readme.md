@@ -225,6 +225,11 @@ This illustrates the power of the new pUPnGO being able to run xwoaf as an sfs-e
 
 [xwoaf_pup170910-2025-12-27T22-08-27-843482200Z.webm](https://github.com/user-attachments/assets/faa3f869-4d0f-4d70-af39-b7e1380339ce)
 
+[xwoaf_pup170910-2025-12-27T22-42-30-965903400Z.webm](https://github.com/user-attachments/assets/68c50bd1-5309-4a12-bc1f-5da4eb001b53)
+
+
 Testing 8 & 12MB, although performance is noticeably slower in booting the kernel at 8MB. Probably stalls. 
 
 Update: Loads X Window with 15MB and 14MB, but not 13MB or less. 
+
+
