@@ -185,3 +185,8 @@ It is also in this version Barry indicated that he would step down from his role
 The latest version of 4.x was 4.3.1.
 
 Just like Series 2.x, there where community members who hold steadfastly to this series and keep maintaining it beyond long after Barry was finished with it, until today."
+
+https://www.youtube.com/watch?v=T9XlAres7tc pUPnGO_V412_041210.iso - 27.9mb Basic Building Block Puplet
+[https://www.youtube.com/watch?v=I99tDDB_upE](https://youtu.be/I99tDDB_upE?t=71) https://oldforum.puppylinux.com/viewtopic.php?t=51478
+
+
