@@ -142,4 +142,8 @@ Kim"
 
 https://oldforum.puppylinux.com/viewtopic.php?t=51478 otherwise 16MB will just stall on that. 
 
+[pUPnGO Browse-2025-12-27T20-35-17-862734400Z.webm](https://github.com/user-attachments/assets/fb2d39d5-214b-4275-b267-83b1ad96a748)
+
+
+[pUPnGO Browse-2025-12-27T20-41-24-435022500Z.webm](https://github.com/user-attachments/assets/bb4cf261-d39b-4546-ac7c-0770d2ca9f77)
 
