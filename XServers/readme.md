@@ -147,3 +147,41 @@ https://oldforum.puppylinux.com/viewtopic.php?t=51478 otherwise 16MB will just s
 
 [pUPnGO Browse-2025-12-27T20-41-24-435022500Z.webm](https://github.com/user-attachments/assets/bb4cf261-d39b-4546-ac7c-0770d2ca9f77)
 
+Tried out FreeOffice and Browser distros (which appear to be single app OSes, or very limited distros around 100MB and less. Virtual Box has a display issue, but I have attached videos to show the bootup process, which is unaffected.
+
+https://412collection.neocities.org/desktop
+
+https://oldforum.puppylinux.com/viewtopic.php?t=68349#:~:text=It%20can%20be%20found%20here,links%20updated%2024th%20Aug%202016) 
+
+These distros appear to be so old that once upon a time, spinning distros with a single app didn't appear as impractical as it might sound today. ;) 
+
+Checking distrowatch, the version in the uploaded video was released 12-2008, or around 17 yrs ago:
+
+https://distrowatch.com/index.php?distribution=puppy 
+
+"2008-12-08	NEW • Distribution Release: Puppy Linux 4.1.2
+Puppy Linux
+
+Puppy Linux
+Rate this project (7.8)
+
+Barry Kauler has announced the release of Puppy Linux 4.1.2, the latest update to the 4.1 series of the popular mini-distribution: "Puppy 4.1.2 released. Puppy 4.1.2 is a bug-fix release for 4.1 and 4.1.1. In summary, I fixed a bug when looking for USB drives at boot-up, ohci-hcd USB driver was not loading in the initial ramdisk so some interfaces were not working at that stage, bug fix for .deb package extraction, /tmp/version clean-up fix at version upgrade, Pmetatagger bug fix, some modem detection improvements, tweak for network connection at boot-up, can now load 3 SFS files, fixed a Pmount crash, prevented invalid RAM-save-interval, fixed recognition of PCMCIA in the initrd." Read the release announcement and release notes for further information. Download: puppy-4.1.2-k2.6.25.16-seamonkey.iso (94.4MB, MD5), puppy-4.1.2retro-k2.6.21.7-seamonkey.iso (94.8MB, MD5).
+
+Series 4.x
+In this series, Puppy went back to its roots and used its own self-compiled packages from T2, which made it lean and fast again.
+
+In addition, this version introduced the “Woof” build system. The difference between “Woof” and “Puppy Unleashed” is that while “Puppy Unleashed” used pre-packaged Puppy packages, the “Woof” build system is able to build a Puppy directly from completely foreign distro packages.
+
+While the official Puppy distributions in the 4.x series were all based on T2 builds, Woof support’s for other distro resulted in an explosion of community-initiated puplets based on them:
+
+Upup - a Woof-built puplet based on Ubuntu
+Dpup - a Woof-built puplet based on Debian
+Spup - a Woof-built puplet based on Slackware
+Apup - a Woof-built puplet based on Arch Linux
+This version also introduced the release of “Quirky” - which was meant as a special release of Puppy Linux that contains experimental features. The idea being, once those features matured (and considered useful by the community), they would be integrated back to the mainstream release.
+
+It is also in this version Barry indicated that he would step down from his role as Puppy benevolent dictator and would focus instead on maintaining “Woof”; hoping that the community would take the baton and do the Puppy-building themselves.
+
+The latest version of 4.x was 4.3.1.
+
+Just like Series 2.x, there where community members who hold steadfastly to this series and keep maintaining it beyond long after Barry was finished with it, until today."
