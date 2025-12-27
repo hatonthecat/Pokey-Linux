@@ -112,3 +112,9 @@ https://archive.org/details/vintagesoftware
 https://www.skamilinux.hu/2016/04/01/skamilinux-live-cd/ 
 
 https://github.com/ivandavidov/minimal
+
+**pUPnGO**
+
+testing on Virtualbox 5.2.44r139111 (Qt5.6.2) x32 on my Acer Aspire One 
+
+loads window manager. i set up a 50MB virtual disk. Loading kernel modules... depmod running a little slow, or stalling. possibly unpacking. 
