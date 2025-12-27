@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js wf-proximanova-i7-active wf-proximanova-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-i3-active wf-proximanova-i4-active wf-lettergothicstd-n7-active wf-active" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    
+
+<title>Has anyone managed to get a minimal Linux install onto an ESP8266 board? | .Stack | Hackaday.io</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#333333">
+<link rel="apple-touch-icon-precomposed" href="https://hackaday.io/apple-touch-icon.png">
+<link rel="stylesheet" href="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/style.css">
+<script async="" src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/analytics.js"></script><script type="text/javascript" src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/ymb0lgk.js"></script>
+<style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}.tk-letter-gothic-std{font-family:"letter-gothic-std",sans-serif;}</style><style type="text/css">@font-face{font-family:tk-proxima-nova-n7;src:url(https://use.typekit.net/af/399a91/0000000000000000000158cf/23/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/399a91/0000000000000000000158cf/23/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/399a91/0000000000000000000158cf/23/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-proxima-nova-i7;src:url(https://use.typekit.net/af/f61233/0000000000000000000158d0/23/l?subset_id=2&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/f61233/0000000000000000000158d0/23/d?subset_id=2&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/f61233/0000000000000000000158d0/23/a?subset_id=2&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-proxima-nova-n4;src:url(https://use.typekit.net/af/477d8d/0000000000000000000158d7/23/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/477d8d/0000000000000000000158d7/23/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/477d8d/0000000000000000000158d7/23/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-proxima-nova-i4;src:url(https://use.typekit.net/af/8adb93/0000000000000000000158d8/23/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/8adb93/0000000000000000000158d8/23/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/8adb93/0000000000000000000158d8/23/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-proxima-nova-n3;src:url(https://use.typekit.net/af/3693ba/0000000000000000000158d9/23/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/3693ba/0000000000000000000158d9/23/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/3693ba/0000000000000000000158d9/23/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-proxima-nova-i3;src:url(https://use.typekit.net/af/9c140d/0000000000000000000158da/23/l?subset_id=2&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/9c140d/0000000000000000000158da/23/d?subset_id=2&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/9c140d/0000000000000000000158da/23/a?subset_id=2&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-letter-gothic-std-n7;src:url(https://use.typekit.net/af/2cd276/000000000000000000012e1b/23/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/2cd276/000000000000000000012e1b/23/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/2cd276/000000000000000000012e1b/23/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}</style><script type="text/javascript">try{Typekit.load({ async: true });}catch(e){}</script>
+        <script type="text/javascript">
+        function getCommentIdFromUrl() {
+            if(window.location.hash) {
+                var hash = window.location.hash.substring(1);
+                var commentId = parseInt(hash.replace('j-discussion-', ''));
+                if (commentId) {
+                    return commentId;
+                }
+            }
+            return null;
+        }
+
+        var commentId = getCommentIdFromUrl();
+        if (commentId) {
+            var url = window.location.href;
+            if (url.indexOf('?') > -1) {
+                url = url.substring(0, url.indexOf('?'));
+            }
+            if (url.indexOf('#') > -1) {
+                url = url.substring(0, url.indexOf('#'));
+            }
+            url += '/discussion-' + commentId;
+            window.location.href = url;
+        }
+    </script>
+    
+
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:site" content="@hackadayio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Has anyone managed to get a minimal Linux install onto an ESP8266 board? | __('.Stack') | Hackaday.io">
+<meta name="twitter:description" content="NOT THE ESP32. I don't have those and I don't want them. Yet.
+
+I *do* have a couple ESP-12E boards. I don't have much (okay, any) experience with them yet, but I&nbsp;cant imagine an 80MHz almost-ARM-ish microcontroller would let its butt be kicked by something on the order of a 1st-gen Pentium CPU -- and I&nbsp;have indeed run Linux on exactly that&nbsp;(it was an obscure low-power version of Puppy Linux, for the record... I&nbsp;have one picture, archived somewhere).
+
+
+I'd like to see if it's doable... video would be uhm interesting, but a pair of PS/2 ports for mouse &amp; keyboard shouldn't be too much overhead. If it could work, a video coproc consisting of an ATMega328 running the TVOut library, plus a serial-drive character ROM (SPI works for me) would probably suffice... I&nbsp;just want to drive an 800x480 screen... 40 rows of 100 characters each (100x40 character resolution) works if you use 8x12 px characters (8 pixels/px wide, 12 high), which is a standard character size but not a standard screen size.
+
+All I&nbsp;really want is to be able to drive Links2 in a bash session, with the built-in WiFi, plus keyboard mouse and screen. The ability to use a USB keyboard/mouse combo would be nice but not strictly speaking required... I'd really like to use this in a wrist PC I'm planning, if that's possible, but that would indeed require USBHID input support for keyboard/mouse, because the one I'm planning to use there is a gutted Bluetooth mobile phone keyboard with a &quot;nub&quot; mouse bodged on (consisting of the four-button 'nub' joystick from a Toshiba T3400CT* and two tact-switch inputs for the left/right &quot;click&quot; buttons). The screen for that unit, for the record, would be a composite-in LCD intended for automotive backup camera applications from eBay. I&nbsp;can power it from a power bank for uhm a very long time, or a real laptop battery if someone can throw in an SMBus driver somewhere (that would be awesome!)... ;)
+
+
+I'll politely note that I&nbsp;am by nature NOT a programmer -- my best effort to date is a four-room text adventure written in MS QuickBASIC, that I'm currently&nbsp;rewriting when I get in the mood, partly to exercise my Amstrad PPC640 (lol)&nbsp;that I got recently and partly because the original version was so awful as to essentially avoid the use of a text input parser (don't ask, you *really* don't want to know!). While I'm *technically*&nbsp;open&nbsp;to learning, my last two concentrated efforts at learning C++ ended spectacularly badly, so I&nbsp;hope you will forgive me for being rather hesitant!
+
+That said, I'm more than happy to help test... ;)
+
+* I feel the same way most folks here do about that stuff -- that's treading on hallowed ground because old PC / computer history, but I&nbsp;have THREE essentially complete but not-entirely-functional-at-best parts machines in a cardboard Banker's Box in addition to the one that works ;)&nbsp;so I think I&nbsp;can take the mouse 'nub' part out of one of the busted ones for this...!">
+<meta name="twitter:image" content="https://cdn.hackaday.io/images/278671459450590037.png">
+
+<!-- Open Graph data -->
+<meta property="og:type" content="website">
+
+
+    <meta property="og:url" content="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board">
+
+<meta property="og:title" content="Has anyone managed to get a minimal Linux install onto an ESP8266 board? | __('.Stack') | Hackaday.io">
+<meta property="og:description" content="NOT THE ESP32. I don't have those and I don't want them. Yet.
+
+I *do* have a couple ESP-12E boards. I don't have much (okay, any) experience with them yet, but I&nbsp;cant imagine an 80MHz almost-ARM-ish microcontroller would let its butt be kicked by something on the order of a 1st-gen Pentium CPU -- and I&nbsp;have indeed run Linux on exactly that&nbsp;(it was an obscure low-power version of Puppy Linux, for the record... I&nbsp;have one picture, archived somewhere).
+
+
+I'd like to see if it's doable... video would be uhm interesting, but a pair of PS/2 ports for mouse &amp; keyboard shouldn't be too much overhead. If it could work, a video coproc consisting of an ATMega328 running the TVOut library, plus a serial-drive character ROM (SPI works for me) would probably suffice... I&nbsp;just want to drive an 800x480 screen... 40 rows of 100 characters each (100x40 character resolution) works if you use 8x12 px characters (8 pixels/px wide, 12 high), which is a standard character size but not a standard screen size.
+
+All I&nbsp;really want is to be able to drive Links2 in a bash session, with the built-in WiFi, plus keyboard mouse and screen. The ability to use a USB keyboard/mouse combo would be nice but not strictly speaking required... I'd really like to use this in a wrist PC I'm planning, if that's possible, but that would indeed require USBHID input support for keyboard/mouse, because the one I'm planning to use there is a gutted Bluetooth mobile phone keyboard with a &quot;nub&quot; mouse bodged on (consisting of the four-button 'nub' joystick from a Toshiba T3400CT* and two tact-switch inputs for the left/right &quot;click&quot; buttons). The screen for that unit, for the record, would be a composite-in LCD intended for automotive backup camera applications from eBay. I&nbsp;can power it from a power bank for uhm a very long time, or a real laptop battery if someone can throw in an SMBus driver somewhere (that would be awesome!)... ;)
+
+
+I'll politely note that I&nbsp;am by nature NOT a programmer -- my best effort to date is a four-room text adventure written in MS QuickBASIC, that I'm currently&nbsp;rewriting when I get in the mood, partly to exercise my Amstrad PPC640 (lol)&nbsp;that I got recently and partly because the original version was so awful as to essentially avoid the use of a text input parser (don't ask, you *really* don't want to know!). While I'm *technically*&nbsp;open&nbsp;to learning, my last two concentrated efforts at learning C++ ended spectacularly badly, so I&nbsp;hope you will forgive me for being rather hesitant!
+
+That said, I'm more than happy to help test... ;)
+
+* I feel the same way most folks here do about that stuff -- that's treading on hallowed ground because old PC / computer history, but I&nbsp;have THREE essentially complete but not-entirely-functional-at-best parts machines in a cardboard Banker's Box in addition to the one that works ;)&nbsp;so I think I&nbsp;can take the mouse 'nub' part out of one of the busted ones for this...!">
+<meta property="og:image" content="https://cdn.hackaday.io/images/278671459450590037.png">
+
+<style class="redactor-placeholder-style-tag">#redactor-uuid-0.redactor-placeholder::after { top: 10px; left: 10px; }</style><style type="text/css">@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/399a91/0000000000000000000158cf/23/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/399a91/0000000000000000000158cf/23/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/399a91/0000000000000000000158cf/23/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/f61233/0000000000000000000158d0/23/l?subset_id=2&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/f61233/0000000000000000000158d0/23/d?subset_id=2&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/f61233/0000000000000000000158d0/23/a?subset_id=2&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/477d8d/0000000000000000000158d7/23/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/477d8d/0000000000000000000158d7/23/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/477d8d/0000000000000000000158d7/23/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/8adb93/0000000000000000000158d8/23/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/8adb93/0000000000000000000158d8/23/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/8adb93/0000000000000000000158d8/23/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/3693ba/0000000000000000000158d9/23/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/3693ba/0000000000000000000158d9/23/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/3693ba/0000000000000000000158d9/23/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/9c140d/0000000000000000000158da/23/l?subset_id=2&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/9c140d/0000000000000000000158da/23/d?subset_id=2&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/9c140d/0000000000000000000158da/23/a?subset_id=2&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;font-stretch:normal;font-display:auto;}@font-face{font-family:letter-gothic-std;src:url(https://use.typekit.net/af/2cd276/000000000000000000012e1b/23/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/2cd276/000000000000000000012e1b/23/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/2cd276/000000000000000000012e1b/23/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}</style><script id="usercentrics-cmp" src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/loader.js" async="" data-settings-id="A3Zwa9HiUmX1XM" data-version="preview"></script><link href="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/WebSdk.lib.1229c023.js" rel="preload" as="script"><script async="" type="text/javascript" src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/WebSdk.lib.1229c023.js"></script><link href="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/UsCmpController.12ddd5ee.js" rel="preload" as="script"><script async="" type="text/javascript" src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/UsCmpController.12ddd5ee.js"></script></head>
+<body class="stack stack-page">
+    
+
+<div class="header hfr-has-background-black" id="header">
+    
+    <div class="hfr-container hfr-is-max-widescreen">
+        <nav class="hfr-navbar" role="navigation" aria-label="main navigation">
+            <div class="hfr-navbar-brand">
+                <a href="https://hackaday.io/" title="Hackaday.io" class="hfr-navbar-item logo">
+                    <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/logo-squares.png" width="33px" height="23px" alt="Hackaday.io" class="hfr-is-hidden-touch hfr-is-hidden-widescreen">
+                    <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/hackaday-logo.svg" width="138px" height="17px" alt="Hackaday.io" class="hfr-is-hidden-desktop-only">
+                </a>
+                <a role="button" class="hfr-navbar-burger hfr-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div class="hfr-navbar-menu">
+                <div class="hfr-navbar-start">
+                    <div class="hfr-navbar-item hfr-has-dropdown hfr-is-hoverable">
+                        
+                            <a href="https://hackaday.io/projects" class="hfr-navbar-item hfr-is-family-secondary ">Projects</a>
+                        
+                    </div>
+                    <a href="https://hackaday.io/discover" class="hfr-navbar-item hfr-is-family-secondary ">Discover</a>
+                    <a href="https://hackaday.io/contests" class="hfr-navbar-item hfr-is-family-secondary ">Contests</a>
+                    <a href="https://hackaday.io/courses" class="hfr-navbar-item hfr-is-family-secondary hfr-is-hidden-desktop-only ">Courses</a>
+                    <a href="https://hackaday.io/stack" class="hfr-navbar-item hfr-is-family-secondary hfr-is-active">Stack</a>
+                    <div class="hfr-navbar-item hfr-has-dropdown hfr-is-hoverable">
+                        <a class="hfr-navbar-link hfr-is-arrowless hfr-is-family-secondary">More 
+
+
+
+
+    <div class="icon hfr-icon hfr-ml-3 hfr-has-text-grey hfr-is-hidden-touch">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m8 9.702 4.79-4.79a.707.707 0 1 1 1 .999l-5.14 5.14a.705.705 0 0 1-.652.197.712.712 0 0 1-.646-.196l-5.14-5.14a.703.703 0 0 1-.004-1.002.708.708 0 0 1 1.003.004L8 9.702z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+</a>
+                        <div class="hfr-navbar-dropdown">
+                            <a href="https://hackaday.io/courses" class="hfr-navbar-item hfr-is-hidden-touch hfr-is-hidden-widescreen">Courses</a>
+                            <a href="https://hackaday.io/list/159729" class="hfr-navbar-item">Tutorials</a>
+                            <a href="https://hackaday.io/events" class="hfr-navbar-item">Events</a>
+                            <a href="https://hackaday.io/hackerspaces" class="hfr-navbar-item">Hackerspaces</a>
+                            
+                            <a href="https://hackaday.com/" target="_blank" rel="noopener noreferrer" class="hfr-navbar-item">Hackaday.com</a>
+                            <a href="https://www.tindie.com/" target="_blank" rel="noopener noreferrer" class="hfr-navbar-item j-store-tracking">Tindie Marketplace</a>
+                        </div>
+                    </div>
+                    <div class="hfr-navbar-item nav search-holder" style="border-left: 1px solid #272727;">
+                        
+<form id="search-form" class="hfr-field hfr-has-addons" action="/search" onsubmit="return submitSearch();" method="GET">
+    <div class="hfr-control">
+        <input type="text" placeholder="Find projects and more" name="term" class="hfr-input hfr-is-static j-add-search t-input-search" id="add-search" autocomplete="off" pattern=".{2,}" required="" title="Two characters minimum">
+    </div>
+    <div class="control">
+        <button type="submit" class="hfr-button button-search" title="Search">
+            
+
+
+
+
+    <div class="icon hfr-icon hfr-is-medium">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.542 9.368a4.547 4.547 0 1 0-1.015 1.079c.04.086.094.166.165.237l2.727 2.727a.8.8 0 0 0 1.137.006.801.801 0 0 0-.006-1.136l-2.726-2.727a.812.812 0 0 0-.282-.185zm-1.72-.473a2.91 2.91 0 1 0-4.114-4.116 2.91 2.91 0 0 0 4.114 4.117z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+
+        </button>
+    </div>
+</form>
+
+                    </div>
+                </div>
+
+                
+                    <div class="hfr-navbar-end">
+                        <div class="hfr-navbar-item">
+                            <div class="hfr-buttons">
+                                <a href="https://hackaday.io/signup" class="hfr-button hfr-is-primary hfr-is-outlined">Sign up</a>
+                                <a href="https://hackaday.io/signin?returnUrl=%2Fpage%2F6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board" class="hfr-button hfr-is-text">Log in</a>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div id="topMessage" class="alert small hide">
+    <span class="j-top-content"></span>
+    <a href="javascript:void(0);" class="alert-close j-top-message-close" title="Close">
+        
+
+
+
+
+    <div class="icon icon-close-circle">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.047 10.658a.562.562 0 0 1-.398-.165L7.984 8.828 6.32 10.493a.562.562 0 0 1-.961-.398.56.56 0 0 1 .164-.398L7.19 8.033 5.523 6.368a.561.561 0 1 1 .795-.796l1.665 1.665L9.65 5.572a.563.563 0 0 1 .795.796L8.78 8.033l1.665 1.664a.562.562 0 0 1-.398.961zm-2.062-7.5a4.875 4.875 0 1 0 .002 9.75 4.875 4.875 0 0 0-.004-9.75zm0 10.875a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+ Close
+    </a>
+</div>
+
+
+
+
+<script>
+    var HIO = HIO || {};
+</script>
+    <div class="headline">
+    <h1>
+        <a href="https://hackaday.io/stack">.Stack</a>
+    </h1>
+</div>
+
+
+    <div class="container post-content">
+        <div class="section section-stack last">
+            
+
+            <h3 class="element-title">
+    
+        <a href="https://hackaday.io/page/6966">Has anyone managed to get a minimal Linux install onto an ESP8266 board?</a>
+    
+</h3>
+
+            <small class="authorship">
+    <span class="gray-link">
+        <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+    </span>
+    <span>wrote <span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 03:53</span> • </span>
+    <span id="page-points-holder-6966">
+        <span>-2 </span>
+        points
+    </span>
+
+    
+
+    
+</small>
+
+
+            
+                <p></p><p>NOT THE ESP32. I don't have those and I don't want them. Yet.</p><p>I
+ *do* have a couple ESP-12E boards. I don't have much (okay, any) 
+experience with them yet, but I&nbsp;cant imagine an 80MHz 
+almost-ARM-ish microcontroller would let its butt be kicked by something
+ on the order of a 1st-gen Pentium CPU -- and I&nbsp;have indeed run 
+Linux on exactly that&nbsp;(it was an obscure low-power version of Puppy
+ Linux, for the record... I&nbsp;have one picture, archived somewhere).<br></p><p>I'd
+ like to see if it's doable... video would be uhm interesting, but a 
+pair of PS/2 ports for mouse &amp; keyboard shouldn't be too much 
+overhead. If it could work, a video coproc consisting of an ATMega328 
+running the TVOut library, plus a serial-drive character ROM (SPI works 
+for me) would probably suffice... I&nbsp;just want to drive an 800x480 
+screen... 40 rows of 100 characters each (100x40 character resolution) 
+works if you use 8x12 px characters (8 pixels/px wide, 12 high), which 
+is a standard character size but not a standard screen size.<br><br>All 
+I&nbsp;really want is to be able to drive Links2 in a bash session, with
+ the built-in WiFi, plus keyboard mouse and screen. The ability to use a
+ USB keyboard/mouse combo would be nice but not strictly speaking 
+required... I'd really like to use this in a wrist PC I'm planning, if 
+that's possible, but that would indeed require USBHID input support for 
+keyboard/mouse, because the one I'm planning to use there is a gutted 
+Bluetooth mobile phone keyboard with a "nub" mouse bodged on (consisting
+ of the four-button 'nub' joystick from a Toshiba T3400CT* and two 
+tact-switch inputs for the left/right "click" buttons). The screen for 
+that unit, for the record, would be a composite-in LCD intended for 
+automotive backup camera applications from eBay. I&nbsp;can power it 
+from a power bank for uhm a very long time, or a real laptop battery if 
+someone can throw in an SMBus driver somewhere (that would be 
+awesome!)... ;)<br></p><p>I'll politely note that I&nbsp;am by nature 
+NOT a programmer -- my best effort to date is a four-room text adventure
+ written in MS QuickBASIC, that I'm currently&nbsp;rewriting when I get 
+in the mood, partly to exercise my Amstrad PPC640 (lol)&nbsp;that I got 
+recently and partly because the original version was so awful as to 
+essentially avoid the use of a text input parser (don't ask, you 
+*really* don't want to know!). While I'm *technically*&nbsp;open&nbsp;to
+ learning, my last two concentrated efforts at learning C++ ended 
+spectacularly badly, so I&nbsp;hope you will forgive me for being rather
+ hesitant!</p><p>That said, I'm more than happy to help test... ;)</p><p>*
+ I feel the same way most folks here do about that stuff -- that's 
+treading on hallowed ground because old PC / computer history, but 
+I&nbsp;have THREE essentially complete but 
+not-entirely-functional-at-best parts machines in a cardboard Banker's 
+Box in addition to the one that works ;)&nbsp;so I think I&nbsp;can take
+ the mouse 'nub' part out of one of the busted ones for this...!</p><p></p>
+            
+
+            
+
+            
+
+
+<div class="share-links share-holder">
+    <span>Share</span>
+    <a class="gray-link">
+        
+
+
+
+
+    <div class="icon icon-link-circle--share">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 16 16"><path d="M10.78 5.371a1.67 1.67 0 0 0-2.357 0L7.33 6.464a1.67 1.67 0 0 0 0 2.356c.076.076.155.14.241.196l.554-.554a.936.936 0 0 1-.26-.177.911.911 0 0 1-.003-1.29l1.093-1.092c.354-.355.935-.355 1.289 0s.354.934 0 1.289l-.818.818c.068.14.158.463.026.999a1.79 1.79 0 0 0 .227-.185l1.093-1.093a1.66 1.66 0 0 0 .007-2.36zM8.547 7.294l-.54.539c.012.007.027.01.038.018a.915.915 0 0 1 .14 1.402l-1.093 1.094c-.355.354-.935.354-1.29 0s-.354-.935 0-1.29l.807-.806c-.075-.177-.14-.501-.022-1.006-.08.056-.159.116-.227.188L5.268 8.526a1.67 1.67 0 0 0 0 2.356c.324.324.75.486 1.18.486s.852-.162 1.18-.486L8.72 9.79a1.67 1.67 0 0 0 0-2.356c-.056-.053-.117-.094-.173-.14zm5.475.747a5.995 5.995 0 0 1-5.996 5.995 5.995 5.995 0 0 1-5.995-5.995 5.995 5.995 0 0 1 5.995-5.995 5.995 5.995 0 0 1 5.996 5.995z"></path></svg>
+        
+    </div>
+
+
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board&amp;text=Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board%3F%20by%20Starhawk&amp;related=hackadayio&amp;via=hackadayio" target="_blank" class="gray-link" title="Share on Twitter">
+        
+
+
+
+
+    <div class="icon icon-twitter-circle--share">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.023 14.03a6 6 0 1 0-.002-12.002 6 6 0 0 0 .002 12.002zm.834-8.345c-.524.19-.855.683-.818 1.22l.012.208-.21-.025a3.405 3.405 0 0 1-1.994-.983L5.57 5.83l-.07.203c-.15.453-.055.932.26 1.254.167.178.13.203-.16.097-.1-.034-.188-.06-.197-.046-.03.03.072.415.15.568.11.21.332.42.575.542l.206.097-.243.005c-.234 0-.242.004-.217.093.084.275.415.568.783.695l.26.09-.226.134c-.335.195-.73.305-1.123.314-.19.004-.344.02-.344.034 0 .042.51.28.81.373.892.275 1.952.156 2.748-.314.567-.336 1.133-1 1.397-1.645.142-.343.285-.97.285-1.27 0-.196.012-.22.247-.454.137-.135.267-.283.292-.326.042-.08.038-.08-.176-.008-.356.127-.406.11-.23-.08.13-.136.285-.382.285-.454 0-.013-.062.008-.133.047-.076.04-.243.104-.37.143l-.225.072-.206-.14a1.794 1.794 0 0 0-.356-.187 1.43 1.43 0 0 0-.733.017z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board" target="_blank" class="gray-link" title="Share on Facebook">
+        
+
+
+
+
+    <div class="icon icon-facebook-circle--share">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.023 14.03a6 6 0 1 0-.002-12.002 6 6 0 0 0 .002 12.002zm-.847-2.737V8.028h-.674V6.904h.674v-.676c0-.917.38-1.463 1.462-1.463h.9V5.89h-.563c-.42 0-.45.157-.45.45v.563h1.02l-.12 1.125h-.9v3.265h-1.35z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+
+    </a>
+</div>
+
+        </div>
+    </div>
+
+    <div id="comments" class="container post-comments">
+        <section class="section last">
+    <h2 id="j-discussions-title" class="section-title">Discussions</h2>
+
+    <form id="j-discussion-add-top" action="/discussions/add" name="add-comment" method="POST" class="skip-global-form discussion-form j-discussion-add hide">
+
+        <div class="redactor-box" role="application" dir="ltr"><span class="redactor-voice-label" id="redactor-voice-0" aria-hidden="false">Rich text editor</span><div class="redactor-layer redactor-styles redactor-layer-img-edit redactor-in redactor-relative redactor-placeholder" aria-labelledby="redactor-voice-0" role="presentation" id="redactor-uuid-0" contenteditable="true" spellcheck="true" dir="ltr" style="min-height: 78px;" placeholder="Add your comment"><p>​</p></div><textarea placeholder="Add your comment" name="comment" class="redactor-comment textarea-field" style="display: none;"></textarea></div>
+
+        <div class="error-message alert-danger hide" id="addCommentErrorMessageTop"></div>
+
+        <input type="hidden" name="categoryId" value="6966">
+        <input type="hidden" name="category" value="stack">
+        <input type="hidden" name="_csrf" value="8n0ztcON-oEUoWdwR6imhkjzYEbwoVpn84Uw">
+        <input type="hidden" name="replyTo" value="0">
+
+        <input type="submit" class="button-grey-gold-medium" value="Post comment">
+    </form>
+
+    <div id="discussion-list" class="discussion-list">
+        
+<p>
+    </p><div class="signup-holder textarea-holder">
+        <textarea placeholder="Log In or become a member to leave your comment" name="comment" class="editable input-comment" style="height: 56.6px;"></textarea>
+    </div>
+    <a href="#" class="button-grey-gold-small login-comment login-button">Log In/Sign up to comment</a>
+<p></p>
+<div class="modal-content-holder onboarding-modal login-modal" id="login-modal">
+        <div class="onboarding-signup">
+        <div class="onboarding-top">
+    <div class="submissions-close modal-close">
+        
+
+
+
+
+    <div class="icon icon-close">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 6.99 4.767 3.76a.714.714 0 1 0-1.01 1.01L6.992 8 3.76 11.233a.714.714 0 1 0 1.01 1.01L8 9.008l3.233 3.232a.714.714 0 1 0 1.01-1.01L9.008 8l3.232-3.233a.714.714 0 1 0-1.01-1.01L8 6.992z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+
+    </div>
+
+    <div class="onboarding-holder">
+        <div class="headline">
+            <h1 class="title text-center">
+                Become a  Hackaday.io Member
+            </h1>
+            <p class="text-center">
+                <span>Create an account to leave a comment.</span>
+                <span>Already have an account?</span>
+                <a href="https://hackaday.io/signin" class="should-link">Log In</a>.
+            </p>
+        </div>
+        <div class="onboarding-content signin-holder">
+            <div class="signin-left">
+                <a href="https://hackaday.io/auth/github" class="sign-in-with-github-button button j-dialog-auth-window">
+                    
+
+
+
+
+    <div class="icon icon-github--signin">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.643 7.513c-.158-.45-.228-.967-.228-1.543 0-1.024.33-1.41.77-1.955-.337-1.167.122-1.965.122-1.965s.71-.142 2.05.79c.728-.303 2.666-.328 3.584-.068.563-.36 1.593-.873 2.008-.73.113.176.355.688.147 1.813.14.247.874.772.877 2.258-.012.548-.07 1.01-.18 1.402.02 0-.14.485-.177.484C12.13 9.034 11.13 9.42 9.52 9.58c.522.32.672.72.672 1.802 0 1.083-.015 1.23-.012 1.478.006.408.623.604.6.736-.023.13-.517.11-.747.032-.654-.22-.588-.75-.588-.75l-.022-1.447s.044-.78-.253-.78v2.37c0 .516.372.672.372.863 0 .327-.68-.03-.888-.235-.32-.31-.283-.97-.275-1.49.006-.502-.006-1.603-.006-1.603l-.216.005s.088 2.403-.114 2.84c-.263.563-1.054.757-1.054.5 0-.172.194-.117.302-.503.093-.33.06-2.78.06-2.78s-.253.146-.253.605c0 .21-.007 1.41-.007 1.767 0 .45-.657.705-.973.705-.16 0-.36-.008-.36-.09 0-.208.602-.33.602-.762 0-.375-.008-1.34-.008-1.34s-.304.052-.736.052c-1.09 0-1.435-.675-1.6-1.053a1.859 1.859 0 0 0-.784-.908c-.18-.113-.222-.247-.013-.285.966-.175 1.212 1.063 1.857 1.26.46.14 1.052.08 1.346-.105.04-.378.32-.705.554-.877-1.64-.153-2.612-.705-3.116-1.593-.005 0-.236-.482-.217-.482z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+
+                    <span>Sign up with Github</span>
+                </a>
+                <a href="https://hackaday.io/auth/twitter" class="sign-in-with-twitter-button button j-dialog-auth-window">
+                    
+
+
+
+
+    <div class="icon icon-twitter--signin">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="m9.1 7.1 4.3-4.9h-1L8.7 6.4l-3-4.2H2.3l4.5 6.4-4.5 5.1h1l3.9-4.5 3.1 4.5h3.4M3.7 3h1.6l7.2 10h-1.6"></path></svg>
+        
+    </div>
+
+
+                    <span>Sign up with X</span>
+                </a>
+                <span class="or-separator">OR</span>
+            </div>
+                
+            <div class="signin-right">
+                <form id="onboarding-ga" action="/signupfast" method="POST">
+                <input type="text" class="input-field" placeholder="Enter your email address" required="" name="email">
+                <input type="password" class="input-field" placeholder="Pick a secure password" required="" name="password">
+                
+                <input id="captchaInput" type="text" class="input-field onboarding-modal-captcha" placeholder="Enter captcha" name="captcha" autocomplete="new-password" style="width: -webkit-calc(100% - 115px);">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/captcha.svg" id="captchaUrl" style="vertical-align: middle;" class="onboarding-modal-captcha">
+                <input type="hidden" name="okay_to_redirect" value="true">
+
+                <input type="hidden" name="source" value="/user : alternate modal">
+                <button class="gold-gold-button button-signin" type="submit">Sign up</button>
+                <input type="hidden" name="_csrf" value="8n0ztcON-oEUoWdwR6imhkjzYEbwoVpn84Uw">
+                <input type="hidden" class="input-field" placeholder="Invitation Code" required="" name="invitation_code" value="5Ad0ix2-b96J">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+</div>
+
+
+
+
+
+    
+    
+
+    <div id="j-discussion-192549" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/447778">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/1083431716509349951.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="447778"><a href="https://hackaday.io/hacker/447778-rupe01">rupe01</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-192549"><span class="time-card" style="margin: 0" title="2 years ago">10/14/2023 at 17:41</span></a>
+
+                <span id="comment-points-holder-192549" class="hide">
+                    • <span id="comment-points-192549">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-192549-content">
+                    <p>Yes, i know it's too late now....but for anyone 
+interested:&nbsp; Take a look at Accelerated Linux for non-MMU devices. 
+Might be able to get that to work....maybe.</p>
+                </div>
+                <p id="comment-192549-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-192549">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-192550" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-192550"><span class="time-card" style="margin: 0" title="2 years ago">10/14/2023 at 18:53</span></a>
+
+                <span id="comment-points-holder-192550" class="hide">
+                    • <span id="comment-points-192550">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-192550-content">
+                    <p>You aren't late, I'm just older :) alas, I have a
+ hard enough time compiling drivers... I don't even want to THINK about 
+the 'make' errors I'd get trying to compile an OS!</p><p>Great idea, 
+tho! By way of explanation... I'm just one of those weird people who 
+wants to see how much they can do with how little.</p>
+                </div>
+                <p id="comment-192550-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-192550">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-192555" data-level="3" class="discussions-item" style="margin-left: 50px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/447778">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/1083431716509349951.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="447778"><a href="https://hackaday.io/hacker/447778-rupe01">rupe01</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-192555"><span class="time-card" style="margin: 0" title="2 years ago">10/14/2023 at 23:27</span></a>
+
+                <span id="comment-points-holder-192555" class="hide">
+                    • <span id="comment-points-192555">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-192555-content">
+                    <p>Yes, i completely understand.....i am very much the same way, too. It's curiosity driven.</p>
+                </div>
+                <p id="comment-192555-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-192555">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-158086" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/350213">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/1490861538407573791.jpeg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="350213"><a href="https://hackaday.io/hacker/350213-david-given">David Given</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-158086"><span class="time-card" style="margin: 0" title="5 years ago">02/14/2021 at 21:48</span></a>
+
+                <span id="comment-points-holder-158086" class="hide">
+                    • <span id="comment-points-158086">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-158086-content">
+                    <p>I've just ported Fuzix to it, if you're 
+interested. Still rather buggy, binaries are limited to 64kB data / 32kB
+ code, and without an MMU you can only have one process in memory at a 
+time, but it makes a perfectly serviceable Unix system. No networking, 
+though (no space for the wifi 
+stack).&nbsp;http://cowlark.com/2021-02-09-esp8266-fuzix</p>
+                </div>
+                <p id="comment-158086-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-158086">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-156811" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/1160872">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/7018711613929545674.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="1160872"><a href="https://hackaday.io/hacker/1160872-giovanni">Giovanni</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-156811"><span class="time-card" style="margin: 0" title="5 years ago">01/20/2021 at 01:59</span></a>
+
+                <span id="comment-points-holder-156811" class="hide">
+                    • <span id="comment-points-156811">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-156811-content">
+                    <p>I&nbsp;have a new reason for wanting linux on an ESP32 (not ESP8266):&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.crowdsupply.com/e-radionica/inkplate-6">https://www.crowdsupply.com/e-radionica/inkplate-6</a>
+ They already added the e-ink, uses the ESP-32&nbsp;WROVER 8MB. The 
+refresh rate isn't great, but isn't bad either. One could even use one 
+of these displays, which has a programmable refresh&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.j-display.com/product/reflective.html">https://www.j-display.com/product/reflective.html</a> video:&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=S1MM8y0zOPw">https://www.youtube.com/watch?v=S1MM8y0zOPw</a></p>
+                </div>
+                <p id="comment-156811-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-156811">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-143214" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/556045">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/8334371586587306401.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="556045"><a href="https://hackaday.io/hacker/556045-daniel">Daniel</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-143214"><span class="time-card" style="margin: 0" title="6 years ago">04/11/2020 at 07:44</span></a>
+
+                <span id="comment-points-holder-143214" class="hide">
+                    • <span id="comment-points-143214">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-143214-content">
+                    <p>I know you want to use an 8266, but from my 
+knowledge of these controllers, you would be FAR better off using an 
+ESP32. In contrast to the ESP8266, this one has the possibility to map 
+external SPI RAM into the CPUs address space. Without this, I think all 
+attempt to run an actual Linux on one of those would be futile as you 
+will be limited to the internal memory only. Adding external memory as 
+you proposed would just be impossible, because without a proper MMU, you
+ can't implement paging.</p><p>WITH the external memory interface of the
+ ESP32 however, you could do exactly as you proposed and add an external
+ controller as MMU. Also, you could run the kernel on the second CPU 
+core so it can run natively and you don't have to somehow run the kernel
+ as application.</p><p>I you decide to give it a go, please let us know. This would be a truly epic hack. <br></p>
+                </div>
+                <p id="comment-143214-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-143214">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-142847" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/127588">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/3426751501647411125.jpeg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="127588"><a href="https://hackaday.io/hacker/127588-rubypanther">rubypanther</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-142847"><span class="time-card" style="margin: 0" title="6 years ago">04/03/2020 at 18:48</span></a>
+
+                <span id="comment-points-holder-142847" class="hide">
+                    • <span id="comment-points-142847">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-142847-content">
+                    <p>In my experience as a programmer, the 8266 barely
+ runs FreeRTOS well, and already with this slim of an OS it is hard to 
+do anything hard without screwing up the wifi. It works fine as an 
+application processor for a small application IF the application has no 
+realtime needs at all, OR the app can turn off wifi while it does its 
+main work.<br></p><p>If you're already adding coprocessors and things, 
+you're better off just using the 8266 as a communication subsystem, and 
+choosing a cheap ARM processor with an MMU.<br><br>If you want to get linux on the 8266 the end result will be gimmicky, not a real linux system.<br></p>
+                </div>
+                <p id="comment-142847-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-142847">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-142854" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-142854"><span class="time-card" style="margin: 0" title="6 years ago">04/03/2020 at 19:26</span></a>
+
+                <span id="comment-points-holder-142854" class="hide">
+                    • <span id="comment-points-142854">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-142854-content">
+                    <p>OK, thank you :)</p>
+                </div>
+                <p id="comment-142854-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-142854">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141322" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/346424">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/3403551580228356202.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="346424"><a href="https://hackaday.io/hacker/346424-aldolo">aldolo</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141322"><span class="time-card" style="margin: 0" title="6 years ago">03/21/2020 at 17:18</span></a>
+
+                <span id="comment-points-holder-141322" class="hide">
+                    • <span id="comment-points-141322">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141322-content">
+                    <p>look for minix</p>
+                </div>
+                <p id="comment-141322-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141322">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141303" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/344094">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/4879601597584952123.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="344094"><a href="https://hackaday.io/hacker/344094-ken-yap">Ken Yap</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141303"><span class="time-card" style="margin: 0" title="6 years ago">03/20/2020 at 23:27</span></a>
+
+                <span id="comment-points-holder-141303" class="hide">
+                    • <span id="comment-points-141303">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141303-content">
+                    <p>I think it would be a heroic hack but you could 
+get glory if you succeed. But what are you really after? Something that 
+works adequately? You'd do better crowdfunding a suitable SBC. Something
+ Unix-like and feasible? FUZIX might fit the bill. Something to pass the
+ time? Sure, and be sure to write it up, Good luck.<br></p>
+                </div>
+                <p id="comment-141303-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141303">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141347" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141347"><span class="time-card" style="margin: 0" title="6 years ago">03/22/2020 at 05:15</span></a>
+
+                <span id="comment-points-holder-141347" class="hide">
+                    • <span id="comment-points-141347">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141347-content">
+                    <p>I'm looking to show that it can be done. If I 
+wanted a simple and expedient solution I'd stick with the Pi Zero as 
+described below... which, honestly, is probably what will end up 
+happening in the end, as I am many things, but programmer is very much 
+not one of them!</p><p>Also, apologies for how long it took me to respond. Life is a thing that complicates other things sometimes.</p>
+                </div>
+                <p id="comment-141347-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141347">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141348" data-level="3" class="discussions-item" style="margin-left: 50px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/344094">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/4879601597584952123.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="344094"><a href="https://hackaday.io/hacker/344094-ken-yap">Ken Yap</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141348"><span class="time-card" style="margin: 0" title="6 years ago">03/22/2020 at 05:24</span></a>
+
+                <span id="comment-points-holder-141348" class="hide">
+                    • <span id="comment-points-141348">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141348-content">
+                    <p>Go find your inner hero then.<br></p>
+                </div>
+                <p id="comment-141348-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141348">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141350" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/173240">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/1716821486850835333.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="173240"><a href="https://hackaday.io/hacker/173240-thomas">Thomas</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141350"><span class="time-card" style="margin: 0" title="6 years ago">03/22/2020 at 07:01</span></a>
+
+                <span id="comment-points-holder-141350" class="hide">
+                    • <span id="comment-points-141350">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141350-content">
+                    <p>If you want to do something that's really heroic 
+(and maybe even of some practical use) go revive uClinux. The amount of 
+RAM might be a bit on the smallish side even for a flat no-MMU approach.
+ Probably there won't be a way to run any kind of useful binary (besides
+ maybe a trimmed down busybox) but at least the (complicated) uClinux 
+dependencies would have been revisited ;-)<br><br>Otherwise I'd go for one of the tiny POSIX-like embedded OS (but wait, Mongoose-OS is already there....<a target="_blank" rel="noopener noreferrer" href="https://www.osrtos.com/rtos/mongoose-os/">https://www.osrtos.com/rtos/mongoose-os/</a> )<br></p>
+                </div>
+                <p id="comment-141350-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141350">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141289" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/112278">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/4596021452033614248.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="112278"><a href="https://hackaday.io/hacker/112278-ziggurat29">ziggurat29</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141289"><span class="time-card" style="margin: 0" title="6 years ago">03/20/2020 at 17:36</span></a>
+
+                <span id="comment-points-holder-141289" class="hide">
+                    • <span id="comment-points-141289">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141289-content">
+                    <p>is Linux strictly required? Or just 'something 
+unixian'? RetroBSD might be a closer match (it is derived from an 
+ancient pre-mmu-era BSD), though to wit even it has a 128 KiB RAM 
+minimum requirement, which exceeds the 80 KiB on the ESP8266 (not to 
+mention it's non-uniform separation of duties of that RAM into 
+executable/data-only).&nbsp; But it might be a starting point.<br><br>That
+ being said, I suspect irrespective of the OS, that the attempt to run 
+Links2 as the user-mode application will be an even bigger ram concern, 
+but I admit I am not intimately familiar with it.<br><br>Even /that/ 
+being said, if you /were/ to try to use a modded RetroBSD, and because 
+your project seems to be application specific (i.e. 'run links 2 over a 
+terminal session'), you might be able to realize some savings by ROM-ing
+ all your executable code, and preserving the precious RAM for data 
+only.<br><br>You had mentioned elsewhere video, and were open to using a
+ separate chip for that.&nbsp; If you are able to relax that constraint 
+there, then you might consider a beefier processor for your unixian 
+stuff (and ps2, video, etc), and keep the ESP for your networky 
+stuff.&nbsp; Just a thought.&nbsp; I myself have used a PIC32MX to 
+synthesize VGA from SPI and do the PS2 stuff, though you surely can do 
+similar with one of the ARMs out there (probably more cheaply, possibly 
+with more RAM).&nbsp; And if you are doing video, don't forget about 
+your RAM needs for the frame buffer.</p>
+                </div>
+                <p id="comment-141289-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141289">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141346" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141346"><span class="time-card" style="margin: 0" title="6 years ago">03/22/2020 at 05:14</span></a>
+
+                <span id="comment-points-holder-141346" class="hide">
+                    • <span id="comment-points-141346">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141346-content">
+                    <p>Sorry for the late reply... as my grandmother often said:&nbsp;"life is what happens when you're making other plans" ;)</p><p>Please
+ do re-read my earlier hardware comment -- the ATMega was to be used as 
+an external MMU with a 30pin SIMM, with a RasPi-style "BIOS 
+substitute"&nbsp;(config.txt sort of thing, plus support 
+files)&nbsp;taking care of making the kludge operational within the OS 
+(which would of course need to support virtual memory or something very 
+much like it -- although that was left to be inferred before). The video
+ was to be handled by a dedicated VLSI (brand) chip with a 1meg onboard 
+RAM getup of its own, which was in this case to be dedicated VRAM. The 
+VLSI chip communicates over SPI. I've just learned of a successor chip, 
+the VLSI&nbsp;VS23S040D, which has 4meg onboard RAM and would be a 
+likely substitute for the previously-mentioned device.</p>
+                </div>
+                <p id="comment-141346-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141346">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141356" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/503994">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/6583311577570914497.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="503994"><a href="https://hackaday.io/hacker/503994-ostropest">ostropest</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141356"><span class="time-card" style="margin: 0" title="6 years ago">03/22/2020 at 09:43</span></a>
+
+                <span id="comment-points-holder-141356" class="hide">
+                    • <span id="comment-points-141356">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141356-content">
+                    <p>why not <a target="_blank" rel="noopener noreferrer" href="https://wiki.debian.org/TheHurd">https://wiki.debian.org/TheHurd</a><br></p>
+                </div>
+                <p id="comment-141356-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141356">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+        <div id="j-discussion-141237" data-level="1" class="discussions-item" style="margin-left: 0px;">
+            <div class="discussions-item-image">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/default-avatar-discussions.png">
+            </div>
+            <div class="discussions-item-body">
+                <small class="authorship"><i>[deleted]</i></small>
+                <p><i>[this comment has been deleted]</i></p>
+            </div>
+        </div>
+    
+
+    
+    
+
+    <div id="j-discussion-141239" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141239"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 20:01</span></a>
+
+                <span id="comment-points-holder-141239" class="hide">
+                    • <span id="comment-points-141239">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141239-content">
+                    <p>Sorry, nope, I&nbsp;like challenges ;) besides. 
+This can be done. Look at my last post, right below this one. It's 
+doable, just tricky.</p>
+                </div>
+                <p id="comment-141239-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141239">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141295" data-level="3" class="discussions-item" style="margin-left: 50px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141295"><span class="time-card" style="margin: 0" title="6 years ago">03/20/2020 at 18:47</span></a>
+
+                <span id="comment-points-holder-141295" class="hide">
+                    • <span id="comment-points-141295">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141295-content">
+                    <p><a data-mention-user-id="532250" href="https://hackaday.io/hacker/532250">@Kosma&nbsp;</a>Thank
+ you for your remarks -- you clearly have NO IDEA what I'm up to 
+(understandable, I've not explained it properly). The contrast between 
+the end-goal of the project and the last paragraph of your comment made 
+me chuckle... which I desperately needed because I'm just as much artist
+ as nerd, and I just accidentally poured Diet Sunkist orange soda all 
+over a partially-completed personal work that was super important and 
+incredibly difficult for me to work out for a number of reasons... and 
+now it's completely ruined.<br><br></p><p>As for *this*&nbsp;thing -- 
+the original plan was to put a Raspberry Pi Zero 1.3 in a weatherproof 
+box with a HubWiPi Blue (3x USB2 + WiFi + BT daughterboard) and the 
+necessary voltage regulation for it and the rest of the system, bolt on a
+ dual USB port weatherproof extension and a Dell D630 knockoff battery 
+(they're cheap) such that that part could hang off a belt clip or 
+whatever, and run the remaining USB port + the "TV Out" (composite 
+video)&nbsp;port from the Pi to a forearm-mounted module consisting of a
+ 5" 800x480 LCD and a homemade keyboard/mouse module -- one of those 
+49-key Bluetooth smartphone keyboards (the kind without a 
+mouse)&nbsp;with a custom controller (Teensy 2.0 + QMK 
+Firmware)&nbsp;that splices in the 'nub' mouse from a Toshiba T3400CT (I
+ have one working one and three parts machines -- this example comes 
+from a parts sys)&nbsp;and a pair of 12mm tact buttons with caps for the
+ left/right mouse buttons. The keyboard/mouse bit would fold over the 
+LCD to protect it when the system was out of service or off or whatever.</p><p>So
+ the idea was to shove an ESP8266 in there instead of the Pi Zero, hub, 
+etc -- I don't necessarily need the extra USB ports, I definitely never 
+need Bluetooth (I've used it like once ever, and that was with one of 
+Mom's incredibly ancient Blackberries and a folding keyboard from when 
+USBHID support on phones was kind of a new thing). I 
+*certainly*&nbsp;don't need a full-on desktop Linux distro with all the 
+bells and whistles and pops and feeps and whatnot -- just enough 
+brainage to pull up a network connection and throw a browser session at 
+it, drive the keyboard/mouse module, and monitor the battery.</p>
+                </div>
+                <p id="comment-141295-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141295">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141232" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141232"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 18:38</span></a>
+
+                <span id="comment-points-holder-141232" class="hide">
+                    • <span id="comment-points-141232">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141232-content">
+                    <p>Just had a thought that might enable this to be 
+done. This is a very low-level issue. You need a few things here... but 
+this is ultimately a /very/ low-level issue.</p><p>First, the ESP8266 
+has no proper MMU. Fine, let's give it one. This will need a "software 
+shim" to work -- i.e., a driver, through the OS, that makes an external 
+MMU and RAM-config usable to the system. Dmitry Grinberg laid the 
+foundations of this, indirectly, with his "Worst Linux Computer" -- we 
+need an ATMega1284 programmed to operate as an MMU, and a 
+30pin&nbsp;SIMM.</p><p>Second, for video output we also need additional 
+hardware, a chip of the sort that, in the old days, was called a "video 
+display processor", or VDP. Famous examples of this include the TMS9918 
+and its successors for MSX-spec computers, and the VIC and VIC-II in the
+ Commodore VIC-20 and the Commodore 64. These are notably different from
+ the old "CRT Controllers"&nbsp;such as the Motorola MC6845 -- the 6845 
+was more of a reconfigurable sequencer sort of a thing. It never 
+processed anything, and was only responsible for generating timing 
+signals and stepping through VRAM addresses for additional external 
+circuitry (which could be quite extensive indeed, as you'll know if 
+you've ever seen a real IBM MDA card -- I&nbsp;have one :D) to interpret
+ and deal with. But we need not be nearly so crude -- or so laborious. 
+Go take a look at the&nbsp;VS23S010D-L ;)&nbsp;it's an SPI VDP with an 
+integrated 1meg RAM setup inside, which is also accessible over SPI as 
+well as internally to its VDP. This is easy. "Shim" it as the display 
+controller, let it use its integrated memory as VRAM, and Bob's yer 
+uncle ;)</p><p>Third, we need a replacement for the PC BIOS. Those 
+"software shims" really has to be at the BIOS level. Also, the system 
+needs to know how to interact with its hardware. This is NOT an 
+IBM-compatible PC of *any* lineage. This is more like a 1st-gen 
+Raspberry Pi that someone's gone and clobbered a few times with 
+something large, blunt, and heavy -- it doesn't think very well any 
+more. Funny mentioning Raspberry Pis, though ;)&nbsp;since their 
+/boot/config.txt trick is almost exactly what we need here!</p><p>Fourth and last, we need a custom bootloader. The bootloader does what it needs to...</p><p><br>(1)
+ Loads the basic functions for external MMU, display controller, USB 
+host support for input devices, hubs, and mass storage devices 
+(MAX3421E-based), and WiFi.</p><p>(2) A simple POST (Power On Self Test.
+ I know, I&nbsp;know -- this is traditionally the FIRST step. But if you
+ do it that way there's nothing to test, because the necessary support 
+to access them has not been provided yet. Also: beep on errors.</p><p>(3)&nbsp;Init the hardware, bring up the input/output interfaces, and enable the external RAM.&nbsp;</p><p>(4) Put up a RAMDrive in the external RAM, then init the custom bootloader and start it going.</p><p>(5)
+ Either chain-load eg GRUB2 or SYSLINUX from storage (the SD 
+card)&nbsp;and then bootstrap the OS from there, or directly bootstrap 
+the OS, establishing a RAMDrive for the kernel at the same time.</p>
+                </div>
+                <p id="comment-141232-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141232">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141211" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/316220">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/2457351526500693274.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="316220"><a href="https://hackaday.io/hacker/316220-daniel-mazurkiewicz">Daniel Mazurkiewicz</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141211"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 13:00</span></a>
+
+                <span id="comment-points-holder-141211" class="hide">
+                    • <span id="comment-points-141211">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141211-content">
+                    <p>Just quick googling and here is your start point: <a target="_blank" rel="noopener noreferrer" href="https://unix.stackexchange.com/questions/190350/mmu-less-kernel#190358">https://unix.stackexchange.com/questions/190350/mmu-less-kernel#190358</a><br></p>
+                </div>
+                <p id="comment-141211-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141211">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141223" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141223"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 16:24</span></a>
+
+                <span id="comment-points-holder-141223" class="hide">
+                    • <span id="comment-points-141223">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141223-content">
+                    <p>If it has RAM it has an MMU of some sort, just 
+not exposed to the outside world... otherwise, how would the CPU Core 
+know how much RAM is there (etc)...? ;)</p><p>That just means it needs swapspace. Not a big deal to hang an SD card off that SPI interface...</p>
+                </div>
+                <p id="comment-141223-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141223">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141208" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/228">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/3944211392563197306.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="228"><a href="https://hackaday.io/hacker/228-paul-stoffregen">Paul Stoffregen</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141208"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 11:43</span></a>
+
+                <span id="comment-points-holder-141208" class="hide">
+                    • <span id="comment-points-141208">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141208-content">
+                    <p>How much RAM did your Pentium machine have?&nbsp; And how much is inside that tiny chip?<br></p>
+                </div>
+                <p id="comment-141208-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141208">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141222" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141222"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 16:22</span></a>
+
+                <span id="comment-points-holder-141222" class="hide">
+                    • <span id="comment-points-141222">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141222-content">
+                    <p>IIRC I maxed that Pentium board out at like 24 
+megs. I don't remember for sure, it was literally years ago. But it 
+wasn't running anything like this -- that was a full-on graphical shell.
+ IIRC it was a clumsy backport of JWM to GTK1 stuff, along with the same
+ treatment for the rest of the apps -- emelFM file manager, Dillo 
+browser, etc. The point being that this was a waaaaay heavier load than 
+I'm picturing here, which would be (again) Links2 in a console session.</p><p>OK,
+ so we've only got 80kB to work with for userdata and 32-64kB for 
+instructions, depending on how you count it. Fine. I'll pull the SPI ROM
+ off and stick on an SD card. Boom! Swap memory. Yes, it's slow. But 
+it's not going to be nearly as slow as eg a mechanical hard drive with 
+that Pentium box (which, BTW, didn't have swapspace set up, but if it'd 
+had that... ow).</p><p>Dude, I&nbsp;know you're trying to scare me off 
+and all, but... one, look up XWOAF aka X Windows On&nbsp;A Floppy. 
+I&nbsp;have a copy (it doesn't boot, it's corrupted :(&nbsp;or claims it
+ is, anyhow -- but it's there...)&nbsp;and it's supposed to be able to 
+boot on a friggin 486 with no coproc (it has emulation support in the 
+kernel) with... I&nbsp;don't remember, 16mb RAM? Basically barely 
+anything, is the point. Two, I have a Compaq Portable III that I'm 
+restoring. When I'm done it's getting DOS 3.3, a DOS-compat Links2 port,
+ and an ESP8266 wired up as a WiFi&nbsp;COMport&nbsp;modem. Yes,&nbsp;I 
+know I'll probably need a DOS Extender to get Links2 up and running -- 
+trust me when I tell you I've got that covered. If I can't get the 
+internal 16450 serial UART chip to do 115200 baud to the modem reliably,
+ I'll piggyback a spare 16550&nbsp;I have onto it. Now go look up the 
+specs of that system, and come back here and tell me how come I can do 
+what I'm talking about on *it*&nbsp;but not on an ESP8266 that's 
+obviously considerably more powerful.<br></p>
+                </div>
+                <p id="comment-141222-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141222">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141224" data-level="3" class="discussions-item" style="margin-left: 50px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/228">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/3944211392563197306.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="228"><a href="https://hackaday.io/hacker/228-paul-stoffregen">Paul Stoffregen</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141224"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 16:29</span></a>
+
+                <span id="comment-points-holder-141224" class="hide">
+                    • <span id="comment-points-141224">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141224-content">
+                    <p>Not trying to scare you off.&nbsp; Only helping 
+you save a little time to reach the inevitable conclusion about Linux 
+memory usage.</p>
+
+<p>Then again, who knows, maybe you'll find a way to make it work?&nbsp;
+ If you do, I'm sure you'll be a hero to many.&nbsp; Hackaday will very 
+likely cover it with a longer format article too, since getting Linux 
+running on this hardware is something widely considered to be impossible
+ due to the limited RAM.<br></p><p>And fwiw, I ran Linux as my primary 
+desktop system back in 1994 on a low-end 486 machine lacking the 
+FPU.&nbsp; Those were the days when most low-end PCs came with 2 megs, 
+because that's what was needed to run Windows 3.1 pretty well.&nbsp; 
+Linux needed 4 megs to run without extreme trickery, but it took at 
+least 8 megs to have a usable system back in those early days.&nbsp; 
+Memory use has grown tremendously since then.</p><p>Good luck and don't give up just because I pointed this out.&nbsp; Go forth and surprise me and the rest of the world!<br></p>
+                </div>
+                <p id="comment-141224-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141224">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141225" data-level="3" class="discussions-item" style="margin-left: 50px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141225"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 16:32</span></a>
+
+                <span id="comment-points-holder-141225" class="hide">
+                    • <span id="comment-points-141225">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141225-content">
+                    <p><a data-mention-user-id="228" href="https://hackaday.io/hacker/228">@Paul Stoffregen&nbsp;</a>-- you didn't even *address* the swapspace idea. I have to say I'm disappointed here.</p>
+                </div>
+                <p id="comment-141225-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141225">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141226" data-level="3" class="discussions-item" style="margin-left: 50px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/228">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/3944211392563197306.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="228"><a href="https://hackaday.io/hacker/228-paul-stoffregen">Paul Stoffregen</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141226"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 17:00</span></a>
+
+                <span id="comment-points-holder-141226" class="hide">
+                    • <span id="comment-points-141226">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141226-content">
+                    <p>Last reply here - specifically on your swap space
+ idea... *you* should go look at the Linux source code and try to get an
+ idea of how much fixed allocation RAM just the memory management and 
+block devices need merely to implement memory swapping (not to mention 
+how well it can be done without a MMU).</p><p><br>This is your project, 
+not mine.&nbsp; I applaud your enthusiasm.&nbsp; But when it comes to 
+figuring out the feasibility of your ideas, you are the one who needs to
+ dive into the Linux source code and discover these realities of memory 
+usage.</p><p><br>I sincerely hope (regardless of how incredibly unlikely
+ it is) you find a way to make this work.&nbsp; Even if utterly 
+impractical, I and pretty much everyone will be very impressed if you 
+can pull it off.&nbsp; Now go forth and explore.&nbsp; Do not let my 
+lack of responsiveness to any idea or question be the reason you didn't 
+accomplish this project!<br></p>
+                </div>
+                <p id="comment-141226-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141226">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+        <div id="j-discussion-141194" data-level="1" class="discussions-item" style="margin-left: 0px;">
+            <div class="discussions-item-image">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/default-avatar-discussions.png">
+            </div>
+            <div class="discussions-item-body">
+                <small class="authorship"><i>[deleted]</i></small>
+                <p><i>[this comment has been deleted]</i></p>
+            </div>
+        </div>
+    
+
+    
+    
+
+    <div id="j-discussion-141195" data-level="2" class="discussions-item" style="margin-left: 25px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141195"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 07:59</span></a>
+
+                <span id="comment-points-holder-141195" class="hide">
+                    • <span id="comment-points-141195">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141195-content">
+                    <p>Right, but... then how is the external ROM handled?&nbsp;Especially since IIRC the ESP8266 boards cannot boot without it.</p><p><br>I'm not arguing, I promise -- I&nbsp;just want to understand.<br></p>
+                </div>
+                <p id="comment-141195-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141195">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-141233" data-level="3" class="discussions-item" style="margin-left: 50px;">
+        <div class="discussions-item-image">
+
+            <a href="https://hackaday.io/hacker/22302">
+                <img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/5550291540166957576.jpg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="22302"><a href="https://hackaday.io/hacker/22302-starhawk">Starhawk</a></span>
+
+                wrote <a class="gray-link" href="https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board/discussion-141233"><span class="time-card" style="margin: 0" title="6 years ago">03/19/2020 at 18:39</span></a>
+
+                <span id="comment-points-holder-141233" class="hide">
+                    • <span id="comment-points-141233">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-141233-content">
+                    <p>I&nbsp;know what it is, <a data-mention-user-id="532250" href="https://hackaday.io/hacker/532250">@Kosma</a>... I dabble in 80s homebrews. That doesn't answer my question at all.</p>
+                </div>
+                <p id="comment-141233-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-141233">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+
+
+
+<script type="text/javascript">
+
+    var pageIndex = 0;
+
+
+</script>
+    </div>
+
+    
+
+</section>
+
+
+
+
+    </div>
+
+    
+
+    
+
+
+    <script>
+        var usersFromComments = '[{"id":447778,"username":"rupe01","screen_name":"rupe01","avatar_url":"https://cdn.hackaday.io/images/1083431716509349951.png"},{"id":22302,"username":"starhawk","screen_name":"Starhawk","avatar_url":"https://cdn.hackaday.io/images/5550291540166957576.jpg"},{"id":350213,"username":"david.given","screen_name":"David Given","avatar_url":"https://cdn.hackaday.io/images/1490861538407573791.jpeg"},{"id":1160872,"username":"catz","screen_name":"Giovanni","avatar_url":"https://cdn.hackaday.io/images/7018711613929545674.png"},{"id":556045,"username":"Winkelkatze","screen_name":"Daniel","avatar_url":"https://cdn.hackaday.io/images/8334371586587306401.png"},{"id":127588,"username":"RubyPanther","screen_name":"rubypanther","avatar_url":"https://cdn.hackaday.io/images/3426751501647411125.jpeg"},{"id":346424,"username":"aldolo69","screen_name":"aldolo","avatar_url":"https://cdn.hackaday.io/images/3403551580228356202.jpg"},{"id":344094,"username":"retiredfeline","screen_name":"Ken Yap","avatar_url":"https://cdn.hackaday.io/images/4879601597584952123.jpg"},{"id":173240,"username":"TG9541","screen_name":"Thomas","avatar_url":"https://cdn.hackaday.io/images/1716821486850835333.jpg"},{"id":112278,"username":"ziggurat29","screen_name":"ziggurat29","avatar_url":"https://cdn.hackaday.io/images/4596021452033614248.jpg"},{"id":503994,"username":"ostropest","screen_name":"ostropest","avatar_url":"https://cdn.hackaday.io/images/6583311577570914497.png"},{"id":532250,"username":"0xtrzy","screen_name":"Kosma","avatar_url":"https://cdn.hackaday.io/images/592521581867631782.png"},{"id":316220,"username":"dmazurkiewicz","screen_name":"Daniel Mazurkiewicz","avatar_url":"https://cdn.hackaday.io/images/2457351526500693274.png"},{"id":228,"username":"PaulStoffregen","screen_name":"Paul Stoffregen","avatar_url":"https://cdn.hackaday.io/images/3944211392563197306.jpg"}]';
+    </script>
+
+
+
+    <script>
+  window.geoRegion = "AMER";
+  window.env       = "prod";
+</script>
+
+<div id="footer" class="footer">
+  
+    <a href="#header" class="back-to-top">
+      
+
+
+
+
+    <div class="icon icon-long-arrow-up">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.023 2.03 4.78 5.26h2.688v1.11h1.11V5.26h2.688L8.023 2.03zm-.555 5.505V8.92h1.11V7.534H7.47zm0 2.56v1.383h1.11v-1.384H7.47zm0 2.55v1.384h1.11v-1.385H7.47z" fill-rule="evenodd"></path></svg>
+        
+    </div>
+
+ Going up?
+    </a>
+  
+
+  <p>
+    <a href="https://hackaday.com/about/">About Us</a>
+    <a href="mailto:projects-contact@hackaday.com">Contact Hackaday.io</a>
+    <a href="https://hackaday.io/project/37">Give Feedback</a>
+    <a href="https://hackaday.io/tos">Terms of Use</a>
+    <a href="https://supplyframe.com/company/privacy">Privacy Policy</a>
+    <a href="https://dev.hackaday.io/" target="_blank" rel="noopener noreferrer">Hackaday API</a>
+    
+    <a id="do-not-sell-link" href="#">Do not sell or share my personal information</a>
+    
+  </p>
+  
+  <p><a id="footer--home" href="https://hackaday.io/">© 2025 Hackaday</a></p>
+
+  
+</div>
+
+
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47229708-1', 'auto');
+
+    var dimensionValue = 'nonregistered';
+    ga('set', 'dimension1', dimensionValue);
+    ga('require', 'displayfeatures');
+
+    ga('send', 'pageview');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9XKDJZELWD');
+</script>
+<script>
+    var csrftoken = '8n0ztcON-oEUoWdwR6imhkjzYEbwoVpn84Uw';
+</script>
+
+
+<img src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/impression.gif" alt="" class="sf-impression">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/BMYGeAy2cbQWKJq2+OUCBAVOetyg1P0mrMh7GwYaeoLfqE9LNsc1HOCGXMHbM.js"></script>
+
+
+<iframe style="display: none;" id="uc-cross-domain-consent-sharing-bridge" src="Has%20anyone%20managed%20to%20get%20a%20minimal%20Linux%20install%20onto%20an%20ESP8266%20board_%20_%20.Stack%20_%20Hackaday.io_files/index.htm"></iframe></body></html>

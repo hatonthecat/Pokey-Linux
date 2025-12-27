@@ -1,0 +1,308 @@
+<html style="--wm-toolbar-height: 67px;"><head><script src="LMW_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app204.us.archive.org';v.server_ms=389;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="LMW_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="LMW_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="LMW_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://modest-proposals.com:80/Hacklin.htm","20090813040614","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1250136374");
+</script>
+<link rel="stylesheet" type="text/css" href="LMW_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="LMW_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="edx 1.05">
+<title>LMW</title>
+</head>
+
+<body background="LMW_files/ylw_back.png" topmargin="0" leftmargin="115"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20090813040614/http://modest-proposals.com:80/Hacklin.htm</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://www.modest-proposals.com/Hacklin.htm","20090813040614",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+<!-- <p>&nbsp;</p> -->
+<br>
+<h2 align="center">Xwoaf: X Windows On A Floppy</h2>
+<h5 align="center">Nov. 4, 2005</h5>
+
+<p align="center"><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/xwoaf.jpg">
+<img src="LMW_files/xwoaf.jpg" width="160" height="120"></a>
+</p><p align="center">Xwoaf with apps.<br>
+</p><p>
+<a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/xwoaf/xwoafhelp.htm">Xwoaf online help</a><br>
+</p>
+<p>
+After working with the 1diskxwin project (see below) I became fascinated with
+the concept of X windows on a boot linux floppy. Working with the 1diskxwin
+project presented a major problem: the apps were neither readily customizable
+nor programmable, nor was there any expansion room. The app source was not
+available, although source for the basic kernel, uClibc, busybox, libtinyX11
+and X server were.
+</p>
+<p>
+So in response, I put together an xcurses module that turns a typical ncurses
+based app into a libX11 only app. This allowed removal of most of the toolkit
+libs that took a lot of the available space.
+</p>
+<p>
+Since the initial release of Xwoaf, the major feedback I have received is "can
+Xwoaf do rdesktop?". The result is Xwoaf now has two forms: without oxelmo,
+but with rdesktop and with oxelmo, but without rdesktop. Both include minix,
+vfat and ext2 file systems, xcmd X run command, improved module support and
+help files for all major apps.
+</p>
+<p>
+Xwoaf is a stripped down version of the linux-2.2.25 and X 4.0.9 kdrives.<br>
+THERE IS NO NLS (Native Language Support)!<br>
+If you need NLS then you might want to check out:<br>
+<a href="https://web.archive.org/web/20090813040614/http://cng.ateneo.net/cng/wyu/software/">Just Another VNC and RDesktop Floppy Distribution v2.0</a><br>
+or a distro from<br>
+<a href="https://web.archive.org/web/20090813040614/http://www.frozentech.com/content/livecd.php">FrozenTech's LiveCD List</a>.
+</p>
+<p>
+The X apps available are: edx text editor, rdesktop client for MS Windows,
+retawq text only web browser, txplor dual-pane tree/dir filemanager, OXElmo
+email client, xcmd X-run command, bcalc 4 function calculator and a popup
+calendar with day/date/time. Also includes jwm window manager and all modules
+for NICs, block devices and file systems.
+
+</p>
+<p>
+Specifics:<br><br>
+Size (bytes) - Name - - - - Function
+	</p><li>604200 - Xfbdev 4.2.0 - kdrive framebuffer X server<br>
+	</li><li>624996 - Xvesa 4.2.0 - kdrive X server<br>
+	</li><li>404303 - 2.2.25 - linux kernel without framebuffer<br>
+	</li><li>432586 - 2.2.25 - linux kernel with framebuffer<br>
+	</li><li>220964 - uClibc-0.9.26 - libc<br>
+	</li><li>216992 - busybox-1.00-pre2 - basic *nix functions<br>
+	</li><li>209400 - libtinyX11 4.2.0 - X lib<br>
+	</li><li>128696 - retawq-0.2.6bx - text only X web browser<br>
+	</li><li>100145 - txplor-1.83 - dual pane X file manager<br>
+	</li><li>230637 - ***oxelmo-1.2.0 - X email client<br>
+	</li><li>101718 - ***X-app htm and txt help files<br>
+	</li><li>081241 - ***rdesktop-1.2.0 - client for Remote Desktop Protocol<br>
+	</li><li>075577 - jwm-0.21x - X window manager<br>
+	</li><li>061989 - rxvt-2.6.4 - X terminal<br>
+	</li><li>030485 - edx-1.04 - X text editor <br>
+	</li><li>016425 - bcalc-0.1.0 - X 4-function calculator<br>
+	</li><li>012513 - e3 - term based text editor<br>
+	</li><li>006293 - menu-3.00 - programmable X popup-menu<br>
+	</li><li>004633 - xcmd-1.05 - xlib only run command<br>
+	</li><li>various and sundry shell scripts and functions.<br>
+<p></p>
+<p>
+*** You can have oxelmo email client or the rdesktop client and app help
+files, but not both on a floppy. If you want/need both then you will have to
+merge your own and then run the initrd from a different medium than a floppy.
+</p>
+<p>
+Minimum RAM required: 24Meg. 4M RAMDISK, rest for kernel &amp; apps.
+</p>
+<p>Download:<br>
+<a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/binary/woaf-0.2.0g-vesa-elmo.tgz">Xwoaf-0.2.0g</a>
+: 2.1M X Windows On A Floppy archive w/doc, floppy image, modules 
+and pack/unpack scripts. Nov. 2, 2005<br>
+<a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/binary/woaf-0.2.0g-fb-elmo.tgz">Xwoaf-0.2.0g with framebuffer</a>
+: 2.01M X Windows On A Floppy archive w/doc, floppy image, modules 
+and pack/unpack scripts. Nov. 4, 2005<br>
+<a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/binary/woaf-0.2.0g-custom.tgz">Custom Xwoaf kit</a>
+: 3.6M Mix and match video modes, apps and qemu for debugging. Nov. 2, 2005<br>
+<a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/binary/woaf-0.2.0g.kit.tgz">Xwoaf apps</a>: 1.94M Source and Xwoaf 
+construction howto. Nov. 2 2005<br>
+	</p></li><li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/README.htm">Xwoaf floppy README</a><br>
+	</li><li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/README.xwoafk">Xwoaf floppy kit README</a><br>
+	</li><li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/HOWTO.xwoaf">Xwoaf construction HOWTO</a><br>
+<p></p>
+<p>
+NOTE: if you are one of those types who want all the floppy they can get see
+<a href="https://web.archive.org/web/20090813040614/http://www.phys.uu.nl/~heukelum/xdflinux/"> http://www.phys.uu.nl/~heukelum/xdflinux/ </a>
+for a method of writing up to 1920KB on a 1.4M floppy.
+</p>
+
+<h2 align="center">Hacked Living in a Linux World</h2>
+<h5 align="center">(lhafh:= Linux Home Away From Home)</h5>
+<h5 align="center">04/22/07</h5>
+
+<p>
+After switching completely over from Windows to Linux, had to recreate my
+Windows development style environment for linux. This archive contains
+the latest personalized (read: hacked) versions of my operational programs 
+used on a daily basis.
+</p>
+<p>
+Included are a suite of programs aimed at the most gui in the least space. 
+Includes several web browsers, filemanagers, and text editors. See README,
+below, for a complete list and description.
+</p>
+<p>
+A small set of xlib only window manager (jwm, karmn), windows style task-bar
+(fspanel), menu program (menu), X text mode web browser retawq and the X file
+manager txplor are included from my XWOAF project.
+</p>
+These source packages include my operational Makefiles for reference. If they
+do not work for you, rerun either ./configure or xmkmf -a with your 
+preferences edited into the appropriate files as noted in the individual 
+packages. These packages come with absolutely no binaries or warranties.
+Compile and use at your own risk.
+<p>
+The archive is evolving due to encountering new programs. The old ones are
+still available in lhafh-02, newer hacks and integrations in lhafh-03. Dillo
+is now also a tabbed container for both edx text editor and uxplor, while
+continuing to be the best small fast static graphic web browser.
+</p>
+<p>
+	</p></li><li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/README.lhafh-03">README.lhafh-03</a><br>
+    </li><li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/lhafh-03.tgz">lhafh-03.tgz</a> 23 projects in 3.09 Mb. Apr. 22 2007<br>
+	</li><li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/README.lhafh-02">README.lhafh-02</a><br>
+    </li><li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/lhafh-02.tgz">lhafh-02.tgz</a> 21 projects in 3.05 Mb. Feb. 9 2005<br>
+<p></p>
+
+<h2 align="center">Mini-LMW*</h2>
+<h5 align="center">LMW* Linux My Way</h5>
+<!-- <hr> -->
+<h5 align="center">02/16/02</h5>
+<h3 align="left">Overview</h3>
+<ul>
+
+<p>
+LMW is a bash shell script, released under the GPL, for
+producing a minimal linux initrd image from your resident linux
+installation, suitable for booting from a floppy, hard-disk or
+solid-state memory device. You, too, can join the PDA/Internet
+appliance boom in the privacy of your own home. 
+</p>
+
+<p>
+Default X configuration includes the Xvnc server, allowing
+remote control of the target system. Using Xvnc eliminates the
+necessity of a graphics card in the target system, at the cost
+of requiring a network interface. Options are also provided for
+conventional X servers.
+</p>
+
+<p>
+You can build a minimal floppy disk size compressed image of
+1.22Mb and/or an X capable compressed image of 3.7Mb (these are
+functional sizes, not minimums. Depending on your linux and
+selected applications, the size can vary wildly). This does not
+include a bootable kernel which you will have to provide.
+</p>
+
+<p>
+Be forewarned, this is NOT a distribution. This is a framework
+for creating your own distribution. This package assumes that
+you have built your own kernel; know what a soft link is; know
+how to download, unpack, configure and compile source packages;
+know how to understand man pages; and are comfortable performing
+routine edit/compile/boot functions as user root. If any of the
+above does not make sense, I recommend starting your education
+at <a href="https://web.archive.org/web/20090813040614/http://www.linux.org/docs/index.html">http://www.linux.org/docs/index.html</a>.
+</p>
+
+<p>
+This script and supporting framework was developed on Slackware
+7.2 beta, using a 2.4.3-pre6 kernel. Older linux systems will
+have different lib and file names. You will have to determine 
+any required name changes and edit lmw.sh to match.
+</p>
+
+<p>
+The supplemental binaries included in the default package were
+built using GNU libc-6. If you are building from a libc-5 or
+older system, they will not run. Download and compile the
+modified sources from below.
+</p>
+
+<p>
+</p>
+
+</ul>
+<h3 align="left">README</h3>
+<ul>
+    <li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/README.txt">README</a>
+        Howto and configuring. 5/11/01</li>
+</ul>
+
+<p><!-- <hr> --></p>
+
+<h3 align="left">Download</h3>
+<ul>
+    <li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/binary/lmw-0.24.tgz">lmw-0.24.tgz</a>
+        Lmw.sh and support structures 910k. 5/11/01</li>
+    <li><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/binary/hacksrc02.tgz">hacksrc02.tgz</a>
+        Hacked source for optional binaries 584k. 5/11/01</li>
+</ul>
+
+<p><!-- <hr> --></p>
+
+<p><font size="4"><strong>Credits</strong></font>
+</p>
+
+<p>
+This project stands on the shoulders of giants. Lots of people
+have contributed. Without GNU Linux or the GPL, this would not exist.
+The following three hold a special place, since they came before
+with such definitive excellence:
+</p>
+<p>
+</p></li><li>Michelle Andreoli for <a href="https://web.archive.org/web/20090813040614/http://sunsite.dk/mulinux/">mulinux</a>.</li>
+<li>Aaron Schoenhals for <a href="https://web.archive.org/web/20090813040614/http://www.phatboydesigns.net/mu2/index.html">mu2</a>.</li>
+<li>Pascal Schmidt for <a href="https://web.archive.org/web/20090813040614/http://www.tzi.de/~pharao90/ttylinux/">ttylinux</a>.</li>
+<p></p>
+<p><!-- <hr> --> </p>
+Required/recommended packages:
+<p></p>
+<p>
+</p><li><a href="https://web.archive.org/web/20090813040614/http://tinylogin.busybox.net/">tinylogin</a></li>
+<li><a href="https://web.archive.org/web/20090813040614/http://busybox.net/">busybox</a></li>
+<li><a href="https://web.archive.org/web/20090813040614/http://www.uclibc.org/">uClibc</a></li>
+<li><a href="https://web.archive.org/web/20090813040614/http://www.realvnc.com/download.html">VNC</a></li>
+<li><a href="https://web.archive.org/web/20090813040614/http://www.sax.de/~adlibit/">e3</a> text editor</li>
+<li><a href="https://web.archive.org/web/20090813040614/http://www.acme.com/software/thttpd/">thttpd</a> web server</li>
+<li><a href="https://web.archive.org/web/20090813040614/http://www.dillo.org/">Dillo</a> GTk web browser</li>
+<p></p>
+
+<p>Questions, feedback or flames can be directed at 
+</p><p>"loveall at iinet.com". (Replace " at " with an @ symbol)</p>
+
+<p></p>
+<h5 align="center"><a href="https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/index.htm">Back to Home</a></h5>
+
+<p><!-- <hr>
+</body>
+</html>
+--></p>
+
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 04:06:14 Aug 13, 2009 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 08:41:22 Dec 27, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.499
+  exclusion.robots: 0.039
+  exclusion.robots.policy: 0.03
+  esindex: 0.008
+  cdx.remote: 7.72
+  LoadShardBlock: 276.653 (3)
+  PetaboxLoader3.resolve: 71.406 (2)
+  PetaboxLoader3.datanode: 243.008 (4)
+  load_resource: 85.356
+  nav: 0.122 (6)
+-->
