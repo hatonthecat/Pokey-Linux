@@ -50,6 +50,14 @@ Starhawk wrote 03/19/2020 at 16:22 • -3 points
 
 IIRC I maxed that Pentium board out at like 24 megs. I don't remember for sure, it was literally years ago. But it wasn't running anything like this -- that was a full-on graphical shell. IIRC it was a clumsy backport of JWM to GTK1 stuff, along with the same treatment for the rest of the apps -- emelFM file manager, Dillo browser, etc. The point being that this was a waaaaay heavier load than I'm picturing here, which would be (again) Links2 in a console session.
 
+https://web.archive.org/web/20120115041947/http://www.goingnuts.dk/linux.asp 
+
+"060211 update: New build. Not so much new - most stuff is like the 041210 version although discovered "bugs" removed. Tested on AMD K6 32 Mb ram, AMD Athlon 64 3000Mhz 1000Mb ram, AMD dada 1000Mb ram. Included bl3-sfs and xwoaf-sfs in "/demo" on iso to promote/demonstrate the versatility of pUPnGO in relation to further build. Included static version of links. For low ram (16Mb) it is recommended to create a swap-file and save-file before trying to run GUI (or delete pmnet and pmfree as they tend to eat some of your ram...).
+
+Graphic browser dillo inclusive dependencies:dillo-0.8.6teki-mu.pet"
+
+
+
 OK, so we've only got 80kB to work with for userdata and 32-64kB for instructions, depending on how you count it. Fine. I'll pull the SPI ROM off and stick on an SD card. Boom! Swap memory. Yes, it's slow. But it's not going to be nearly as slow as eg a mechanical hard drive with that Pentium box (which, BTW, didn't have swapspace set up, but if it'd had that... ow).
 
 Dude, I know you're trying to scare me off and all, but... one, look up XWOAF aka X Windows On A Floppy. I have a copy (it doesn't boot, it's corrupted :( or claims it is, anyhow -- but it's there...) and it's supposed to be able to boot on a friggin 486 with no coproc (it has emulation support in the kernel) with... I don't remember, 16mb RAM? Basically barely anything, is the point. Two, I have a Compaq Portable III that I'm restoring. When I'm done it's getting DOS 3.3, a DOS-compat Links2 port, and an ESP8266 wired up as a WiFi COMport modem. Yes, I know I'll probably need a DOS Extender to get Links2 up and running -- trust me when I tell you I've got that covered. If I can't get the internal 16450 serial UART chip to do 115200 baud to the modem reliably, I'll piggyback a spare 16550 I have onto it. Now go look up the specs of that system, and come back here and tell me how come I can do what I'm talking about on *it* but not on an ESP8266 that's obviously considerably more powerful.
