@@ -10,6 +10,9 @@ https://copy.sh/v86/?profile=xwoaf
 
 <img width="800" height="600" alt="Untitled" src="https://github.com/user-attachments/assets/a2059b34-3955-4b48-aec6-6e70fb9e46ba" />
 
+----
+
+<img width="800" height="600" alt="Untitled" src="https://github.com/user-attachments/assets/333a6c18-8890-4a0f-bfc1-7fc43c80c11a" />
 
 https://github.com/copy/v86
 
