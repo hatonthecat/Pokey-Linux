@@ -124,3 +124,22 @@ loads window manager. i set up a 50MB virtual disk. Loading kernel modules... de
 I tried boot to ram but it wouldn't load X. (060611). Though it might not have X. Trying JWM distro.
 
 32MB and 167MB VHD runs fine (see png). 4MB free. 12MB cached. 
+
+[20MB RAM](https://github.com/hatonthecat/Pokey-Linux/blob/main/XServers/VirtualBox_pUPnGO%20XVesa%20JWM_27_12_2025_13_52_46%2020MB%20RAM.png) is needed to load more than an empty X wallpaper:
+
+"Hi nooby
+I have only tested in qemu, vmware and on my own machine (a more modern one with "lots" of RAM). So the ram statement above comes from adjusting ram in virtual machines. Vmware boots OK with 16Mb RAM whereas qemu seems more happy with 20Mb (otherwise it takes ages to boot).
+
+and
+
+Hi 8-bit
+I did burn a DVD - and it boots ok. I haven't access to a CD-rom drive...or a blank CD at the moment...
+
+Seems I have to dig up an old 486 with CD-rom and 16Mb RAM...
+
+best regards
+Kim"
+
+https://oldforum.puppylinux.com/viewtopic.php?t=51478 otherwise 16MB will just stall on that. 
+
+
