@@ -2,7 +2,9 @@
 
 "Xwoaf stands for X windows on a floppy"
 
-hthttps://copy.sh/v86/?profile=xwoaftps://bbs.archlinux.org/viewtopic.php?id=56816
+https://copy.sh/v86/?profile=xwoaf
+
+https://bbs.archlinux.org/viewtopic.php?id=56816
 
 https://copy.sh/v86/?profile=xwoaf
 
