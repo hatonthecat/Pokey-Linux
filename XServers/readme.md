@@ -25,3 +25,50 @@ https://lwn.net/Articles/76339/
 
 
 https://docs.yoctoproject.org/0.9/poky-ref-manual/poky-ref-manual.html#intro-welcome
+
+
+https://www.youtube.com/watch?v=8or3ehc5YDo
+
+https://news.ycombinator.com/item?id=33123697
+
+https://news.ycombinator.com/item?id=35112900
+
+https://osiux.com/links.html #+x11 
+
+https://github.com/copy/v86
+
+--
+
+https://hackaday.io/page/6966-has-anyone-managed-to-get-a-minimal-linux-install-onto-an-esp8266-board
+
+Paul Stoffregen wrote 03/19/2020 at 11:43 • 1 point
+
+How much RAM did your Pentium machine have?  And how much is inside that tiny chip?
+
+reply  
+Starhawk wrote 03/19/2020 at 16:22 • -3 points
+
+IIRC I maxed that Pentium board out at like 24 megs. I don't remember for sure, it was literally years ago. But it wasn't running anything like this -- that was a full-on graphical shell. IIRC it was a clumsy backport of JWM to GTK1 stuff, along with the same treatment for the rest of the apps -- emelFM file manager, Dillo browser, etc. The point being that this was a waaaaay heavier load than I'm picturing here, which would be (again) Links2 in a console session.
+
+OK, so we've only got 80kB to work with for userdata and 32-64kB for instructions, depending on how you count it. Fine. I'll pull the SPI ROM off and stick on an SD card. Boom! Swap memory. Yes, it's slow. But it's not going to be nearly as slow as eg a mechanical hard drive with that Pentium box (which, BTW, didn't have swapspace set up, but if it'd had that... ow).
+
+Dude, I know you're trying to scare me off and all, but... one, look up XWOAF aka X Windows On A Floppy. I have a copy (it doesn't boot, it's corrupted :( or claims it is, anyhow -- but it's there...) and it's supposed to be able to boot on a friggin 486 with no coproc (it has emulation support in the kernel) with... I don't remember, 16mb RAM? Basically barely anything, is the point. Two, I have a Compaq Portable III that I'm restoring. When I'm done it's getting DOS 3.3, a DOS-compat Links2 port, and an ESP8266 wired up as a WiFi COMport modem. Yes, I know I'll probably need a DOS Extender to get Links2 up and running -- trust me when I tell you I've got that covered. If I can't get the internal 16450 serial UART chip to do 115200 baud to the modem reliably, I'll piggyback a spare 16550 I have onto it. Now go look up the specs of that system, and come back here and tell me how come I can do what I'm talking about on *it* but not on an ESP8266 that's obviously considerably more powerful.
+
+reply  
+Paul Stoffregen wrote 03/19/2020 at 16:29 • 2 points
+
+Not trying to scare you off.  Only helping you save a little time to reach the inevitable conclusion about Linux memory usage.
+
+Then again, who knows, maybe you'll find a way to make it work?  If you do, I'm sure you'll be a hero to many.  Hackaday will very likely cover it with a longer format article too, since getting Linux running on this hardware is something widely considered to be impossible due to the limited RAM.
+
+And fwiw, I ran Linux as my primary desktop system back in 1994 on a low-end 486 machine lacking the FPU.  Those were the days when most low-end PCs came with 2 megs, because that's what was needed to run Windows 3.1 pretty well.  Linux needed 4 megs to run without extreme trickery, but it took at least 8 megs to have a usable system back in those early days.  Memory use has grown tremendously since then.
+
+Good luck and don't give up just because I pointed this out.  Go forth and surprise me and the rest of the world!
+
+https://retawq.sourceforge.net/
+
+https://www.minimalinux.org/ttylinux/
+
+https://web.archive.org/web/20050206183102/https://www.modest-proposals.com/Hacklin.htm
+
+https://web.archive.org/web/20090813040614/https://www.modest-proposals.com/Hacklin.htm
