@@ -18,6 +18,8 @@ https://github.com/copy/v86
 
 https://lwn.net/Articles/76339/
 
+https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild.html 
+
 
 **Early Poky  (~2009)**
 
