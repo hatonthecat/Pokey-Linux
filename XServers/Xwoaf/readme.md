@@ -16,3 +16,7 @@ Linux Kernel 2.2 (10/19/200)
 
 Loads X, but literally nothing else (no menu, toolbar, etc) (Admittedly, most developers, even in 2000, weren't targeting 7MB builds..)
 
+32MB test
+--
+
+https://github.com/hatonthecat/Pokey-Linux/blob/main/XServers/Xwoaf/xwoaf%201.4-screen0.webm
