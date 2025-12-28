@@ -20,3 +20,5 @@ Loads X, but literally nothing else (no menu, toolbar, etc) (Admittedly, most de
 --
 
 https://github.com/hatonthecat/Pokey-Linux/blob/main/XServers/Xwoaf/xwoaf%201.4-screen0.webm
+
+[xwoaf 1.4-screen0.webm](https://github.com/user-attachments/assets/8d36de76-1540-4e57-9817-8fa92057d98e)
