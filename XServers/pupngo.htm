@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html style="--wm-toolbar-height: 67px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="pupngo_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app204.us.archive.org';v.server_ms=554;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="pupngo_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="pupngo_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="pupngo_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://pupngo.dk/","20250302001037","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1740874237");
+</script>
+<link rel="stylesheet" type="text/css" href="pupngo_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="pupngo_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<title>pupngo</title>
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20250302001037/http://pupngo.dk/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://pupngo.dk/","20250302001037",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+<h1>pupngo - a small linux hobby OS</h1>
+<p>This is the home of various pupngo stuff. <a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/mylist.html">Link</a> to overview of hosted ressources</p>
+<p>Looking for XWOAF-stuff? Go <a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/xwinflpy/Hacklin.htm">here</a> where a mirror of the now vanished http://www.modest-proposals.com/Hacklin.htm can be found. Go <a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/xwinflpy/xwoaf_rebuild.html">here</a> if you feel like (re-)creating the xwoaf-gem.</p>
+
+<h1>Building a toolchain</h1>
+<p>pupngo toolchain was mostly based on precompiled uclibc toolchain
+<a href="https://web.archive.org/web/20250302001037/https://www.kernel.org/pub/linux/libs/uclibc/root_fs_i386.ext2.bz2">root_fs_i386.ext2.bz2</a>.
+</p>
+<p>
+This is a walkthrough building a toolchain using buildroot-0.9.27 as 
+starting point. With later versions I have had several problems getting a
+ working native compiler in the target. The drawback (?) is that 64-bit 
+builds are not supported as this needs later versions of 
+uclibc/buildroot.
+</p>
+<p>
+Buildroot expect some tools to be availeble in the host. The target is 
+to build a toolchain capable of building it self, a goal which is not a 
+build-in feature of buildroot.
+Secondly the toolchain should be able to build pupngo from source.
+</p>
+<p>
+The host will be pristine P412 with devx installed. The target architecture will be i386.
+</p>
+<p>Installing and configuring Puppy Linux 4.12 is beyond the 
+instructions given here. In short you download the 
+puppy-4.1.2-k2.6.25.16-seamonkey.iso image and burn it to a CD or DVD 
+media. Boot from the CD/DVD and install to harddisk/usb or even to the 
+boot CD/DVD itself. After that install the devx_412.sfs. Below are links
+ to copies hosted at this site.
+</p>
+<ul>
+  <li><a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/resource/puppy-4.1.2-k2.6.25.16-seamonkey.iso">puppy-4.1.2-k2.6.25.16-seamonkey.iso</a></li>
+  <li><a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/resource/devx_412.sfs">devx_412.sfs</a></li>
+</ul>
+<p>
+Or...: Download an iso-image - <a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/resource/puppy-4.1.2-k2.6.25.16-seamonkey_w_devx.iso">puppy-4.1.2-k2.6.25.16-seamonkey_w_devx.iso</a>
+ - where devx_412.sfs is included as well as a package 
+"otf_sfs_loader_2015.pet" which after burn to a CD/DVD will boot you to a
+ normal Puppy Linux 4.12 but with the tools needed for creating the 
+toolchain at hands on the CD/DVD. You need min 1 Gb ram to do this or 
+access to a large swap-partition.
+After boot, navigate to the CD/DVD, install the otf_sfs_loader_2015.pet,
+ after that open a terminal in the CD/DVD and run "otf_sfs_loader 
+devx_412.sfs". You should now have a working devellopment environment 
+and be ready to follow the recipe further below.
+</p>
+
+<p>
+Some trivial patches are needed to get started: Links to download 
+sources has changed and the ncurses based build option menu needs small 
+change. Some binaries needs to be compiled static to avoid break during 
+the build, some versions need to be downgraded - others upgraded and 
+some programs are missing.
+</p>
+<p>
+The selection of programs are also to be settled - so are the configurations, especially busybox features need to change.
+</p>
+<p>
+Where to start? Its an itterative process so below a description of the 
+final patch via my incremental patches applied. You should be able to 
+identify the incremental patches reading the patch from start to end... 
+</p>
+
+<ol>
+  <li>
+The targets /dev is not correctly populated so added makedevs to busybox and used busybox to create the nodes.
+  </li>
+  <li>
+An upgrade of BB version from 1.00 to 1.13.2 is needed to get a working makedevs. 
+  </li>
+  <li>
+Busybox "ar" is not robust enough so had to disable that.
+  </li>
+  <li>
+Enable cpio in busybox. Enable ed in busybox - some programs expect ed 
+to be present during configure and make (later XFree86 will fail without
+ this).
+  </li>
+  <li>
+Upgrade version of m4, zlib, bison, sed, gzip, grep, tar, bzip2, gawk and make. Minor changes of source names and links.
+  </li>
+  <li>
+Patch to get buildroot menu working in P412.
+  </li>
+  <li>
+Source link updates.
+  </li>
+  <li>
+Added binutils 2.19.1 as a package choice, needed later to build pupngo.
+  </li>
+  <li>
+Source link for ccache updated.
+  </li>
+  <li>
+gdb source link updated.
+  </li>
+  <li>
+squashfs version updated. gettext version updated.
+  </li>
+  <li>
+diffutils, strace, sed, tar and wget static build. strace version upgraded.
+  </li>
+  <li>
+Install of mksquashfs in target to be able to use later in pupngo too.
+  </li>
+  <li>
+gzip linked static.
+  </li>
+  <li>
+ncurses to build programs and include in target (tic).
+  </li>
+  <li>
+autoconf source link.
+  </li>
+  <li>
+zlib to include headers in target. Added texinfo as package option. 
+Added perl-5.16.1 as package option. Both to be able to have working 
+autoconf and automake. Later found that crosscompiling those two is a 
+pain (=did not succed).
+  </li>
+  <li>
+gzip configure change. After upgrading version one has to give 
+-DGNU_STANDARD=0 to CFFLAGS to get normal (old) behavior (ex. working 
+gunzip).
+  </li>
+  <li>
+ncurses programs need to be compiled as static linked to be able to use 
+during the build. microperl added as a package choise - this can be 
+crosscompiled. autoconf version downgraded to 2.52 which can be build 
+with microperl. less source link updated.
+  </li>
+  <li>
+automake version downgraded to 1.6.3 which will work with the downgrade autoconf. symlink microperl to perl in target.
+  </li>
+  <li>
+gawk configure changed to autoreconf to be able to build with the older 
+versions of autoconf and automake. grep made able to use a fake 
+makeinfo.
+  </li>
+  <li>
+Further patch to make sure zlib headers ends up in root-target.
+  </li>
+</ol>
+
+<p>
+A test at this point shows I am able to run buildroot and get a toolchain which is able to rebuild it self.
+As full perl and texinfo additions are not working a common patch is made where they are removed again.
+</p>
+<p>
+Get the final patch via below link as well as my buildroot-config file. Also get
+util-linux_2.12-10.diff.gz as it might be hard to get your hands on these days.
+</p>
+
+<ul>
+  <li><a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/patch/buildroot-0.9.27_20150102.diff">buildroot-0.9.27_20150102.diff</a></li>
+  <li><a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/source/pixmaps/buildroot-0.9.27.config">buildroot-0.9.27.config</a></li>
+  <li><a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/source/pixmaps/util-linux_2.12-10.diff.gz">util-linux_2.12-10.diff.gz</a></li>
+</ul>
+
+So ends up in the following "recipe":
+
+<ol>
+	<li>
+Get buildroot-0.9.27 (wget http://buildroot.uclibc.org/downloads/old/buildroot-0.9.27.tar.gz)
+	</li>
+	<li>
+Unpack buildroot-0.9.27 (tar -xzf buildroot-0.9.27.tar.gz)
+</li>
+	<li>
+Apply patch (cd buildroot; patch -p1 &lt; ../buildroot-0.9.27_20150102.diff)
+</li>
+	<li>
+Copy buildroot-0.9.27.config to buildroot/.config (cp ../buildroot-0.9.27.config .config)
+</li>
+	<li>
+Create directory buildroot/dl (mkdir -p dl)
+</li>
+	<li>
+Copy util-linux_2.12-10.diff.gz to buildroot/dl (cp ../util-linux_2.12-10.diff.gz dl)
+</li>
+	<li>
+In buildroot directory issue command "make oldconfig"
+</li>
+	<li>
+Run "make", sit back and wait for your target to be build. You will be 
+asked about which target x86 Processor Family you want - I have only 
+tested Generic 386. 
+You can afterwards chroot into your toolchain root (in build_i386) or 
+load the created squashfs (root_fs_i386.squashfs) in pupngo (after 
+rename to root_fs_i386_412.sfs).
+</li>
+	</ol>
+
+<p>
+Please note that links to sources change over time. If the build stops 
+because the source cannot be downloaded - download the source from where
+ you can get it - and place it in dl-directory. You might have luck 
+looking <a href="https://web.archive.org/web/20250302001037/https://pupngo.dk/source/">here</a>
+</p>
+<p>
+You can test your new toolchain by chroot into your toolchain root 
+(build_i386/root). The toolchain should be able to rebuild itself. After
+ chroot repeat the procedure described above 1-8. To have internet 
+connection in the chrooted environment copy your host /etc/resolv.conf 
+to your /root/etc/resolv.conf
+
+</p>
+<p>
+Question:
+Which packages need automake and autoconf? They might be moved to an 
+install upgrade for pupngo if program who need them could be excluded 
+from the toolchain. How did perl get in?
+</p>
+<p>
+Answer:
+uclibc (binutils) needs gettext, bison &amp; flex and flex needs 
+autoconf.
+So no way to avoid microperl, autoconf and automake. Might circumvent by
+ using http://landley.net/aboriginal/mirror/binutils-397a64b3.tar.bz2?
+</p>
+
+<h1>Next step - building pupngo from source</h1>
+We do not know yet if pupngo can be build from this toolchain. In 
+pupngo-2014 all sources, patches and build scripts are included. So we 
+grab it all and put it in the build/root/src directory. 
+Download pUPnGO_V412_240314.iso <a href="https://web.archive.org/web/20250302001037/http://ia600909.us.archive.org/28/items/Puppy_Linux_pUPnGO/pUPnGO_V412_240314.iso">here</a>
+<p></p>
+<p>Here we should have some more information about how to get the things off the iso. That is a TODO.
+</p>
+<p>With all the needed files in /src in our toolchain we are ready to start.
+</p>
+<ol>
+<li>
+We chroot into the toolchain and run the src/pupngo_build.sh script. 
+sysfsutils-2.1.0 require autoconf version 2.58 or higher. autoreconf not
+ possible as full perl is needed. So try installing perl before sysfs. 
+This helps but errors persist. Downgrade sysfsutils to 2.0.0 removes 
+problems with autoconf/automake version.
+This seems to be only problem running "run_basis_install". sysfsutils is
+ needed for pcmciautils-014 and cdrkit to build.
+ </li>
+ <li>
+e2fsprogs-1.40.2 might have problem with installing info. No more problems running "populate_initrd".
+</li>
+ <li>
+"populate_CLIsfs" runs without problems.
+</li>
+ <li>
+"create_tinyx" runs without problems.
+</li>
+ </ol>
+
+<p>We should now have the basic pupngo ready. Create a iso and give it a
+ boot-try.
+We have a lot of applications that can e build. Try running the 
+build_packages_01.sh. If all goes well a bunch of packages are created 
+in the /src/packages directory.
+</p>
+
+
+
+
+
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 00:10:37 Mar 02, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:49:23 Dec 28, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.629
+  exclusion.robots: 0.037
+  exclusion.robots.policy: 0.025
+  esindex: 0.009
+  cdx.remote: 8.04
+  LoadShardBlock: 198.427 (3)
+  PetaboxLoader3.datanode: 167.935 (5)
+  PetaboxLoader3.resolve: 262.94 (3)
+  load_resource: 314.394 (2)
+  nav: 0.14 (6)
+-->

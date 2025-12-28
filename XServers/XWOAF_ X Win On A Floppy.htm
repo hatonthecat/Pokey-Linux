@@ -1,0 +1,399 @@
+<html style="--wm-toolbar-height: 67px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="XWOAF_%20X%20Win%20On%20A%20Floppy_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app204.us.archive.org';v.server_ms=524;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="XWOAF_%20X%20Win%20On%20A%20Floppy_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="XWOAF_%20X%20Win%20On%20A%20Floppy_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="XWOAF_%20X%20Win%20On%20A%20Floppy_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://pupngo.dk/xwinflpy/README.htm","20240810073147","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1723275107");
+</script>
+<link rel="stylesheet" type="text/css" href="XWOAF_%20X%20Win%20On%20A%20Floppy_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="XWOAF_%20X%20Win%20On%20A%20Floppy_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<meta name="GENERATOR" content="edx Ver 1.02">
+<title>XWOAF: X Win On A Floppy</title>
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20240810073147/http://pupngo.dk/xwinflpy/README.htm</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","http://pupngo.dk/xwinflpy/README.htm","20240810073147",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+<pre>                                 README
+                                X.W.O.A.F
+                           X Windows On A Floppy
+                              Version 0.1.4
+
+                               Basic HELP
+</pre>
+
+<p>Copyright (C) 2005, Terry Loveall. All files released under OSI approved
+licenses. See individual source for details.
+</p>
+<p>email: &lt;<a href="https://web.archive.org/web/20240810073147/mailto:loveall@iinet.com">loveall@iinet.com</a>&gt;<br>
+Xwoaf home page: <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/http://www.modest-proposals.com/Hacklin.htm">http://www.modest-proposals.com/Hacklin.htm</a>
+</p>
+<h2 align="CENTER">!!!! When all else fails, READ THE SCREEN !!!!</h2>
+
+<p>This single floppy based linux X-window package attempts to provide the
+basic applications and file functions required for a communications node
+on the Internet. With suitable network interface card based access (T1, DSL
+modem or cable modem) to the Internet,<br><br>
+Xwoaf provides:<br>
+jwm Win95 clone window manager,<br>
+retawq (fast!) text mode web browser,<br>
+OXElmo email client,<br>
+edx text editor,<br>
+bcalc simple four function GUI/command line calculator<br>
+xcalendar date/day/time pop-up calendar.<br><br>
+File functions are provided by:<br>
+rxvt X-terminal program,<br>
+busybox, the built in monolithic binary containing linux command line apps and<br>
+txplor: a dual-pane, tree-based filemanager.
+</p>
+<p>NOTE: To edit any local URL linked file in this help file, Right-click
+on the URL, select 'SendTo:' and then select 'Editor'.</p>
+<p>The three X-apps txplor, retawq and OXElmo all started life as curses
+based text-mode terminal apps. I hacked together an equivalent X-curses
+API which only uses libX11 and libc based upon code I wrote for edx.<br><br>
+</p>
+<hr>
+<p>Retawq:</p>
+<p>Text mode Web Browser/Help-file viewer (The app used to view this file) <br>
+binary is /usr/X11R6/bin/retawq.<br>
+Help file is <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/Retawq.html">file:/Retawq.html.</a><br><br>
+A text mode web browser that also supports passive ftp and nntp.<br><br>
+'q' to quit.<br>
+'h' for help.<br>
+Tab key moves to next link, Shift-Tab key moves to prev.<br>
+Up/Down cursor keys scroll by one line.<br>
+PageUp/PageDown and Home/End as expected.<br>
+Left-Arrow prev URL, Right-Arrow next URL.<br>
+Backspace prev URL, Shift-Backspace next URL.<br>
+Scrollbar is accurate only after the current page is finished downloading.<br>
+To copy to clipboard from anywhere on window, left-click and drag.<br>
+To paste text from clipboard to line input, right-click.<br>
+Press 'g' or ^L to manually enter a URL.<br>
+Press 'R' or ^R to reload URL.<br>
+Press ^i to switch between split windows.<br>
+Press Esc key to stop any on-going processes, e.g. line input, menus or looong
+URL loads.<br><br>
+</p>
+<hr>
+<p>X-Windows:</p>
+<p>Uses X11R6 XFree86 3.9N Xvesa Xserver.<br><br>
+binary is /usr/X11R6/bin/X.</p>
+<p>Only three getty's are active. You only have 2 text mode consoles. The
+third is reserved for X.<br><br>
+To switch to the main text mode console from X, press 'Ctrl-Alt-F1'.<br><br>
+To switch back from either text mode console to X press 'Alt-F3'.<br><br>
+After exiting X windows, reboot either with the three finger salute
+'Ctl-Alt-Delete' or type 'reboot' &lt;Enter&gt;.
+</p>
+<p>To change the configuration for X-windows, mouse, networking and whatever
+else, examine and edit <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/rc.d/sysinit">file:/etc/rc.d/sysinit.</a>
+Sysinit generates the following configuration files at system boot:<br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/networks">file:/etc/networks</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/inetd.conf">file:/etc/inetd.conf</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/passwd">file:/etc/passwd</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/group">file:/etc/group</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/host.conf">file:/etc/host.conf</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/hostname">file:/etc/hostname</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/hosts">file:/etc/hosts</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/hosts.allow">file:/etc/hosts.allow</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/hosts.deny">file:/etc/hosts.deny</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/issue">file:/etc/issue</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/resolv.conf">file:/etc/resolv.conf</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/startx">file:/usr/X11R6/bin/startx</a><br>
+which calls:<br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/lib/X11/xinit/xinitrc">file:/usr/X11R6/lib/X11/xinit/xinitrc</a><br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/bin/netstart">file:/bin/netstart</a> 
+(This file exists only when using a static IP address)<br><br>
+BTW <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/rc.d/sysinit">file:/etc/rc.d/sysinit</a> gives a good
+overview of just what is necessary, after booting the linux kernel, to
+configure, logon to a networked linux system and run X.
+</p>
+<p>You may need to relink the mouse in /dev. Default mouse is /dev/psaux.<br>
+Other available options are com1 on ttyS0 or com2 on ttyS1. e.g.:<br>
+ 'cd /dev;rm -f mouse;ln -s ttyS0 mouse;cd -'
+ or<br>
+ 'cd /dev;rm -f mouse;ln -s ttyS1 mouse;cd -'<br>
+ USB anything is not supported.<br><br>
+</p>
+<hr>
+<p>Busybox:</p>
+<p>For the list of available busybox commands, type 'busybox' at the command
+line. PPP is <u>not</u> supported.<br><br>
+</p>
+<hr>
+<p>Networking:</p>
+<p>DHCP for ethernet is the default network logon. 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/default.script">file:/etc/default.script</a> is
+the commented and verbose shell script which the busybox udhcpc code uses to
+execute the DHCP functions.
+</p>
+<p>To enable static IP addressing set the variable 'DHCP' in 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/etc/rc.d/sysinit">file:/etc/rc.d/sysinit.</a> to
+'no' to disable dhcp. Then you must configure sysinit using your static IP
+address, netmask, broadcast IP address, gw IP address and DNS server IP
+addresses.<br><br>
+</p>
+<hr>
+<p>Console text editor:</p>
+<p>The impervious e3 editor in wordstar mode is available for editing files at
+ the terminal.<br><br>
+binary is /bin/e3<br><br>
+ <u>REQUIRES</u> a filename to operate, displays help screen otherwise.<br>
+ ^k^q to exit.<br>
+ Alt-h for help. Help not available from _within_ e3 under rxvt, but does
+display if e3 entered without a filename.<br><br>
+</p>
+<hr>
+<p>X app help:</p>
+
+<p>Jwm (Joe's Window Manager):<br><br>
+The window manager 'jwm' is a Win95 simplified clone. Default MS Window
+key-bindings.<br><br>
+binary is /usr/X11R6/bin/jwm<br><br>
+There is a pop up task bar at the bottom of the root X window. Move the cursor
+to the bottom of the screen to un-hide it.<br><br>
+Use the task bar to hide or bring a window to the top.<br><br>
+Window policy is click-to-focus.<br><br>
+'Ctrl-Alt-Backspace' or 'Start-&gt;Exit' to exit X.<br>
+'Alt-Tab' to switch between active app windows.<br>
+'Alt-Space' to pop up the active window menu.<br>
+'Alt-F4' to exit active window app.<br>
+'Alt-Escape' to pop up 'Start' menu.<br>
+'Alt-#' (replace '#' with a number) to switch desktops, when enabled. However,
+Xwoaf as configured only has one desktop.<br>
+</p>
+<p>'Start' button menu and window manager configuration located in 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/root/.jwmrc">file:/root/.jwmrc.</a> Can be edited with:
+'Start-&gt;Edit Config-&gt;Edit this menu' selection.<br><br>
+Click on the 'load' button to start 'top' in an rxvt terminal.<br><br>
+Click on clock to start calendar (see below).<br><br>
+</p>
+<hr>
+<p>Console:</p>
+<p>Starts up an rxvt terminal with presets in <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/Cmd">file:/usr/X11R6/bin/Cmd.</a><br><br>
+</p>
+<hr>
+<p>Explorer:</p>
+<p>binary is /usr/X11R6/bin/txplor.<br><br>
+A dual pane directory tree/file list filemanager.<br>
+Press '/' for pane sensitive Commands.<br>
+Press '/' followed by 'q' to exit.<br>
+Press 'a--z' to move cursor to next dir/file starting with that char.<br>
+Press Tab to switch between panes.<br>
+Mouse click in non active pane switches to that pane.<br>
+Mouse click in active pane selects dir/file under it.<br>
+Mouse double-click in active pane executes/views selected file per
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/mime_start">file:/usr/X11R6/bin/mime_start.</a>
+</p>
+<p>Scrollbar works on active pane.<br>
+Up/Down cursor keys move selection up/down one.<br>
+PageUp/PageDown and Home/End as expected.<br>
+To copy to clipboard from anywhere on window, right-click and drag.<br>
+To paste use Shift-Ins. (Recommended only in line input!)<br>
+Directories ending in the character '/' contain sub-directories.<br>
+Left mouse double-click, &lt;Enter&gt; key or right-arrow to expand.<br>
+Left-arrow to collapse.<br><br>
+</p>
+<hr>
+<p>browser:</p>
+<p>see Retawq text mode Web Browser above<br><br>
+</p>
+<hr>
+<p>E-mail:</p>
+<p>OXElmo is a text mode style email client.<br>
+Binary is /usr/X11R6/bin/OXElmo.<br>
+'q' to quit.<br>
+'?' or 'h' for help.<br>
+Documentation is <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/Elmo.txt">file:/Elmo.txt.</a><br>
+Tutorial is <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/Elmo_tutorial.txt">file:/Elmo_tutorial.txt.</a><br>
+Mail directory <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/root/mail">file:/root/mail.</a><br>
+Mail template is kept in <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/local/share/elmo">file:/usr/local/share/elmo.</a><br>
+To empty /root/mail/inbox and clear downloaded headers, execute the shell
+script 'clrmail' from a command line.<br><br>
+You will need to edit <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/root/.elmorc">file:/root/.elmorc</a>
+to enable your email account.<br>
+(Right click on file:/root/.elmorc, select 'SendTo:', select 'Editor' to edit).<br>
+Complete the individual items: in 'smtp_acc' (where to send email) and
+'pop_acc' (your email account).<br><br>
+</p>
+<p>set smtp_acc {<br>
+-- name: ISP_name<br>
+-- server: ISP_SMTP_host_name_or_IP_address<br>
+-- my_name: 'your_email_name'<br>
+-- email: your_email_address<br>
+-- port: 25<br>
+-- username: your_ISP_logon_name<br>
+-- password: your_ISP_logon_password<br>
+-- ssl: no<br>
+}
+</p>
+smtp_acc NOTES:<br>
+To prevent spam abuse, many ISPs are requiring a logon name and password
+to send email. Recommend using the same username and password as in pop_acc, 
+below.<br><br>
+The 'my_name' field above requires enclosing tick (') marks.<br>
+Leave 'port' number unchanged unless you know otherwise.<br>
+Leave 'ssl' field alone. ssl support not compiled.<br><br>
+<p>set pop_acc {<br>
+-- name: ISP_name<br>
+-- server: ISP_SMTP_host_name_or_IP_address<br>
+-- username: your_ISP_logon_name<br>
+-- password: your_ISP_logon_password<br>
+-- port: 110<br>
+-- count_max: 0<br>
+-- ssl: no<br>
+}
+</p>
+<p>pop_acc NOTES:<br>
+Leave 'port' and 'count_max' unchanged unless you know otherwise.<br>
+Leave 'ssl' field alone. ssl support not compiled.<br>
+</p>
+<hr>
+<p>Editor:
+</p><p>A WordStar style text editor.<br>
+Binary is /usr/X11R6/bin/edx.<br>
+^k^q or 'Alt-F4' to exit.<br>
+F1 key for help.<br>
+F2 key to save.<br>
+F3 key to open a new file.<br>
+Accepts file input from 'stdin' for use as a viewer.
+(Has softlinks for 'less' and 'xless' pointing at it).
+</p><hr>
+<p>Calendar:</p>
+<p>Provides a printout of the month, what day it is and the time the calendar executed.
+Shell script located in 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/calendar">file:/usr/X11R6/bin/calendar</a>.
+Uses busybox 'cal' and 'date' functions. Displays in edx.<br>
+^k^q or 'Alt-F4' to exit.<br><br>
+</p>
+<hr>
+<p>Calc:</p>
+<p>Homegrown four function basic GUI and command line calculator.
+Binary is /usr/X11R6/bin/bcalc.<br>
+'q' to exit.<br>
+'bcalc 5 + 6 x 3' will display '33' on the command line. Or use keyboard or
+mouse in GUI (NOTE: due to command line limitations, use 'x' or '\*' for
+multiply).<br><br>
+</p>
+<hr>
+<p>Edit Config:</p>
+<p>This sub-menu invokes the editor on specific xwoaf configuration files.<br>
+See X-Windows: above for list.</p>
+<hr>
+<p>SendTo:</p>
+
+<p>'SendTo:' appears on the right click pop up menu for both retawq and txplor.</p>
+<p>'SendTo:' operates using the binary /usr/X11R6/bin/menu along with the two
+shell script files:<br>
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/sendto">file:/usr/X11R6/bin/sendto</a> and 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/.sendto">file:/usr/X11R6/bin/.sendto</a>.<br>
+</p>
+<p>Right clicking on a URL in retawq pops up a menu with a 'SendTo:' option.
+Selecting 'SendTo:' pops up a menu of operations to perform on or with the
+selected URL. Enables retawq to act as a file manager.
+</p>
+<p>Right clicking on a file in txplor will pop up the same menu of operations
+to perform on or with the selected file.
+</p>
+<hr>
+<p>SendTo:-&gt;Exec:</p>
+<p>Uses shell scripts 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/x">file:/usr/X11R6/bin/x</a> and 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/mime_start">file:/usr/X11R6/bin/mime_start</a> to
+evaluate the passed parameter from the calling app.<br>
+For use in right button generated 'SendTo:' mode from within either the file
+pane of Explorer filemanager (aka txplor) or the retawq web Browser.<br><br>
+</p>
+<hr>
+<p>SendTo:-&gt;HexView:</p>
+<p>Uses builtin busybox 'hexdump' command on specified file, with piped output
+to edx.<br>
+Has command line alias script of 'hv'.<br>
+'Alt-F4' to exit.<br><br>
+</p>
+<hr>
+<p>SendTo:-&gt;EditMenu:</p>
+<p>Edit the 'SendTo:' menu text file.<br>
+Edits <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/file:/usr/X11R6/bin/.sendto">file:/usr/X11R6/bin/.sendto</a>.<br>
+See 'Editor' above and this file for help.<br><br>
+</p>
+<hr>
+<p>My thanks to:</p>
+
+<p>mungkie at: 
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/http://www.angelfire.com/linux/floorzat/2diskXwin.htm">http://www.angelfire.com/linux/floorzat/2diskXwin.htm</a>.
+He released the basic uClibc, busybox and libtinyX11 package together as the
+1diskxwin package and did a nice job.
+</p>
+<p>Arne Thomassen for his cooperation in hacking up retawq. See:
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/http://www.arne-thomassen.de/">http://www.arne-thomassen.de</a>
+</p>
+<p>Joe Wingbermuehle for jwm. Finally! A _small_ task bar based window
+manager. See: <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/http://joewing.net/">http://joewing.net</a>
+</p>
+<p>Albrecht Kleine for the beautifully crafted e3.
+See: <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/http://www.sax.de/~adlibit/">http://www.sax.de/~adlibit/</a>
+</p>
+<p>rzyjontko for elmo, the curses based email client OXElmo is derived from.
+See: <a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/http://elmo.sourceforge.net/">http://elmo.sourceforge.net</a>
+</p>
+<p>Werner Bregulla for writing the original ytree. See:
+<a href="https://web.archive.org/web/20240810073147/http://web.archive.org/web/20080611080627/http://www.han.de/~werner/ytree.html">http://www.han.de/~werner/ytree.html</a>
+</p>
+<p>The author of retawq wrote his own standalone X and has released retawq with
+an Xlib only curses interface.
+</p>
+<p>Haven't heard back from the the original author of ytree, which I hacked into
+txplor.
+</p>
+
+
+
+
+
+
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 8:06:27 Jun 11, 2008 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 5:02:04 Nov 13, 2011.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+     FILE ARCHIVED ON 07:31:47 Aug 10, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:57:36 Dec 28, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.491
+  exclusion.robots: 0.043
+  exclusion.robots.policy: 0.032
+  esindex: 0.008
+  cdx.remote: 33.452
+  LoadShardBlock: 263.508 (3)
+  PetaboxLoader3.resolve: 141.186 (4)
+  PetaboxLoader3.datanode: 276.12 (4)
+  load_resource: 198.691
+  nav: 0.128 (6)
+-->
