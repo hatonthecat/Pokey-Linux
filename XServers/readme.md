@@ -245,3 +245,13 @@ https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebu
 
 https://youtu.be/Us96NmMFxGY 
 
+Kdrive
+--
+
+https://www.pps.jussieu.fr/~jch/software/kdrive.html
+
+https://wiki.x2go.org/doku.php/wiki:advanced:x2gokdrive:start
+
+https://hugh712.gitbooks.io/embeddedsystem/content/kdrive.html
+
+https://en.wikipedia.org/wiki/Xephyr
