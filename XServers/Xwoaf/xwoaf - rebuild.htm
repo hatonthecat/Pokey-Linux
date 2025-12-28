@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html style="--wm-toolbar-height: 67px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="xwoaf%20-%20rebuild_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app204.us.archive.org';v.server_ms=266;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="xwoaf%20-%20rebuild_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="xwoaf%20-%20rebuild_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="xwoaf%20-%20rebuild_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://pupngo.dk/xwinflpy/xwoaf_rebuild.html","20240901115514","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1725191714");
+</script>
+<link rel="stylesheet" type="text/css" href="xwoaf%20-%20rebuild_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="xwoaf%20-%20rebuild_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<title>xwoaf - rebuild</title>
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://pupngo.dk/xwinflpy/xwoaf_rebuild.html","20240901115514",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+<h1>Rebuild xwoaf-gem from source</h1>
+
+<p>Build instructions in Terry Lovealls original HOWTO is quite clear. 
+But a toolchain was never released and some sources might not be present
+ anymore. The pupngo buildchain with additional libraries and programs 
+(nasm-2.04, sysfsutils-2.0.0, perl-5.16.1, cmake-2.8.0, openssl-1.0.1p, 
+ucl-1.03, lzma-4.43, libcap-2.10, xz-5.0.4, lzo-2.06, upx-3.05-src, 
+util-linux-ng-2.17.2, module-init-tools-3.3-pre11, file-4.10, 
+zlib-1.2.5, bzip2-1.0.6, cdrkit-1.1.10, indent-2.2.0, dosfstools-2.11, 
+e2fsprogs-1.40.2, binutils-2.19.1 and syslinux-3.86) has been used to 
+rebuild xwoaf. But the toolchain can not rebuild kernel 2.2.25. You can 
+either reuse the original kernel or use a live-cd of slackware 4 to 
+rebuild the 2.2.25 kernel (holds gcc-2.7.2.3).</p>
+
+<p>I changed busybox from busybox-1.00-pre2 to busybox-1.00. And used my
+ own tinyxlib-0.01 and tinyxserver-0.03 as they do the job and the 
+1diskx-1.2.4.tar.bz2 seems impossible to get your hands on these days. 
+OXElmo will build but I havent been able to get it running so replaced 
+it with rdesktop-1.2.0 (which run but I havent really tested it).
+</p>
+
+<p>The original used rdev to alter the kernel to boot from the floppy. I
+ have changed this to use syslinux and a msdos formated floppy - and 
+included creation of a bootable isoimage.</p>
+
+<p>In the hope that an updated xwoaf could be made I have included a 
+final reduction af the library size using mklibs. But finding 
+replacements for txplor, edx and retawq until now gives too big a system
+ to fit on a 1.44Mb floppy.</p>
+
+<p>The original kernel lacks USB-support. I have succeded introducing 
+USB-support with an upxed kernel 2.6.11 but that might not work on your 
+hardware.</p>
+
+<p>xwoaf was a genious gem, with a lot of innovative modifications that 
+call for follow up. Look at the "Hacked Living in a Linux World" part of
+ the original web-page an checkout the content of lhafh-02.tgz and 
+lhafh-03.tgz.</p>
+
+<p>Below link to my tool-chain and my packaged xwoaf-build. Have fun!</p>
+
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf-rebuild-toolchain.tar.gz">Toolchain</a> - just unpack somewhere - you will get a directory named xwoaf-rebuild.</li>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf-build-package.tar.gz">xwoaf-build-package</a> - unpack in the root of the toolchain (xwoaf-rebuild/xwoafchain).</li>
+</ul>
+
+<p>Then cd into top-diretory (xwoaf-rebuild) and run xwoaf-dev.sh from 
+within a terminal. cd to /src and run xwoaf_build. Final result is a 
+CD-image (output.iso) and a floppy-image (xwoaf_rebuild.img) which can 
+be burned to a CD-rom or dded to a floppy. If you have qemu installed 
+scripts to run the images are included as well.</p>
+
+<p>If you just want to test the result -  iso- and floppy image supplied below:</p>
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/output.iso">iso-image</a>.</li>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild.img">floppy-image</a>.</li>
+</ul>
+
+<img src="xwoaf%20-%20rebuild_files/xwoaf-rebuild.png">
+
+<p>Below a floppyimage with xawplus applications (xcalc, xfilemanger, 
+xcalendar and xe) as an example of a different focus eliminating email 
+client and web browser. To have room for this I needed to upx Xvesa 
+though...</p>
+
+<img src="xwoaf%20-%20rebuild_files/xwoaf-rebuild2.png">
+
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild2.img">floppy-image</a>.</li>
+</ul>
+
+
+<h2>Some findings working further with xwoaf...</h2>
+<p>My first approach to get more room was to use "mklibs" which repack 
+the dynamic libraries to only contain what the applications on the 
+floppy needs - and that does work.</p>
+
+<p>Then tried to use upx on the binaries but that gave a slight increase in total size (of Image.gz).</p>
+
+<p>sstrip reduces a tiny bit but not with the magnitude I was looking for.</p>
+
+<p>exepak works - but upx seems more efficient.</p>
+
+<p>The dynamic libraries wont compress with upx - though recent versions
+ works with libc libraries - it refuses to compress uclibc dynamic 
+libraries.</p>
+
+<p>upx can compress the kernel but afterwards kernel wont boot.</p>
+
+<p>My present solution is to create multi call binaries and static link 
+them. This give the possibility to reduce size of dynamic libraries left
+ and the static linked binaries compress well with upx.</p>
+
+<p>Never compress busybox as execution speed decreases a lot.</p>
+
+<p>The creation of multi call binaries is a much more complicated 
+process but frees space. And they work outside xwoaf too as no external 
+libraries are needed.</p>
+
+<p>The new free space is used to include cdrom and loop modules in 
+kernel (you cant compress modules but build in modules are compressed 
+with the kernel), upgraded version of busybox and added support for 
+creating/formating partitions and added extlinux to make hard disk boot 
+able. So now install to hard disk can be performed - at least from 
+floppy - install from iso-boot depend if the cd/dvd-drive is recognized 
+correctly by this 15 year old kernel. And tools for setting the keyboard
+ is now included.
+</p>
+
+<p>At the moment the floppy contains the following applications:
+jwm menu rxvt xcmd xinit xsetroot xcalc xcalendar xe xfilemanager xminesweep busybox pr extlinux Xvesa.</p>
+
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild3.img">xwoaf_rebuild3 floppy-image</a>.</li>
+</ul>
+
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild3.iso">xwoaf_rebuild3 iso-image</a>.</li>
+</ul>
+
+<h2>Xwoaf-rebuild-4.0</h2>
+<p>The forth version of xwoaf-rebuild is containing a lot of 
+applications contained in only two binaries: busybox and mcb_xawplus. 
+You get xcalc, xcalendar, xfilemanager, xminesweep, chimera, xed, 
+xsetroot, xcmd, xinit, menu, jwm, desklaunch, rxvt, xtet42, torsmo, 
+djpeg, xban2, text2pdf, Xvesa, xsnap, xmessage, xvl, xtmix, pupslock, 
+xautolock and minimp3 via mcb_xawplus. And you get
+</p><pre>[, [[, ash, basename, bunzip2, busybox, bzcat, cat, chgrp, chmod,
+chown, chroot, clear, cp, cut, date, dd, df, dirname, dmesg, du,
+echo, env, extlinux, false, fdisk, fgrep, find, free, getty, grep,
+gunzip, gzip, halt, head, hostname, id, ifconfig, init, insmod,
+kill, killall, klogd, ln, loadkmap, logger, login, losetup, ls,
+lsmod, lzmacat, mesg, mkdir, mke2fs, mkfs.ext2, mkfs.ext3, mknod,
+mkswap, mount, mv, nslookup, openvt, passwd, ping, poweroff, pr,
+ps, pwd, readlink, reboot, reset, rm, rmdir, rmmod, route, sed,
+sh, sleep, sort, swapoff, swapon, sync, syslogd, tail, tar, test,
+top, touch, tr, true, tty, udhcpc, umount, uname, uncompress,
+unlzma, unzip, uptime, wc, which, whoami, yes, zcat </pre>
+via busybox. On top you get extensive help system, install scripts, mount scripts, configure scripts etc.
+        <p></p>
+<img src="xwoaf%20-%20rebuild_files/xwoaf-rebuild4.png">     
+<p>Download floppy or cd image below</p>  
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild4.img">xwoaf_rebuild4 floppy-image</a>.</li>
+</ul>
+
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild4.iso">xwoaf_rebuild4 iso-image</a>.</li>
+</ul>
+
+<ul>
+  <li><a href="https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf-rebuild-4.1_toolchain.tar.gz">xwoaf-rebuild-4.1_toolchain.tar.gz [100mb] Everything needed to build xwoaf-rebuild-4.1 from source.</a>.</li>
+</ul>
+
+
+
+
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 11:55:14 Sep 01, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:40:31 Dec 28, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.739
+  exclusion.robots: 0.052
+  exclusion.robots.policy: 0.04
+  esindex: 0.014
+  cdx.remote: 6.011
+  LoadShardBlock: 124.39 (3)
+  PetaboxLoader3.resolve: 123.388 (3)
+  PetaboxLoader3.datanode: 101.257 (4)
+  load_resource: 105.815
+  nav: 0.188 (6)
+-->
