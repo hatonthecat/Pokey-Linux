@@ -225,6 +225,7 @@ Update after pUPnGO_041210: Created a "dress-up"-sfs file of the xwoaf-core that
 This illustrates the power of the new pUPnGO being able to run xwoaf as an sfs-extension - xwoaf fueled by ulibc and tinyX...and powered by pUPnGO_041210.
 
 **Xwoaf pup w/16MB RAM** (3.5MB ISO!)
+--
 
 [xwoaf_pup170910-2025-12-27T22-08-27-843482200Z.webm](https://github.com/user-attachments/assets/faa3f869-4d0f-4d70-af39-b7e1380339ce)
 
