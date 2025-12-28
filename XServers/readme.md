@@ -235,4 +235,12 @@ Testing 8 & 12MB, although performance is noticeably slower in booting the kerne
 
 Update: Loads X Window with 15MB and 14MB, but not 13MB or less. 
 
+Xwoaf 1.3 w/ 8MB RAM & Linux 2.2
+--
+
+[Xwoaf 1.3 rebuild-screen0.webm](https://github.com/user-attachments/assets/50c1cc2e-967b-4c7e-a108-25bef01cad8e)
+
+https://web.archive.org/web/20240901115514/https://pupngo.dk/xwinflpy/xwoaf_rebuild.html 
+
+https://youtu.be/Us96NmMFxGY 
 
