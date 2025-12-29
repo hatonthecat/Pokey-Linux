@@ -62,3 +62,13 @@ Though it doesn't aim to be board-centric, and could be more IP-centric, as [J-c
 So, it might be a productive avenue to develop lowRAM BSP packages in the [8-16MB](https://inavoyage.blogspot.com/2025/09/the-future-of-32-bit-linux-support.html) size. 
 
 Vedula and I are also working an an ARM9 board called [FemtoTX](https://github.com/EI2030/FemtoTX) and he has recently completed Ethernet tests. We are looking into WB adapters but also FIFO drivers. Our test bench is an Arty A7 with 256MB, so smaller systems can be explored once verification/validation is complete. 
+
+
+
+Yocto News
+--
+
+An interesting thing I noticed is that the upcoming 6.0 release of Yocto will deprecate the use of the Poky folder. It also increases the system requiremnents to 32GB from 8GB. This is mainly due to the apparent memory usage of LLVM, a multi-language compiler. In other words, great if you have the RAM, since you can create a backend and a front-end for any architecture you'd like to build for, or from. But there is a LTS for Scarthgap 5.0 til April 2028, and if I want to run on something using only 1 language (or little multi-language compiling), apparently 8GB will suffice. There are also techniques to lower the maximum RAM usage on the 6.0 (or even 5.3 release), as it defaults to 50% of the avaialble RAM (16GB in most cases).
+
+https://docs.yoctoproject.org/dev/_images/releases.svg
+
