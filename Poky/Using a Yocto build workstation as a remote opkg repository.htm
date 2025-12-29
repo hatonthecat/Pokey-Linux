@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html style="--wm-toolbar-height: 67px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app243.us.archive.org';v.server_ms=547;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://jumpnowtek.com/yocto/Using-your-build-workstation-as-a-remote-package-repository.html","20210512144813","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1620830893");
+</script>
+<link rel="stylesheet" type="text/css" href="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Using a Yocto build workstation as a remote opkg repository</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="Using%20a%20Yocto%20build%20workstation%20as%20a%20remote%20opkg%20repository_files/main.css">
+
+    </head>
+    <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+https://web.archive.org/web/20210512144813/https://jumpnowtek.com/yocto/
+Using-your-build-workstation-as-a-remote-package-repository.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://jumpnowtek.com/yocto/Using-your-build-workstation-as-a-remote-package-repository.html","20210512144813",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="https://web.archive.org/web/20210512144813/https://jumpnowtek.com/">Jumpnow Technologies</a></h1>
+            <a class="extra" href="https://web.archive.org/web/20210512144813/https://jumpnowtek.com/">home</a>
+          </div>
+
+          <h2>Using a Yocto build workstation as a remote opkg repository</h2>
+<p class="meta">24 Jul 2014</p>
+
+<div class="post">
+<p>During development of an embedded Linux system you’ll frequently want
+ to add software packages that didn’t make it into the initial build or 
+upgrade existing packages. The packages might come from external 
+upstream project or they might be your own custom software.</p>
+
+<p>I’m using tools from the <a href="https://web.archive.org/web/20210512144813/https://www.yoctoproject.org/">Yocto Project</a> to build an embedded Linux system and using <a href="https://web.archive.org/web/20210512144813/https://code.google.com/p/opkg/">opkg</a> as the package manager.</p>
+
+<p>After the initial build, there are a number of ways I’ve used to go about adding new software packages to the systems</p>
+
+<ol>
+  <li>
+    <p>Add the new packages to the <em>image</em> recipe, rebuild the 
+image and do a complete reinstall to an SD card. This is the eventual 
+goal solution for production, but it’s the most time consuming during 
+development.</p>
+  </li>
+  <li>
+    <p>Build the packages with bitbake, manually copy the .ipk files to the target and use <em>opkg</em> to install. Works, but not very convenient.</p>
+  </li>
+  <li>
+    <p>Cross-build on a workstation without using bitbake and copy the binaries to the target, usually with <em>scp</em>. Works okay during development, particularly with custom C/C++ projects. Doesn’t work well for production.</p>
+  </li>
+  <li>
+    <p>Build directly on the embedded machine. Okay for smaller projects
+ OR when cross-builds aren’t working. Doesn’t work well for production.</p>
+  </li>
+  <li>
+    <p>Configure the systems so that <em>opkg</em> on the embedded board can remotely access packages directly on the build workstation.</p>
+  </li>
+</ol>
+
+<p>The last method is what this document describes.</p>
+
+<h3 id="find-your-package-directory">Find your package directory</h3>
+
+<p>So assuming you’ve already built a system image with <em>Yocto</em>, you can find the installer files for packages you have already built in</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$(TMPDIR)/deploy/ipk
+</code></pre></div></div>
+
+<p>where <em>$(TMPDIR)</em> comes from <code class="language-plaintext highlighter-rouge">build/conf/local.conf</code> or if it is not defined in <code class="language-plaintext highlighter-rouge">local.conf</code> it defaults to <code class="language-plaintext highlighter-rouge">build/tmp</code>.</p>
+
+<p>For this example, the <em>$(TMPDIR)</em> is <code class="language-plaintext highlighter-rouge">/oe7/dart/tmp-poky-dora-build</code>.</p>
+
+<p>Here’s what it looks like</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scott@octo:/oe7/dart/tmp-poky-dora-build/deploy/ipk$ ls -l
+total 364
+drwxr-xr-x 2 scott scott   4096 Jul 24 19:03 all
+drwxr-xr-x 2 scott scott 344064 Jul 24 19:03 cortexa9hf-vfp-neon
+drwxr-xr-x 2 scott scott  16384 Jul 24 19:03 dart
+-rw-r--r-- 1 scott scott      0 Jul 24 19:03 Packages
+-rw-r--r-- 1 scott scott      0 Jun 18 18:35 Packages.flock
+-rw-r--r-- 1 scott scott     20 Jul 24 19:03 Packages.gz
+-rw-r--r-- 1 scott scott      0 Jul 24 19:03 Packages.stamps
+</code></pre></div></div>
+
+<p>The package install files are in three sub-directories</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>all/
+cortexa9hf-vfp-neon/
+dart/
+</code></pre></div></div>
+
+<p><em>Yocto</em> has already created a <em>Package</em> manifest file for <em>opkg</em> in each of these directories.</p>
+
+<p>What I’m calling the <em>architecture</em> and <em>machine</em> directories will depend on the system you are building for and the compiler options you choose.</p>
+
+<p>For this example I’m building a <a href="https://web.archive.org/web/20210512144813/http://www.variscite.com/products/system-on-module-som/cortex-a9/dart-4460-cpu-ti-omap-4-omap4460">Variscite OMAP4 Dart</a> system with hard-floating point enabled.</p>
+
+<p>The <em>architecture</em> directory is <code class="language-plaintext highlighter-rouge">cortexa9hf-vfp-neon/</code>.</p>
+
+<p>The <em>machine</em> directory is <code class="language-plaintext highlighter-rouge">dart/</code>.</p>
+
+<p>Modify these instructions accordingly for your system.</p>
+
+<h3 id="setup-a-web-server">Setup a web server</h3>
+
+<p>I’m running Ubuntu and want to use <em>nginx</em> as the web server</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install nginx
+</code></pre></div></div>
+
+<p>Add a new site configuration file for <em>nginx</em>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo vi /etc/nginx/sites-available/dart-repo
+</code></pre></div></div>
+
+<p>Here is the contents of <code class="language-plaintext highlighter-rouge">dart-repo</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
+    listen 80 default_server;
+
+    # set root to $(TMPDIR)/deploy/ipk/
+    root /oe7/dart/tmp-poky-dora-build/deploy/ipk/;
+
+    autoindex on;
+}
+</code></pre></div></div>
+
+<p>Remove the <em>nginx</em> default enabled site</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo rm /etc/nginx/sites-enabled/default
+</code></pre></div></div>
+
+<p>Enable the new <em>dart-repo</em> site</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ln -s /etc/nginx/sites-available/dart-repo /etc/nginx/sites-enabled/dart-repo
+</code></pre></div></div>
+
+<p>Restart the server</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo /etc/init.d/nginx restart
+</code></pre></div></div>
+
+<p>Point a browser at the workstation IP and you should see something like</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index of /
+
+=================================================================
+../
+all/                             24-Jul-2014 23:03          -
+cortexa9hf-vfp-neon/             24-Jul-2014 23:03          -
+dart/                            24-Jul-2014 23:03          -
+Packages                         24-Jul-2014 23:03          0
+Packages.flock                   24-Jul-2014 23:03          0
+Packages.gz                      24-Jul-2014 23:03         20
+Packages.stamps                  24-Jul-2014 23:03          0
+=================================================================
+</code></pre></div></div>
+
+<h3 id="configure-the-target-system">Configure the target system</h3>
+
+<p>We need to tell <em>opkg</em> on the embedded system where to look for packages.</p>
+
+<p>The <em>opkg</em> configuration file is <code class="language-plaintext highlighter-rouge">/etc/opkg/opkg.conf</code>.</p>
+
+<p>Edit the <code class="language-plaintext highlighter-rouge">opkg.conf</code> file to look like this</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/gz all http://192.168.10.8/all
+src/gz cortexa9hf-vfp-neon http://192.168.10.8/cortexa9hf-vfp-neon
+src/gz dart http://192.168.10.8/dart
+
+dest root /
+lists_dir ext /var/lib/opkg
+</code></pre></div></div>
+
+<p>Replacing <code class="language-plaintext highlighter-rouge">192.168.10.8</code> with the IP of your build workstation.</p>
+
+<h3 id="test-it-out">Test it out</h3>
+
+<p>First run an <em>opkg</em> update.</p>
+
+<p>Updates are not cached, so after a reboot you must run an update again first before running other <em>opkg</em> commands.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@dart:~# opkg update
+Downloading http://192.168.10.8/all/Packages.gz.
+Inflating http://192.168.10.8/all/Packages.gz.
+Updated list of available packages in /var/lib/opkg/all.
+Downloading http://192.168.10.8/cortexa9hf-vfp-neon/Packages.gz.
+Inflating http://192.168.10.8/cortexa9hf-vfp-neon/Packages.gz.
+Updated list of available packages in /var/lib/opkg/cortexa9hf-vfp-neon.
+Downloading http://192.168.10.8/dart/Packages.gz.
+Inflating http://192.168.10.8/dart/Packages.gz.
+Updated list of available packages in /var/lib/opkg/dart.
+</code></pre></div></div>
+
+<p>Install a package (assumes you’ve bitbaked <em>inetutils</em> and have not already installed <em>rsh</em>)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@dart:~# opkg install inetutils-rsh
+Installing inetutils-rsh (1.9.1-r1) to root...
+Downloading http://192.168.10.8/cortexa9hf-vfp-neon/inetutils-rsh_1.9.1-r1_cortexa9hf-vfp-neon.ipk.
+Configuring inetutils-rsh.
+update-alternatives: Linking //usr/bin/rcp to /usr/bin/rcp.inetutils
+update-alternatives: Linking //usr/bin/rexec to /usr/bin/rexec.inetutils
+update-alternatives: Linking //usr/bin/rlogin to /usr/bin/rlogin.inetutils
+update-alternatives: Linking //usr/bin/rsh to /usr/bin/rsh.inetutils
+</code></pre></div></div>
+
+<p>Check for updates</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@dart:~# opkg list-upgradable
+</code></pre></div></div>
+
+<p>Run updates</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@dart:~# opkg upgrade
+</code></pre></div></div>
+
+<p>Help with the <em>opkg</em> commands can be found by running <em>opkg</em> without any arguments.</p>
+
+<h3 id="refreshing-the-package-manifests">Refreshing the Package manifests</h3>
+
+<p>When you build or rebuild a package with <em>bitbake</em> on the build machine, the <em>Package</em> manifests are NOT automatically updated.</p>
+
+<p>The <em>Package</em> manifests will be updated if you build an <em>image</em> recipe.</p>
+
+<p>Until the <em>Package</em> manifests are updated, you won’t see new packages on the embedded machine.</p>
+
+<p>Here’s an example</p>
+
+<p>I rebuilt the <em>opkg-collateral</em> recipe after making the changes described in the next section.</p>
+
+<p>The original <em>PR</em> was <code class="language-plaintext highlighter-rouge">-r2</code> and after the change <code class="language-plaintext highlighter-rouge">-r3</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scott@octo:/oe7/dart/tmp-poky-dora-build/deploy/ipk/cortexa9hf-vfp-neon$ ls -l opkg-coll*
+-rw-r--r-- 2 scott scott 1248 Jul 25 11:10 opkg-collateral_1.0-r3_cortexa9hf-vfp-neon.ipk
+-rw-r--r-- 2 scott scott  720 Jul 25 11:10 opkg-collateral-dbg_1.0-r3_cortexa9hf-vfp-neon.ipk
+-rw-r--r-- 2 scott scott  750 Jul 25 11:10 opkg-collateral-dev_1.0-r3_cortexa9hf-vfp-neon.ipk
+</code></pre></div></div>
+
+<p>Note that the <em>Package</em> manifest files are still old.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scott@octo:/oe7/dart/tmp-poky-dora-build/deploy/ipk/cortexa9hf-vfp-neon$ ls -l Pack*
+-rw-r--r-- 1 scott scott 3885124 Jul 24 19:03 Packages
+-rw-r--r-- 1 scott scott       0 Jun 18 18:35 Packages.flock
+-rw-r--r-- 1 scott scott  245491 Jul 24 19:03 Packages.gz
+-rw-r--r-- 1 scott scott  239181 Jul 24 19:03 Packages.stamps
+</code></pre></div></div>
+
+<p>The embedded board does not see any changes</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@dart:~# opkg update
+...
+
+root@dart:~# opkg list-upgradable
+</code></pre></div></div>
+
+<p>Shows nothing</p>
+
+<p>After rebuilding the <em>console-image</em> the <em>Package</em> manifests are updated.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scott@octo:/oe7/dart/tmp-poky-dora-build/deploy/ipk/cortexa9hf-vfp-neon$ ls -l Pack*
+-rw-r--r-- 1 scott scott 3885124 Jul 25 11:17 Packages
+-rw-r--r-- 1 scott scott       0 Jun 18 18:35 Packages.flock
+-rw-r--r-- 1 scott scott  245486 Jul 25 11:17 Packages.gz
+-rw-r--r-- 1 scott scott  239363 Jul 25 11:17 Packages.stamps
+</code></pre></div></div>
+
+<p>Now checking on the embedded board</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@dart:~# opkg update
+...
+
+root@dart:~# opkg list-upgradable
+opkg-collateral - 1.0-r2 - 1.0-r3
+</code></pre></div></div>
+
+<p>And if I run an upgrade now</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@dart:~# opkg upgrade
+Upgrading opkg-collateral on root from 1.0-r2 to 1.0-r3...
+Downloading http://192.168.10.8/cortexa9hf-vfp-neon/opkg-collateral_1.0-r3_cortexa9hf-vfp-neon.ipk.
+Configuring opkg-collateral.
+Collected errors:
+ * resolve_conffiles: Existing conffile /etc/opkg/opkg.conf is different from the conffile in the new package. The new conffile will be placed at /etc/opkg/opkg.conf-opkg.
+</code></pre></div></div>
+
+<p>The error is only because I manually modified <code class="language-plaintext highlighter-rouge">/etc/opkg/opkg.conf</code> and <em>opkg</em> will not overwrite my changes.</p>
+
+<h3 id="opkg-collateral-recipe">opkg-collateral recipe</h3>
+
+<p>The default <code class="language-plaintext highlighter-rouge">opkg.conf</code> file is generated by the <em>opkg-collateral</em> recipe.</p>
+
+<p>You can create a <em>.bbappend</em> to add default <em>src</em> file entries to <code class="language-plaintext highlighter-rouge">opkg.conf</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p meta-&lt;your-layer&gt;/recipes-devtools/opkg
+cd meta-&lt;your-layer&gt;/recipes-devtools/opkg
+vi opkg-collateral.bbappend
+</code></pre></div></div>
+
+<p>The contents of <code class="language-plaintext highlighter-rouge">opkg-collateral.bbappend</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+
+PRINC := "${@int(PRINC) + 1}"
+</code></pre></div></div>
+
+<p>Then create the new <code class="language-plaintext highlighter-rouge">src</code> file that the recipe will use to populate <code class="language-plaintext highlighter-rouge">opkg.conf</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir opkg-collateral
+cd opkg-collateral
+vi src
+</code></pre></div></div>
+
+<p>The contents of <code class="language-plaintext highlighter-rouge">src</code> will be something like</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/gz all http://192.168.10.8/all
+src/gz cortexa9hf-vfp-neon http://192.168.10.8/cortexa9hf-vfp-neon
+src/gz dart http://192.168.10.8/dart
+</code></pre></div></div>
+
+<p>Adjust accordingly for your system.</p>
+
+
+</div>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Jumpnow Technologies, LLC - <a href="https://web.archive.org/web/20210512144813/https://jumpnowtek.com/privacy-policy.html">Privacy Policy</a>
+              </p>
+            </div>
+          </div>
+        </div>
+    
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 14:48:13 May 12, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:22:21 Dec 29, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.991
+  exclusion.robots: 0.138
+  exclusion.robots.policy: 0.121
+  esindex: 0.013
+  cdx.remote: 7.565
+  LoadShardBlock: 248.184 (3)
+  PetaboxLoader3.resolve: 251.42 (4)
+  PetaboxLoader3.datanode: 200.945 (4)
+  load_resource: 260.959
+  nav: 0.151 (6)
+-->

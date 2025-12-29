@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html style="--wm-toolbar-height: 67px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Miscellaneous%20Yocto%20Notes_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app243.us.archive.org';v.server_ms=499;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="Miscellaneous%20Yocto%20Notes_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="Miscellaneous%20Yocto%20Notes_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="Miscellaneous%20Yocto%20Notes_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://jumpnowtek.com/yocto/Yocto-Notes.html","20210512132434","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1620825874");
+</script>
+<link rel="stylesheet" type="text/css" href="Miscellaneous%20Yocto%20Notes_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="Miscellaneous%20Yocto%20Notes_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Miscellaneous Yocto Notes</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="Miscellaneous%20Yocto%20Notes_files/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="Miscellaneous%20Yocto%20Notes_files/main.css">
+
+    </head>
+    <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20210512132434/https://jumpnowtek.com/yocto/Yocto-Notes.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://jumpnowtek.com/yocto/Yocto-Notes.html","20210512132434",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="https://web.archive.org/web/20210512132434/https://jumpnowtek.com/">Jumpnow Technologies</a></h1>
+            <a class="extra" href="https://web.archive.org/web/20210512132434/https://jumpnowtek.com/">home</a>
+          </div>
+
+          <h2>Miscellaneous Yocto Notes</h2>
+<p class="meta">17 Feb 2016</p>
+
+<div class="post">
+<h3 id="oe-pkgdata-util">oe-pkgdata-util</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scott@fractal:~/elvaria/build$ oe-pkgdata-util -h
+usage: oe-pkgdata-util [-h] [-d] [-p PKGDATA_DIR] &lt;subcommand&gt; ...
+
+OpenEmbedded pkgdata tool - queries the pkgdata files written out during
+do_package
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d, --debug           Enable debug output
+  -p PKGDATA_DIR, --pkgdata-dir PKGDATA_DIR
+                        Path to pkgdata directory (determined automatically if
+                        not specified)
+
+subcommands:
+  &lt;subcommand&gt;
+    lookup-pkg          Translate between recipe-space package names and
+                        runtime package names
+    list-pkgs           List packages
+    list-pkg-files      List files within a package
+    lookup-recipe       Find recipe producing one or more packages
+    find-path           Find package providing a target path
+    read-value          Read any pkgdata value for one or more packages
+    glob                Expand package name glob expression
+
+Use oe-pkgdata-util &lt;subcommand&gt; --help to get help on a specific command
+</code></pre></div></div>
+
+<p>Example: List the individual packages the <em>linux-firmware</em> recipe provides</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scott@fractal:~/elvaria/build$ oe-pkgdata-util list-pkgs -p linux-firmware
+linux-firmware-ralink-license
+linux-firmware-ralink
+linux-firmware-radeon-license
+linux-firmware-radeon
+linux-firmware-marvell-license
+linux-firmware-sd8686
+linux-firmware-sd8787
+linux-firmware-sd8797
+linux-firmware-ti-connectivity-license
+linux-firmware-wl12xx
+linux-firmware-wl18xx
+linux-firmware-vt6656-license
+linux-firmware-vt6656
+linux-firmware-rtl-license
+linux-firmware-rtl8192cu
+linux-firmware-rtl8192ce
+linux-firmware-rtl8192su
+linux-firmware-broadcom-license
+linux-firmware-bcm4329
+linux-firmware-bcm4330
+linux-firmware-bcm4334
+linux-firmware-bcm4354
+linux-firmware-atheros-license
+linux-firmware-ar9170
+linux-firmware-ar3k
+linux-firmware-ath6k
+linux-firmware-ath9k
+linux-firmware-iwlwifi-license
+linux-firmware-iwlwifi-135-6
+linux-firmware-iwlwifi-3160-7
+linux-firmware-iwlwifi-3160-8
+linux-firmware-iwlwifi-3160-9
+linux-firmware-iwlwifi-6000-4
+linux-firmware-iwlwifi-6000g2a-5
+linux-firmware-iwlwifi-6000g2a-6
+linux-firmware-iwlwifi-6000g2b-5
+linux-firmware-iwlwifi-6000g2b-6
+linux-firmware-iwlwifi-6050-4
+linux-firmware-iwlwifi-6050-5
+linux-firmware-iwlwifi-7260-7
+linux-firmware-iwlwifi-7260-8
+linux-firmware-iwlwifi-7260-9
+linux-firmware-iwlwifi-7265-8
+linux-firmware-iwlwifi-7265-9
+linux-firmware-license
+linux-firmware-dbg
+linux-firmware-dev
+linux-firmware
+</code></pre></div></div>
+
+
+</div>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Jumpnow Technologies, LLC - <a href="https://web.archive.org/web/20210512132434/https://jumpnowtek.com/privacy-policy.html">Privacy Policy</a>
+              </p>
+            </div>
+          </div>
+        </div>
+    
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 13:24:34 May 12, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 03:23:23 Dec 29, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.7
+  exclusion.robots: 0.097
+  exclusion.robots.policy: 0.084
+  esindex: 0.009
+  cdx.remote: 39.907
+  LoadShardBlock: 294.474 (3)
+  PetaboxLoader3.datanode: 134.477 (4)
+  PetaboxLoader3.resolve: 98.961 (2)
+  load_resource: 139.106
+  nav: 0.4 (6)
+-->
