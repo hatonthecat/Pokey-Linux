@@ -68,7 +68,35 @@ Vedula and I are also working an an ARM9 board called [FemtoTX](https://github.c
 Yocto News
 --
 
-An interesting thing I noticed is that the upcoming 6.0 release of Yocto will deprecate the use of the Poky folder. It also increases the system requiremnents to 32GB from 8GB. This is mainly due to the apparent memory usage of LLVM, a multi-language compiler. In other words, great if you have the RAM, since you can create a backend and a front-end for any architecture you'd like to build for, or from. But there is a LTS for Scarthgap 5.0 til April 2028, and if I want to run on something using only 1 language (or little multi-language compiling), apparently 8GB will suffice. There are also techniques to lower the maximum RAM usage on the 6.0 (or even 5.3 release), as it defaults to 50% of the avaialble RAM (16GB in most cases).
+An interesting thing I noticed is that the upcoming 5.3/6.0 release of Yocto will deprecate the use of the Poky folder. It also increases the system requiremnents to 32GB from 8GB. This is mainly due to the apparent memory usage of [LLVM](https://en.wikipedia.org/wiki/LLVM), a multi-language compiler. In other words, great if you have the RAM, since you can create a backend and a front-end for any architecture you'd like to build for, or from. But there is a LTS for Scarthgap 5.0 til April 2028, and if I want to run on something using only 1 language (or little multi-language compiling), apparently 8GB will suffice. There are also techniques to lower the maximum RAM usage on the 6.0 (or even 5.3 release), as it defaults to 50% of the avaialble RAM (16GB in most cases).
 
 https://docs.yoctoproject.org/dev/_images/releases.svg
+
+https://lists.yoctoproject.org/g/docs/topic/patch_poky_yaml_in/114097099
+
+https://docs.yoctoproject.org/dev/migration-guides/release-notes-5.3.html
+
+_"Release notes for 5.3 (whinlatter)_
+
+_Linux kernel 6.16, gcc 15, glibc 2.42, LLVM 21.1.1, and over 300 other recipe upgrades._
+
+_Minimum Python version required on the host: 3.9._
+
+_Host requirements changes:
+
+_The minimum disk space requirement is now 140Gbytes (previously 90Gbytes)._
+
+_The minimum RAM requirement is now 32Gbytes (previously 8Gbytes)._
+
+_These changes are mainly due to recent additions of the LLVM and other resource heavy recipes. For guidance on how to limit the resources used by the OpenEmbedded Build System, see the Limiting the Host Resources Usage guide."_
+
+Another Google search result returned this:
+
+"ML-LLVM-Tools: Towards Seamless Integration of Machine Learning in Compiler Optimizations [ Video ] [ Slides ]
+S. VenkataKeerthy, IIT Hyderabad
+
+_With the growth in usage of Machine Learning (ML) to support compiler optimization decisions, there is a need for robust tools to support both training and inference. Such tools should be scalable and independent of the underlying model, and the ML framework upon which the model is built. We propose a unified infrastructure to aid ML based compiler optimizations in LLVM at each of training and inference stages by using: (1) LLVM-gRPC, a gRPC based framework to support training, (2) LLVM-InferenceEngine, a novel ONNX based infrastructure to support ML inference within LLVM. Our infrastructure allows seamless integration of both the approaches with ML based compiler optimization passes. When our LLVM-InferenceEngine is integrated with a recently proposed approach that uses Reinforcement Learning for performing Register Allocation, it results in a 12.5x speedup in compile time."_
+
+https://llvm.org/devmtg/2023-05/#:~:text=Our%20infrastructure%20allows%20seamless%20integration%20of%20both,in%20a%2012.5x%20speedup%20in%20compile%20time.
+
 
