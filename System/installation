@@ -28,7 +28,9 @@ https://www.youtube.com/watch?v=KpRzZ_JdVK8
 
 I followed the YT video until it got to the part about installing/upgrading Python3.
 
-So in the first section (up to around 0:30, I installed git, then tar. The commands for "sudo apt get install gawk wget..." weren't working so I jumped (back or forward) to the Part 2 tutorial, which seems to have filled in some of the blanks.
+So in the first section (up to around 0:30, I installed git, then tar. 
+
+The commands for "sudo apt get install gawk wget..." weren't working so I jumped (back or forward) to the Part 2 tutorial, which seems to have filled in some of the blanks.
 
 https://kickstartembedded.com/2021/12/19/yocto-part-2-setting-up-ubuntu-host/
 
@@ -57,7 +59,9 @@ Maybe I will need to install the rest separately (it might be in the later part 
 errors: unable to locate package libegl1-mesa
 unable locate package pylint3 (possibly newer version and it got moved).
 
-Also got an error: externally-managed-environment. This is probably a newb error (even this discussion points to a common workaround that is NOT recommended: https://discuss.python.org/t/the-most-popular-advice-on-the-internet-for-error-externally-managed-environment-is-to-force-packages-to-be-system-installed/56900)
+Also got an error: externally-managed-environment. This is probably a newb error (even this discussion points to a common workaround that is NOT recommended: 
+
+https://discuss.python.org/t/the-most-popular-advice-on-the-internet-for-error-externally-managed-environment-is-to-force-packages-to-be-system-installed/56900)
 
 So I guess I need to figure out which packages are official python and which are not authorized, at least to be run system wide, and should look into the virtual enviornment option.
 
@@ -67,4 +71,6 @@ https://lists.yoctoproject.org/g/docs/topic/libegl1_mesa_not_available_in/105760
 
 https://forum.beagleboard.org/t/why-i-cant-install-the-host-package-of-yocto-project/37126/4
 
-It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools. Then I will move to a different ISA, most likely.
+It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
+
+Then I will move to a different ISA, most likely.
