@@ -24,7 +24,7 @@ Distros shall be named "desserts", as they are not a main course meal, and are n
 
 The multi boot loader (using GRUB/UEFI like boot menu, shall be named JukeBox. Development of this software is not being prioritized as I am more focused on initially developing a Yocto pipeline to images for a number of few apps.
 
-If the OSes have a desktop environment, they will include a desert as a wallpaper. This can be rendered or an actual photo. Another mnemonic technique (Pokey->Desert->Desert). This also emphasizes the sparse environment of the OS- indicating a single app with few resources.
+If the OSes have a desktop environment, they will include a desert as a wallpaper. This can be rendered or an actual photo. Another mnemonic technique (Pokey->Dessert->Desert). This also emphasizes the sparse environment of the OS- indicating a single app with few resources.
 
 Programs (or Apps, in the smartphone era), can be called an "Oasis." Intentionally, the icon to launch an app can be placed on the desert wallpaper within a small oasis.
 
