@@ -61,6 +61,10 @@ Also got an error: externally-managed-environment. This is probably a newb error
 
 So I guess I need to figure out which packages are official python and which are not authorized, at least to be run system wide, and should look into the virtual enviornment option.
 
+Found a few pages that identify the issue for Ubuntu 24.04 (but still searching for the cause and solution):
 
+https://lists.yoctoproject.org/g/docs/topic/libegl1_mesa_not_available_in/105760426
+
+https://forum.beagleboard.org/t/why-i-cant-install-the-host-package-of-yocto-project/37126/4
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools. Then I will move to a different ISA, most likely.
