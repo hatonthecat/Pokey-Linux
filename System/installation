@@ -18,3 +18,32 @@ I used Raspberry Pi Imager to erase and flash the drive
 This guide confirms 8GB fits: https://phoenixnap.com/kb/install-ubuntu-24-04
 
 https://www.raspberrypi.com/software/
+
+After installing Ubuntu, I have 99GB left over. Better than expected.
+
+I used this tutorial to install the required files for Yocto:
+
+
+https://www.youtube.com/watch?v=KpRzZ_JdVK8
+
+I followed the YT video until it got to the part about installing/upgrading Python3.
+
+So in the first section (up to around 0:30, I installed git, then tar. The commands for "sudo apt get install gawk wget..." weren't working so I jumped (back or forward) to the Part 2 tutorial, which seems to have filled in some of the blanks.
+
+https://kickstartembedded.com/2021/12/19/yocto-part-2-setting-up-ubuntu-host/
+
+$ sudo apt update
+
+The first one worked, but it listed optional updates. I did not select them, although I might. (Edit: I got a prompt window asking to install 180MB+ of updates, so I selected yes)
+
+$ sudo apt install git git-lfs tar python3 python3-pip gcc 
+
+This installed the items that appeared to be in the 0:30 mark. Actually, I will return to the video tutorial:
+
+The 0:32 mark gets a little confusiung because it's not clear if the command worked on the first line and then the sudo apt install without line breaks /  seems to be the correct formatting.
+
+So I will resume copying the tutorial and include the ones from the webpage, possibly out of order. 
+
+
+
+It's for an A5 board, the Jupiter Nano. 
