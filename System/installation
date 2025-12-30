@@ -79,6 +79,8 @@ https://docs.yoctoproject.org/ref-manual/system-requirements.html#ubuntu-and-deb
 
 sudo apt-get install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
 
+Progress^ this prompted 17.1MB of additional packages, so it got what the 2021 tutorial missed (no surprises, but eh)
+
 $ locale --all-locales | grep en_US.utf8
 
 $ sudo dpkg-reconfigure locales
