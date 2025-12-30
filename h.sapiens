@@ -33,7 +33,7 @@ The wallpaper shall remain the default wallpaper for at least 40 days.
 None of these guidelines are required, but they "really tie the room together."
 
 Version naming
----------------
+--------------
 
 Version will use 2 decimals after each version number, with 0.0.1-0.4.9 being reserved for alpha releases, and 0.5.0-0.9.9 being reserved for beta releases. A maximum of ten versions after the first and second decimal (i.e: 0.0.10 and 0.0.10+ is not allowed; likewise 0.10.0 and 0.10+.x is not allowed; it must increase the digit after the first decimal. (e.g once 0.0.9 reaches a new revision= 0.1.0. That is what some softwares might consider 0.0.10. This has less to do with obsolete UTF schemes/compatibility(though there might be too), and more with readability. A version 0.18 can appear smaller than a version 0.0.2. Therefore 0.1.8 reads more clearly, as three digits appear in all versions of the software, implying there will only be a maximum of 999 versions. Once version 9.9.9 is reached (if it does), a double or even triple digit may be considered for the only digits before the first decimal (i.e 10.0.1, 10.9.9, & 100.0.1) with the two digits after the decimals always retaining up to 9 digits for versioning.) 
 
