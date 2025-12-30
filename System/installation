@@ -91,7 +91,11 @@ sudo apt install fonts-freefont-otf latexmk tex-gyre texlive-fonts-extra texlive
 
 (yes i know, that should have been my first approach, but sometimes using a tutorial for a project similar to mine seems more interesting at first, at lesat)
 
-Installation of documentation PDF packs is for multiple languages. The i3 2350M is a dual core, 4 threaded processor. Threading works quite well for simple installation and utilizes all four threads around 30-75%. The download is only 1.8GB and I could use an ethernet cable but the installation files and package updates are infrequent so it might even complete the installation slower than it can download some of the files on ethernet. Unlikely a bottleneck, but not always (2.4Ghz is around 40Mbps instead of the maximum speed I have) 
+Installation of documentation PDF packs is for multiple languages. The i3 2350M is a dual core, 4 threaded processor. 
+
+Threading works quite well for simple installation and utilizes all four threads around 30-75%. 
+The download is only 1.8GB and I could use an ethernet cable but the installation files and package updates are infrequent so it might even complete the installation slower than it can download some of the files on ethernet. Unlikely a bottleneck, but not always.
+(2.4Ghz is around 40Mbps instead of the maximum speed I have) 
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
 
