@@ -98,10 +98,16 @@ The download is only 1.8GB and I could use an ethernet cable but the installatio
 (2.4Ghz is around 40Mbps instead of the maximum speed I have) 
 
 
-I realize these instructions are for Yocto 5.3.999. Now I am unsure if this is the version I want to run, since it requires 32GB RAM, and may need to revert to 5.0 to avoid some unforseen issue. I am unsure if it will affect small builds, but still may need to check the 5.0 installation guide (or an unofficial guide for that)
+I realize these instructions are for Yocto 5.3.999. 
+Now I am unsure if this is the version I want to run, since it requires 32GB RAM, and may need to revert to 5.0 to avoid some unforseen issue.
+I am unsure if it will affect small builds, but still may need to check the 5.0 installation guide (or an unofficial guide for that)
 
+Yep, that was the issue. The current version doesn't mention the version number, but the legacy/supported versions prior to are visible in the placeholder:
 
+https://docs.yoctoproject.org/5.0/ref-manual/system-requirements.html#ubuntu-and-debian
 
+The first command adds just 249 KB of disk space (most were already installed by the 2021 Kickstart Embedded tutorial or the 5.3 one). 
+$ sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev python3-subunit mesa-common-dev zstd liblz4-tool file locales libacl1
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
 
