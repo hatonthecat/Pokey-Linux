@@ -1,0 +1,33 @@
+-------------------------
+Pokey 0.0.1 Documentation
+-------------------------
+
+The Documentation file is intended to provide an overview of the scope and functions of Pokey Linux. Early in Poky's development, before it became a reference build, it had some actual distros:
+
+https://linuxdevices.org/free-linux-distro-targets-smartphones/ 
+
+"Aug 2, 2007 [Updated Aug. 6] — A free GNOME-based Linux distribution for mobile devices such as smartphones and PDAs has achieved a major release. OpenedHand's Poky Linux 3.0 (“Blinky”) is based on X11, GTK+, and the Matchbox window manager, and includes an impressive-looking new application framework and theme called “Sato… 0.1.”
+
+The new “Blinky” release of Poky is based on X11/GTK+/Matchbox, much like the Nokia-sponsored Maemo.org project. However, in place of the Hildon GUI layer used by Maemo, Intel Moblin, and Ubuntu Mobile and Embedded (among others), Poky includes a new “Sato 0.1” component. OpenedHand described Sato as “a simple fast GTK+ based PDA/Smartfone fully featured theme and application framework.” The screenshots below show Sato 0.1 in action."
+
+It's unclear what exactly became of this effort, other than it ultimately got discontinued.
+
+Pokey Linux isn't focused on developing a single operating system like Ubuntu or Fedora, but a "jukebox" system of multi-boot single app OSes contained within a bootloader, along with a web-based repository of said distros.
+
+The reasoning of this project can be found in the adjacent repositories ("Solar FemtoTX, Solar Kernel, Solar Circuits, Low-Power-E-Paper OS), but Pokey Linux aims to be actual code-based. 
+
+Some of the terms will be included here as guidance, rather than rules.
+
+The naming of Pokey is both Mnemonic with Poky, but I also seek to reuse its characteristics to enhance it memorizability. For example, in the Earthbound game (U.S. version), Pokey is reprimaded for going out past his curfew to see about an incident in Onett. His father says he cannot have dessert for 10 years.
+
+Distros shall be named "desserts", as they are not a main course meal, and are not intended as a main course meal. Responsibility of maintaining a single OS is outsourced by stratifying funcitonality to a number of exokernel-like OSes.
+
+The multi boot loader (using GRUB/UEFI like boot menu, shall be named JukeBox. Development of this software is not being prioritized as I am more focused on initially developing a Yocto pipeline to images for a number of few apps.
+
+If the OSes have a desktop environment, they will include a desert as a wallpaper. This can be rendered or an actual photo. Another mnemonic technique (Pokey->Desert->Desert). This also emphasizes the sparse environment of the OS- indicating a single app with few resources.
+
+Programs (or Apps, in the smartphone era), can be called an "Oasis." Intentionally, the icon to launch an app can be placed on the desert wallpaper within a small oasis.
+
+The wallpaper shall remain the default wallpaper for at least 40 days.
+
+None of these guidelines are required, but they "really tie the room together."
