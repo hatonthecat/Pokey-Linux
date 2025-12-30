@@ -1,7 +1,7 @@
 Installation Steps
 
 For building Yocto images, I will be using a Lenovo Thinkpad E420 from 2012. 
-It has an i3 2350M (x86_64v2) with 6GB RAM. It originally came with 4GB DDR3.
+It has an i3 2350M (x86-64-v2) with 6GB RAM. It originally came with 4GB DDR3.
 A 120GB SSD was installed a while back ("upgraded" from a 500GB HDD with 8KB cache).
 
 Yocto 5.0 says around 90GB storage is needed and 8GB of RAM.
