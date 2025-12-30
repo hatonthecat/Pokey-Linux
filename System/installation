@@ -167,6 +167,26 @@ $ bitbake core-image-sato
 It will be curious of what the build time will be on this 4 threaded CPU. I imagine the SSD should help, but I assume they are using one too (in 2021, i'd expect). 
 But who knows, maybe mine will take 5 hrs.
 
+I was going to bake the minimal, but I will benchmark my laptop by building the Sato image.
+
+An error occurred: 
+
+https://lists.yoctoproject.org/g/poky/topic/problem_run_bitbake_on/111656575  
+
+But you need to have sudo permission.
+
+    "Disable this restriction on the entire system for one boot by executing echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns. This setting is lost on reboot. This similar to the previous behaviour, but it does not mitigate against kernel exploits that abuse the unprivileged user namespaces feature.
+
+    Disable this restriction using a persistent setting by adding a new file (/etc/sysctl.d/60-apparmor-namespace.conf) with the following contents:
+
+    kernel.apparmor_restrict_unprivileged_userns=0
+
+    Reboot. This is similar to the previous behaviour, but it does not mitigate against kernel exploits that abuse the unprivileged user namespaces feature."
+
+I guess I will have to temporarily disable the restriction for this test. There are probably other ways to work around that, but I won't be using this machine for other documents, so the risk is less.
+
+I won't enable the persistent option by creating the config file for now, until I understand more of the block (i am guessing it's just the kernel and Ubuntu trying to protect naive users from blindly following online instructions ;)
+
 Do I even have qemu installed yet? Checking soon.
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
