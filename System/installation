@@ -71,6 +71,8 @@ https://lists.yoctoproject.org/g/docs/topic/libegl1_mesa_not_available_in/105760
 
 https://forum.beagleboard.org/t/why-i-cant-install-the-host-package-of-yocto-project/37126/4
 
+I suppose I could just find a Yocto installation tutorial that was written after Ubuntu 24.04 was released, but I might just wait on that if the solution is simple enough (2 errors isn't as bad as it could be- might be a simple fix)
+
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
 
 Then I will move to a different ISA, most likely.
