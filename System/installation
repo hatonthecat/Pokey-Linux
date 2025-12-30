@@ -109,6 +109,31 @@ https://docs.yoctoproject.org/5.0/ref-manual/system-requirements.html#ubuntu-and
 The first command adds just 249 KB of disk space (most were already installed by the 2021 Kickstart Embedded tutorial or the 5.3 one). 
 $ sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev python3-subunit mesa-common-dev zstd liblz4-tool file locales libacl1
 
+So, after completing the 5.0 instructions (minus the oss4 step since it wasn't installed), I had to create the Yocto directory along with the Poky folder. When I tried to proceed to the next section 1.5.1, it says to cd Poky. Realizing it wasn't installed, I jumped back to the next youtube video, since the above video link completed with the pip and python scripts, which might have already been in the top section 1.4.1.
+
+So the YT video has a convenient instruction (Part 3: https://kickstartembedded.com/2021/12/21/yocto-part-3-build-run-your-first-ever-image/)
+
+https://youtu.be/ddwaLPzezuo?t=9
+
+$ mkdir yocto
+$ cd yocto
+
+$ git clone git://git.yoctoproject.org/poky
+$ cd poky
+$ git checkout -b dunfell origin/dunfell
+
+$ source oe-init-build-env <name of your build directory>
+
+$ bitbake core-image-sato --runall=fetch
+
+$ bitbake core-image-sato
+
+"Depending on your CPU capability, it may take anywhere from few tens of minutes to maybe even a few hours (took 2.5 hours for us!)."
+
+It will be curious of what the build time will be on this 4 threaded CPU. I imagine the SSD should help, but I assume they are using one too (in 2021, i'd expect). But who knows, maybe mine will take 5 hrs.
+
+Do I even have qemu installed yet? Checking soon.
+
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
 
 Then I will move to a different ISA, most likely.
