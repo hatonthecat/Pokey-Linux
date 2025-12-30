@@ -20,7 +20,7 @@ Some of the terms will be included here as guidance, rather than rules.
 
 The naming of Pokey is both Mnemonic with Poky, but I also seek to reuse its characteristics to enhance it memorizability. For example, in the Earthbound game (U.S. version), Pokey is reprimaded for going out past his curfew to see about an incident in Onett. His father says he cannot have dessert for 10 years.
 
-Distros shall be named "desserts", as they are not a main course meal, and are not intended as a main course meal. Responsibility of maintaining a single OS is outsourced by stratifying functionality to a number of exokernel-like OSes.
+Distros shall be named "desserts", as they are not a main course meal, and are not intended as a main course meal. If they are intended to be used as a main course, they can only run in serial threading/single tasking, as the processor cores will likley be 32-bit and single core to minimize energy consumption. Responsibility of maintaining a single OS is outsourced by stratifying functionality to a number of exokernel-like OSes.
 
 The multi boot loader (using GRUB/UEFI like boot menu, shall be named JukeBox. Development of this software is not being prioritized as I am more focused on initially developing a Yocto pipeline to images for a number of few apps. The analogy of a JukeBox storing records, or CDs, only makes sense in this case if the desserts are singles, and not albums.
 
