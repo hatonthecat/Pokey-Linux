@@ -97,6 +97,12 @@ Threading works quite well for simple installation and utilizes all four threads
 The download is only 1.8GB and I could use an ethernet cable but the installation files and package updates are infrequent so it might even complete the installation slower than it can download some of the files on ethernet. Unlikely a bottleneck, but not always.
 (2.4Ghz is around 40Mbps instead of the maximum speed I have) 
 
+
+I realize these instructions are for Yocto 5.3.999. Now I am unsure if this is the version I want to run, since it requires 32GB RAM, and may need to revert to 5.0 to avoid some unforseen issue. I am unsure if it will affect small builds, but still may need to check the 5.0 installation guide (or an unofficial guide for that)
+
+
+
+
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
 
 Then I will move to a different ISA, most likely.
