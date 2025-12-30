@@ -11,7 +11,7 @@ I will be installing Ubuntu 24.04.3 LTS.
 Ubuntu uses around 25GB. I should have around 85GB left over. 
 
 https://ubuntu.com/download/desktop
-I used an 8GB USB stick. The ISO file is 6GB
+I used an 8GB SD card with USB-SD adapter. The ISO file is 6GB
 
 I used Raspberry Pi Imager to erase and flash the drive 
 (it works remarkably well, despite Windows 10 errors saying otherwise)
