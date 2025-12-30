@@ -87,6 +87,8 @@ sudo apt install git librsvg2-bin locales make python3-saneyaml python3-sphinx-r
 
 sudo apt install fonts-freefont-otf latexmk tex-gyre texlive-fonts-extra texlive-fonts-recommended texlive-lang-all texlive-latex-extra texlive-latex-recommended texlive-xetex
 
+(yes i know, that should have been my first approach, but sometimes using a tutorial for a project similar to mine seems more interesting at first, at lesat)
+
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
 
 Then I will move to a different ISA, most likely.
