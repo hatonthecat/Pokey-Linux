@@ -44,6 +44,23 @@ The 0:32 mark gets a little confusiung because it's not clear if the command wor
 
 So I will resume copying the tutorial and include the ones from the webpage, possibly out of order. 
 
+The video uses a slightly shorter command- it includes everything in the webpage up until :
+
+"sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm"
+
+When I tried to use the entire command, it said "command not found." Possiblky one of the instructions later on were not recognized, or incorrect, or both:
+
+$ sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm python3-subunit mesa-common-dev zstd liblz4-tool
+
+Maybe I will need to install the rest separately (it might be in the later part of the video.)
+
+errors: unable to locate package libegl1-mesa
+unable locate package pylint3 (possibly newer version and it got moved).
+
+Also got an error: externally-managed-environment. This is probably a newb error (even this discussion points to a common workaround that is NOT recommended: https://discuss.python.org/t/the-most-popular-advice-on-the-internet-for-error-externally-managed-environment-is-to-force-packages-to-be-system-installed/56900)
+
+So I guess I need to figure out which packages are official python and which are not authorized, at least to be run system wide, and should look into the virtual enviornment option.
+
 
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools. Then I will move to a different ISA, most likely.
