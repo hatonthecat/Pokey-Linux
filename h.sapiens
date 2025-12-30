@@ -31,3 +31,5 @@ Programs (or Apps, in the smartphone era), can be called an "Oasis." Intentional
 The wallpaper shall remain the default wallpaper for at least 40 days.
 
 None of these guidelines are required, but they "really tie the room together."
+
+Version naming: Version will use 2 decimals after each version number, with 0.0.1-0.4.9 being reserved for alpha releases, and 0.5.0-0.9.9 being reserved for beta releases. A maximum of ten versions after the first and second decimal (i.e: 0.0.10 is not allowed; it must increase the digit after the first decimal once 0.0.9 reaches a new revision. 0.1.0 is what some softwares might consider 0.10. This has less to do with obsolete UTF schemes, and more with readability. A version 0.18 can appear smaller than a version 0.0.2. Therefore 0.1.8 reads more clearly, as three digits appear in all versions of the software, implying there will only be a maximum of 999 versions. Once version 9.9.9 is reached (if it does), a double digit may be considered for the digit only before the first decimal (i.e 100.0.1, 100.9.9, with the two digits after the decimals retaining up to 9 digits for versioning.)   
