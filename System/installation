@@ -118,9 +118,25 @@ https://youtu.be/ddwaLPzezuo?t=9
 $ mkdir yocto
 $ cd yocto
 
-$ git clone git://git.yoctoproject.org/poky
+$ git clone git://git.yoctoproject.org/poky (221MB as of this writing - it was 179MB in 2021)
 $ cd poky
-$ git checkout -b dunfell origin/dunfell
+$ git checkout -b dunfell origin/dunfell (Dunfell is Yocto 3.1, so might it be as easy as just changing the letters to scarthgap? more or less)
+
+I cd'd to poky and then ran:
+
+$git checkout -b scarthgap origin/scarthgap
+
+Preserving the format to see if it would run (the 5.0 has a script file to run instead/in addition, but first I tried that and got this:
+
+"branch 'scarthgap" set up to track 'origin\scarthgap
+
+"Switched to a new branch scarthgap'. So maybe it worked?
+
+Obviously I don't want to mix the directories where builds get made, but some are created by default.
+
+Maybe I will try this next $ scripts/install-buildtools
+
+Maybe this build is a chimera at best, and a chimera at best.
 
 $ source oe-init-build-env <name of your build directory>
 
@@ -130,7 +146,8 @@ $ bitbake core-image-sato
 
 "Depending on your CPU capability, it may take anywhere from few tens of minutes to maybe even a few hours (took 2.5 hours for us!)."
 
-It will be curious of what the build time will be on this 4 threaded CPU. I imagine the SSD should help, but I assume they are using one too (in 2021, i'd expect). But who knows, maybe mine will take 5 hrs.
+It will be curious of what the build time will be on this 4 threaded CPU. I imagine the SSD should help, but I assume they are using one too (in 2021, i'd expect). 
+But who knows, maybe mine will take 5 hrs.
 
 Do I even have qemu installed yet? Checking soon.
 
