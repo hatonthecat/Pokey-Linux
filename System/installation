@@ -81,13 +81,13 @@ sudo apt-get install build-essential chrpath cpio debianutils diffstat file gawk
 
 Progress^ this prompted 17.1MB of additional packages, so it got what the 2021 tutorial missed (no surprises, but eh)
 
-$ locale --all-locales | grep en_US.utf8
+$ locale --all-locales | grep en_US.utf8 (already set)
 
 $ sudo dpkg-reconfigure locales
 
-sudo apt install git librsvg2-bin locales make python3-saneyaml python3-sphinx-rtd-theme sphinx
+sudo apt install git librsvg2-bin locales make python3-saneyaml python3-sphinx-rtd-theme sphinx (added 31MB)
 
-sudo apt install fonts-freefont-otf latexmk tex-gyre texlive-fonts-extra texlive-fonts-recommended texlive-lang-all texlive-latex-extra texlive-latex-recommended texlive-xetex
+sudo apt install fonts-freefont-otf latexmk tex-gyre texlive-fonts-extra texlive-fonts-recommended texlive-lang-all texlive-latex-extra texlive-latex-recommended texlive-xetex (4,428M additional disk space needed, wowza lol)
 
 (yes i know, that should have been my first approach, but sometimes using a tutorial for a project similar to mine seems more interesting at first, at lesat)
 
