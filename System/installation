@@ -372,7 +372,21 @@ but your builds will be much faster on a system with as much RAM and as many CPU
 
 Somehow this increased because I had over 98 GB free when I started the build.
 
+9:02AM
 
+The 74GB tmp file is in the trash, but it's been preparing for a while. There are a lot of files, so that is to be expected. I pressed delete a 2nd time, and now i might have slowed it down. It shouldn't get this close to a full disk, almost at the risk of needing to reformat it. It's like the weight of the bad estimate from yesterday's build is carrying over into today.
+
+Should have just built the core-image-minimal build from the start. 
+
+9:20AM The deletion took a while. nearly 30 minutes. It seemed to have been doing nothing (or showing no progress bar despite disk activity) so I tried to press empty trash again and it had an error. but fortunately said the trash was now empty and the File System in System monitor shows the disk space increased from 4GB to to 20GB incrementally. i am not sure if it is just counting the space and i can reboot or, if is still deleting.
+
+I tried to uncomment the shared state mirror, to enable the JSDeliver CDN, which the reference manual local.conf file said was faster and recommended, but it didn't specify exactly which Line and SSTATE Mirror to uncomment, and which URL, if any, to type in for that CDN.
+
+82.4GB remaining after tmp folder fully flushed.
+
+https://wiki.yoctoproject.org/wiki/Minimal_Image#Dependencies (an early build from 2011)
+
+https://docs.yoctoproject.org/dev/ref-manual/variables.html#term-SSTATE_MIRRORS It would be far simpler/more accurate if there was a text editor that counts the lines and can help pinpoint where a configuration edit should take place. There can always be extra space to add configurations past a default set of lines (e.g. 50 or 100), so that they don't interfere with a section where they can easily be found (provided additional lines aren't added superfluously)  Maybe this exists for the Yocto files somewhere, I just haven't found it.
 
 -----
 Do I even have qemu installed yet? Checking soon.
