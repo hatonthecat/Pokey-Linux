@@ -279,6 +279,36 @@ especially if it shares some of the same build files/ "Shared State" drive/state
 (to avoid that long 2 hour Yocto linux kernel download at <1MB/s - some videos showed 11MB/s download, so it could have been a different mirror). 
 Then I will delete the work directory.
 
+11:12PM
+-- 
+28%. rust-llvm is one of the larger compilations. 1hr and 16minutes and only 23% complete- that meanns it will take 5 hrs.
+Some of the Sato Images for newer Yoctos range from 750MB to higher. 
+the .wic files can be written to SD cards using DD, but a safer method (and faster) is the bmap-tools
+https://medium.com/os-systems/using-the-bmaptool-to-record-disk-images-safely-and-quickly-80d92147c5f6
+https://github.com/intel/bmap-tools
+https://www.reddit.com/r/yocto/comments/zs0qlk/coreimagesato_for_rpi3b/
+ways to reduce size of yocto: https://lists.yoctoproject.org/g/yocto/topic/size_of_production_os_image/113066816
+"For image sizes, it is contextual, there is poky-tiny Distro policy
+template, that can build images (core-image-minimal ) < 8MB, with some
+effort you can reduce it more depending upon what you expect the device to do.'
+
+https://downloads.yoctoproject.org/releases/yocto/yocto-5.0/machines/qemu/qemux86-64/?C=S&O=D precompiled images as a test reference.
+Minimal is around 77MB (an increase from the stated 40MB, which was likely in Yocto 3.0 or 4.0)
+
+I am not sure which version contains the X window manager- possible the one with rootfs.wic. 
+Found a video with one running a Sato image with X in Qemu in 2018:
+https://www.youtube.com/watch?v=JpyYy21bfdc
+
+Do they even make phones with this Window System? Seems fairly obscure, for a reference build.
+I read somewhere PostmarketOS is built from an early Yocto project GUI/desktop environment.
+https://en.wikipedia.org/wiki/PostmarketOS#Gallery Hildon?
+
+It seems some earlier Yocto versions had more trouble controlling the memory allocation for default thread allocation. 
+Apparently fewer threads needed to be allocated so it wouldn't run out of memory, but my Lenovo doesn't seem to have this problem, possibly because the RAM size is proportional to the thread needs.
+I read somewhere that 1.5GB of RAM per thread/core(if not hyperthreaded) is ideal- In this case, it occasionally reaches above 5GB, but doesn't get too close to 6GB. 
+This is preferrable to it hovering closer to 6GB, even if it completes better. 
+So whatever problems it had before might have gotten fixed, or the reference build is relatively lightweight compared to a larger distro (e.g. 4GB in size), and runs into that memory ceiling on a dual core i3 with HT and with 6GB. 
+
 -----
 Do I even have qemu installed yet? Checking soon.
 
