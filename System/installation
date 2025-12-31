@@ -437,6 +437,23 @@ The build started with around 91GB free.
 
 The tasks indicate the action, and "do_compile" appears alongside "do_fetch" and "do_install", and I do see network activity alongside compiling. This should save some time.
 
+"Using the rm_work class will delete the work directories of completed builds and actually only has a very small impact on build times, 
+especially if you tune the mount parameters so the write cache timeout is more than a few seconds, as a recipe can often build and be deleted before it needs to even be written to disk." !
+https://stackoverflow.com/questions/55237890/how-to-clean-free-space (2019)
+
+I'm hoping they fixed that by now? Is there a way to check if any built packages got deleted before they were written?
+
+find build/sstate-cache -type f -mtime +1 -delete 
+(2025) https://docs.yoctoproject.org/dev/dev-manual/disk-space.html 
+
+Different commands of course, but I plan to set mine to 1 day unless my compile time is more than 24 hrs, which I don't plan on any large builds. Curious if there is a way to add this to a local.conf file rather than run it routinely.
+
+"You could use -atime instead of -mtime if the partition isn’t mounted with the noatime option for a read only cache. "
+
+find /path/to/sstate-cache -type f -atime +60 -delete 
+(2019) https://stackoverflow.com/questions/55237890/how-to-clean-free-space
+
+It's currently at 47% complete (1920/4077 tasks), with around 61.0GB disk storage available. I will be dismayed if it uses more than the remaining 61GB to compile a 78MB binary (core-image-minimal), but it's 2025- actually it will be 2026 tomorrow, so the jury's out on whether it will complete in the next 11 hrs.
 
 ----
 Do I even have qemu installed yet? Checking soon.
