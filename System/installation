@@ -175,7 +175,9 @@ https://lists.yoctoproject.org/g/poky/topic/problem_run_bitbake_on/111656575
 
 But you need to have sudo permission.
 
-    "Disable this restriction on the entire system for one boot by executing echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns. This setting is lost on reboot. This similar to the previous behaviour, but it does not mitigate against kernel exploits that abuse the unprivileged user namespaces feature.
+    "Disable this restriction on the entire system for one boot by executing echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns. 
+This setting is lost on reboot.
+This similar to the previous behaviour, but it does not mitigate against kernel exploits that abuse the unprivileged user namespaces feature.
 
     Disable this restriction using a persistent setting by adding a new file (/etc/sysctl.d/60-apparmor-namespace.conf) with the following contents:
 
@@ -183,21 +185,25 @@ But you need to have sudo permission.
 
     Reboot. This is similar to the previous behaviour, but it does not mitigate against kernel exploits that abuse the unprivileged user namespaces feature."
 
-I guess I will have to temporarily disable the restriction for this test. There are probably other ways to work around that, but I won't be using this machine for other documents, so the risk is less.
+I guess I will have to temporarily disable the restriction for this test. 
+There are probably other ways to work around that, but I won't be using this machine for other documents, so the risk is less.
 
-I won't enable the persistent option by creating the config file for now, until I understand more of the block (i am guessing it's just the kernel and Ubuntu trying to protect naive users from blindly following online instructions ;)
+I won't enable the persistent option by creating the config file for now, until I understand more of the block
+(i am guessing it's just the kernel and Ubuntu trying to protect naive users from blindly following online instructions ;)
 
 
-The temp option worked. All 4 threads are operating. Parsing takes around 1 minute. 568 Setscene tasks. 1136 tasks. Running 4 at a time. Only 3.4GB out of 6.1GB in use (4.4MB swap). It's downloading and running tasks at the same time.
+The temp option worked. All 4 threads are operating. Parsing takes around 1 minute. 568 Setscene tasks. 1136 tasks. 
+Running 4 at a time. Only 3.4GB out of 6.1GB in use (4.4MB swap). It's downloading and running tasks at the same time.
 At 55% complete. Probably only takes 10 minutes at most.
 
-Binutilis 2.4 took just under 7 minutes and 30 seconds, followerd by glibc, which was around 4 minutes. I am not sure if this refers to the fetching or installing of the packages, but a little over 10 minutes to complete all 1126 tasks. It actually seems to be downloading the tasks right now for te  last 3 rpm and yocto, so that appeared to be the bottleneck (5 GHz and Ethernet wouldn't help- speed is 550KB/s on average )
+Binutilis 2.4 took just under 7 minutes and 30 seconds, followed by glibc, which was around 4 minutes.
+I am not sure if this refers to the fetching or installing of the packages, but a little over 10 minutes to complete all 1136 tasks. 
+It actually seems to be downloading the tasks right now for the last 3 rpm and yocto, so that appeared to be the bottleneck 
+(5 GHz and Ethernet wouldn't help- speed is 550KB/s on average )
+
+The Yocto-linux 6.6.111+git-r0 do_fetch us at 860Kb/s and only at 26% complete. likely a server issue or mirror not running as well as it should?
 
 The bitbake command will happen next. $ bitbake core-image-sato
-
-
-
-
 
 Do I even have qemu installed yet? Checking soon.
 
