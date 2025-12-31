@@ -187,6 +187,16 @@ I guess I will have to temporarily disable the restriction for this test. There 
 
 I won't enable the persistent option by creating the config file for now, until I understand more of the block (i am guessing it's just the kernel and Ubuntu trying to protect naive users from blindly following online instructions ;)
 
+
+The temp option worked. All 4 threads are operating. Parsing takes around 1 minute. 568 Setscene tasks. 1136 tasks. Running 4 at a time. Only 3.4GB out of 6.1GB in use (4.4MB swap). It's downloading and running tasks at the same time.
+At 55% complete. Probably only takes 10 minutes at most.
+
+The bitbake command will happen next. $ bitbake core-image-sato
+
+
+
+
+
 Do I even have qemu installed yet? Checking soon.
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
