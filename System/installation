@@ -455,6 +455,20 @@ find /path/to/sstate-cache -type f -atime +60 -delete
 
 It's currently at 47% complete (1920/4077 tasks), with around 61.0GB disk storage available. I will be dismayed if it uses more than the remaining 61GB to compile a 78MB binary (core-image-minimal), but it's 2025- actually it will be 2026 tomorrow, so the jury's out on whether it will complete in the next 11 hrs.
 
+Helpful tutorial:
+https://cm.e-ale.org/2018/yocto-intro/intro-Yocto-e-ale-elc.pdf
+
+Every recipe produces lots of log output for
+diagnostics and debugging
+➢ Use the Environment to find the log files for a
+given recipe:
+$ bitbake -e hello | grep “^T=”
+T="${HOME}yocto/build/tmp/work/armv5e-poky-linux-gnueabi/hello/1.0.0-r0/temp"
+
+Unrelated thought: I am curious if I can set up Yocto to compile a bunch of mini OSes for ELKS (Embeddable Linux Kernel Subet). Maximum of 16MB address space and 16 bit- will it run faster than 32 bit, since there are fewer pointers? Of course, this might require a 16 bit architecture, or a 32 bit one that can run Thumb2, or something like that.
+https://en.wikipedia.org/wiki/Embeddable_Linux_Kernel_Subset
+
+
 ----
 Do I even have qemu installed yet? Checking soon.
 
