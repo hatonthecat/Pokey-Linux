@@ -306,7 +306,8 @@ https://en.wikipedia.org/wiki/PostmarketOS#Gallery Hildon?
 It seems some earlier Yocto versions had more trouble controlling the memory allocation for default thread allocation. 
 Apparently fewer threads needed to be allocated so it wouldn't run out of memory, but my Lenovo doesn't seem to have this problem, possibly because the RAM size is proportional to the thread needs.
 I read somewhere that 1.5GB of RAM per thread/core(if not hyperthreaded) is ideal- In this case, it occasionally reaches above 5GB, but doesn't get too close to 6GB. 
-This is preferrable to it hovering closer to 6GB, even if it completes better. 
+This is preferrable to it hovering closer to 6GB, even if it completes faster.
+(I'd rather it complete slower than crash and have to start over, even if that has largely been prevented in newer versions).
 So whatever problems it had before might have gotten fixed, or the reference build is relatively lightweight compared to a larger distro (e.g. 4GB in size), and runs into that memory ceiling on a dual core i3 with HT and with 6GB. 
 
 -----
