@@ -488,6 +488,16 @@ The Motorola 68020, released in 1984, had a 32-bit address space, giving it a ma
 
 56% complete and 55.5GB left. 
 
+4:23pm
+
+It crashed, but not entirely on its own. In an attempt to screenshot the build at 90% memory, the build crashed and reverted to a terminal screen and rebooted X.
+
+I hadn't actually uncommented of the "INHERIT += "rm_work" so I will run the fetch all (I was betting on the idea that the minimimal might have more space left over this time and wouldn't need to delete files as it built), then enable it.
+
+The yocto linux took another 90 minutes, so that will be unavoidable. 
+
+It's possible either setting will allow it to run fine under 6GB but skipping the fetch alone might have caused it more memory usage.
+
 ----
 Do I even have qemu installed yet? Checking soon.
 
