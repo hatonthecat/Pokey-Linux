@@ -146,7 +146,9 @@ If you don’t specify a name, a build directory named build is automatically cr
 
 This way I know it worked. 
 
-The next instructions I will try out the minimal build, which should require the least compile time. It seems like the Sato environment is still developed/featured- i did speculate what happened to that mobile enviroment in the h.sapiens file of this main repository. I obviously don't know enough about Yocto development, but I probably haven't looked hard enough for mobile desktop environments.
+The next instructions I will try out the minimal build, which should require the least compile time.
+It seems like the Sato environment is still developed/featured- i did speculate what happened to that mobile enviroment in the h.sapiens file of this main repository. 
+I obviously don't know enough about Yocto development, but I probably haven't looked hard enough for mobile desktop environments.
 
 https://www.linkedin.com/posts/michaelopdenacker_important-change-for-the-next-yocto-releases-activity-7393585408602718208-4mfm
 
@@ -154,7 +156,9 @@ https://www.linkedin.com/posts/michaelopdenacker_important-change-for-the-next-y
 
 Former releases of Yocto (Walnascar, Scarthgap, Kirkstone) are not impacted."
 
-Apparently this change affects _a_ Poky directory (on the git repository or the local, or both), but it doesn't affect the 5.0 release. "Important change for the next Yocto releases: the  "poky" repository is no longer maintained as a combo layer. You now have to switch to individual clones of bitbake, openembedded-core, meta-yocto and yocto-docs, or use the new "bitbake-setup" tool.
+Apparently this change affects _a_ Poky directory (on the git repository or the local, or both), but it doesn't affect the 5.0 release. 
+
+"Important change for the next Yocto releases: the  "poky" repository is no longer maintained as a combo layer. You now have to switch to individual clones of bitbake, openembedded-core, meta-yocto and yocto-docs, or use the new "bitbake-setup" tool.
 
 $ source oe-init-build-env <name of your build directory>
 
@@ -394,8 +398,45 @@ Maybe this exists for the Yocto files somewhere, I just haven't found it.
 
 Edit: Found it under the Settings icon in the top right of the editor-> Show Line Mumbers. I added INHERIT += "rm_work" at line 287. That should be fine, right? Hopefully the conf file doesn't get belatedly parsed and reaches line 287 after it runs out of disk space ;)
 
+i tried to setup "bitbake core-image-minimal" but it said bitbake command not found. Seems to be a fairly common issue, possibly due to rebooting. This seems to identify the cause:
+https://community.nxp.com/t5/i-MX-Processors/Bitbake-not-working/td-p/1289060
 
------
+"You need to source environment setup scripts everytime you boot your PC or switch to another terminal."
+
+I re-disabled the app armor temporarily, and then it still didn't work, so I deleted the entire Poky directory (10.2GB). 
+
+re-ran git clone git://git.yoctoproject.org/poky then cd'd to poky and reran:
+
+$git checkout -b scarthgap origin/scarthgap
+
+and re-ran $ source oe-init-build-env
+
+then ran bitbake core-image-minimal. 
+
+It's downloading now. 
+
+hopefully the Yocto-linux 6.6.111+git-r0 do_fetch isn't as large or as slow as before. 
+
+(unsure if the file is the same for the minimal, but there are 4077 tasks).
+
+Oh wait, I just realized I skipped the bitbake core-image-minimal --runall=fetch command and went straight into the bitbake. 
+
+I guess this is an optional step because it still went through, and it is fetching the files now, but lets me know there are 4077 tasks (compared to the over 9000 for the Sato one). 
+
+Maybe it is programmed to run both for expert users, I guess it's better to allow for a pit stop since the fetch process can take a while. 
+
+Especially if the files needed to be analyzed for errors. 
+
+Maybe this option has the added benefit of baking and fetching when the threads aren't saturated, although they are.
+
+Since I did enable the INHERIT += "rm_work, it's likely the folder/storage will be smaller after it is finished baking, 
+
+but I won't know how much is really used for the full build (but I am sure somewhere on the web that number is known).
+
+The build started with around 91GB free.
+
+
+----
 Do I even have qemu installed yet? Checking soon.
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
