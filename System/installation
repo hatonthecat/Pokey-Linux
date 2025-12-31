@@ -386,7 +386,14 @@ I tried to uncomment the shared state mirror, to enable the JSDeliver CDN, which
 
 https://wiki.yoctoproject.org/wiki/Minimal_Image#Dependencies (an early build from 2011)
 
-https://docs.yoctoproject.org/dev/ref-manual/variables.html#term-SSTATE_MIRRORS It would be far simpler/more accurate if there was a text editor that counts the lines and can help pinpoint where a configuration edit should take place. There can always be extra space to add configurations past a default set of lines (e.g. 50 or 100), so that they don't interfere with a section where they can easily be found (provided additional lines aren't added superfluously)  Maybe this exists for the Yocto files somewhere, I just haven't found it.
+https://docs.yoctoproject.org/dev/ref-manual/variables.html#term-SSTATE_MIRRORS 
+
+It would be far simpler/more accurate if there was a text editor that counts the lines and can help pinpoint where a configuration edit should take place. 
+There can always be extra space to add configurations past a default set of lines (e.g. 50 or 100), so that they don't interfere with a section where they can easily be found (provided additional lines aren't added superfluously)  
+Maybe this exists for the Yocto files somewhere, I just haven't found it.
+
+Edit: Found it under the Settings icon in the top right of the editor-> Show Line Mumbers. I added INHERIT += "rm_work" at line 287. That should be fine, right? Hopefully the conf file doesn't get belatedly parsed and reaches line 287 after it runs out of disk space ;)
+
 
 -----
 Do I even have qemu installed yet? Checking soon.
