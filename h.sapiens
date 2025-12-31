@@ -30,7 +30,7 @@ Development of this software is not being prioritized as I am more focused on in
 
 The analogy of a JukeBox storing records, or CDs, only makes sense in this case if the desserts are singles, and not albums.
 
-The kexec method, while more advanced, may allow a more microkernel-like environment, and minimize rebooting times, if any.
+The kexec method, while more advanced, may allow a more microkernel-like environment, and minimize rebooting times, if any. The analogy is that the kexec loads a new "image" (single app OS) without interrupting the flow of the wheel (engine).
 
 It can resemble more a Kodak Carousel, than a JukeBox, which elicits a more mechanical and slower rebooting process. https://www.youtube.com/watch?v=rq3n2sJ43Hg
 
