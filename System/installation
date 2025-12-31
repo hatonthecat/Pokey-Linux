@@ -231,6 +231,15 @@ Storage is at 79.8GB.
 I imagine this will decrease as compile time progresses, but hopefully not below 30GB. 
 Who knows. It's fine if 5GB is left over since I can always delete build after it is complete or move it.
 
+08:36PM
+-------
+gettext is at the configure stage.
+gcc cross x86_64-13.4 is at 16minutes of compilation, along with libunistring and openssl. 
+RAM usage at 5.5GB (90%), and CPUS all at 100%. 
+No ETA but 8% complete with 826/9505 tasks complete.
+
+
+-----
 Do I even have qemu installed yet? Checking soon.
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
