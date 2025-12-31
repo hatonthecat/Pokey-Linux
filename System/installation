@@ -218,6 +218,15 @@ Possibly unpacking as the threads' utilization are 75%+ and using 4.1GB of RAM n
 
 The bitbake command will happen next. $ bitbake core-image-sato
 
+at 8:02pm local time, it has completed fetching.
+The compile is now running. There are 9505 tasks. 
+CPU threads are all at 100%. RAM only at 2.2GB/6.1GB currently. 
+I have screenshots but will upload them when completed.
+
+Setscene summary: Wanted 4107 Local 0 Mirrors 0 Missed 4107 Current 568 (0% Match, 12% Complete)
+
+5% complete. (603 of 9505). I think it might take 7-8 hrs. More CPU bottlenecked than anything. Fortunately it is a laptop with a fan, and the room temperature isn't too warm.
+
 Do I even have qemu installed yet? Checking soon.
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
