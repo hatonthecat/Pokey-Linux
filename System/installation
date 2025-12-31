@@ -227,6 +227,10 @@ Setscene summary: Wanted 4107 Local 0 Mirrors 0 Missed 4107 Current 568 (0% Matc
 
 5% complete. (603 of 9505). I think it might take 7-8 hrs. More CPU bottlenecked than anything. Fortunately it is a laptop with a fan, and the room temperature isn't too warm.
 
+Storage is at 79.8GB.
+I imagine this will decrease as compile time progresses, but hopefully not below 30GB. 
+Who knows. It's fine if 5GB is left over since I can always delete build after it is complete or move it.
+
 Do I even have qemu installed yet? Checking soon.
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
