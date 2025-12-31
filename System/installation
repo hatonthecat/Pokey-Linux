@@ -218,6 +218,8 @@ Possibly unpacking as the threads' utilization are 75%+ and using 4.1GB of RAM n
 
 The bitbake command will happen next. $ bitbake core-image-sato
 
+Compiling Sato
+----
 at 8:02pm local time, it has completed fetching.
 The compile is now running. There are 9505 tasks. 
 CPU threads are all at 100%. RAM only at 2.2GB/6.1GB currently. 
@@ -240,6 +242,18 @@ No ETA but 8% complete with 826/9505 tasks complete.
 
 Swap is using incrementally more space- 1.2GB (26%) out of 4.3GB. 
 Naybe this isn't a problem, yet.
+
+
+9:35pm
+======
+
+Approximately 90 minutes after compilation commenced, progress at 17% (1654 of 9505 tasks complete). 
+GCC cross took over an hour - maybe 90 minutes. 
+
+Since I don't plan to create images more than 500MB, the compile times should only get faster as I test smaller images and then manually remove what can be from the ~40MB core-image-minimal. 
+If the rate of compilation remains steady, it should take no more than 9 hrs (100% / 17% is 588, or nearly 6 x 90 minutes, or 540 minutes. 
+It's actually at 18% now, so could move faster if the largest packages run slower.
+Laptop is not hot- only 2GB of RAM in use. 
 
 -----
 Do I even have qemu installed yet? Checking soon.
