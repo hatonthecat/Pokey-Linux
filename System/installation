@@ -255,6 +255,30 @@ If the rate of compilation remains steady, it should take no more than 9 hrs (10
 It's actually at 18% now, so could move faster if the largest packages run slower.
 Laptop is not hot- only 2GB of RAM in use. 
 
+9:50PM
+
+22%- moving relatively fast.
+
+54.1GB remaining - it's normal to unpack the source to this size, but I am curious if I will run out of space before this completes. 
+
+According to this manual, I might only use around 62GB without applying the statement modifier:
+https://docs.yoctoproject.org/5.0/dev-manual/disk-space.html
+
+"24.1 Conserving Disk Space During Builds
+
+To help conserve disk space during builds, you can add the following statement to your project’s local.conf configuration file found in the Build Directory:
+
+INHERIT += "rm_work"
+
+Adding this statement deletes the work directory used for building a recipe once the recipe is built. For more information on “rm_work”, see the rm_work class in the Yocto Project Reference Manual.
+
+When you inherit this class and build a core-image-sato image for a qemux86-64 machine from an Ubuntu 22.04 x86-64 system, you end up with a final disk usage of 22 Gbytes instead of 90 Gbytes. However, 40 Gbytes of initial free disk space are still needed to create temporary files before they can be deleted."
+
+I might want to keep it to try to install the minimal build after the Sato image is completed, 
+especially if it shares some of the same build files/ "Shared State" drive/state 
+(to avoid that long 2 hour Yocto linux kernel download at <1MB/s - some videos showed 11MB/s download, so it could have been a different mirror). 
+Then I will delete the work directory.
+
 -----
 Do I even have qemu installed yet? Checking soon.
 
