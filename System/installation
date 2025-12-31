@@ -201,7 +201,7 @@ I am not sure if this refers to the fetching or installing of the packages, but 
 It actually seems to be downloading the tasks right now for the last 3 rpm and yocto, so that appeared to be the bottleneck 
 (5 GHz and Ethernet wouldn't help- speed is 550KB/s on average )
 
-The Yocto-linux 6.6.111+git-r0 do_fetch us at 860Kb/s and only at 26% complete. likely a server issue or mirror not running as well as it should?
+The Yocto-linux 6.6.111+git-r0 do_fetch is at 860Kb/s and only at 26% complete. likely a server issue or mirror not running as well as it should?
 
 It seems to have slowed down to a crawl around 26%. 
 It's now at 30% and 20 minutes elapsed (for just that 2nd to last task #1135- fetching began around 30 minute ago).
@@ -212,7 +212,9 @@ Possible similar references:
 https://news.ycombinator.com/item?id=42722659 
 https://www.youtube.com/watch?v=SvxZ3MtraSA
 
-It appears to have completed downloading sometime while I was away. at 1hr and 26 minutes, it's 87% complete with another task as part of task 1135. Possibly unpacking as the threads' utilization are 75%+ and using 4.1GB of RAM now (+490MB of swap)
+It appears to have completed downloading sometime while I was away. 
+At 1hr and 26 minutes, it's 87% complete with another task as part of task 1135/1136. 
+Possibly unpacking as the threads' utilization are 75%+ and using 4.1GB of RAM now (+490MB of swap).
 
 The bitbake command will happen next. $ bitbake core-image-sato
 
