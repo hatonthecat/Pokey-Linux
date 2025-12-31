@@ -212,6 +212,8 @@ Possible similar references:
 https://news.ycombinator.com/item?id=42722659 
 https://www.youtube.com/watch?v=SvxZ3MtraSA
 
+It appears to have completed downloading sometime while I was away. at 1hr and 26 minutes, it's 87% complete with another task as part of task 1135. Possibly unpacking as the threads' utilization are 75%+ and using 4.1GB of RAM now (+490MB of swap)
+
 The bitbake command will happen next. $ bitbake core-image-sato
 
 Do I even have qemu installed yet? Checking soon.
