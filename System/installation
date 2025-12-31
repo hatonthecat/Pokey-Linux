@@ -468,6 +468,25 @@ T="${HOME}yocto/build/tmp/work/armv5e-poky-linux-gnueabi/hello/1.0.0-r0/temp"
 Unrelated thought: I am curious if I can set up Yocto to compile a bunch of mini OSes for ELKS (Embeddable Linux Kernel Subet). Maximum of 16MB address space and 16 bit- will it run faster than 32 bit, since there are fewer pointers? Of course, this might require a 16 bit architecture, or a 32 bit one that can run Thumb2, or something like that.
 https://en.wikipedia.org/wiki/Embeddable_Linux_Kernel_Subset
 
+Actually, it would need 24 address pins to support 16MB of address:
+
+https://en.wikipedia.org/wiki/RAM_limit#16_address_bits,_16_address_pins
+
+"16 bit addresses, 24 address pins: 80286
+
+The Intel 80286 CPU used a 24-bit addressing scheme. Each memory location was byte-addressable. This results in a total addressable space of 224 × 1 byte = 16,777,216 bytes or 16 megabytes. The 286 and later could also function in real mode, which imposed the addressing limits of the 8086 processor. The 286 had support for virtual memory.
+32 bit addresses, 24 address pins
+
+The Intel 80386SX was an economical version of the 386DX. It had a 24-bit addressing scheme, in contrast to 32-bit in the 386DX. Like the 286, the 386SX can address only up to 16 megabytes of memory.
+
+The Motorola 68000 had a 24-bit address space, allowing it to access up to 16 megabytes of memory.
+32 bit addresses, 32 address pins
+
+The 386DX had 32-bit addressing, allowing it to address up to 4 gigabytes (4096 megabytes) of memory.
+
+The Motorola 68020, released in 1984, had a 32-bit address space, giving it a maximum addressable memory limit of 4 GB. All following chips in the Motorola 68000 series inherited this limit. "
+
+56% complete and 55.5GB left. 
 
 ----
 Do I even have qemu installed yet? Checking soon.
