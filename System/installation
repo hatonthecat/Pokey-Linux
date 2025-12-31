@@ -433,7 +433,9 @@ Since I did enable the INHERIT += "rm_work, it's likely the folder/storage will 
 
 but I won't know how much is really used for the full build (but I am sure somewhere on the web that number is known).
 
-The build started with around 91GB free.
+The build started with around 91GB free. 
+
+The tasks indicate the action, and "do_compile" appears alongside "do_fetch" and "do_install", and I do see network activity alongside compiling. This should save some time.
 
 
 ----
