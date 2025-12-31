@@ -238,6 +238,8 @@ gcc cross x86_64-13.4 is at 16minutes of compilation, along with libunistring an
 RAM usage at 5.5GB (90%), and CPUS all at 100%. 
 No ETA but 8% complete with 826/9505 tasks complete.
 
+Swap is using incrementally more space- 1.2GB (26%) out of 4.3GB. 
+Naybe this isn't a problem, yet.
 
 -----
 Do I even have qemu installed yet? Checking soon.
