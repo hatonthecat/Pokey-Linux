@@ -203,6 +203,15 @@ It actually seems to be downloading the tasks right now for the last 3 rpm and y
 
 The Yocto-linux 6.6.111+git-r0 do_fetch us at 860Kb/s and only at 26% complete. likely a server issue or mirror not running as well as it should?
 
+It seems to have slowed down to a crawl around 26%. 
+It's now at 30% and 20 minutes elapsed (for just that 2nd to last task #1135- fetching began around 30 minute ago).
+This might take 60+ minutes. Threads are around 25% utilized (per thread). 
+Possibly lots of users download this default file and its possible that the speed is rate limited by the server due to preventing bots from saturating their bandwidth.
+
+Possible similar references:
+https://news.ycombinator.com/item?id=42722659 
+https://www.youtube.com/watch?v=SvxZ3MtraSA
+
 The bitbake command will happen next. $ bitbake core-image-sato
 
 Do I even have qemu installed yet? Checking soon.
