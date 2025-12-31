@@ -191,6 +191,8 @@ I won't enable the persistent option by creating the config file for now, until 
 The temp option worked. All 4 threads are operating. Parsing takes around 1 minute. 568 Setscene tasks. 1136 tasks. Running 4 at a time. Only 3.4GB out of 6.1GB in use (4.4MB swap). It's downloading and running tasks at the same time.
 At 55% complete. Probably only takes 10 minutes at most.
 
+Binutilis 2.4 took just under 7 minutes and 30 seconds, followerd by glibc, which was around 4 minutes. I am not sure if this refers to the fetching or installing of the packages, but a little over 10 minutes to complete all 1126 tasks. It actually seems to be downloading the tasks right now for te  last 3 rpm and yocto, so that appeared to be the bottleneck (5 GHz and Ethernet wouldn't help- speed is 550KB/s on average )
+
 The bitbake command will happen next. $ bitbake core-image-sato
 
 
