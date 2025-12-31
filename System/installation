@@ -310,6 +310,70 @@ This is preferrable to it hovering closer to 6GB, even if it completes faster.
 (I'd rather it complete slower than crash and have to start over, even if that has largely been prevented in newer versions).
 So whatever problems it had before might have gotten fixed, or the reference build is relatively lightweight compared to a larger distro (e.g. 4GB in size), and runs into that memory ceiling on a dual core i3 with HT and with 6GB. 
 
+8:00
+I woke up around 7:30 to see the Bitbake process at 64%, which was fine, but then I noticed I literally had only 5GB left, and within minutes, it dropped to 2.9GB.
+I attempted to add the INHERIT += "rm_work" to the local.conf file in hopes that it might delete completed work files, but it froze as I was searching for the line or attempted to add it (it didn't specify where).
+
+I powered down the system the system (holding the power button), and 2.5GB was remaining.
+
+I checked the size of the entire Yocto folder, and it counted 6.8m files totalling 84.1 GB. 
+
+I checked the  size of the tmp folder, and it was 73.9GB alone.
+
+So I will add INHERIT += "rm_work" to the local.conf file.
+
+I am not sure if it will delete temporary files no longer needed DURING the build (assuming it knows what files won't need to be sprinked/sampled later on) 
+An intelligent build instruction will know what files won't be needed after a certain number of steps, which would actually help building systems on smaller drives, 
+because even if it needs 90-140GB in total space, it doesn't need to store them all in the temp folder at any given time, especially if it is unpacking some files and only running them once early on in the build. 
+That way, the largest file might only consume 40GB and the binary itself might use another 40GB, but still less than the total maximum size if all the files are in use.
+
+Fortunately, there is an option to delete completed build files from the ${TMPDIR}/work DURING the build process, 
+and 6.135 rm_work in the manual does specify that it does delete before the final binary/build is complete
+(there has to be a better word to distinguish between temporary build files/sources and the compiled file/binary- i want to say "built" but that might be confused with temporary build files)
+
+6.135 rm_work
+
+The rm_work class supports deletion of temporary workspace, which can ease your hard drive demands during builds.
+
+The OpenEmbedded build system can use a substantial amount of disk space during the build process. 
+A portion of this space is the work files under the ${TMPDIR}/work directory for each recipe.
+Once the build system generates the packages for a recipe, the work files for that recipe are no longer needed. 
+However, by default, the build system preserves these files for inspection and possible debugging purposes. 
+If you would rather have these files deleted to save disk space as the build progresses, you can enable rm_work by adding the following to your local.conf file, which is found in the Build Directory:
+
+INHERIT += "rm_work"
+
+https://docs.yoctoproject.org/dev/ref-manual/classes.html#ref-classes-rm-work
+
+The local.conf says the tmp directory can be deleted and it will rebuild, but I don't plan to use the Sato image, so I will just delete the temp folder for now. 
+The minimal boot file will be downloaded. Ubuntu also completed an update so I might only have around 91GB left over, but that doesn't include all the files in the Yocto folder, so possibly less.
+
+
+https://docs.yoctoproject.org/dev/dev-manual/disk-space.html#conserving-disk-space-during-builds
+
+"Adding this statement deletes the work directory used for building a recipe once the recipe is built. For more information on “rm_work”, see the rm_work class in the Yocto Project Reference Manual.
+
+When you inherit this class and build a core-image-sato image for a qemux86-64 machine from an Ubuntu 22.04 x86-64 system, you end up with a final disk usage of 22 Gbytes instead of 140 Gbytes. 
+However, 40 Gbytes of initial free disk space are still needed to create temporary files before they can be deleted." I am unsure if this is a typo. 
+
+https://docs.yoctoproject.org/5.1/ref-manual/system-requirements.html#minimum-free-disk-space It doesn't show a minimum size for 5.0 (I don't see it in the manual, but it says for 5.1
+
+
+"1.1 Minimum Free Disk Space
+
+To build an image such as core-image-sato for the qemux86-64 machine, you need a system with at least 90 Gbytes of free disk space.
+However, much more disk space will be necessary to build more complex images, to run multiple builds and to cache build artifacts, improving build efficiency.
+
+If you have a shortage of disk space, see the “Conserving Disk Space” section of the Development Tasks Manual.
+1.2 Minimum System RAM
+
+You will manage to build an image such as core-image-sato for the qemux86-64 machine with as little as 8 Gbytes of RAM on an old system with 4 CPU cores, 
+but your builds will be much faster on a system with as much RAM and as many CPU cores as possible."
+
+Somehow this increased because I had over 98 GB free when I started the build.
+
+
+
 -----
 Do I even have qemu installed yet? Checking soon.
 
