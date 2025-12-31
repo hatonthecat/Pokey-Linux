@@ -12,7 +12,7 @@ The new “Blinky” release of Poky is based on X11/GTK+/Matchbox, much like th
 
 It's unclear what exactly became of this effort, other than it ultimately got discontinued.
 
-Pokey Linux isn't focused on developing a single operating system like Ubuntu or Fedora, but a "jukebox" system of multi-boot single app OSes contained within a bootloader, along with a web-based repository of said distros.
+Pokey Linux isn't focused on developing a single operating system like Ubuntu or Fedora, but a "jukebox" system of multi-boot single app OSes contained within a bootloader, along with a web-based repository of said distros. The JukeBox is an attempt to develop a pseduo-micro kernel, since it is not one in any conventional way. it is a microkernel by other means, in that it takes a long/est detour route to isolate tasks to the point of rebooting or via kexec, if possible.
 
 The reasoning of this project can be found in the adjacent repositories ("Solar FemtoTX, Solar Kernel, Solar Circuits, Low-Power-E-Paper OS), but Pokey Linux aims to be actual code-based. 
 
