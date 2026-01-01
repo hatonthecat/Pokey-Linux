@@ -498,17 +498,29 @@ The yocto linux took another 90 minutes, so that will be unavoidable.
 
 It's possible either setting will allow it to run fine under 6GB but skipping the fetch alone might have caused it more memory usage.
 
-9:47AM
+9:47AM (1-1)
 
 Compile completed around 3:30AM. Threads were limited to 2 towards the end by the software, seemingly because the memory was low or to ensure it completed. I had closed browsers and the system monitor, in case it would freeze again, but it left around 65GB after the compilation completed, and the minimal image was around 12MB, which ran in Qemu, using "$ runqemu qemux86-64" (i left out nographic, although I can try that next). 6GB RAM is probably sufficient for lighter builds, but definitely won't be compiling much larger images on it.
 
 
  
 
-----
+---- (this was written before the image was compiled -12-30 or 12-31)
 Do I even have qemu installed yet? Checking soon.
 
 It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to get familiar with the autopopulating directories of Yocto and its related tools.
 
 Then I will move to a different ISA, most likely.
 
+--
+
+1:02 PM 
+--
+
+Qemu was able to run this morning, but rebooting the PC lost the shell/environment
+
+When it was running (after bitbake completed) https://github.com/hatonthecat/Pokey-Linux/blob/main/System/screenshots/Screenshot%20from%202026-01-01%2003-35-09.png
+
+I thought it might have to do with app armor or loading the binary from the right directory, but when I cd'd to the tmp folder where one of the ext4 and bz2 files was located, nothing happened.
+
+sudo didn't seem to work, although i might not have invoked it correctly.
