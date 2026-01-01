@@ -1,0 +1,1708 @@
+2057059 16:46:49.988655 --- Starting bitbake server pid 2057059 at 2025-12-31 16:46:49.988618 ---
+2057059 16:46:49.990076 Started bitbake server pid 2057059
+2057059 16:46:49.990365 Entering server connection loop
+2057059 16:46:49.990404 Lockfile is: /home/rivian/code/yocto/poky/build/bitbake.lock
+Socket is /home/rivian/code/yocto/poky/build/bitbake.sock (True)
+2057059 16:46:49.990908 Accepting [<socket.socket fd=6, family=1, type=1, proto=0, laddr=bitbake.sock>] ([])
+2057059 16:46:49.991801 Processing Client
+2057059 16:46:49.991875 Connecting Client
+2057059 16:46:49.992406 Running command ['setFeatures', [2, 1]]
+2057059 16:46:49.992466 Sending reply (None, None)
+2057059 16:46:49.992577 Command Completed (socket: True)
+2057059 16:46:49.993626 Running command ['updateConfig', {'halt': True, 'force': False, 'invalidate_stamp': None, 'dry_run': False, 'dump_signatures': [], 'extra_assume_provided': [], 'profile': False, 'prefile': [], 'postfile': [], 'server_timeout': None, 'nosetscene': False, 'setsceneonly': False, 'skipsetscene': False, 'runall': ['fetch'], 'runonly': None, 'writeeventlog': None, 'build_verbose_shell': False, 'build_verbose_stdout': False, 'default_loglevel': 20, 'debug_domains': {}}, {'SHELL': '/bin/bash', 'BB_ENV_PASSTHROUGH_ADDITIONS': 'ALL_PROXY BBPATH_EXTRA BB_LOGCONFIG BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'PWD': '/home/rivian/code/yocto/poky/build', 'LOGNAME': 'rivian', 'HOME': '/home/rivian', 'BBPATH': '/home/rivian/code/yocto/poky/build', 'USER': 'rivian', 'PATH': '/home/rivian/code/yocto/poky/scripts:/home/rivian/code/yocto/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'LC_ALL': 'en_US.UTF-8', 'SESSION_MANAGER': 'local/rivian-ThinkPad-E420:@/tmp/.ICE-unix/2046500,unix/rivian-ThinkPad-E420:/tmp/.ICE-unix/2046500', 'QT_ACCESSIBILITY': '1', 'COLORTERM': 'truecolor', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_MENU_PREFIX': 'gnome-', 'OE_ADDED_PATHS': '/home/rivian/code/yocto/poky/scripts:/home/rivian/code/yocto/poky/bitbake/bin:', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'XMODIFIERS': '@im=ibus', 'DESKTOP_SESSION': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XDG_SESSION_TYPE': 'wayland', 'SYSTEMD_EXEC_PID': '2046544', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.5A5FI3', 'USERNAME': 'rivian', 'IM_CONFIG_PHASE': '1', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'VTE_VERSION': '7600', 'WAYLAND_DISPLAY': 'wayland-0', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/dbcd3c22_88d6_4b60_a724_94508731fb45', 'GNOME_SETUP_DISPLAY': ':1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'XDG_SESSION_CLASS': 'user', 'PYTHONPATH': '/home/rivian/code/yocto/poky/bitbake/lib:', 'TERM': 'xterm-256color', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GNOME_TERMINAL_SERVICE': ':1.150', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'DISPLAY': ':0', 'SHLVL': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'QT_IM_MODULE': 'ibus', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com ', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'GDMSESSION': 'ubuntu', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'BUILDDIR': '/home/rivian/code/yocto/poky/build', 'OLDPWD': '/home/rivian/code/yocto/poky', '_': '/home/rivian/code/yocto/poky/bitbake/bin/bitbake'}, ['/home/rivian/code/yocto/poky/bitbake/bin/bitbake', 'core-image-minimal', '--runall=fetch']]
+2057059 16:46:51.297347 Base config valid
+/usr/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=2057059) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+2057059 16:46:51.445503 Sending reply (None, None)
+2057059 16:46:51.445761 Command Completed (socket: True)
+2057059 16:46:51.446120 Running command ['getVariable', 'BBINCLUDELOGS']
+2057059 16:46:51.446331 Sending reply ('yes', None)
+2057059 16:46:51.446421 Command Completed (socket: True)
+2057059 16:46:51.446765 Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+2057059 16:46:51.446852 Sending reply (None, None)
+2057059 16:46:51.446950 Command Completed (socket: True)
+2057059 16:46:51.447162 Running command ['getSetVariable', 'BB_CONSOLELOG']
+2057059 16:46:51.447430 Sending reply ('/home/rivian/code/yocto/poky/build/tmp/log/cooker/qemux86-64/20251231224650.log', None)
+2057059 16:46:51.447521 Command Completed (socket: True)
+2057059 16:46:51.447726 Running command ['getSetVariable', 'BB_LOGCONFIG']
+2057059 16:46:51.447779 Sending reply (None, None)
+2057059 16:46:51.447856 Command Completed (socket: True)
+2057059 16:46:51.452460 Running command ['getUIHandlerNum']
+2057059 16:46:51.452550 Sending reply (1, None)
+2057059 16:46:51.452657 Command Completed (socket: True)
+2057059 16:46:51.453033 Running command ['setEventMask', 1, 20, {'BitBake.RunQueue.HashEquiv': 19, 'BitBake.SigGen.HashEquiv': 19}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+2057059 16:46:51.453115 Sending reply (True, None)
+2057059 16:46:51.453206 Command Completed (socket: True)
+2057059 16:46:51.453370 Running command ['getVariable', 'BB_DEFAULT_TASK']
+2057059 16:46:51.453425 Sending reply ('build', None)
+2057059 16:46:51.453524 Command Completed (socket: True)
+2057059 16:46:51.453793 Running command ['setConfig', 'cmd', 'build']
+2057059 16:46:51.453961 Sending reply (None, None)
+2057059 16:46:51.454160 Command Completed (socket: True)
+2057059 16:46:51.454417 Running command ['buildTargets', ['core-image-minimal'], 'build']
+2057059 16:46:51.454726 Registering idle function <bound method Command.runAsyncCommand of <bb.command.Command object at 0x7ee274923dd0>>
+2057059 16:46:51.454798 Sending reply (True, None)
+2057059 16:46:51.454970 Command Completed (socket: True)
+2057059 16:46:51.553544 Parsing started
+/home/rivian/code/yocto/poky/meta/classes-global/sanity.bbclass:489: DeprecationWarning: This process (pid=2057059) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+/usr/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=2057059) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+2057059 16:46:52.224126 Parse cache valid
+--2025-12-31 16:48:45--  http://downloads.yoctoproject.org/releases/uninative/4.9/x86_64-nativesdk-libc-4.9.tar.xz
+Resolving downloads.yoctoproject.org (downloads.yoctoproject.org)... 37.27.135.249, 2a01:4f9:3070:3985::2
+Connecting to downloads.yoctoproject.org (downloads.yoctoproject.org)|37.27.135.249|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7164424 (6.8M) [application/octet-stream]
+Saving to: ‘/home/rivian/code/yocto/poky/build/downloads/uninative/4c03d1ed2b7b4e823aca4a1a23d8f2e322f1770fc10e859adcede5777aff4f3a/x86_64-nativesdk-libc-4.9.tar.xz.tmp’
+
+
+2025-12-31 16:49:29 (162 KB/s) - ‘/home/rivian/code/yocto/poky/build/downloads/uninative/4c03d1ed2b7b4e823aca4a1a23d8f2e322f1770fc10e859adcede5777aff4f3a/x86_64-nativesdk-libc-4.9.tar.xz.tmp’ saved [7164424/7164424]
+
+/home/rivian/code/yocto/poky/bitbake/bin/bitbake-worker:210: DeprecationWarning: This process (pid=2057257) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+/home/rivian/code/yocto/poky/bitbake/lib/hashserv/sqlite.py:448: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes
+  cursor.execute(query, data)
+2057059 16:49:31.559726 Registering idle function <function BBCooker.buildTargets.<locals>.buildTargetsIdle at 0x7ee26b07a7a0>
+2057059 16:49:31.559806 Removing idle function <bound method Command.runAsyncCommand of <bb.command.Command object at 0x7ee274923dd0>>
+2057059 18:10:49.586484 Removing idle function <function BBCooker.buildTargets.<locals>.buildTargetsIdle at 0x7ee26b07a7a0> at idleFinish
+2057059 18:10:49.864137 Processing Client
+2057059 18:10:49.890007 Disconnecting Client (socket: True)
+2057059 18:10:49.979311 Parse cache invalidated
+2057059 18:10:49.979973 No timeout, exiting.
+2057059 18:10:50.080782 Exiting (socket: True)
+2057059 18:10:50.614558 Exiting as we could obtain the lock
+sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/rivian/code/yocto/poky/build/bitbake-cookerdaemon.log' mode='a+' encoding='UTF-8'>
+2070589 18:14:32.245961 --- Starting bitbake server pid 2070589 at 2025-12-31 18:14:32.245925 ---
+2070589 18:14:32.247437 Started bitbake server pid 2070589
+2070589 18:14:32.247799 Entering server connection loop
+2070589 18:14:32.247857 Lockfile is: /home/rivian/code/yocto/poky/build/bitbake.lock
+Socket is /home/rivian/code/yocto/poky/build/bitbake.sock (True)
+2070589 18:14:32.248770 Accepting [<socket.socket fd=6, family=1, type=1, proto=0, laddr=bitbake.sock>] ([])
+2070589 18:14:32.249799 Processing Client
+2070589 18:14:32.249880 Connecting Client
+2070589 18:14:32.250430 Running command ['setFeatures', [2, 1]]
+2070589 18:14:32.250490 Sending reply (None, None)
+2070589 18:14:32.250612 Command Completed (socket: True)
+2070589 18:14:32.251692 Running command ['updateConfig', {'halt': True, 'force': False, 'invalidate_stamp': None, 'dry_run': False, 'dump_signatures': [], 'extra_assume_provided': [], 'profile': False, 'prefile': [], 'postfile': [], 'server_timeout': None, 'nosetscene': False, 'setsceneonly': False, 'skipsetscene': False, 'runall': [], 'runonly': None, 'writeeventlog': None, 'build_verbose_shell': False, 'build_verbose_stdout': False, 'default_loglevel': 20, 'debug_domains': {}}, {'SHELL': '/bin/bash', 'BB_ENV_PASSTHROUGH_ADDITIONS': 'ALL_PROXY BBPATH_EXTRA BB_LOGCONFIG BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'PWD': '/home/rivian/code/yocto/poky/build', 'LOGNAME': 'rivian', 'HOME': '/home/rivian', 'BBPATH': '/home/rivian/code/yocto/poky/build', 'USER': 'rivian', 'PATH': '/home/rivian/code/yocto/poky/scripts:/home/rivian/code/yocto/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'LC_ALL': 'en_US.UTF-8', 'SESSION_MANAGER': 'local/rivian-ThinkPad-E420:@/tmp/.ICE-unix/2046500,unix/rivian-ThinkPad-E420:/tmp/.ICE-unix/2046500', 'QT_ACCESSIBILITY': '1', 'COLORTERM': 'truecolor', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_MENU_PREFIX': 'gnome-', 'OE_ADDED_PATHS': '/home/rivian/code/yocto/poky/scripts:/home/rivian/code/yocto/poky/bitbake/bin:', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'XMODIFIERS': '@im=ibus', 'DESKTOP_SESSION': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XDG_SESSION_TYPE': 'wayland', 'SYSTEMD_EXEC_PID': '2046544', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.5A5FI3', 'USERNAME': 'rivian', 'IM_CONFIG_PHASE': '1', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'VTE_VERSION': '7600', 'WAYLAND_DISPLAY': 'wayland-0', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/dbcd3c22_88d6_4b60_a724_94508731fb45', 'GNOME_SETUP_DISPLAY': ':1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'XDG_SESSION_CLASS': 'user', 'PYTHONPATH': '/home/rivian/code/yocto/poky/bitbake/lib:', 'TERM': 'xterm-256color', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GNOME_TERMINAL_SERVICE': ':1.150', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'DISPLAY': ':0', 'SHLVL': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'QT_IM_MODULE': 'ibus', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com ', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'GDMSESSION': 'ubuntu', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'BUILDDIR': '/home/rivian/code/yocto/poky/build', 'OLDPWD': '/home/rivian/code/yocto/poky', '_': '/home/rivian/code/yocto/poky/bitbake/bin/bitbake'}, ['/home/rivian/code/yocto/poky/bitbake/bin/bitbake', 'core-image-minimal']]
+2070589 18:14:32.944234 Base config valid
+/home/rivian/code/yocto/poky/bitbake/bin/bitbake-worker:210: DeprecationWarning: This process (pid=2070658) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+/home/rivian/code/yocto/poky/bitbake/bin/bitbake-worker:210: DeprecationWarning: This process (pid=2487803) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2488118
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2701647
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2703892
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2703487
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2749174
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2750544
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2754048
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2755671
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2757110
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2757600
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2824245
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2824308
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2824318
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 2984518
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3066498
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3067139
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3067268
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3148714
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3149045
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3149110
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3148685
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 3149340
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3149533
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3150778
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3152077
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3152735
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3152765
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3153396
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3154015
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3149638
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 2
+Client pids: 3154407
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3154429
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 5
+Client pids: 3154749
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3154749
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3156747
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3157178
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3157290
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3158028
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3158242
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3158381
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3157717
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3158887
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 3
+Client pids: 3159107
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3159107
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3159576
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3159788
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3159816
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3164529
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 3167800
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3167903
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3170473
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3170534
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3176135
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3176407
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3176443
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3179853
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3183899
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3184267
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3184291
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3230375
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3230722
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3231667
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3231907
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3244905
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3245301
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3245772
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3263603
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3263925
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3277468
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3278300
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3264356
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3278374
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3283776
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3284019
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3284111
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3302761
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3305777
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3303967
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3305951
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3320843
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3321312
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3307723
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3321426
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3324945
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3325338
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3327241
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3327355
+Server will shut down after all clients exit.
+/usr/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=2070589) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+2070589 18:14:32.971944 Sending reply (None, None)
+2070589 18:14:32.972223 Command Completed (socket: True)
+2070589 18:14:32.972551 Running command ['getVariable', 'BBINCLUDELOGS']
+2070589 18:14:32.972711 Sending reply ('yes', None)
+2070589 18:14:32.972815 Command Completed (socket: True)
+2070589 18:14:32.973033 Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+2070589 18:14:32.973103 Sending reply (None, None)
+2070589 18:14:32.973195 Command Completed (socket: True)
+2070589 18:14:32.973434 Running command ['getSetVariable', 'BB_CONSOLELOG']
+2070589 18:14:32.973657 Sending reply ('/home/rivian/code/yocto/poky/build/tmp/log/cooker/qemux86-64/20260101001432.log', None)
+2070589 18:14:32.973753 Command Completed (socket: True)
+2070589 18:14:32.973964 Running command ['getSetVariable', 'BB_LOGCONFIG']
+2070589 18:14:32.974019 Sending reply (None, None)
+2070589 18:14:32.974108 Command Completed (socket: True)
+2070589 18:14:32.978548 Running command ['getUIHandlerNum']
+2070589 18:14:32.978620 Sending reply (1, None)
+2070589 18:14:32.978731 Command Completed (socket: True)
+2070589 18:14:32.979030 Running command ['setEventMask', 1, 20, {'BitBake.SigGen.HashEquiv': 19, 'BitBake.RunQueue.HashEquiv': 19}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+2070589 18:14:32.979097 Sending reply (True, None)
+2070589 18:14:32.979191 Command Completed (socket: True)
+2070589 18:14:32.979441 Running command ['getVariable', 'BB_DEFAULT_TASK']
+2070589 18:14:32.979491 Sending reply ('build', None)
+2070589 18:14:32.979581 Command Completed (socket: True)
+2070589 18:14:32.979799 Running command ['setConfig', 'cmd', 'build']
+2070589 18:14:32.979864 Sending reply (None, None)
+2070589 18:14:32.979959 Command Completed (socket: True)
+2070589 18:14:32.980196 Running command ['buildTargets', ['core-image-minimal'], 'build']
+2070589 18:14:32.980364 Registering idle function <bound method Command.runAsyncCommand of <bb.command.Command object at 0x77db2b272180>>
+2070589 18:14:32.980394 Sending reply (True, None)
+2070589 18:14:32.980485 Command Completed (socket: True)
+2070589 18:14:33.071614 Parsing started
+2070589 18:14:35.643649 Parse cache valid
+2070589 18:14:38.460961 Registering idle function <function BBCooker.buildTargets.<locals>.buildTargetsIdle at 0x77db219336a0>
+2070589 18:14:38.461034 Removing idle function <bound method Command.runAsyncCommand of <bb.command.Command object at 0x77db2b272180>>
+2070589 18:40:52.408866 Running command ['ping']
+2070589 18:40:52.408956 Sending reply ('Still alive!', None)
+2070589 18:40:52.409116 Command Completed (socket: True)
+2070589 18:43:09.659650 Running command ['ping']
+2070589 18:43:09.659731 Sending reply ('Still alive!', None)
+2070589 18:43:09.659908 Command Completed (socket: True)
+2070589 18:47:19.524992 Running command ['ping']
+2070589 18:47:19.525067 Sending reply ('Still alive!', None)
+2070589 18:47:19.525229 Command Completed (socket: True)
+2070589 18:51:34.637484 Running command ['ping']
+2070589 18:51:34.637569 Sending reply ('Still alive!', None)
+2070589 18:51:34.637750 Command Completed (socket: True)
+2070589 18:52:34.648842 Running command ['ping']
+2070589 18:52:34.648927 Sending reply ('Still alive!', None)
+2070589 18:52:34.649110 Command Completed (socket: True)
+2070589 18:54:12.356487 Running command ['ping']
+2070589 18:54:12.356568 Sending reply ('Still alive!', None)
+2070589 18:54:12.356763 Command Completed (socket: True)
+2070589 18:56:08.787827 Running command ['ping']
+2070589 18:56:08.787904 Sending reply ('Still alive!', None)
+2070589 18:56:08.788084 Command Completed (socket: True)
+2070589 18:58:04.301490 Running command ['ping']
+2070589 18:58:04.301566 Sending reply ('Still alive!', None)
+2070589 18:58:04.301751 Command Completed (socket: True)
+2070589 18:59:04.518484 Running command ['ping']
+2070589 18:59:04.518561 Sending reply ('Still alive!', None)
+2070589 18:59:04.518770 Command Completed (socket: True)
+2070589 19:04:45.172854 Running command ['ping']
+2070589 19:04:45.173556 Sending reply ('Still alive!', None)
+2070589 19:04:45.174420 Command Completed (socket: True)
+2070589 19:06:36.030645 Running command ['ping']
+2070589 19:06:36.030728 Sending reply ('Still alive!', None)
+2070589 19:06:36.030916 Command Completed (socket: True)
+2070589 19:54:27.464348 Running command ['ping']
+2070589 19:54:27.464464 Sending reply ('Still alive!', None)
+2070589 19:54:27.466647 Command Completed (socket: True)
+2070589 19:55:27.699736 Running command ['ping']
+2070589 19:55:27.699812 Sending reply ('Still alive!', None)
+2070589 19:55:27.699997 Command Completed (socket: True)
+2070589 19:57:22.567803 Running command ['ping']
+2070589 19:57:22.568472 Sending reply ('Still alive!', None)
+2070589 19:57:22.568689 Command Completed (socket: True)
+2070589 19:58:22.787996 Running command ['ping']
+2070589 19:58:22.788072 Sending reply ('Still alive!', None)
+2070589 19:58:22.788227 Command Completed (socket: True)
+2070589 20:02:28.544447 Running command ['ping']
+2070589 20:02:28.544523 Sending reply ('Still alive!', None)
+2070589 20:02:28.544691 Command Completed (socket: True)
+2070589 20:03:52.200886 Running command ['ping']
+2070589 20:03:52.200965 Sending reply ('Still alive!', None)
+2070589 20:03:52.201143 Command Completed (socket: True)
+2070589 20:31:20.031957 Running command ['ping']
+2070589 20:31:20.032024 Sending reply ('Still alive!', None)
+2070589 20:31:20.032168 Command Completed (socket: True)
+2070589 20:32:20.259023 Running command ['ping']
+2070589 20:32:20.259098 Sending reply ('Still alive!', None)
+2070589 20:32:20.259272 Command Completed (socket: True)
+2070589 20:48:28.996419 Running command ['ping']
+2070589 20:48:28.996490 Sending reply ('Still alive!', None)
+2070589 20:48:28.996654 Command Completed (socket: True)
+2070589 20:49:29.268829 Running command ['ping']
+2070589 20:49:29.268911 Sending reply ('Still alive!', None)
+2070589 20:49:29.269096 Command Completed (socket: True)
+2070589 20:50:29.519346 Running command ['ping']
+2070589 20:50:29.519425 Sending reply ('Still alive!', None)
+2070589 20:50:29.519597 Command Completed (socket: True)
+2070589 20:52:03.989060 Running command ['ping']
+2070589 20:52:03.989137 Sending reply ('Still alive!', None)
+2070589 20:52:03.989329 Command Completed (socket: True)
+2070589 20:53:04.055403 Running command ['ping']
+2070589 20:53:04.055753 Sending reply ('Still alive!', None)
+2070589 20:53:04.055951 Command Completed (socket: True)
+2070589 20:54:04.086353 Running command ['ping']
+2070589 20:54:04.086430 Sending reply ('Still alive!', None)
+2070589 20:54:04.086605 Command Completed (socket: True)
+2070589 20:57:32.290251 Running command ['ping']
+2070589 20:57:32.290327 Sending reply ('Still alive!', None)
+2070589 20:57:32.290503 Command Completed (socket: True)
+2070589 21:11:33.219975 Running command ['ping']
+2070589 21:11:33.220116 Sending reply ('Still alive!', None)
+2070589 21:11:33.220441 Command Completed (socket: True)
+2070589 21:13:04.276347 Running command ['ping']
+2070589 21:13:04.276428 Sending reply ('Still alive!', None)
+2070589 21:13:04.276598 Command Completed (socket: True)
+2070589 21:20:40.979055 Running command ['ping']
+2070589 21:20:40.979134 Sending reply ('Still alive!', None)
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3363748
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3365290
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3366952
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3367386
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3367936
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3368513
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3368840
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3368903
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3379804
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3380562
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3380735
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3321476
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 2
+Client pids: 3383582
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3384253
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3386410
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3387409
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3387886
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3387980
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3403817
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3404233
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3404353
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3455399
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3458169
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3453127
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3459643
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3470031
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 2
+Client pids: 3476839
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3478162
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3489817
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3490091
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3491676
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3491957
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3497852
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3503196
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3505929
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3506709
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3510094
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3510536
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3513455
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3516399
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3516841
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3516973
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3517835
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3518265
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3518898
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3518990
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3515330
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3569873
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3592433
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3594848
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3574783
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3595233
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3597115
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3597350
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3610459
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3610597
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3610792
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3610828
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3595084
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3611429
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3611462
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3611557
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3611682
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3611923
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3612474
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3612612
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3612279
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 2
+Client pids: 3613694
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3613722
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3616218
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3616666
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 2
+Client pids: 3617401
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3617428
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3624416
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3624959
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3626240
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3626445
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3642171
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3642734
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 3643832
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3643889
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3652763
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3646779
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3653879
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3655788
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3655733
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3656020
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3656191
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3656754
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3656820
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3655635
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3657220
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3661838
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3662685
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3665479
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3665870
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3666239
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3666402
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3674271
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3674676
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 2
+Client pids: 3675265
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3675345
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3675688
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3676148
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3676761
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3676874
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3690873
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3691647
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3695143
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3698635
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3691900
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3699603
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3752208
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3753036
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3729395
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3753962
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3753115
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3754157
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3774636
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3774710
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3797084
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3799312
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3802875
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3803274
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3804395
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3805117
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3805374
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3823364
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3826345
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3829083
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3829374
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3830192
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3828895
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3830244
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3807783
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3834362
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3846860
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3847809
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3847904
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3850112
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3850871
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3850662
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3851625
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3851026
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3851787
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3851687
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3854696
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3860339
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3861944
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3861712
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3862322
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3862270
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3863703
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3864039
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 5
+Client pids: 3855991
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3864527
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3863783
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3865096
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3865435
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3875532
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3875880
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3869733
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3876011
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3877475
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3877598
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3889955
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3890957
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3892250
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3892464
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3892783
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3893229
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3893452
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3894097
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3894754
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3895109
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3838199
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3896846
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3897036
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3897126
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3897176
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3897396
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3897645
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3903394
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3903579
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3903894
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 3897445
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3904141
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3905546
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3917287
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3917410
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 3917784
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3917854
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3904019
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3923302
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3877126
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3923753
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3925986
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3926068
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3927000
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3927708
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3935684
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3924220
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3937498
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3941106
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3941191
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3941385
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3942369
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3941685
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3942694
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 3943342
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3943430
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3945631
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3953381
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3954315
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3955537
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3955783
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3966653
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3969616
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3985920
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3987090
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 3976642
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3997447
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3997633
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3991031
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4021169
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4021354
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4022377
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4022649
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4059560
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4061417
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4063979
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4064663
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4066069
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4068374
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4070118
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4070148
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4070423
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4071141
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4074870
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4074901
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4075308
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4075345
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4075380
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4075459
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4076879
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4076912
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4077758
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4078060
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4076336
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4080291
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 4085596
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4086085
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4087602
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4088487
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4090461
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4090838
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4091095
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4092084
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4099251
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4099603
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4100855
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4101187
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4108325
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4108460
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4108888
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4108961
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4109980
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4110022
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4110767
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4110936
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4111418
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4109991
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4111529
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4111744
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4112693
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4112758
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4112731
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4112971
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 3949574
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 4112927
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4114149
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4114184
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4114228
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4113117
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4114924
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4115904
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4115432
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4116187
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 4115224
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4117532
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4117736
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4117690
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4118022
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 4
+Client pids: 4116426
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4132062
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4132257
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4132716
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4132810
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4133876
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4134199
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4140073
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4140259
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4141422
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4141443
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4141631
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4141663
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4118208
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4142721
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4142751
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4143066
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4143219
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4154562
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4155766
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4157162
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4157551
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4157933
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4158679
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4160061
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 4160244
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 19689 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 23642 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 24837 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 24838 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 24841 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 26678 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 26739 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 25631 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 28241 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 34915 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 34927 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 2
+Client pids: 34948 34949 
+Server will shut down after all clients exit.
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 34949 
+Server will shut down after all clients exit.
+2070589 21:20:40.979350 Command Completed (socket: True)
+2070589 21:21:41.184183 Running command ['ping']
+2070589 21:21:41.184269 Sending reply ('Still alive!', None)
+2070589 21:21:41.184418 Command Completed (socket: True)
+2070589 21:30:16.126214 Running command ['ping']
+2070589 21:30:16.126332 Sending reply ('Still alive!', None)
+2070589 21:30:16.126511 Command Completed (socket: True)
+2070589 21:34:10.769339 Running command ['ping']
+2070589 21:34:10.769425 Sending reply ('Still alive!', None)
+2070589 21:34:10.769649 Command Completed (socket: True)
+2070589 21:35:18.316214 Running command ['ping']
+2070589 21:35:18.324041 Sending reply ('Still alive!', None)
+2070589 21:35:18.324322 Command Completed (socket: True)
+2070589 21:36:39.944475 Running command ['ping']
+2070589 21:36:39.944554 Sending reply ('Still alive!', None)
+2070589 21:36:39.944732 Command Completed (socket: True)
+2070589 21:38:42.683419 Running command ['ping']
+2070589 21:38:42.683499 Sending reply ('Still alive!', None)
+2070589 21:38:42.683678 Command Completed (socket: True)
+2070589 21:51:03.484002 Running command ['ping']
+2070589 21:51:03.484079 Sending reply ('Still alive!', None)
+2070589 21:51:03.484249 Command Completed (socket: True)
+2070589 21:52:36.723194 Running command ['ping']
+2070589 21:52:36.723290 Sending reply ('Still alive!', None)
+2070589 21:52:36.724321 Command Completed (socket: True)
+2070589 21:53:36.735009 Running command ['ping']
+2070589 21:53:36.735081 Sending reply ('Still alive!', None)
+2070589 21:53:36.735290 Command Completed (socket: True)
+2070589 21:55:18.606670 Running command ['ping']
+2070589 21:55:18.606744 Sending reply ('Still alive!', None)
+2070589 21:55:18.606909 Command Completed (socket: True)
+2070589 21:57:18.529270 Running command ['ping']
+2070589 21:57:18.529347 Sending reply ('Still alive!', None)
+2070589 21:57:18.529528 Command Completed (socket: True)
+2070589 21:58:18.571662 Running command ['ping']
+2070589 21:58:18.571738 Sending reply ('Still alive!', None)
+2070589 21:58:18.571928 Command Completed (socket: True)
+2070589 22:01:18.907184 Running command ['ping']
+2070589 22:01:18.907278 Sending reply ('Still alive!', None)
+2070589 22:01:18.907463 Command Completed (socket: True)
+2070589 22:20:42.338325 Running command ['ping']
+2070589 22:20:42.338418 Sending reply ('Still alive!', None)
+2070589 22:20:42.338606 Command Completed (socket: True)
+2070589 22:26:07.379869 Running command ['ping']
+2070589 22:26:07.379947 Sending reply ('Still alive!', None)
+2070589 22:26:07.380134 Command Completed (socket: True)
+2070589 22:27:07.596697 Running command ['ping']
+2070589 22:27:07.596782 Sending reply ('Still alive!', None)
+2070589 22:27:07.597115 Command Completed (socket: True)
+2070589 22:28:41.035765 Running command ['ping']
+2070589 22:28:41.035844 Sending reply ('Still alive!', None)
+2070589 22:28:41.036001 Command Completed (socket: True)
+2070589 22:29:41.258722 Running command ['ping']
+2070589 22:29:41.258801 Sending reply ('Still alive!', None)
+2070589 22:29:41.258980 Command Completed (socket: True)
+2070589 22:30:41.481946 Running command ['ping']
+2070589 22:30:41.482037 Sending reply ('Still alive!', None)
+2070589 22:30:41.482195 Command Completed (socket: True)
+2070589 22:32:17.081463 Running command ['ping']
+2070589 22:32:17.081637 Sending reply ('Still alive!', None)
+2070589 22:32:17.081835 Command Completed (socket: True)
+2070589 22:33:40.029522 Running command ['ping']
+2070589 22:33:40.029601 Sending reply ('Still alive!', None)
+2070589 22:33:40.029785 Command Completed (socket: True)
+2070589 22:34:40.254768 Running command ['ping']
+2070589 22:34:40.254850 Sending reply ('Still alive!', None)
+2070589 22:34:40.255036 Command Completed (socket: True)
+2070589 22:35:40.501941 Running command ['ping']
+2070589 22:35:40.502100 Sending reply ('Still alive!', None)
+2070589 22:35:40.502270 Command Completed (socket: True)
+2070589 22:40:08.476774 Running command ['ping']
+2070589 22:40:10.835866 Sending reply ('Still alive!', None)
+2070589 22:40:10.836103 Command Completed (socket: True)
+2070589 22:45:37.447466 Running command ['ping']
+2070589 22:45:37.447540 Sending reply ('Still alive!', None)
+2070589 22:45:37.447716 Command Completed (socket: True)
+2070589 22:50:50.020521 Running command ['ping']
+2070589 22:50:50.020597 Sending reply ('Still alive!', None)
+2070589 22:50:50.020758 Command Completed (socket: True)
+2070589 22:53:39.198693 Running command ['ping']
+2070589 22:53:39.198770 Sending reply ('Still alive!', None)
+2070589 22:53:39.198929 Command Completed (socket: True)
+2070589 23:44:12.538061 Running command ['ping']
+2070589 23:44:12.543322 Sending reply ('Still alive!', None)
+2070589 23:44:12.549676 Command Completed (socket: True)
+2070589 02:44:10.014706 Running command ['ping']
+2070589 02:44:10.019103 Sending reply ('Still alive!', None)
+2070589 02:44:10.024803 Command Completed (socket: True)
+2070589 02:45:10.156318 Running command ['ping']
+2070589 02:45:10.156391 Sending reply ('Still alive!', None)
+2070589 02:45:10.156554 Command Completed (socket: True)
+2070589 02:46:10.285292 Running command ['ping']
+2070589 02:46:10.285367 Sending reply ('Still alive!', None)
+2070589 02:46:10.285518 Command Completed (socket: True)
+2070589 02:47:10.407070 Running command ['ping']
+2070589 02:47:10.407148 Sending reply ('Still alive!', None)
+2070589 02:47:10.407326 Command Completed (socket: True)
+2070589 02:48:10.518037 Running command ['ping']
+2070589 02:48:10.518112 Sending reply ('Still alive!', None)
+2070589 02:48:10.518268 Command Completed (socket: True)
+2070589 02:49:10.634373 Running command ['ping']
+2070589 02:49:10.634444 Sending reply ('Still alive!', None)
+2070589 02:49:10.634725 Command Completed (socket: True)
+2070589 02:50:10.750944 Running command ['ping']
+2070589 02:50:10.751018 Sending reply ('Still alive!', None)
+2070589 02:50:10.751172 Command Completed (socket: True)
+2070589 02:51:10.880806 Running command ['ping']
+2070589 02:51:10.880894 Sending reply ('Still alive!', None)
+2070589 02:51:10.881058 Command Completed (socket: True)
+2070589 02:52:11.005313 Running command ['ping']
+2070589 02:52:11.013277 Sending reply ('Still alive!', None)
+2070589 02:52:11.013555 Command Completed (socket: True)
+2070589 02:53:11.145331 Running command ['ping']
+2070589 02:53:11.145404 Sending reply ('Still alive!', None)
+2070589 02:53:11.145569 Command Completed (socket: True)
+2070589 02:54:11.266307 Running command ['ping']
+2070589 02:54:11.266384 Sending reply ('Still alive!', None)
+2070589 02:54:11.266552 Command Completed (socket: True)
+2070589 02:55:11.397557 Running command ['ping']
+2070589 02:55:11.397634 Sending reply ('Still alive!', None)
+2070589 02:55:11.397798 Command Completed (socket: True)
+2070589 02:56:11.524036 Running command ['ping']
+2070589 02:56:11.524110 Sending reply ('Still alive!', None)
+2070589 02:56:11.524292 Command Completed (socket: True)
+2070589 02:57:11.649282 Running command ['ping']
+2070589 02:57:11.649351 Sending reply ('Still alive!', None)
+2070589 02:57:11.649502 Command Completed (socket: True)
+2070589 02:58:11.763852 Running command ['ping']
+2070589 02:58:11.772954 Sending reply ('Still alive!', None)
+2070589 02:58:11.773220 Command Completed (socket: True)
+2070589 02:59:11.897554 Running command ['ping']
+2070589 02:59:11.897626 Sending reply ('Still alive!', None)
+2070589 02:59:11.897771 Command Completed (socket: True)
+2070589 03:00:12.015232 Running command ['ping']
+2070589 03:00:12.023835 Sending reply ('Still alive!', None)
+2070589 03:00:12.024090 Command Completed (socket: True)
+2070589 03:01:12.150299 Running command ['ping']
+2070589 03:01:12.150375 Sending reply ('Still alive!', None)
+2070589 03:01:12.150548 Command Completed (socket: True)
+2070589 03:02:12.288037 Running command ['ping']
+2070589 03:02:12.288113 Sending reply ('Still alive!', None)
+2070589 03:02:12.288287 Command Completed (socket: True)
+2070589 03:03:12.400627 Running command ['ping']
+2070589 03:03:12.400703 Sending reply ('Still alive!', None)
+2070589 03:03:12.403013 Command Completed (socket: True)
+2070589 03:04:12.517309 Running command ['ping']
+2070589 03:04:12.517382 Sending reply ('Still alive!', None)
+Server refused shutdown.  Remaining client fds: 1
+Client pids: 82997 
+Server will shut down after all clients exit.
+/home/rivian/code/yocto/poky/bitbake/lib/hashserv/sqlite.py:448: DeprecationWarning: The default datetime adapter is deprecated as of Python 3.12; see the sqlite3 documentation for suggested replacement recipes
+  cursor.execute(query, data)
+2070589 03:04:12.517553 Command Completed (socket: True)
+2070589 03:05:12.629772 Running command ['ping']
+2070589 03:05:12.629848 Sending reply ('Still alive!', None)
+2070589 03:05:12.630028 Command Completed (socket: True)
+2070589 03:06:12.751418 Running command ['ping']
+2070589 03:06:12.751496 Sending reply ('Still alive!', None)
+2070589 03:06:12.751663 Command Completed (socket: True)
+2070589 03:07:12.870314 Running command ['ping']
+2070589 03:07:12.870390 Sending reply ('Still alive!', None)
+2070589 03:07:12.870560 Command Completed (socket: True)
+2070589 03:08:12.987556 Running command ['ping']
+2070589 03:08:12.987631 Sending reply ('Still alive!', None)
+2070589 03:08:12.988997 Command Completed (socket: True)
+2070589 03:09:13.122547 Running command ['ping']
+2070589 03:09:13.122625 Sending reply ('Still alive!', None)
+2070589 03:09:13.122795 Command Completed (socket: True)
+2070589 03:10:13.247268 Running command ['ping']
+2070589 03:10:13.247352 Sending reply ('Still alive!', None)
+2070589 03:10:13.247511 Command Completed (socket: True)
+2070589 03:11:13.376775 Running command ['ping']
+2070589 03:11:13.376849 Sending reply ('Still alive!', None)
+2070589 03:11:13.377040 Command Completed (socket: True)
+2070589 03:12:52.191466 Removing idle function <function BBCooker.buildTargets.<locals>.buildTargetsIdle at 0x77db219336a0> at idleFinish
+2070589 03:12:52.471117 Processing Client
+2070589 03:12:52.475031 Disconnecting Client (socket: True)
+2070589 03:12:52.521406 Parse cache invalidated
+2070589 03:12:52.521552 No timeout, exiting.
+2070589 03:12:52.623327 Exiting (socket: True)
+2070589 03:12:52.837274 Exiting as we could obtain the lock
+sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/rivian/code/yocto/poky/build/bitbake-cookerdaemon.log' mode='a+' encoding='UTF-8'>
+87884 03:34:45.084118 --- Starting bitbake server pid 87884 at 2026-01-01 03:34:45.084071 ---
+87884 03:34:45.085629 Started bitbake server pid 87884
+87884 03:34:45.085934 Entering server connection loop
+87884 03:34:45.085977 Lockfile is: /home/rivian/code/yocto/poky/build/bitbake.lock
+Socket is /home/rivian/code/yocto/poky/build/bitbake.sock (True)
+87884 03:34:45.086503 Accepting [<socket.socket fd=6, family=1, type=1, proto=0, laddr=bitbake.sock>] ([])
+87884 03:34:45.088113 Processing Client
+87884 03:34:45.088186 Connecting Client
+87884 03:34:45.088692 Running command ['setFeatures', [2, 1]]
+87884 03:34:45.088754 Sending reply (None, None)
+87884 03:34:45.088865 Command Completed (socket: True)
+87884 03:34:45.089909 Running command ['updateConfig', {'halt': True, 'force': False, 'invalidate_stamp': None, 'dry_run': False, 'dump_signatures': [], 'extra_assume_provided': [], 'profile': False, 'prefile': [], 'postfile': [], 'server_timeout': None, 'nosetscene': False, 'setsceneonly': False, 'skipsetscene': False, 'runall': [], 'runonly': None, 'writeeventlog': None, 'build_verbose_shell': False, 'build_verbose_stdout': False, 'default_loglevel': 20, 'debug_domains': {}}, {'USER': 'rivian', 'HOME': '/home/rivian', 'BBPATH': '/home/rivian/code/yocto/poky/build', 'LOGNAME': 'rivian', 'MACHINE': 'qemux86-64', 'PATH': '/home/rivian/code/yocto/poky/scripts:/home/rivian/code/yocto/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'SHELL': '/bin/bash', 'PWD': '/home/rivian/code/yocto/poky/build', 'BB_ENV_PASSTHROUGH_ADDITIONS': 'ALL_PROXY BBPATH_EXTRA BB_LOGCONFIG BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'LC_ALL': 'en_US.UTF-8', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'OLDPWD': '/home/rivian/code/yocto/poky', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'BUILDDIR': '/home/rivian/code/yocto/poky/build', 'SYSTEMD_EXEC_PID': '2046544', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com ', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', '_': '/home/rivian/code/yocto/poky/scripts/runqemu', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'rivian', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'SESSION_MANAGER': 'local/rivian-ThinkPad-E420:@/tmp/.ICE-unix/2046500,unix/rivian-ThinkPad-E420:/tmp/.ICE-unix/2046500', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/dbcd3c22_88d6_4b60_a724_94508731fb45', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'OE_ADDED_PATHS': '/home/rivian/code/yocto/poky/scripts:/home/rivian/code/yocto/poky/bitbake/bin:', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.5A5FI3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.150', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rivian/code/yocto/poky/bitbake/lib:', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600'}, ['/home/rivian/code/yocto/poky/bitbake/bin/bitbake', '-e']]
+87884 03:34:45.813000 Base config valid
+/usr/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=87884) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+87884 03:34:45.840973 Sending reply (None, None)
+87884 03:34:45.841344 Command Completed (socket: True)
+87884 03:34:45.841636 Running command ['getVariable', 'BBINCLUDELOGS']
+87884 03:34:45.841801 Sending reply ('yes', None)
+87884 03:34:45.841901 Command Completed (socket: True)
+87884 03:34:45.842263 Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+87884 03:34:45.842333 Sending reply (None, None)
+87884 03:34:45.842427 Command Completed (socket: True)
+87884 03:34:45.842710 Running command ['getSetVariable', 'BB_CONSOLELOG']
+87884 03:34:45.842914 Sending reply ('/home/rivian/code/yocto/poky/build/tmp/log/cooker/qemux86-64/20260101093445.log', None)
+87884 03:34:45.843013 Command Completed (socket: True)
+87884 03:34:45.843283 Running command ['getSetVariable', 'BB_LOGCONFIG']
+87884 03:34:45.843338 Sending reply (None, None)
+87884 03:34:45.843426 Command Completed (socket: True)
+87884 03:34:45.847974 Running command ['getUIHandlerNum']
+87884 03:34:45.848039 Sending reply (1, None)
+87884 03:34:45.848153 Command Completed (socket: True)
+87884 03:34:45.848527 Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+87884 03:34:45.848590 Sending reply (True, None)
+87884 03:34:45.848681 Command Completed (socket: True)
+87884 03:34:45.848990 Running command ['getVariable', 'BB_DEFAULT_TASK']
+87884 03:34:45.849050 Sending reply ('build', None)
+87884 03:34:45.849155 Command Completed (socket: True)
+87884 03:34:45.849455 Running command ['setConfig', 'cmd', 'build']
+87884 03:34:45.849512 Sending reply (None, None)
+87884 03:34:45.849603 Command Completed (socket: True)
+87884 03:34:45.849880 Running command ['getVariable', 'BBTARGETS']
+87884 03:34:45.849929 Sending reply (None, None)
+87884 03:34:45.850014 Command Completed (socket: True)
+87884 03:34:45.850280 Running command ['showEnvironment', None]
+87884 03:34:45.850438 Registering idle function <bound method Command.runAsyncCommand of <bb.command.Command object at 0x75442bf98d70>>
+87884 03:34:45.850459 Sending reply (True, None)
+87884 03:34:45.850543 Command Completed (socket: True)
+87884 03:34:47.277604 Removing idle function <bound method Command.runAsyncCommand of <bb.command.Command object at 0x75442bf98d70>>
+87884 03:34:47.528829 Processing Client
+87884 03:34:47.529270 Disconnecting Client (socket: True)
+87884 03:34:47.530334 No timeout, exiting.
+87884 03:34:47.631614 Exiting (socket: True)
+87884 03:34:47.653111 Exiting as we could obtain the lock
+sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/rivian/code/yocto/poky/build/bitbake-cookerdaemon.log' mode='a+' encoding='UTF-8'>
