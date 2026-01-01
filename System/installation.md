@@ -524,3 +524,5 @@ When it was running (after bitbake completed) https://github.com/hatonthecat/Pok
 I thought it might have to do with app armor or loading the binary from the right directory, but when I cd'd to the tmp folder where one of the ext4 and bz2 files was located, nothing happened.
 
 sudo didn't seem to work, although i might not have invoked it correctly.
+
+the screenshot has an added instruction bitbake -e after the qemu. 
