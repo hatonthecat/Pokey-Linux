@@ -1,4 +1,4 @@
-Installation Steps
+Installation Log
 
 For building Yocto images, I will be using a Lenovo Thinkpad E420 from 2012. 
 It has an i3 2350M (x86-64-v2) with 6GB RAM. It originally came with 4GB DDR3.
@@ -497,6 +497,13 @@ I hadn't actually uncommented of the "INHERIT += "rm_work" so I will run the fet
 The yocto linux took another 90 minutes, so that will be unavoidable. 
 
 It's possible either setting will allow it to run fine under 6GB but skipping the fetch alone might have caused it more memory usage.
+
+9:47AM
+
+Compile completed around 3:30AM. Threads were limited to 2 towards the end by the software, seemingly because the memory was low or to ensure it completed. I had closed browsers and the system monitor, in case it would freeze again, but it left around 65GB after the compilation completed, and the minimal image was around 12MB, which ran in Qemu, using "$ runqemu qemux86-64" (i left out nographic, although I can try that next). 6GB RAM is probably sufficient for lighter builds, but definitely won't be compiling much larger images on it.
+
+
+ 
 
 ----
 Do I even have qemu installed yet? Checking soon.
