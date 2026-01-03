@@ -576,8 +576,20 @@ Perhaps this bug fixed a problem in an even earlier version of AbiWord, but for 
 
 *3:34pm*
 
-I also realize that there may be kernels that already dynamically drop modules and drivers that aren't being used, and some of this work is unnecessary because I haven't studied programming. And that is true, but that dynamic level might only exist or be robust enough in a larger memory environment, especially if that feature has been optimized in later kernels. Older kernels might not have everything I am looking for, but at the same time I can use quick heuristic tests- memory usage- as a way to screen certain OS functions out, and that list is not very large, based on the top system monitor which shows less than 20 commands in the process ID.
+I also realize that there may be kernels that already dynamically drop modules and drivers that aren't being used, and some of this work is unnecessary because I haven't studied programming. And that is true, but that dynamic level might only exist or be robust enough in a larger memory environment, especially if that feature has been optimized in later kernels. Older kernels might not have everything I am looking for, but at the same time I can use quick heuristic tests- memory usage- as a way to screen certain OS functions out, and that list is not very large, based on the top system monitor which shows less than 20 commands in the process ID. https://github.com/hatonthecat/Pokey-Linux/blob/main/Carousel%20Pi.png
 
+12MB (not a Poky image)
+--
+[Xwoaf 1.3 rebuild-screen0.webm](https://github.com/user-attachments/assets/667a8dbd-8a47-4484-86e1-3c2cbfc119f4)
+
+9MB Xwoaf
+--
+
+[Xwoaf 1.3 rebuild-screen0.webm](https://github.com/user-attachments/assets/a5fd1f32-d537-4dc7-8069-50658747285c)
+
+This test was an ironic realization that the default settings used more memory and would not load any apps in 8MB, but by setting Virtual Box to 9MB, then allowing me to change the resolution to 800x600x4 bit, it would use less memory and load apps within 8MB. There might be a config setting that can be compiled with this setting out of the box somewhere, instead of the stock OS, although some of the resolutions show text that is illegible. It could be the wrong graphics card or a virtual machine setting that causes that.
+
+These are the OSes and estimated system sizes that I would like to develop Yocto images towards.
 When i started this project 5 yrs ago, I remember reading this early on: 
 https://www.emcraft.com/imxrt1050-evk-board/what-is-minimal-footprint
 
