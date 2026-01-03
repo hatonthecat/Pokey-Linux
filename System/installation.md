@@ -594,7 +594,7 @@ This test was an ironic realization that the default settings used more memory a
 
 [Xwoaf 1.3 rebuild-screen0.webm](https://github.com/user-attachments/assets/3b706900-7c95-4373-b2ba-dfb39d8136fc)
 
-9MB Test 3  320x200x9 & 640x480x8
+9MB Test 3  320x200x8 & 640x480x8
 --
 
 [Xwoaf 1.3 rebuild-screen0.webm](https://github.com/user-attachments/assets/8064a721-e9af-43c6-a95f-6252d8f06740)
