@@ -526,3 +526,18 @@ I thought it might have to do with app armor or loading the binary from the righ
 sudo didn't seem to work, although i might not have invoked it correctly.
 
 the screenshot has an added instruction bitbake -e after the qemu. 
+
+1/3/2026 Task 2: Load an old kernel onto a new Yocto system (or use an old Yocto version) 
+--
+
+Before I started this project, I was aware of other programs that can compile a kernel, such as Buildroot. Obviously there are pros and cons to using such system, but from what I read, Yocto can automate builds for a number of systems and introduce small variations in each one by running a script, or recipe, with instructions on those variations. This, at least from first impression, seemed to be an ideal software environment to develop Pokey, even for older kernels, of which I am targeting (e.g. linux kernels 2.0-2.6).
+
+Without knowing everything about those systems, there very well be many kernel developers that might recommned Buildroot. But for now, I am getting accustomed to the Yocto build system. Also, yesterday, I drew an illustration of the Boot drive (a microSD card, likely):
+
+https://github.com/hatonthecat/Pokey-Linux/commit/8cfa1824ee2c0862ed29b6eb871098827e156bce
+
+MicroSD storage is cheap in 2026, whereas RAM is of course, not super expensive for small systems under 4GB. However, Since lowering the energy consumption of the single board computer to make it solar powered, the systems need to use less than 8MB, 16MB, and 32MB whenever possible, and an initial "LiveCD" would not include any software (like Libre Office), since none of those programs could fit under a 32MB RAM System Requirement, even if it is installed to the disk and executes in place. Theoretically, some optimizations could take place, but disk IO to a microSD ALSO consumes power, and the purpose of including the microSD into the system is purely to load the OS into RAM, after which the microSD will unmount and run unpowered, until the user wants to load a different application (and by definition of the New Model (see SD card on right panel of this: https://github.com/hatonthecat/Pokey-Linux/blob/main/Kodak%20Carousel%20with%20OS%20analogy.jpg), the Disk is only temporarily accessed at boot, but the system is more or less a RAM disk. One other difference from conventional RAM disks (except for the smallest ones like initrd), is that those live CDS (including DSL), require 128MB RAM+ to uncompress the entire distro into RAM, and have additional RAM left over to run those programs. Thus the tradeoff is not trivial when accounting for hybrid systems that depend on I/O to load the OS, but unlike those live distros, they are only loading 1/64th (in the case of a 1GB microSD Card with sixty four 16MB pre-compiled images to run one app, which is then inflated/unzipped/uncompressed into the RAM as a ramdisk (persistent storage can be set to a different partition of that same uSD disk), but only apps that can fit under 16MB when accounting for the X window system/or frame buffer system and the application to run. 
+
+In some ways, it might resemble MSDOS, which ran single applications is MSDOS mode, even in the early years where Windows 95 was still used. It slightly more performant to run games in MSDOS, because it didn't have to load the whole windows system that wasn't related to the application because the windowed mode used a significant fraction of the systems memory (likely 4MB out of an 8MB system- The Packard Bell Legend 3540 was one example of this in 1996, which was my first PC). 
+
+
