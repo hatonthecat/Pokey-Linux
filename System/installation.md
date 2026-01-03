@@ -574,3 +574,13 @@ I can confirm this. I've had AbiWord documents corrupted. It's not nice to lose 
 I am guessing an old version of AbiWord once set this limit to limit, but not fully prevent crashes.
 Perhaps this bug fixed a problem in an even earlier version of AbiWord, but for those who feel they can be compliant with that modest limit, then the program should perfectly fine- at most requiring the user to save more than one copy or create a series of documents if they surpass the 20 page limit (which is not really a major inconvenience for diarists or people short documentation/composing letters.)
 
+*3:34pm*
+
+I also realize that there may be kernels that already dynamically drop modules and drivers that aren't being used, and some of this work is unnecessary because I haven't studied programming. And that is true, but that dynamic level might only exist or be robust enough in a larger memory environment, especially if that feature has been optimized in later kernels. Older kernels might not have everything I am looking for, but at the same time I can use quick heuristic tests- memory usage- as a way to screen certain OS functions out, and that list is not very large, based on the top system monitor which shows less than 20 commands in the process ID.
+
+When i started this project 5 yrs ago, I remember reading this early on: 
+https://www.emcraft.com/imxrt1050-evk-board/what-is-minimal-footprint
+
+At this time, I am not focusing on whether I want to use an MMU or not, but I realize the benefits of both. NOMMU can run kernels as small as 300KB. Kernels with MMU can be much larger, requiring 6-7MB to load an Xwindow with kernel 2.2 (an early linux 1.x kernel can get X to run under 4MB, but that is far above my capabilities).
+
+This line was intriguing: "Size of external RAM required for run-time Linux operation. The answer we give to our customers when asked how much RAM is needed is the more the better, but no less than 16 MBytes. Admittedly, it may be possible to run some very basic configurations with rootfs mounted from NFS or some external device even out of 2 MBytes but frankly this is more of a joke than a configuration one can build a practical uClinux design on."
