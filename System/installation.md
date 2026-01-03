@@ -543,3 +543,34 @@ https://github.com/tindzk/GTK GTK 1.2.10 and Abiword can run in as little as 16M
 In some ways, it might resemble MSDOS, which ran single applications is MSDOS mode, even in the early years where Windows 95 was still used. It slightly more performant to run games in MSDOS, because it didn't have to load the whole windows system that wasn't related to the application because the windowed mode used a significant fraction of the systems memory (likely 4MB out of an 8MB system- The Packard Bell Legend 3540 was one example of this in 1996, which was my first PC). 
 
 
+https://oldforum.puppylinux.com/viewtopic.php?t=84636 
+
+" Which Word processor? Abiword limits
+
+#1 Post by Rope » Tue 26 Feb 2013, 18:06
+Hello, I read in this forum that Abiword has a 20 pages limit for stability and that it has problems with tables. Is that true?
+
+All my colleagues send me MS Word documents, now in docx format and I meed to edit with footnotes and all.
+
+Maybe it is just better to use Google docs, but not always compatible 100%. Not sure if Libreoffice is better.
+
+Thanks"
+
+" Re: Which Word processor? Abiword limits
+
+#5 Post by rogerology » Tue 26 Feb 2013, 21:57
+
+    Rope wrote:
+    Hello, I read in this forum that Abiword has a 20 pages limit for stability and that it has problems with tables. Is that true?
+
+    All my colleagues send me MS Word documents, now in docx format and I meed to edit with footnotes and all.
+
+    Maybe it is just better to use Google docs, but not always compatible 100%. Not sure if Libreoffice is better.
+
+    Thanks
+
+I can confirm this. I've had AbiWord documents corrupted. It's not nice to lose a day of writing."
+
+I am guessing an old version of AbiWord once set this limit to limit, but not fully prevent crashes.
+Perhaps this bug fixed a problem in an even earlier version of AbiWord, but for those who feel they can be compliant with that modest limit, then the program should perfectly fine- at most requiring the user to save more than one copy or create a series of documents if they surpass the 20 page limit (which is not really a major inconvenience for diarists or people short documentation/composing letters.)
+
