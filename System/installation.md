@@ -589,7 +589,12 @@ I also realize that there may be kernels that already dynamically drop modules a
 
 This test was an ironic realization that the default settings used more memory and would not load any apps in 8MB, but by setting Virtual Box to 9MB, then allowing me to change the resolution to 800x600x4 bit, it would use less memory and load apps within 8MB. There might be a config setting that can be compiled with this setting out of the box somewhere, instead of the stock OS, although some of the resolutions show text that is illegible. It could be the wrong graphics card or a virtual machine setting that causes that.
 
-9MB Test 2 320x200 & 640x480x4 (working color & text)
+9MB Test 0 320x200 & 640x480x4 (non working color & text (wrong video uploaded- VBox didn't save my latest)
+--
+
+[Xwoaf 1.3 rebuild-screen0.webm](https://github.com/user-attachments/assets/8064a721-e9af-43c6-a95f-6252d8f06740)
+
+9MB Test 3  320x200x9 & 640x480x8
 --
 
 [Xwoaf 1.3 rebuild-screen0.webm](https://github.com/user-attachments/assets/3b706900-7c95-4373-b2ba-dfb39d8136fc)
