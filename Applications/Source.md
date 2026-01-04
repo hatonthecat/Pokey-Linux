@@ -16,3 +16,7 @@ Version 1.0 – April 19th, 2002.[19][20]
 AbiWord 1.0 (2002) 2MB memory use in Windows (likely similar in linux, or possibly less.)
 
 Abiword 2.2.3 has ~6.7MB-7MB RAM usage- still small, but probably not enough for 8MB RAM systems.... 
+
+<img width="1411" height="1939" alt="image" src="https://github.com/user-attachments/assets/63769944-1d46-48ac-9b3c-2bebaf4aa98b" />
+
+Why did we ever move on?
