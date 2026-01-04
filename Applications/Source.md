@@ -1,5 +1,7 @@
 https://web.archive.org/web/20020604025749/http://www.abisource.com/download/ 
 
+https://en.wikipedia.org/wiki/AbiWord
+
 Version history
 --
 
