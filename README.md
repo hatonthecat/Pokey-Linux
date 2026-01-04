@@ -96,7 +96,7 @@ _The minimum RAM requirement is now 32Gbytes (previously 8Gbytes)._
 
 _These changes are mainly due to recent additions of the LLVM and other resource heavy recipes. For guidance on how to limit the resources used by the OpenEmbedded Build System, see the Limiting the Host Resources Usage guide."_
 
-Another Google search result returned this:
+Another Google search result returned this (not really related to this repo):
 
 "ML-LLVM-Tools: Towards Seamless Integration of Machine Learning in Compiler Optimizations [ Video ] [ Slides ]
 S. VenkataKeerthy, IIT Hyderabad
