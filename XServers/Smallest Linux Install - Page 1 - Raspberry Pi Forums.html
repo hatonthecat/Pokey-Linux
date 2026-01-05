@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://forums.raspberrypi.com/viewtopic.php?t=1253&start=20 -->
+<html dir="ltr" lang="en-gb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Smallest Linux Install - Page 1 - Raspberry Pi Forums</title>
+
+	<link rel="alternate" type="application/atom+xml" title="Feed - Raspberry Pi Forums" href="https://forums.raspberrypi.com/app.php/feed?sid=2388180ffd25e151dc61955c3aeb3317">			<link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="https://forums.raspberrypi.com/app.php/feed/topics?sid=2388180ffd25e151dc61955c3aeb3317">		<link rel="alternate" type="application/atom+xml" title="Feed - Forum - General discussion" href="https://forums.raspberrypi.com/app.php/feed/forum/63?sid=2388180ffd25e151dc61955c3aeb3317">	<link rel="alternate" type="application/atom+xml" title="Feed - Topic - Smallest Linux Install" href="https://forums.raspberrypi.com/app.php/feed/topic/1253?sid=2388180ffd25e151dc61955c3aeb3317">
+	
+
+<!--[if IE]><link rel="shortcut icon" href="./styles/rpi/theme/images/favicon.png"><![endif]-->
+<!-- <link rel="apple-touch-icon-precomposed" href="./styles/rpi/theme/images/apple-touch-icon-precomposed.gif"> -->
+<link rel="icon" href="https://forums.raspberrypi.com/styles/rpi/theme/images/favicon.png">
+
+	<link rel="canonical" href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20">
+
+<link href="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen, projection">
+<link href="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/legacy.min.css" rel="stylesheet">
+<link href="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/stylesheet.css" rel="stylesheet" type="text/css" media="screen, projection">
+<link href="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/colours_rpi.css" rel="stylesheet" type="text/css" media="screen, projection">
+<link href="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/print.css" rel="stylesheet" type="text/css" media="print">
+
+
+
+
+
+
+</head>
+
+<body id="phpbb" class="notouch section-viewtopic ltr section-forums hasjs">
+
+
+<div id="overall-wrap">
+  <a id="top" class="anchor" accesskey="t"></a>
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+#__rptl-header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  font-weight: 400;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  z-index: 100;
+}
+#__rptl-header .__rptl-header-wrapper {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+#__rptl-header .__rptl-header-navbar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  border-bottom: 1px solid #dedede;
+  width: 100%;
+  padding: 16px;
+}
+@media (min-width: 800px) {
+  #__rptl-header .__rptl-header-navbar {
+    padding: 16px 76px;
+  }
+}
+@media (min-width: 1200px) {
+  #__rptl-header .__rptl-header-navbar {
+    padding: 16px 84px;
+    border-bottom-style: none;
+  }
+}
+#__rptl-header .__rptl-header-brand {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+}
+#__rptl-header .__rptl-header-logo {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  display: block;
+  vertical-align: middle;
+}
+#__rptl-header .__rptl-header-burger {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  transform: rotate(0deg);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@media (min-width: 1200px) {
+  #__rptl-header .__rptl-header-burger {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #__rptl-header .__rptl-header-burger {
+    transition: 0.5s ease-in-out;
+  }
+}
+#__rptl-header .__rptl-header-burger-stroke {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #707070;
+  border-radius: 9px;
+  transform: rotate(0deg);
+}
+#__rptl-header .__rptl-header-burger-stroke:nth-child(1) {
+  top: 0;
+  transform-origin: left center;
+}
+#__rptl-header .__rptl-header-burger-stroke:nth-child(2) {
+  top: 14px;
+  transform-origin: left center;
+}
+#__rptl-header .__rptl-header-burger-stroke:nth-child(3) {
+  top: 28px;
+  transform-origin: left center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #__rptl-header .__rptl-header-burger-stroke {
+    transition: 0.25s ease-in-out;
+  }
+}
+#__rptl-header .__rptl-header-burger-state {
+  display: none;
+}
+#__rptl-header .__rptl-header-burger-state:checked + .__rptl-header-navbar .__rptl-header-burger-stroke:nth-child(1) {
+  transform: rotate(45deg);
+  top: 4.5px;
+  left: 4.5px;
+}
+#__rptl-header .__rptl-header-burger-state:checked + .__rptl-header-navbar .__rptl-header-burger-stroke:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+#__rptl-header .__rptl-header-burger-state:checked + .__rptl-header-navbar .__rptl-header-burger-stroke:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 25.5px;
+  left: 4.5px;
+}
+#__rptl-header .__rptl-header-burger-state:checked ~ .__rptl-header-nav {
+  transform: translateY(100%);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+#__rptl-header .__rptl-header-nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #dedede;
+}
+#__rptl-header .__rptl-header-nav:focus-within {
+  transform: translateY(100%);
+}
+@media (min-width: 1200px) {
+  #__rptl-header .__rptl-header-nav {
+    position: static;
+    padding: 0 84px;
+    background-color: #f7f8fa;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #__rptl-header .__rptl-header-nav {
+    transition: transform 0.25s ease-in;
+  }
+}
+#__rptl-header .__rptl-header-nav-inner {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+@media (min-width: 1200px) {
+  #__rptl-header .__rptl-header-nav-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+#__rptl-header .__rptl-header-nav-list {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  list-style: none;
+  display: block;
+  box-sizing: border-box;
+}
+#__rptl-header .__rptl-header-nav-list:first-child .__rptl-header-nav-list-item:first-child {
+  border: 0;
+}
+#__rptl-header .__rptl-header-nav-list-item {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  display: block;
+  box-sizing: border-box;
+  border-top: 1px solid #dedede;
+}
+@media (min-width: 1200px) {
+  #__rptl-header .__rptl-header-nav-list-item {
+    display: inline-block;
+    border-style: none;
+  }
+}
+#__rptl-header .__rptl-header-nav-link {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 1.65em;
+  padding: 16px;
+}
+#__rptl-header .__rptl-header-nav-link:hover {
+  color: #fff;
+  background-color: #333;
+}
+#__rptl-header .__rptl-header-nav-link--for-home, #__rptl-header .__rptl-header-nav-link--for-industry {
+  font-weight: 700;
+}
+@media (min-width: 800px) {
+  #__rptl-header .__rptl-header-nav-link {
+    padding: 16px 76px;
+  }
+}
+@media (min-width: 1200px) {
+  #__rptl-header .__rptl-header-nav-link {
+    font-size: 1em;
+    padding: 16px;
+  }
+}
+
+#__rptl-cookiebanner {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  font-weight: 400;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  z-index: 101;
+  background: #333;
+  color: #fff;
+}
+#__rptl-cookiebanner.__rptl-cookiebanner-hidden {
+  display: none;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-wrapper {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+}
+@media (min-width: 800px) {
+  #__rptl-cookiebanner .__rptl-cookiebanner-wrapper {
+    padding: 16px 76px;
+  }
+}
+@media (min-width: 1200px) {
+  #__rptl-cookiebanner .__rptl-cookiebanner-wrapper {
+    padding: 16px 84px;
+  }
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-text {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  display: block;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-link:hover {
+  text-decoration: underline;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  #__rptl-cookiebanner .__rptl-cookiebanner-buttons {
+    flex-direction: row;
+  }
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-accept, #__rptl-cookiebanner .__rptl-cookiebanner-reject {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  cursor: pointer;
+  border-radius: 9999px;
+  line-height: 1.5;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-accept:hover, #__rptl-cookiebanner .__rptl-cookiebanner-reject:hover {
+  text-decoration: underline;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-accept:focus, #__rptl-cookiebanner .__rptl-cookiebanner-reject:focus {
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgb(121, 167, 236) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-accept {
+  color: #333;
+  background: #fff;
+}
+#__rptl-cookiebanner .__rptl-cookiebanner-reject {
+  color: #fff;
+  background: #333;
+}
+</style>
+<div id="__rptl-cookiebanner" class="">
+  <div class="__rptl-cookiebanner-wrapper">
+    <p class="__rptl-cookiebanner-text">
+      We use some essential cookies to make our website work.
+    </p>
+    <p class="__rptl-cookiebanner-text">
+      We use optional cookies, as detailed in our <a href="https://www.raspberrypi.com/cookies/" class="__rptl-cookiebanner-link">cookie policy</a>, to remember your
+      settings and understand how you use our website.
+    </p>
+    <div class="__rptl-cookiebanner-buttons">
+      <button id="__rptl-cookiebanner-accept" class="__rptl-cookiebanner-accept">
+        Accept optional cookies
+      </button>
+      <button id="__rptl-cookiebanner-reject" class="__rptl-cookiebanner-reject">
+        Reject optional cookies
+      </button>
+    </div>
+  </div>
+</div>
+<header id="__rptl-header">
+  <input type="checkbox" class="__rptl-header-burger-state" id="__rptl-header-burger-state">
+
+  <div class="__rptl-header-navbar">
+    <div class="__rptl-header-wrapper">
+      <a href="https://www.raspberrypi.com/" class="__rptl-header-brand">
+        <svg class="__rptl-header-logo" aria-hidden="true" focusable="false" height="44" viewBox="0 0 270 57" xmlns="http://www.w3.org/2000/svg" aria-labelledby="__rptl-header-logo"><title id="__rptl-header-logo">Raspberry Pi</title><g fill-rule="nonzero" fill="none"><path d="M65.275 33.317h-4.477v9.46c0 .29-.235.526-.525.526h-4.57a.525.525 0 0 1-.526-.525V16.55a.525.525 0 0 1 .525-.525h9.61c3.223 0 5.709.718 7.457 2.154a7.437 7.437 0 0 1 2.623 6.09 8.391 8.391 0 0 1-1.208 4.655 8.24 8.24 0 0 1-3.663 2.97l5.635 10.638a.525.525 0 0 1-.464.77h-4.917a.63.63 0 0 1-.56-.342l-4.94-9.643Zm-4.477-4.552h4.534a4.641 4.641 0 0 0 3.278-1.078 3.85 3.85 0 0 0 1.162-2.97 4.122 4.122 0 0 0-1.096-3.034 4.556 4.556 0 0 0-3.363-1.106h-4.515v8.188ZM90.426 42.997a6.562 6.562 0 0 1-.402-1.511 6.551 6.551 0 0 1-5.114 2.192 7.195 7.195 0 0 1-4.937-1.724 5.542 5.542 0 0 1-1.958-4.347 5.73 5.73 0 0 1 2.389-4.946c1.592-1.148 3.894-1.73 6.904-1.742h2.491v-1.162a3.342 3.342 0 0 0-.72-2.248 2.838 2.838 0 0 0-2.277-.843 3.226 3.226 0 0 0-2.145.656 2.13 2.13 0 0 0-.748 1.37.513.513 0 0 1-.513.428h-4.375a.533.533 0 0 1-.524-.596 5.494 5.494 0 0 1 1.054-2.663 7.184 7.184 0 0 1 3.073-2.352 11.2 11.2 0 0 1 4.459-.852 8.848 8.848 0 0 1 5.948 1.883 6.587 6.587 0 0 1 2.202 5.292v8.787a9.948 9.948 0 0 0 .629 3.93.525.525 0 0 1-.47.754h-4.485a.515.515 0 0 1-.48-.306Zm-4.336-3.46c.77.007 1.529-.176 2.21-.534a3.509 3.509 0 0 0 1.5-1.433v-3.485h-2.024c-2.71 0-4.153.937-4.328 2.81l-.019.319a2.166 2.166 0 0 0 .712 1.667 2.764 2.764 0 0 0 1.949.656ZM109.963 37.701a1.745 1.745 0 0 0-.983-1.564 11.18 11.18 0 0 0-3.157-1.021c-4.822-1.012-7.232-3.06-7.232-6.145a5.57 5.57 0 0 1 2.24-4.506 9.031 9.031 0 0 1 5.854-1.808 9.723 9.723 0 0 1 6.173 1.817 5.699 5.699 0 0 1 2.292 4.175.52.52 0 0 1-.525.546h-4.382a.514.514 0 0 1-.514-.435 2.538 2.538 0 0 0-.721-1.485 3.172 3.172 0 0 0-2.342-.759 3.24 3.24 0 0 0-2.117.619c-.483.377-.76.96-.75 1.573.001.603.327 1.158.853 1.452a8.76 8.76 0 0 0 2.876.956 23.54 23.54 0 0 1 3.41.908c2.86 1.05 4.29 2.867 4.29 5.452a5.288 5.288 0 0 1-2.38 4.487 10.264 10.264 0 0 1-6.145 1.715c-1.556.029-3.1-.281-4.524-.91a7.586 7.586 0 0 1-3.1-2.49 5.853 5.853 0 0 1-1.094-2.824.533.533 0 0 1 .523-.596h4.11a.513.513 0 0 1 .513.418c.091.71.46 1.354 1.024 1.793a4.233 4.233 0 0 0 2.66.768c.827.057 1.65-.15 2.352-.59.508-.35.807-.93.796-1.546ZM136.719 33.355a12.159 12.159 0 0 1-2.127 7.503 6.817 6.817 0 0 1-5.742 2.82 6.315 6.315 0 0 1-4.965-2.136v9.03c0 .29-.235.525-.525.525h-4.364a.525.525 0 0 1-.525-.525V23.557a.525.525 0 0 1 .525-.525h4.018c.27 0 .497.206.523.475l.142 1.51a6.363 6.363 0 0 1 5.134-2.36 6.865 6.865 0 0 1 5.826 2.773c1.387 1.848 2.08 4.396 2.08 7.644v.28Zm-5.415-.394a7.982 7.982 0 0 0-1.002-4.365 3.266 3.266 0 0 0-2.913-1.536 3.546 3.546 0 0 0-3.504 1.948v8.3a3.605 3.605 0 0 0 3.541 2.004c2.586 0 3.878-2.117 3.878-6.35ZM158.159 33.355c0 3.247-.694 5.78-2.08 7.597a6.889 6.889 0 0 1-5.808 2.726 6.329 6.329 0 0 1-5.264-2.53l-.191 1.689a.525.525 0 0 1-.522.466h-3.877a.525.525 0 0 1-.525-.525V15.05c0-.29.235-.525.525-.525h4.364a.525.525 0 0 1 .525.525v9.798a6.166 6.166 0 0 1 4.928-2.192 6.945 6.945 0 0 1 5.817 2.726c1.405 1.817 2.108 4.374 2.108 7.672v.3Zm-5.415-.394a8.068 8.068 0 0 0-.974-4.487 3.295 3.295 0 0 0-2.904-1.414 3.572 3.572 0 0 0-3.56 2.117v8a3.62 3.62 0 0 0 3.597 2.135c1.626.093 3.081-.999 3.448-2.585.31-1.23.442-2.498.393-3.766ZM170.555 43.678a9.95 9.95 0 0 1-7.26-2.736 9.722 9.722 0 0 1-2.8-7.288v-.524a12.247 12.247 0 0 1 1.18-5.461 8.666 8.666 0 0 1 3.344-3.71 9.387 9.387 0 0 1 4.936-1.302 8.413 8.413 0 0 1 6.548 2.623c1.593 1.749 2.39 4.228 2.39 7.438v1.685a.525.525 0 0 1-.526.525h-12.383a5.028 5.028 0 0 0 1.583 3.185 4.785 4.785 0 0 0 3.344 1.2 5.886 5.886 0 0 0 4.524-1.837.527.527 0 0 1 .773.026l1.964 2.198c.17.188.182.47.028.672a8.216 8.216 0 0 1-3.036 2.34 10.82 10.82 0 0 1-4.609.966Zm-.618-16.656a3.382 3.382 0 0 0-2.614 1.092 5.65 5.65 0 0 0-1.283 3.124h7.531v-.433a4.034 4.034 0 0 0-.974-2.795 3.492 3.492 0 0 0-2.66-.988ZM193.333 27.525a.523.523 0 0 1-.575.515c-.459-.051-.92-.078-1.382-.081-2.049 0-3.391.693-4.028 2.08v12.739a.525.525 0 0 1-.525.525h-4.364a.525.525 0 0 1-.525-.525V23.557a.525.525 0 0 1 .525-.525h4.096c.277 0 .507.215.524.492l.12 1.924a5.017 5.017 0 0 1 4.514-2.791c.434-.002.867.044 1.29.138a.515.515 0 0 1 .39.515l-.06 4.215ZM207.017 27.525a.523.523 0 0 1-.575.515c-.459-.051-.92-.078-1.382-.081-2.048 0-3.39.693-4.028 2.08v12.739a.525.525 0 0 1-.525.525h-4.364a.525.525 0 0 1-.525-.525V23.557a.525.525 0 0 1 .525-.525h4.096c.277 0 .507.215.524.492l.12 1.924a5.018 5.018 0 0 1 4.514-2.791c.434-.002.867.044 1.29.138a.515.515 0 0 1 .39.515l-.06 4.215ZM217.934 35.64l3.635-12.233a.525.525 0 0 1 .504-.375h4.677a.525.525 0 0 1 .496.697l-7.907 22.721-.45 1.068a6.18 6.18 0 0 1-5.995 3.972 8.368 8.368 0 0 1-2.003-.25.529.529 0 0 1-.395-.513v-3.15a.525.525 0 0 1 .546-.524l.538.02a3.442 3.442 0 0 0 2.035-.492 3.08 3.08 0 0 0 1.19-1.555l.637-1.667-6.857-19.63a.525.525 0 0 1 .496-.697h4.696c.232 0 .437.152.503.374l3.654 12.234ZM245.156 33.692v9.086c0 .29-.235.525-.525.525h-4.57a.525.525 0 0 1-.526-.525V16.55a.525.525 0 0 1 .525-.525h10.117a12.31 12.31 0 0 1 5.405 1.124 8.284 8.284 0 0 1 3.587 3.194 8.91 8.91 0 0 1 1.256 4.712 7.833 7.833 0 0 1-2.745 6.323c-1.83 1.543-4.362 2.314-7.597 2.314h-4.927Zm0-4.553h5.02a4.934 4.934 0 0 0 3.401-1.049 3.816 3.816 0 0 0 1.171-2.998 4.5 4.5 0 0 0-1.18-3.24 4.41 4.41 0 0 0-3.26-1.275h-5.152v8.562ZM263.081 17.786a2.666 2.666 0 0 1 .815-2.005 3.512 3.512 0 0 1 4.431 0 2.86 2.86 0 0 1-.01 4.028 3.473 3.473 0 0 1-4.402 0 2.66 2.66 0 0 1-.834-2.023Zm5.227 25.517h-4.383a.525.525 0 0 1-.525-.525V23.557a.525.525 0 0 1 .525-.525h4.383a.525.525 0 0 1 .525.525v19.22a.525.525 0 0 1-.525.526ZM45.008 32.949a8.74 8.74 0 0 0-3.104-6.182 7.664 7.664 0 0 0-1.44-2.801 8.594 8.594 0 0 0-3.058-5.777c.284-.244.524-.536.708-.862a6.186 6.186 0 0 0 3.63-4.23 5.558 5.558 0 0 0 1.755-3.64 3.481 3.481 0 0 0-.31-1.638 3.114 3.114 0 0 0 .81-3.215c-.606-1.756-2.73-2.896-5.584-3.017a4.497 4.497 0 0 0-3.11-1.065 7.188 7.188 0 0 0-1.678.207 3.821 3.821 0 0 0-1.65-.334 6.458 6.458 0 0 0-3.148.858 2.894 2.894 0 0 0-.38-.025 6.276 6.276 0 0 0-3.551 1.558 10.765 10.765 0 0 0-1.866 1.944 10.768 10.768 0 0 0-1.867-1.944 6.278 6.278 0 0 0-3.55-1.558c-.127 0-.254.008-.38.025a6.46 6.46 0 0 0-3.148-.858 3.822 3.822 0 0 0-1.65.334 7.188 7.188 0 0 0-1.68-.207 4.498 4.498 0 0 0-3.109 1.065c-2.854.12-4.978 1.261-5.585 3.018a3.114 3.114 0 0 0 .812 3.214 3.482 3.482 0 0 0-.31 1.639 5.557 5.557 0 0 0 1.755 3.64 6.186 6.186 0 0 0 3.63 4.229c.183.326.423.618.707.862A8.594 8.594 0 0 0 5.6 23.966a7.663 7.663 0 0 0-1.44 2.801 8.74 8.74 0 0 0-3.104 6.182 8.424 8.424 0 0 0 1.92 6.578c.26 1.31.8 2.549 1.581 3.632a9.452 9.452 0 0 0 2.386 5.514 9.768 9.768 0 0 0 5.262 3.126 12.74 12.74 0 0 0 4.208 2.605 9.763 9.763 0 0 0 13.24 0c1.559-.585 2.988-1.47 4.207-2.605a9.768 9.768 0 0 0 5.262-3.126 9.452 9.452 0 0 0 2.386-5.514 9.311 9.311 0 0 0 1.582-3.632 8.424 8.424 0 0 0 1.919-6.578Z" fill="#000"></path><path d="M28.366 4.192a.225.225 0 0 1 .286.24c-.072.672.335.587.432.468a3.526 3.526 0 0 1 3.188-1.53.225.225 0 0 1 .154.363c-.4.593.03.706.19.6 1.631-1.02 3.187-1.023 3.785-.594a.225.225 0 0 1 .013.349c-.604.514-.266.77-.052.692a5.802 5.802 0 0 1 4.74.607.227.227 0 0 1 .006.343 4.493 4.493 0 0 0-1.73 3.018c-.045.396.614.313.891.241a.225.225 0 0 1 .28.21c.026.954-.876 2.002-2.218 2.898-.18.12-.154.408.256.42a.222.222 0 0 1 .191.334c-.478.888-1.13 1.724-3.345 2.298a.227.227 0 0 0-.032.429.217.217 0 0 1 .071.384c-2.207 1.896-7.8 1.148-8.51-2.043a.224.224 0 0 1 .04-.182 21.262 21.262 0 0 1 9.276-7.058.176.176 0 0 0-.087-.34 15.168 15.168 0 0 0-10.074 6.074.227.227 0 0 1-.289.065c-3.585-1.851-.64-7.317 2.538-8.286ZM7.285 12.85a.222.222 0 0 1 .191-.334c.41-.01.436-.299.256-.419C6.39 11.201 5.49 10.153 5.514 9.2a.225.225 0 0 1 .28-.21c.278.072.936.155.891-.241a4.493 4.493 0 0 0-1.73-3.017.227.227 0 0 1 .006-.344 5.802 5.802 0 0 1 4.74-.607c.214.079.552-.178-.052-.692a.225.225 0 0 1 .014-.35c.597-.428 2.153-.426 3.785.594.159.107.589-.006.19-.599a.225.225 0 0 1 .153-.363A3.526 3.526 0 0 1 16.98 4.9c.096.12.503.204.432-.469a.225.225 0 0 1 .286-.239c3.178.97 6.122 6.435 2.537 8.286a.227.227 0 0 1-.289-.065A15.168 15.168 0 0 0 9.873 6.34a.176.176 0 0 0-.088.34 21.262 21.262 0 0 1 9.276 7.057c.04.052.054.119.04.183-.71 3.19-6.303 3.938-8.51 2.042a.217.217 0 0 1 .071-.384.227.227 0 0 0-.031-.429c-2.216-.574-2.867-1.41-3.346-2.298Z" fill="#46AF4B"></path><path d="M37.158 22.605c.92 2.446.203 3.622-1.978 2.377a15.632 15.632 0 0 1-4.58-3.84c-1.644-1.952-.576-2.821 2.012-2.352a6.985 6.985 0 0 1 4.546 3.815ZM27.375 19.853c3.12 2.593-.454 4.428-4.343 4.428-3.89 0-7.463-1.835-4.344-4.428a6.935 6.935 0 0 1 8.687 0ZM8.906 22.605a6.985 6.985 0 0 1 4.545-3.815c2.588-.47 3.656.4 2.013 2.352a15.632 15.632 0 0 1-4.58 3.84c-2.182 1.245-2.898.069-1.978-2.377ZM4.394 36.196a6.983 6.983 0 0 1 .518-5.942c1.153-1.96 2.313-1.883 2.773-.222.585 2.29.373 4.712-.6 6.867-.854 1.696-1.921 1.123-2.691-.703ZM12.704 48.896A6.942 6.942 0 0 1 7.482 42.7c.433-10.066 14.94 7.91 5.222 6.196ZM12.999 36.358c-2.433-1.404-3.077-4.844-1.438-7.682 1.639-2.839 4.94-4 7.372-2.596 2.433 1.404 3.077 4.844 1.438 7.682-1.639 2.839-4.94 4-7.372 2.596ZM27.091 52.737a6.947 6.947 0 0 1-8.119 0c-2.41-1.664.015-3.58 4.06-3.58s6.47 1.916 4.06 3.58Z" fill="#CD2355"></path><ellipse fill="#CD2355" cx="23.032" cy="41.795" rx="5.647" ry="4.84"></ellipse><path d="M25.692 33.762c-1.639-2.838-.995-6.278 1.438-7.682 2.433-1.405 5.734-.243 7.372 2.596 1.64 2.838.995 6.278-1.438 7.682-2.432 1.405-5.733.243-7.372-2.596ZM33.36 48.896C23.64 50.61 38.149 32.634 38.58 42.7a6.941 6.941 0 0 1-5.221 6.196ZM41.67 36.196c-.77 1.826-1.838 2.399-2.691.703a10.417 10.417 0 0 1-.6-6.867c.46-1.66 1.62-1.739 2.772.222a6.983 6.983 0 0 1 .518 5.942Z" fill="#CD2355"></path></g></svg>
+      </a>
+
+      <label class="__rptl-header-burger" for="__rptl-header-burger-state">
+        <span class="__rptl-header-burger-stroke"></span>
+        <span class="__rptl-header-burger-stroke"></span>
+        <span class="__rptl-header-burger-stroke"></span>
+      </label>
+    </div>
+  </div>
+
+  <nav class="__rptl-header-nav">
+    <div class="__rptl-header-wrapper">
+      <div class="__rptl-header-nav-inner">
+        <ul class="__rptl-header-nav-list">
+          <li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.com/for-industry/" class="__rptl-header-nav-link __rptl-header-nav-link--for-industry">For industry</a>
+          </li><li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.com/for-home/" class="__rptl-header-nav-link __rptl-header-nav-link--for-home">For home</a>
+        </li></ul>
+        <ul class="__rptl-header-nav-list">
+          <li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.com/products/" class="__rptl-header-nav-link">Hardware</a>
+          </li><li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.com/software/" class="__rptl-header-nav-link">Software</a>
+          </li><li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.com/documentation/" class="__rptl-header-nav-link">Documentation</a>
+          </li><li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.com/news/" class="__rptl-header-nav-link">News</a>
+          </li><li class="__rptl-header-nav-list-item"><a href="https://forums.raspberrypi.com/" class="__rptl-header-nav-link">Forums</a>
+          </li><li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.org/" class="__rptl-header-nav-link" rel="noopener">Foundation</a>
+          </li><li class="__rptl-header-nav-list-item"><a href="https://www.raspberrypi.com/contact/" class="__rptl-header-nav-link">Contact</a>
+        </li></ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<script>
+  (function() {
+    var header = document.getElementById("__rptl-header"),
+        burgerState = document.getElementById("__rptl-header-burger-state"),
+        cookiebanner = document.getElementById("__rptl-cookiebanner"),
+        accept = document.getElementById("__rptl-cookiebanner-accept"),
+        reject = document.getElementById("__rptl-cookiebanner-reject");
+
+    if (document.cookie.indexOf("cookiebanner_accepted=") === -1) {
+      cookiebanner.classList.remove("__rptl-cookiebanner-hidden");
+    }
+
+    accept.addEventListener("click", function (e) {
+      document.cookie = "cookiebanner_accepted=1; path=/; max-age=" + 60 * 60 * 24 * 365 * 2;
+
+      if (typeof window.gtag !== "undefined") {
+        window.gtag("consent", "update", {
+          analytics_storage: "granted",
+        });
+      }
+
+      cookiebanner.classList.add("__rptl-cookiebanner-hidden");
+    });
+
+    reject.addEventListener("click", function (e) {
+      document.cookie = "cookiebanner_accepted=0; path=/; max-age=" + 60 * 60 * 24 * 365 * 2;
+
+      cookiebanner.classList.add("__rptl-cookiebanner-hidden");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!header.contains(e.target)) {
+        burgerState.checked = false;
+      }
+    });
+  })();
+</script>
+
+	<div id="wrap-head">
+		<div id="site-header">
+			<div class="chunk">
+				<ul id="site-menu">
+					<li data-skip-responsive="true" class="site-menu"><a href="https://forums.raspberrypi.com/app.php/help/faq?sid=2388180ffd25e151dc61955c3aeb3317" rel="help" title="Frequently Asked Questions">Forum FAQ</a></li>
+<li class="site-menu">
+	<a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" title="About">About</a>
+	<ul>
+		<li><a href="https://www.raspberrypi.com/about/">About us</a></li>
+		<li><a href="https://www.raspberrypi.com/contact/">Contact us</a></li>
+		<li><a href="https://www.raspberrypi.com/documentation/">Documentation</a></li>
+		<li><a href="https://www.raspberrypi.com/trademark-rules/">Trademark rules</a></li>
+	</ul>
+</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="site-nav" role="navigation">
+			<div class="chunk">
+
+				
+				<div class="site-nav">
+
+					
+										<div id="site-search" role="search">
+						<form action="https://forums.raspberrypi.com/search.php?sid=2388180ffd25e151dc61955c3aeb3317" method="get">
+							<fieldset>
+								<input name="keywords" type="search" maxlength="128" title="Search for keywords" size="20" value="" placeholder="Search"><button type="submit" title="Search"><i class="fa fa-search"></i></button><input type="hidden" name="sid" value="2388180ffd25e151dc61955c3aeb3317">
+
+							</fieldset>
+						</form>
+					</div>
+					
+					<ul role="menubar">
+											<li class="font-icon rightside" data-skip-responsive="true"><a href="https://forums.raspberrypi.com/ucp.php?mode=login&amp;redirect=viewtopic.php%3Fstart%3D20%26t%3D1253&amp;sid=2388180ffd25e151dc61955c3aeb3317" title="Login" accesskey="x" role="menuitem"><i class="fa fa-power-off"></i><span class="nav-rh-2">Login</span></a></li>
+												<li class="font-icon rightside" data-skip-responsive="true"><a href="https://forums.raspberrypi.com/ucp.php?mode=register&amp;sid=2388180ffd25e151dc61955c3aeb3317" role="menuitem"><i class="fa fa-pencil-square-o"></i><span class="nav-rh-2">Register</span></a></li>
+																																		</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<a id="start_here" class="anchor"></a>
+		
+		
+		<!-- main element closes in overall_footer.html -->
+		<main id="rp-app-landmark-main">
+
+<div id="wrap-subhead">
+	<div class="chunk">
+		<div class="wrap-subhead">
+			<ul id="breadcrumbs" role="menubar">
+				<li class="font-icon responsive-menu dropdown-container" data-skip-responsive="true">
+  <a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" class="responsive-menu-link dropdown-trigger dropdown-toggle"><i class="fa fa-bars"></i></a>
+  <div class="dropdown hidden">
+    <div class="pointer"><div class="pointer-inner"></div></div>
+    <ul class="dropdown-contents" role="menu">
+      
+              <li class="separator"></li>
+                                <li class="font-icon icon-search-unanswered"><a href="https://forums.raspberrypi.com/search.php?search_id=unanswered&amp;sid=2388180ffd25e151dc61955c3aeb3317" role="menuitem"><i class="fa fa-file-o"></i>Unanswered topics</a></li>
+        <li class="font-icon icon-search-active"><a href="https://forums.raspberrypi.com/search.php?search_id=active_topics&amp;sid=2388180ffd25e151dc61955c3aeb3317" role="menuitem"><i class="fa fa-fire"></i>Active topics</a></li>
+            <li class="separator site-menu"></li>
+
+      <li data-skip-responsive="true" class="site-menu"><a href="https://forums.raspberrypi.com/app.php/help/faq?sid=2388180ffd25e151dc61955c3aeb3317" rel="help" title="Frequently Asked Questions">Forum FAQ</a></li>
+<li class="site-menu">
+	<a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" title="About">About</a>
+	<ul>
+		<li><a href="https://www.raspberrypi.com/about/">About us</a></li>
+		<li><a href="https://www.raspberrypi.com/contact/">Contact us</a></li>
+		<li><a href="https://www.raspberrypi.com/documentation/">Documentation</a></li>
+		<li><a href="https://www.raspberrypi.com/trademark-rules/">Trademark rules</a></li>
+	</ul>
+</li>
+
+          </ul>
+  </div>
+</li>
+								
+								<li class="breadcrumbs rightside" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+															<span class="crumb" itemtype="http://schema.org/ListItem" itemprop="itemListElement" itemscope="">
+						<a itemprop="item" href="https://forums.raspberrypi.com/index.php?sid=2388180ffd25e151dc61955c3aeb3317" accesskey="h" data-navbar-reference="index" title="Board index"><i class="fa fa-home"></i><span itemprop="name">Board index</span></a>
+						<meta itemprop="position" content="1">
+					</span>
+					                    <span class="crumb" itemtype="http://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="19">
+    <a itemprop="item" href="https://forums.raspberrypi.com/viewforum.php?f=19&amp;sid=2388180ffd25e151dc61955c3aeb3317" title="Community"><span itemprop="name">Community</span></a>
+    <meta itemprop="position" content="2">
+  </span>
+                      <span class="crumb" itemtype="http://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="63">
+    <a itemprop="item" href="https://forums.raspberrypi.com/viewforum.php?f=63&amp;sid=2388180ffd25e151dc61955c3aeb3317" title="General discussion"><span itemprop="name">General discussion</span></a>
+    <meta itemprop="position" content="3">
+  </span>
+  									</li>
+							</ul>
+
+		</div>
+
+		<div id="subhead-title">
+			<h2 class="topic-title"><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20&amp;sid=2388180ffd25e151dc61955c3aeb3317">Smallest Linux Install</a></h2>
+			
+					</div>
+
+	</div>
+</div>
+
+<div id="wrap-body">
+	<div class="chunk">
+
+		
+		<div class="action-bar top">
+
+			<div class="buttons">
+				
+							<a href="https://forums.raspberrypi.com/posting.php?mode=reply&amp;t=1253&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="button font-icon" title="This topic is locked, you cannot edit posts or make further replies.">
+					<i class="fa fa-lock"></i>Locked				</a>
+			
+							</div>
+
+				<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button icon-button tools-icon dropdown-trigger dropdown-select dropdown-toggle"><i class="fa fa-wrench"></i></span>
+		<div class="dropdown hidden">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																								<li class="font-icon icon-print"><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20&amp;sid=2388180ffd25e151dc61955c3aeb3317&amp;view=print" title="Print view" accesskey="p"><i class="fa fa-print"></i>Print view</a></li>							</ul>
+		</div>
+	</div>
+
+			
+							<div class="search-box" role="search">
+					<form method="get" id="topic-search" action="https://forums.raspberrypi.com/search.php?sid=2388180ffd25e151dc61955c3aeb3317">
+					<fieldset>
+						<input class="inputbox search" type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…">
+						<button class="button" type="submit" title="Search"><i class="fa fa-search"></i></button>
+						<input type="hidden" name="t" value="1253">
+<input type="hidden" name="sf" value="msgonly">
+<input type="hidden" name="sid" value="2388180ffd25e151dc61955c3aeb3317">
+
+					</fieldset>
+					</form>
+				</div>
+			
+							<div class="pagination">
+					48 posts
+											<ul>
+<li class="active"><span>1</span></li><li><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;sid=2388180ffd25e151dc61955c3aeb3317&amp;start=25" role="button">2</a></li><li class="next"><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;sid=2388180ffd25e151dc61955c3aeb3317&amp;start=25" rel="next" role="button"><i class="fa fa-chevron-right"></i></a></li></ul>
+									</div>
+			
+			
+		</div>
+
+		
+		
+		
+											<div id="p9102" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9102">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=638&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">obarthelemy</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=638&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">1410</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Tue Aug 09, 2011 10:53 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9102">
+					
+					<h3 class="first"><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9102">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9102&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9102">Fri Nov 18, 2011 9:00 pm</a> </p>
+
+					
+					
+					
+					<div class="content">@mung: you keep double-posting. The forum software is a very old, cranky lady. Not as fast as she used to, so give it time before banging on that button again ^^</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9110" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9110">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=1949&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">SlayingDragons</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=1949&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">67</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Wed Sep 14, 2011 3:17 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9110">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9110">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9110&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9110">Sat Nov 19, 2011 11:36 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Quote from psergiu on November 8, 2011, 13:08<br>
+<a href="http://www.linuxfromscratch.org/" class="postlink">http://www.linuxfromscratch.org/</a><br>
+<br>
+Customized Kernel + Busybox + /dev + config files in /etc = under 10Mb.<br>
+<br>
+No compiler, no debug and .a libraries, no manpages, no documentation, no i18n.<br>
+No sysV init scripts - a single shell script started from inittab.<br>
+Remember to strip all the binaries.<br>
+Hand-compiled kernel with only the exact required modules (or no modules at all - everything required build-in). No initrd needed.<br>
+<br>
+My personal record on i386 was 6Mb without busybox for a machine configured as router/firewall, ftp server &amp; web server (thttpd)<br>
+<br>
+I've seen and have been particularly interested in doing LFS on the raspi, but are the steps and components the same for making LFS for ARM as they are for x86? As in I can follow the book except just cross-compile for ARM instead of x86 and use an arm kernel?</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9118" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9118">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=3794&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">mung</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=3794&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">506</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Fri Nov 18, 2011 10:49 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9118">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9118">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9118&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9118">Sun Nov 20, 2011 5:18 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Quote from SlayingDragons on November 19, 2011, 23:36<br>
+<br>
+I've seen and have been particularly interested in doing LFS on the raspi, but are the steps and components the same for making LFS for ARM as they are for x86? As in I can follow the book except just cross-compile for ARM instead of x86 and use an arm kernel? <br>
+<br>
+I have never read the LFS docs, but my advice is avoid.<br>
+<br>
+There is a huge amount of work required to compile from scratch and it has all been done before, it is a waste of time reinventing the wheel.<br>
+<br>
+If you want to compile a specialised distro try gentoo.org (I have never used but I think would be your best first call?).<br>
+<br>
+If you just want to learn about the internals of programming an OS tryminix3.org<br>
+<br>
+If you just want an easy way to start ARM compiling and simulation try one of the virtual machines mentioned before (I hoped to look at them this weekend but have not yet, so dont know what they are like).<br>
+<br>
+If you want to help make a compilable distro then maybe try adding some scripts to <a href="http://www.angstrom-distribution.org/" class="postlink">http://www.angstrom-distribution.org/</a> so that their auto build system can handle a Rpi build??<br>
+<br>
+I think size is not so important these days for the OS, I think boot to X11 image should be easy to get under 1mb for ARM with a little work maybe kernel and root with busybox could be under 300kb?<br>
+<br>
+Would be nice if there was some VM image that had a running Rpi ARM VM system that included all the source and compilation tools required to create itself.<br>
+<br>
+I would imagine such a system could be under 50mb as a compressed VM image???<br>
+<br>
+Minix is similar in this concept, and also http://soundproofingforum.co.u.....oofing.htm 2diskxwin has similar VM build system for tiny i386 linux (27mb rar ), though does not include the source code to compile the gcc compiler <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"><br>
+<br>
+As an irellevant side note:<br>
+I also remember someone actually created a real time compiled version of linux where the boot loader loaded tcc (tiny c compiler) the compiler then loaded and compiled the entire linux operating system from scratch at boot time.</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9119" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9119">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=1499&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">kme</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=1499&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">448</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Sep 04, 2011 9:37 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9119">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9119">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9119&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9119">Sun Nov 20, 2011 5:52 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Quote from mung on November 20, 2011, 17:18<br>
+I think size is not so important these days for the OS, I think boot to X11 image should be easy to get under 1mb for ARM with a little work maybe kernel and root with busybox could be under 300kb?That's about a factor ten too optimistic. The kirkwood kernel for Debian is 1,4 MB and the busybox package is 570 kB. Although these can be optimized directly for R-Pi I don't believe in cutting 90%. Also X is a very heavy system these days.</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9121" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9121">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=3794&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">mung</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=3794&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">506</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Fri Nov 18, 2011 10:49 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9121">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9121">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9121&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9121">Sun Nov 20, 2011 7:18 pm</a> </p>
+
+					
+					
+					
+					<div class="content">That's about a factor ten too optimistic. The kirkwood kernel for Debian is 1,4 MB and the busybox package is 570 kB. Although these can be optimized directly for R-Pi I don't believe in cutting 90%. Also X is a very heavy system these days.<br>
+<br>
+I was thinking of the minimal size of the packages mentioned.<br>
+X11 and the linux kernel are fairly small if you exclude all the extra extensions and drivers.<br>
+<br>
+If you can be bothered looking at the 2diskxwin you will see there is a fairly full featured i386 X11 distribution in 1.4mb (kernel=320kb, X11 vesa server 300kb, busybox 300kb, X11 libs and applications 600kb).<br>
+<br>
+Most of the angstrom distributions are around 15mb if I remember correctly.<br>
+<br>
+I am not an expert and am sure most of what I am saying is not exactly correct as its been years since I looked at this stuff, but its all roughly correct +-30%.<br>
+<br>
+I really don't know much about ARM, I only know that ARM should be the way to go if there was more support and software available. I have unfortunately only had i386 hardware to hack on until recently.</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9123" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9123">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=1783&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">ryao</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=1783&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">24</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Sep 11, 2011 3:47 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9123">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9123">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9123&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9123">Fri Nov 25, 2011 10:01 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Quote from AlanCox on November 10, 2011, 20:28<br>
+About the absolute minimum is busybox + kernel + ucLibc Pre-seed the kernel with device nodes or include devtmpfs. That will get you enough to actually bootstrap a lot of projects and stuff. It'll also build with a full glibc if you want to be able to drop on fullblown apps without mucking about.<br>
+<br>
+There are plenty of embedded devices whose environment is essentially busybox + scripts + specific app (sometimes + an ssh daemon) and they are actually not unpleasant to hack on.In fact functionally they are probably better shell and scripting wise than many older Unixen !<br>
+<br>
+Getting a bit bigger as well as buildroot you may want to look at Yocto which can be used to build embedded environments to a recipe and without sucking in all the usual junk of a random desktop OS. That really helps once you get a few dependancies and security updates and the like to juggle.<br>
+<br>
+<br>
+The absolute minimum would be the kernel and a bootloader. The kernel has its own commandline for recovery purposes. It would not be good for much without a userland, but it would work.<br>
+<br>
+Quote from mung on November 18, 2011, 18:03<br>
+To compile something for the Pi you will need a toolchain to compile for arm.<br>
+<br>
+I would like to add that you can obtain a Gentoo toolchain if you do a Gentoo Prefix installation, install crossdev inside it and then tell crossdev to build the toolchain you want. Gentoo's toolchain is well maintained, so it is probably a good one to use.</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9124" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9124">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=3287&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/3287.png" width="40" height="40" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=3287&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">psergiu</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=3287&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">224</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Mon Nov 07, 2011 8:36 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9124">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9124">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9124&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9124">Sun Nov 27, 2011 10:50 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Or you can do it like this:<br>
+<br>
+1) Install a full ARM distro on a large SD<br>
+2) Connect the 2nd small SD to a USB reader<br>
+3) Create all the required filesystems and dirs on the small SD (RPi msdos partition with "The Blob", ext3 partition (ex: mount in /mnt/small) with /etc, /bin, /sbin, /lib, /tmp<br>
+4) Use MAKEDEV in the /dev of the small SD (/mnt/small/dev/)<br>
+5) Copy the kernel, /lib/modules/... /sbin/init /etc/passwd /etc/fstab /etc/group /etc/inittab (edited accordingly to fsck &amp; mount / rw, mount /dev &amp; all special FSs and start a single login prompt ) /sbin/getty /sbin/login /bin/mount /bin/umount /bin/sync /sbin/reboot /sbin/fsck /bin/sync /bin/sh /bin/ls /bin/cat ...<br>
+6) Use "ldd" on all the binaries and copy all the required libs too<br>
+7) "man" all the binaries and copy all the required config &amp; additional files<br>
+8 ) Check permissions on the new files (suid bits &amp; co)<br>
+9) Shutdown and boot from the small card.<br>
+10) See if you're happy<br>
+11) Shutdown and boot from the large card, add some more stuff  ( insmod, more, ae or nano or other small editor, ifconfig, route, dropbear ... ) and GOTO step 8 untill you're happy.<br>
+12) If you get a stable standalone config, you can start making it smaller: put busybox and try switching everything to it - deleting the old binaries &amp; related libs &amp; files, remove unused dev files from /dev ...</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9125" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9125">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=4231&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">sylvan</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=4231&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">118</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Nov 27, 2011 8:39 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9125">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9125">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9125&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9125">Tue Nov 29, 2011 9:44 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Quote from ryao on November 25, 2011, 22:01<br>
+The absolute minimum would be the kernel and a bootloader. The kernel has its own commandline for recovery purposes.<br>
+<br>
+You should check that again.<br>
+<br>
+(And while you're at it, notice who you were correcting.)<br>
+<br>
+I've never seen any commandline code in the kernel before or after building.  Perhaps you were thinking of the initrd or initram image.<br>
+<br>
+As for a bootloader, the kernel used to, looks like it still is x86 bootable.  ('file' still identifies the kernel on my x86 and amd64 ubuntu systems as an x86 boot image)<br>
+<br>
+Therefore on an x86 PC the absolute minimum is a kernel and some executable application because it will use the bootloader in the BIOS.<br>
+<br>
+On R-Pi (and most embedded platforms) the application is still needed but a bootloader is a design decision.  The kernel might be installed to "execute in place" (XIP) and so not need a bootloader.  Or some bootloader might be the XIP image.</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p9126" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile9126">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=4650&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">eric_baird</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=4650&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">37</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Dec 04, 2011 3:42 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content9126">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p9126">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=9126&amp;sid=2388180ffd25e151dc61955c3aeb3317#p9126">Sun Dec 04, 2011 4:03 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Perhaps when people have this running, it might be nice to have distros already set up for a few common applications of the board.<br>
+The two main uses I can think of so far are:<br>
+<br>
+1: Wireless network storage.<br>
+* RPi &amp; wifi dongle, plus 2.5" USB harddrive(s).<br>
+IMO It's slightly odd that there aren't more hard drives sold with wifi, it'd be cool to clip an RPi to a pocketable HD and turn it into a networked wifi drive. That'd be useful to me immediately.<br>
+<br>
+2: Wifi webcam<br>
+* RPi &amp; wifi dongle &amp; USB webcam<br>
+This might be a big application for the board (eg video entry systems), but would need rather more software than (1), because it'd need to stream video.<br>
+<br>
+I'm currently pondering the feasibility of sticking an RPi in a "gauge 0" model railway wagon with webcam and wifi dongle and giving a large model railway layout a live video feed from inside the train. <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548311" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548311">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/9189.jpg" width="90" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">OMightyBuggy</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=9189&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">21</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 25, 2012 6:52 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548311">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548311">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548311&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548311">Sat May 10, 2014 8:56 am</a> </p>
+
+					
+					
+					
+					<div class="content">Is there any Linux distro that can fit on a 16MB SD card? 16MB or less?</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548318" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548318">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=73731&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/73731.jpg" width="89" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=73731&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">DougieLawson</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=73731&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">43633</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 16, 2013 11:19 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548318">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548318">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548318&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548318">Sat May 10, 2014 9:19 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>OMightyBuggy wrote:</cite>Is there any Linux distro that can fit on a 16MB SD card? 16MB or less?</div></blockquote>
+For X86 there was Toms Root Boot floppy (less than 2.88MB) but nobody has built anything like that for a RPi.<br>
+<br>
+You can save lots of space by ditching kernel modules that you won't ever use. You can trim the kernel by not configuring things you don't need. <br>
+<br>
+Busybox is the shell/toolkit needed for userspace operations.<br>
+<br>
+Best of luck with building that.<br>
+<br>
+Remember you've got a whole SDCard to play on because you can't boot your RPi without one. So trimming to the bone is pointless.</div>
+
+					
+															
+															<div id="sig548318" class="signature"><span style="font-size: 90%; line-height: normal">Languages using left-hand whitespace for syntax are ridiculous<br>
+<br>
+DMs sent on Bluesky or by LinkedIn will be answered next month.<br>
+Fake doctors - are all on my foes list.<br>
+<br>
+The use of crystal balls and mind reading is prohibited.</span></div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548329" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548329">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=8015&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">Joe Schmoe</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=8015&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">4277</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Jan 15, 2012 1:11 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548329">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548329">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548329&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548329">Sat May 10, 2014 9:33 am</a> </p>
+
+					
+					
+					
+					<div class="content">Of course, if the SD card is only 16Mb total (as is the case here), then having the "entire SD card to use" isn't saying that much.</div>
+
+					
+															
+															<div id="sig548329" class="signature">And some folks need to stop being fanboys and see the forest behind the trees.<br>
+<br>
+(One of the best lines I've seen on this board lately)</div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548343" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548343">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=7655&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">mikerr</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=7655&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">2835</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Thu Jan 12, 2012 12:46 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548343">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548343">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548343&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548343">Sat May 10, 2014 9:54 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>OMightyBuggy wrote:</cite>Is there any Linux distro that can fit on a 16MB SD card? 16MB or less?</div></blockquote>
+Not quite what you're asking, but you can run raspbian with a 16MB SD card if you use USB root to hold the rest <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"><br>
+(the fat32 partition files are under 16MB)<br>
+<br>
+Check out this thread for a small raspbian, but that needs a 256mb card<br>
+<a href="http://www.raspberrypi.org/forums/viewtopic.php?f=63&amp;t=47634" class="postlink">http://www.raspberrypi.org/forums/viewt ... 63&amp;t=47634</a><br>
+if you want to keep apt-get and other niceties, it seems 1GB is about as low as you go.<br>
+<br>
+<br>
+For smallest linux, look at picore, a version of tinycore for the pi:<br>
+<a href="http://forum.tinycorelinux.net/index.php/topic,16937.0.html" class="postlink">http://forum.tinycorelinux.net/index.ph ... 937.0.html</a><br>
+CLi version is fully functional with 21mb of files.</div>
+
+					
+															
+															<div id="sig548343" class="signature">Android app - Raspi Card Imager - download and image SD cards - No PC required !</div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548484" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548484">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=19449&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/19449.png" width="65" height="65" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=19449&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">pluggy</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=19449&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">3635</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Thu May 31, 2012 3:52 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548484">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548484">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548484&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548484">Sat May 10, 2014 2:38 pm</a> </p>
+
+					
+					
+					
+					<div class="content">I think the need for a Linux to run on an SD card you found in an ancient digital camera at the back of a drawer are fairly limited.  Get you hand down and buy an 8GB one, its not like they're expensive. <br>
+<br>
+<a href="http://swag.raspberrypi.org/collections/frontpage/products/noobs-8gb-sd-card" class="postlink">http://swag.raspberrypi.org/collections ... gb-sd-card</a><br>
+<br>
+Even has NOOBS preinstalled....</div>
+
+					
+															
+															<div id="sig548484" class="signature">Don't judge Linux by the Pi.......<br>
+I must not tread on too many sacred cows......</div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548757" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548757">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/9189.jpg" width="90" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">OMightyBuggy</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=9189&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">21</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 25, 2012 6:52 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548757">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548757">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548757&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548757">Sun May 11, 2014 7:25 am</a> </p>
+
+					
+					
+					
+					<div class="content">Well all great ideas. <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> I don't want to buy another SD card when I have one. Just wanted to know if there was anyway to boot the Raspberry Pi up for just SSH or something. 15.9MB is all the space that can be used on my SD card.</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548796" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548796">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=73731&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/73731.jpg" width="89" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=73731&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">DougieLawson</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=73731&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">43633</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 16, 2013 11:19 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548796">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548796">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548796&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548796">Sun May 11, 2014 8:51 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>OMightyBuggy wrote:</cite>Well all great ideas. <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> I don't want to buy another SD card when I have one.</div></blockquote>
+
+I can't see any reason not to spend a few £££ on having a collection of 8GB cards sitting on the shelf so you don't have to faff about when you want to try a new project on your Raspberry Pi.</div>
+
+					
+															
+															<div id="sig548796" class="signature"><span style="font-size: 90%; line-height: normal">Languages using left-hand whitespace for syntax are ridiculous<br>
+<br>
+DMs sent on Bluesky or by LinkedIn will be answered next month.<br>
+Fake doctors - are all on my foes list.<br>
+<br>
+The use of crystal balls and mind reading is prohibited.</span></div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548798" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548798">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=17042&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/17042.jpg" width="90" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=17042&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">rpdom</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=17042&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">25330</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun May 06, 2012 5:17 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548798">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548798">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548798&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548798">Sun May 11, 2014 8:53 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>DougieLawson wrote:</cite><blockquote><div><cite>OMightyBuggy wrote:</cite>Well all great ideas. <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> I don't want to buy another SD card when I have one.</div></blockquote>
+
+I can't see any reason not to spend a few £££ on having a collection of 8GB cards sitting on the shelf so you don't have to faff about when you want to try a new project on your Raspberry Pi.</div></blockquote>
+
+Lack of £££ is a very good reason.</div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548803" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548803">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=73731&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/73731.jpg" width="89" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=73731&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">DougieLawson</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=73731&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">43633</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 16, 2013 11:19 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548803">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548803">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548803&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548803">Sun May 11, 2014 9:04 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>rpdom wrote:</cite>
+<br>
+Lack of £££ is a very good reason.</div></blockquote>
+Are you serious? Scrimping over £4 for a £35 computer.  <a href="http://www.ebuyer.com/487066-lexar-8gb-sdhc-card-lsd8gbabeuc10" class="postlink">http://www.ebuyer.com/487066-lexar-8gb- ... 8gbabeuc10</a></div>
+
+					
+															
+															<div id="sig548803" class="signature"><span style="font-size: 90%; line-height: normal">Languages using left-hand whitespace for syntax are ridiculous<br>
+<br>
+DMs sent on Bluesky or by LinkedIn will be answered next month.<br>
+Fake doctors - are all on my foes list.<br>
+<br>
+The use of crystal balls and mind reading is prohibited.</span></div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548810" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548810">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=7655&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">mikerr</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=7655&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">2835</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Thu Jan 12, 2012 12:46 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548810">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548810">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548810&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548810">Sun May 11, 2014 9:23 am</a> </p>
+
+					
+					
+					
+					<div class="content">From previous posts it seems he had a decent sized SD card but it failed. Stopgap until payday ? Not everyone has money to buy a couple of sd cards at a time,<br>
+Though I'd guess a friend or neighbour will have a 2gb sd card lying around if you ask.<br>
+<br>
+Boot from 16mb sd can be done, if you also use a usb flashdrive (2GB+):<br>
+<a href="http://www.redrobe.com/mike/boot-raspberry-pi-from-a-16mb-sd-card/" class="postlink">http://www.redrobe.com/mike/boot-raspbe ... b-sd-card/</a><br>
+<br>
+That's as easy as <br>
+<br>
+1) selecting your usb pendrive in win32diskimager instead of the sd card, to write an image to (e.g. 2GB raspbian: <a href="http://downloads.raspberrypi.org/raspbian/images/raspbian-2013-09-16/" class="postlink">http://downloads.raspberrypi.org/raspbi ... 013-09-16/</a>)<br>
+2) copying all the files (9mb) except emergency.img to the SD card <a href="https://www.dropbox.com/s/84r95jovi4rlv64/raspbian-boot-folder.zip" class="postlink">https://www.dropbox.com/s/84r95jovi4rlv ... folder.zip</a><br>
+3) editing the cmdline.txt on the SD card to read /dev/sda2:
+<div class="codebox"><p>Code: <a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait </code></pre></div></div>
+
+					
+																					<div class="notice">
+							Last edited by <a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=7655&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">mikerr</a> on Mon May 12, 2014 11:44 am, edited 6 times in total.
+													</div>
+					
+															<div id="sig548810" class="signature">Android app - Raspi Card Imager - download and image SD cards - No PC required !</div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p548814" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile548814">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=17042&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/17042.jpg" width="90" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=17042&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">rpdom</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=17042&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">25330</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun May 06, 2012 5:17 am</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content548814">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p548814">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=548814&amp;sid=2388180ffd25e151dc61955c3aeb3317#p548814">Sun May 11, 2014 9:35 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>DougieLawson wrote:</cite><blockquote><div><cite>rpdom wrote:</cite>
+<br>
+Lack of £££ is a very good reason.</div></blockquote>
+Are you serious? Scrimping over £4 for a £35 computer.  <a href="http://www.ebuyer.com/487066-lexar-8gb-sdhc-card-lsd8gbabeuc10" class="postlink">http://www.ebuyer.com/487066-lexar-8gb- ... 8gbabeuc10</a></div></blockquote>
+
+Yes, I'm very serious. We don't all have well paid jobs (or any job at all for that matter).<br>
+<br>
+My Raspi was a gift. I'm using old cards and monitors and scrounged bits to keep them going... and yes, I do use an old 8MB SD card for some work, but not Linux. I also have some Pentium MMX/166MHz laptops with 32MB of RAM and 2GB HDs. They run a custom Debian kernel quite well <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p549151" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile549151">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/9189.jpg" width="90" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">OMightyBuggy</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=9189&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">21</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 25, 2012 6:52 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content549151">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p549151">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=549151&amp;sid=2388180ffd25e151dc61955c3aeb3317#p549151">Mon May 12, 2014 12:10 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>mikerr wrote:</cite>From previous posts it seems he had a decent sized SD card but it failed. Stopgap until payday ? Not everyone has money to buy a couple of sd cards at a time,<br>
+Though I'd guess a friend or neighbour will have a 2gb sd card lying around if you ask.<br>
+<br>
+Boot from 16mb sd can be done, if you also use a usb flashdrive (2GB+):<br>
+<a href="http://sirlagz.net/2012/07/31/how-to-run-a-raspberry-pi-off-a-16mb-sd-card/" class="postlink">http://sirlagz.net/2012/07/31/how-to-ru ... b-sd-card/</a><br>
+<br>
+That's as easy as <br>
+<br>
+1) selecting your usb pendrive in win32diskimager instead of the sd card, to write an image to (e.g. 2GB raspbian: <a href="http://downloads.raspberrypi.org/raspbian/images/raspbian-2013-09-16/" class="postlink">http://downloads.raspberrypi.org/raspbi ... 013-09-16/</a>)<br>
+2) copying all the files (9mb) except emergency.img to the SD card <a href="https://www.dropbox.com/s/84r95jovi4rlv64/raspbian-boot-folder.zip" class="postlink">https://www.dropbox.com/s/84r95jovi4rlv ... folder.zip</a><br>
+3) editing the cmdline.txt on the SD card to read /dev/sda2:
+<div class="codebox"><p>Code: <a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait </code></pre></div></div></blockquote>
+
+This is exactly what I was looking for thanks much. <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> I did run into a small problem. I can't expand the USB drive like the sd card so I only have 469M left.<br>
+
+<div class="codebox"><p>Code: <a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Filesystem      Size  Used Avail Use% Mounted on
+rootfs          2.6G  2.0G  469M  82% /
+/dev/root       2.6G  2.0G  469M  82% /
+devtmpfs        180M     0  180M   0% /dev
+tmpfs            38M  284K   38M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs            75M     0   75M   0% /run/shm
+/dev/mmcblk0p1   16M  9.3M  6.0M  61% /boot</code></pre></div></div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p549301" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile549301">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=7655&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">mikerr</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=7655&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">2835</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Thu Jan 12, 2012 12:46 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content549301">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p549301">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=549301&amp;sid=2388180ffd25e151dc61955c3aeb3317#p549301">Mon May 12, 2014 9:47 am</a> </p>
+
+					
+					
+					
+					<div class="content">raspi-config  checks for and uses the sd card,<br>
+<br>
+use this to change it to use usb
+<div class="codebox"><p>Code: <a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>cp /usr/bin/raspi-config ~
+sed -i 's/mmcblk0p2/sda2/' ~/raspi-config                                                                             
+sed -i 's/mmcblk0/sda/' ~/raspi-config
+sudo ~/raspi-config</code></pre></div></div>
+
+					
+															
+															<div id="sig549301" class="signature">Android app - Raspi Card Imager - download and image SD cards - No PC required !</div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p549324" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile549324">
+					<dt class="no-profile-rank no-avatar">
+						<div class="avatar-container">
+																											</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=8015&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">Joe Schmoe</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=8015&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">4277</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Sun Jan 15, 2012 1:11 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content549324">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p549324">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=549324&amp;sid=2388180ffd25e151dc61955c3aeb3317#p549324">Mon May 12, 2014 10:37 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>mikerr wrote:</cite>raspi-config  checks for and uses the sd card,<br>
+<br>
+use this to change it to use usb
+<div class="codebox"><p>Code: <a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>cp /usr/bin/raspi-config ~
+sed -i 's/mmcblk0p2/sda2/' ~/raspi-config                                                                             
+sed -i 's/mmcblk0/sda/' ~/raspi-config
+sudo ~/raspi-config</code></pre></div></div></blockquote>
+
+More simply:<br>
+<br>
+sed -e 's/mmcblk0p2/sda2/'  -e 's/mmcblk0/sda/' /usr/bin/rasp-config &gt; ~/raspi-config<br>
+chmod +x !$</div>
+
+					
+															
+															<div id="sig549324" class="signature">And some folks need to stop being fanboys and see the forest behind the trees.<br>
+<br>
+(One of the best lines I've seen on this board lately)</div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p549673" class="post has-profile bg1">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile549673">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/9189.jpg" width="90" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=9189&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">OMightyBuggy</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=9189&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">21</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 25, 2012 6:52 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content549673">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p549673">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=549673&amp;sid=2388180ffd25e151dc61955c3aeb3317#p549673">Mon May 12, 2014 8:22 pm</a> </p>
+
+					
+					
+					
+					<div class="content">Thank you everyone. <img class="smilies" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+
+					
+															
+															
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+														<div id="p581807" class="post has-profile bg2">
+				<div class="inner">
+
+				<dl class="postprofile" id="profile581807">
+					<dt class="no-profile-rank has-avatar">
+						<div class="avatar-container">
+																						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=28413&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="avatar"><img class="avatar" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/28413.jpg" width="90" height="90" alt="User avatar"></a>																				</div>
+
+						
+						<a href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=28413&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="username">RichShumaker</a>
+						
+					</dt>
+
+					
+					
+					
+				<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.raspberrypi.com/search.php?author_id=28413&amp;sr=posts&amp;sid=2388180ffd25e151dc61955c3aeb3317">438</a></dd>				<dd class="profile-joined"><strong>Joined:</strong> Tue Jul 31, 2012 4:16 pm</dd>				
+				
+												
+												
+				</dl>
+
+				<div class="postbody">
+										<div id="post_content581807">
+					
+					<h3><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#p581807">Re: Smallest Linux Install</a></h3>
+
+				
+				
+													
+				
+					
+					<p class="author"><a href="https://forums.raspberrypi.com/viewtopic.php?p=581807&amp;sid=2388180ffd25e151dc61955c3aeb3317#p581807">Sun Jul 20, 2014 12:33 am</a> </p>
+
+					
+					
+					
+					<div class="content"><blockquote><div><cite>mikerr wrote:</cite>
+3) editing the cmdline.txt on the SD card to read /dev/sda2:
+<div class="codebox"><p>Code: <a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline rootwait </code></pre></div></div></blockquote>
+Looking for some help.<br>
+<br>
+B+ have extra USB's so I have been booting using a 128mb(smallest I could find at a reasonable price) SD Micro to a USB flash/pen drive - works great.<br>
+I want to boot my old NOOBs cards using a USB to SD card reader.  I have not put an image directly on the SD card yet to see if that works, so I am not sure if I have a USB card reader issue(driver needed) OR a NOOBs wrong location(not just /dev/sda2)<br>
+<br>
+Anyone tried this yet?  What worked for you?<br>
+My goal is a bunch of 128mb SD Micros in the B+ and I swap out my current systems on SD using the USB Flash Reader.<br>
+Thanks in advance for your help.</div>
+
+					
+															
+															<div id="sig581807" class="signature">Rich Shumaker<br>
+http://www.instructables.com/id/Pi-Zero-W-NoIR-8MP-Camera-Build-Overview-Introduct/<br>
+Pi HQ in Effect on my Podcast<br>
+https://www.youtube.com/channel/UCXz1Cr7vBrP3yu0LLls3Uhg</div>
+										</div>
+
+				</div>
+
+				</div>
+											</div>
+
+			<hr class="divider">
+					
+		
+					<form id="viewtopic" method="post" action="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20&amp;sid=2388180ffd25e151dc61955c3aeb3317">
+			<fieldset class="display-options" style="margin-top: 0; ">
+								<label>Display posts from previous:<select name="st" id="st" style="display: none;"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: auto;" title="" id="st_chosen"><a class="chosen-single" tabindex="-1"><span>All posts</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div></label><label>Sort by<select name="sk" id="sk" style="display: none;"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: auto;" title="" id="sk_chosen"><a class="chosen-single" tabindex="-1"><span>Post time</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div></label><label><select name="sd" id="sd" style="display: none;"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: auto;" title="" id="sd_chosen"><a class="chosen-single" tabindex="-1"><span>Ascending</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div></label><input type="submit" name="sort" value="Go" class="button2">
+							</fieldset>
+			</form>
+		
+				<div class="action-bar bottom">
+			<div class="buttons">
+				
+							<a href="https://forums.raspberrypi.com/posting.php?mode=reply&amp;t=1253&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="button font-icon" title="This topic is locked, you cannot edit posts or make further replies.">
+					<i class="fa fa-lock"></i>Locked				</a>
+			
+							</div>
+
+				<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button icon-button tools-icon dropdown-trigger dropdown-select dropdown-toggle"><i class="fa fa-wrench"></i></span>
+		<div class="dropdown hidden">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																								<li class="font-icon icon-print"><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20&amp;sid=2388180ffd25e151dc61955c3aeb3317&amp;view=print" title="Print view" accesskey="p"><i class="fa fa-print"></i>Print view</a></li>							</ul>
+		</div>
+	</div>
+
+			
+			
+							<div class="pagination">
+					48 posts
+											<ul>
+<li class="active"><span>1</span></li><li><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;sid=2388180ffd25e151dc61955c3aeb3317&amp;start=25" role="button">2</a></li><li class="next"><a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;sid=2388180ffd25e151dc61955c3aeb3317&amp;start=25" rel="next" role="button"><i class="fa fa-chevron-right"></i></a></li></ul>
+									</div>
+						<div class="clear"></div>
+		</div>
+
+				
+	<p class="jumpbox-return"><a href="https://forums.raspberrypi.com/viewforum.php?f=63&amp;sid=2388180ffd25e151dc61955c3aeb3317" class="left-box arrow-left" accesskey="r">Return to “General discussion”</a></p>
+
+	<div class="dropdown-container dropdown-container-right dropdown-up dropdown-left dropdown-button-control" id="jumpbox">
+		<span title="Jump to" class="dropdown-trigger button dropdown-select dropdown-toggle">
+			Jump to		</span>
+		<div class="dropdown hidden">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																			<li><a href="https://forums.raspberrypi.com/viewforum.php?f=19&amp;sid=2388180ffd25e151dc61955c3aeb3317">Community</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=63&amp;sid=2388180ffd25e151dc61955c3aeb3317">General discussion</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=117&amp;sid=2388180ffd25e151dc61955c3aeb3317">Announcements</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=90&amp;sid=2388180ffd25e151dc61955c3aeb3317">Other languages</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=75&amp;sid=2388180ffd25e151dc61955c3aeb3317">Deutsch</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=76&amp;sid=2388180ffd25e151dc61955c3aeb3317">Español</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=65&amp;sid=2388180ffd25e151dc61955c3aeb3317">Français</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=79&amp;sid=2388180ffd25e151dc61955c3aeb3317">Italiano</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=88&amp;sid=2388180ffd25e151dc61955c3aeb3317">Nederlands</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=82&amp;sid=2388180ffd25e151dc61955c3aeb3317">日本語</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=103&amp;sid=2388180ffd25e151dc61955c3aeb3317">Polski</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=74&amp;sid=2388180ffd25e151dc61955c3aeb3317">Português</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=84&amp;sid=2388180ffd25e151dc61955c3aeb3317">Русский</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=89&amp;sid=2388180ffd25e151dc61955c3aeb3317">Türkçe</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=57&amp;sid=2388180ffd25e151dc61955c3aeb3317">User groups and events</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=106&amp;sid=2388180ffd25e151dc61955c3aeb3317">Raspberry Pi Official Magazine</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=12&amp;sid=2388180ffd25e151dc61955c3aeb3317">Using the Raspberry Pi</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=91&amp;sid=2388180ffd25e151dc61955c3aeb3317">Beginners</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=28&amp;sid=2388180ffd25e151dc61955c3aeb3317">Troubleshooting</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=29&amp;sid=2388180ffd25e151dc61955c3aeb3317">Advanced users</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=102&amp;sid=2388180ffd25e151dc61955c3aeb3317">Assistive technology and accessibility</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=17&amp;sid=2388180ffd25e151dc61955c3aeb3317">Education</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=99&amp;sid=2388180ffd25e151dc61955c3aeb3317">Picademy</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=49&amp;sid=2388180ffd25e151dc61955c3aeb3317">Teaching and learning resources</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=48&amp;sid=2388180ffd25e151dc61955c3aeb3317">Staffroom, classroom and projects</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=104&amp;sid=2388180ffd25e151dc61955c3aeb3317">Astro Pi</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=94&amp;sid=2388180ffd25e151dc61955c3aeb3317">Mathematica</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=111&amp;sid=2388180ffd25e151dc61955c3aeb3317">High Altitude Balloon</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=112&amp;sid=2388180ffd25e151dc61955c3aeb3317">Weather station</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=14&amp;sid=2388180ffd25e151dc61955c3aeb3317">Programming</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=33&amp;sid=2388180ffd25e151dc61955c3aeb3317">C/C++</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=81&amp;sid=2388180ffd25e151dc61955c3aeb3317">Java</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=32&amp;sid=2388180ffd25e151dc61955c3aeb3317">Python</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=77&amp;sid=2388180ffd25e151dc61955c3aeb3317">Scratch</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=34&amp;sid=2388180ffd25e151dc61955c3aeb3317">Other programming languages</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=105&amp;sid=2388180ffd25e151dc61955c3aeb3317">Windows 10 for IoT</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=95&amp;sid=2388180ffd25e151dc61955c3aeb3317">Wolfram Language</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=72&amp;sid=2388180ffd25e151dc61955c3aeb3317">Bare metal, Assembly language</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=67&amp;sid=2388180ffd25e151dc61955c3aeb3317">Graphics programming</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=68&amp;sid=2388180ffd25e151dc61955c3aeb3317">OpenGLES</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=69&amp;sid=2388180ffd25e151dc61955c3aeb3317">OpenVG</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=70&amp;sid=2388180ffd25e151dc61955c3aeb3317">OpenMAX</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=31&amp;sid=2388180ffd25e151dc61955c3aeb3317">General programming discussion</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=15&amp;sid=2388180ffd25e151dc61955c3aeb3317">Projects</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=36&amp;sid=2388180ffd25e151dc61955c3aeb3317">Networking and servers</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=37&amp;sid=2388180ffd25e151dc61955c3aeb3317">Automation, sensing and robotics</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=38&amp;sid=2388180ffd25e151dc61955c3aeb3317">Graphics, sound and multimedia</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=41&amp;sid=2388180ffd25e151dc61955c3aeb3317">Other projects</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=78&amp;sid=2388180ffd25e151dc61955c3aeb3317">Gaming</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=35&amp;sid=2388180ffd25e151dc61955c3aeb3317">Media centres</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=114&amp;sid=2388180ffd25e151dc61955c3aeb3317">AIY Projects</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=16&amp;sid=2388180ffd25e151dc61955c3aeb3317">Hardware and peripherals</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=43&amp;sid=2388180ffd25e151dc61955c3aeb3317">Camera board</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=98&amp;sid=2388180ffd25e151dc61955c3aeb3317">Compute Module</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=108&amp;sid=2388180ffd25e151dc61955c3aeb3317">Official Display</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=45&amp;sid=2388180ffd25e151dc61955c3aeb3317">HATs and other add-ons</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=107&amp;sid=2388180ffd25e151dc61955c3aeb3317">Device Tree</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=44&amp;sid=2388180ffd25e151dc61955c3aeb3317">Interfacing (DSI, CSI, I2C, etc.)</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=140&amp;sid=2388180ffd25e151dc61955c3aeb3317">Keyboard computers (400, 500, 500+)</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=143&amp;sid=2388180ffd25e151dc61955c3aeb3317">Raspberry Pi Pico</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=144&amp;sid=2388180ffd25e151dc61955c3aeb3317">General</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=145&amp;sid=2388180ffd25e151dc61955c3aeb3317">SDK</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=146&amp;sid=2388180ffd25e151dc61955c3aeb3317">MicroPython</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=147&amp;sid=2388180ffd25e151dc61955c3aeb3317">Other RP2040 boards</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=174&amp;sid=2388180ffd25e151dc61955c3aeb3317">Zephyr</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=175&amp;sid=2388180ffd25e151dc61955c3aeb3317">Rust</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=168&amp;sid=2388180ffd25e151dc61955c3aeb3317">AI Accelerator</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=169&amp;sid=2388180ffd25e151dc61955c3aeb3317">AI Camera - IMX500</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=170&amp;sid=2388180ffd25e151dc61955c3aeb3317">Hailo</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=18&amp;sid=2388180ffd25e151dc61955c3aeb3317">Software</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=66&amp;sid=2388180ffd25e151dc61955c3aeb3317">Raspberry Pi OS</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=167&amp;sid=2388180ffd25e151dc61955c3aeb3317">Raspberry Pi Connect</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=116&amp;sid=2388180ffd25e151dc61955c3aeb3317">Raspberry Pi Desktop for PC and Mac</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=173&amp;sid=2388180ffd25e151dc61955c3aeb3317">Beta testing</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=56&amp;sid=2388180ffd25e151dc61955c3aeb3317">Other</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=73&amp;sid=2388180ffd25e151dc61955c3aeb3317">Android</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=50&amp;sid=2388180ffd25e151dc61955c3aeb3317">Debian</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=85&amp;sid=2388180ffd25e151dc61955c3aeb3317">FreeBSD</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=54&amp;sid=2388180ffd25e151dc61955c3aeb3317">Gentoo</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=71&amp;sid=2388180ffd25e151dc61955c3aeb3317">Linux Kernel</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=86&amp;sid=2388180ffd25e151dc61955c3aeb3317">NetBSD</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=87&amp;sid=2388180ffd25e151dc61955c3aeb3317">openSUSE</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=80&amp;sid=2388180ffd25e151dc61955c3aeb3317">Plan 9</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=52&amp;sid=2388180ffd25e151dc61955c3aeb3317">Puppy</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=53&amp;sid=2388180ffd25e151dc61955c3aeb3317">Arch</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=51&amp;sid=2388180ffd25e151dc61955c3aeb3317">Pidora / Fedora</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=55&amp;sid=2388180ffd25e151dc61955c3aeb3317">RISCOS</a></li>
+																<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=131&amp;sid=2388180ffd25e151dc61955c3aeb3317">Ubuntu</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=20&amp;sid=2388180ffd25e151dc61955c3aeb3317">Ye Olde Pi Shoppe</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=93&amp;sid=2388180ffd25e151dc61955c3aeb3317">For sale</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=61&amp;sid=2388180ffd25e151dc61955c3aeb3317">Wanted</a></li>
+																<li><a href="https://forums.raspberrypi.com/viewforum.php?f=21&amp;sid=2388180ffd25e151dc61955c3aeb3317">Off topic</a></li>
+																<li>&nbsp; &nbsp;<a href="https://forums.raspberrypi.com/viewforum.php?f=62&amp;sid=2388180ffd25e151dc61955c3aeb3317">Off topic discussion</a></li>
+										</ul>
+		</div>
+	</div>
+
+		
+		
+	</div>
+</div>
+
+        <!-- main element opens in overall_header.html -->
+        </main>
+		
+	
+	<div id="wrap-footer">
+		<div id="site-footer-nav" role="navigation">
+			<div class="chunk">
+				<ul class="site-footer-nav" role="menubar">
+					<li class="small-icon icon-home breadcrumbs">
+																		<span class="crumb"><a href="https://forums.raspberrypi.com/index.php?sid=2388180ffd25e151dc61955c3aeb3317" data-navbar-reference="index" title="Board index">Board index</a></span>
+											</li>
+					
+										<li class="rightside">All times are <span title="UTC">UTC</span></li>
+																<li class="small-icon icon-delete-cookies rightside"><a href="https://forums.raspberrypi.com/app.php/user/delete_cookies?sid=2388180ffd25e151dc61955c3aeb3317" data-ajax="true" data-refresh="true" role="menuitem">Delete cookies</a></li>
+															</ul>
+			</div>
+		</div>
+
+    <style>
+#__rptl-footer .__rptl-footer-link, #__rptl-footer .__rptl-footer-link--with-icon, #__rptl-footer .__rptl-footer-item, #__rptl-footer .__rptl-footer-list, #__rptl-footer .__rptl-footer-heading, #__rptl-footer .__rptl-footer-column, #__rptl-footer .__rptl-footer-row, #__rptl-footer .__rptl-footer-container, #__rptl-footer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+#__rptl-footer {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f5f6f9;
+  overflow: hidden;
+}
+#__rptl-footer .__rptl-footer-container {
+  width: 100%;
+  max-width: 1300px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: auto;
+  margin-top: 32px;
+}
+@media (min-width: 800px) {
+  #__rptl-footer .__rptl-footer-container {
+    padding: 0 76px;
+  }
+}
+@media (min-width: 1200px) {
+  #__rptl-footer .__rptl-footer-container {
+    padding: 0 84px;
+  }
+}
+#__rptl-footer .__rptl-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+#__rptl-footer .__rptl-footer-column {
+  flex-basis: 1;
+  width: 100%;
+  padding-right: 8px;
+}
+@media (min-width: 640px) {
+  #__rptl-footer .__rptl-footer-column {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  #__rptl-footer .__rptl-footer-column {
+    width: 25%;
+  }
+}
+#__rptl-footer .__rptl-footer-heading {
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 8px;
+}
+#__rptl-footer .__rptl-footer-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+#__rptl-footer .__rptl-footer-item {
+  margin-bottom: 8px;
+}
+#__rptl-footer .__rptl-footer-icon {
+  margin-right: 0.5em;
+  fill: #333;
+}
+#__rptl-footer .__rptl-footer-link, #__rptl-footer .__rptl-footer-link--with-icon {
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+}
+#__rptl-footer .__rptl-footer-link--with-icon {
+  display: inline-flex;
+  align-items: center;
+}
+#__rptl-footer .__rptl-footer-link:hover, #__rptl-footer .__rptl-footer-link--with-icon:hover {
+  text-decoration: underline;
+}
+</style>
+<footer id="__rptl-footer">
+  <div class="__rptl-footer-container">
+    <div class="__rptl-footer-row">
+      <div class="__rptl-footer-column">
+        <div class="__rptl-footer-heading">Follow us</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item">
+            <a href="https://www.raspberrypi.com/weekly/" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 6v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2Zm19.707 10.293a1 1 0 1 1-1.414 1.414L15 13.414l-.515.515a3.518 3.518 0 0 1-4.97 0L9 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L7.586 12 3.293 7.707a1 1 0 0 1 1.414-1.414l5 5 1.222 1.222a1.516 1.516 0 0 0 2.142 0l1.222-1.222 5-5a1 1 0 0 1 1.414 1.414L16.414 12Z"></path></svg>
+              Sign up to newsletter
+            </a>
+          </li>
+          <li class="__rptl-footer-item">
+            <a href="https://x.com/Raspberry_Pi" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1227 1227">
+                <path d="m714.16 519.28 446.73-519.28h-105.86l-387.89 450.89-309.81-450.89h-357.33l468.49 681.82-468.49 544.55h105.87l409.62-476.15 327.18 476.15h357.33l-485.86-707.09zm-145 168.55-47.46-67.9-377.69-540.24h162.6l304.8 435.99 47.47 67.9 396.2 566.72h-162.6l-323.32-462.45z"></path>
+              </svg>
+              X
+            </a>
+          </li>
+          <li class="__rptl-footer-item">
+            <a href="https://www.threads.net/@raspberrypi" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.07 0h-.113C68.882.194 47.292 9.642 32.788 28.08 19.882 44.485 13.224 67.315 13.001 95.932L13 96v.067c.224 28.617 6.882 51.447 19.788 67.854C47.292 182.358 68.882 191.806 96.957 192h.113c24.96-.173 42.554-6.708 57.048-21.189 18.963-18.945 18.392-42.692 12.142-57.27-4.484-10.454-13.033-18.945-24.723-24.553ZM98.44 129.507c-10.44.588-21.286-4.098-21.82-14.135-.397-7.442 5.296-15.746 22.461-16.735 1.966-.114 3.895-.169 5.79-.169 6.235 0 12.068.606 17.371 1.765-1.978 24.702-13.58 28.713-23.802 29.274Z"></path></svg>
+              Threads
+            </a>
+          </li>
+          <li class="__rptl-footer-item">
+            <a href="https://www.tiktok.com/@raspberry_pi" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="m36.62 13.617a9.106 9.106 0 0 1 -4.14-7.617h-6.533l-.01 26.182c-.11 2.932-2.523 5.285-5.482 5.285-.919 0-1.785-.23-2.547-.631a5.494 5.494 0 0 1 -2.944-4.86 5.498 5.498 0 0 1 5.491-5.492c.566 0 1.108.093 1.62.253v-6.669c-.53-.072-1.07-.117-1.62-.117-6.63 0-12.024 5.394-12.024 12.024 0 4.069 2.032 7.669 5.133 9.846a11.954 11.954 0 0 0 6.891 2.179c6.631 0 12.025-5.394 12.025-12.025v-13.275a15.537 15.537 0 0 0 9.09 2.923v-6.533a9.033 9.033 0 0 1 -4.95-1.472z"></path></svg>
+              TikTok
+            </a>
+          </li>
+          <li class="__rptl-footer-item">
+            <a href="https://youtube.com/raspberrypi" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.751 15.27V8.73L15.498 12l-5.747 3.27Zm12.783-8.597a2.763 2.763 0 0 0-1.944-1.956C18.876 4.254 12 4.254 12 4.254s-6.876 0-8.59.463a2.763 2.763 0 0 0-1.944 1.956A28.982 28.982 0 0 0 1.006 12a28.982 28.982 0 0 0 .46 5.327 2.763 2.763 0 0 0 1.943 1.956c1.715.463 8.591.463 8.591.463s6.876 0 8.59-.463a2.763 2.763 0 0 0 1.944-1.956 28.98 28.98 0 0 0 .46-5.327 28.98 28.98 0 0 0-.46-5.327Z"></path></svg>
+              YouTube
+            </a>
+          </li>
+          <li class="__rptl-footer-item">
+            <a href="https://www.instagram.com/raspberrypi/" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.25 3.667c2.67 0 2.986.01 4.04.058a5.534 5.534 0 0 1 1.858.344 3.312 3.312 0 0 1 1.898 1.898 5.534 5.534 0 0 1 .344 1.857c.048 1.054.058 1.37.058 4.04s-.01 2.987-.058 4.042a5.534 5.534 0 0 1-.344 1.857 3.312 3.312 0 0 1-1.898 1.897 5.533 5.533 0 0 1-1.857.345c-1.054.048-1.37.058-4.041.058s-2.987-.01-4.04-.058a5.533 5.533 0 0 1-1.858-.345 3.312 3.312 0 0 1-1.898-1.897 5.534 5.534 0 0 1-.344-1.857c-.048-1.055-.058-1.371-.058-4.041s.01-2.987.058-4.041a5.534 5.534 0 0 1 .344-1.857A3.312 3.312 0 0 1 6.352 4.07a5.533 5.533 0 0 1 1.857-.344c1.055-.048 1.37-.058 4.041-.058m0-1.802c-2.716 0-3.056.011-4.123.06A7.34 7.34 0 0 0 5.7 2.39a5.113 5.113 0 0 0-2.925 2.924 7.34 7.34 0 0 0-.465 2.428c-.049 1.066-.06 1.407-.06 4.123s.011 3.056.06 4.123a7.34 7.34 0 0 0 .465 2.427A5.113 5.113 0 0 0 5.7 21.34a7.34 7.34 0 0 0 2.427.465c1.067.048 1.407.06 4.123.06s3.056-.012 4.123-.06a7.34 7.34 0 0 0 2.427-.465 5.113 5.113 0 0 0 2.925-2.925 7.34 7.34 0 0 0 .465-2.427c.048-1.067.06-1.407.06-4.123s-.012-3.057-.06-4.123a7.34 7.34 0 0 0-.465-2.428A5.113 5.113 0 0 0 18.8 2.39a7.34 7.34 0 0 0-2.427-.465c-1.067-.049-1.407-.06-4.123-.06Z"></path><path class="cls-1" d="M12.25 6.73a5.135 5.135 0 1 0 5.135 5.135A5.135 5.135 0 0 0 12.25 6.73Zm0 8.468a3.333 3.333 0 1 1 3.333-3.333 3.333 3.333 0 0 1-3.333 3.333Z"></path><circle cx="17.588" cy="6.527" r="1.2"></circle></svg>
+              Instagram
+            </a>
+          </li>
+          <li class="__rptl-footer-item">
+            <a href="https://www.linkedin.com/company/raspberrypi/" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.435 2.1H3.561a1.445 1.445 0 0 0-1.462 1.426v16.946a1.446 1.446 0 0 0 1.462 1.429h16.874a1.449 1.449 0 0 0 1.466-1.429V3.526A1.448 1.448 0 0 0 20.435 2.1ZM7.972 18.972H5.035v-9.45h2.937ZM6.504 8.23a1.703 1.703 0 1 1 1.702-1.703A1.703 1.703 0 0 1 6.504 8.23Zm12.468 10.742h-2.934v-4.596c0-1.096-.02-2.505-1.527-2.505-1.528 0-1.762 1.193-1.762 2.426v4.675H9.814v-9.45h2.817v1.291h.04a3.086 3.086 0 0 1 2.778-1.526c2.974 0 3.523 1.957 3.523 4.501Z"></path></svg>
+              LinkedIn
+            </a>
+          </li>
+          <li class="__rptl-footer-item">
+            <a href="https://www.facebook.com/raspberrypi" class="__rptl-footer-link--with-icon">
+              <svg class="__rptl-footer-icon" aria-hidden="true" focusable="false" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12.06a10 10 0 1 0-11.563 9.88V14.95H7.899v-2.89h2.54V9.858a3.529 3.529 0 0 1 3.777-3.891 15.378 15.378 0 0 1 2.238.195v2.461h-1.26a1.445 1.445 0 0 0-1.63 1.562v1.876h2.773l-.443 2.89h-2.33v6.988A10.002 10.002 0 0 0 22 12.061Z"></path></svg>
+              Facebook
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="__rptl-footer-column">
+        <div class="__rptl-footer-heading">About Raspberry Pi</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/news/" class="__rptl-footer-link">News</a></li>
+          <li class="__rptl-footer-item"><a href="https://investors.raspberrypi.com/" class="__rptl-footer-link">Investor relations</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/contact/" class="__rptl-footer-link">Contact us</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/trademark-rules/" class="__rptl-footer-link">Trademark</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/about/" class="__rptl-footer-link">About us</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/resellers/" class="__rptl-footer-link">Our Approved Resellers</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/jobs/" class="__rptl-footer-link">Jobs</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/accessibility/" class="__rptl-footer-link">Accessibility</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/sustainability/" class="__rptl-footer-link">Sustainability</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/modern-slavery-statement/" class="__rptl-footer-link">Modern slavery statement</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/terms-and-conditions/" class="__rptl-footer-link">Site use terms and conditions</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/acceptable-use/" class="__rptl-footer-link">Acceptable use</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/cookies/" class="__rptl-footer-link">Cookies</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/licensing/" class="__rptl-footer-link">Licensing</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/terms-conditions-sale/" class="__rptl-footer-link">Terms and conditions of sale</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/privacy/" class="__rptl-footer-link">Privacy</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/contact/security/" class="__rptl-footer-link">Security</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/verify/" class="__rptl-footer-link">Verify our bank details</a></li>
+        </ul>
+      </div>
+      <div class="__rptl-footer-column">
+        <div class="__rptl-footer-heading">For home</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/for-home/" class="__rptl-footer-link">Raspberry Pi for home</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/tutorials/" class="__rptl-footer-link">Tutorials</a></li>
+        </ul>
+        <div class="__rptl-footer-heading">For industry</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/for-industry/" class="__rptl-footer-link">Raspberry Pi for industry</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/for-industry/newsletter/" class="__rptl-footer-link">Industry updates</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/for-industry/thin-clients/" class="__rptl-footer-link">Thin clients</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/for-industry/space/" class="__rptl-footer-link">Raspberry Pi in space</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/for-industry/powered-by/" class="__rptl-footer-link">Powered by Raspberry Pi</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/for-industry/design-partners/" class="__rptl-footer-link">Design partners</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/success-stories/" class="__rptl-footer-link">Success stories</a></li>
+        </ul>
+        <div class="__rptl-footer-heading">Hardware</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/products/#raspberry-pi-computers-and-microcontrollers" class="__rptl-footer-link">Computers and microcontrollers</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/products/#cameras-and-displays" class="__rptl-footer-link">Cameras and displays</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/products/#add-on-boards" class="__rptl-footer-link">Add-on boards</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/products/#power-supplies-and-cables" class="__rptl-footer-link">Power supplies and cables</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/products/#cases" class="__rptl-footer-link">Cases</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/products/#peripherals" class="__rptl-footer-link">Peripherals</a></li>
+        </ul>
+      </div>
+      <div class="__rptl-footer-column">
+        <div class="__rptl-footer-heading">Software</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/software/connect/" class="__rptl-footer-link">Raspberry Pi Connect</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/software/raspberry-pi-desktop/" class="__rptl-footer-link">Raspberry Pi Desktop</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/software/" class="__rptl-footer-link">Raspberry Pi Imager</a></li>
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/software/operating-systems/" class="__rptl-footer-link">Raspberry Pi OS</a></li>
+        </ul>
+        <div class="__rptl-footer-heading">Documentation</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/documentation/" class="__rptl-footer-link">All categories</a></li>
+          <li class="__rptl-footer-item"><a href="https://pip.raspberrypi.com/" class="__rptl-footer-link">Product information portal</a></li>
+          <li class="__rptl-footer-item"><a href="https://datasheets.raspberrypi.com/" class="__rptl-footer-link">Datasheets</a></li>
+        </ul>
+        <div class="__rptl-footer-heading">Community</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://forums.raspberrypi.com/" class="__rptl-footer-link">Forums</a></li>
+          <li class="__rptl-footer-item"><a href="https://events.raspberrypi.com/" class="__rptl-footer-link">Events</a></li>
+        </ul>
+        <div class="__rptl-footer-heading">Raspberry Pi Store</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/raspberry-pi-store/" class="__rptl-footer-link">Store information</a></li>
+        </ul>
+        <div class="__rptl-footer-heading">Raspberry Pi Press</div>
+        <ul class="__rptl-footer-list">
+          <li class="__rptl-footer-item"><a href="https://www.raspberrypi.com/books-magazines/" class="__rptl-footer-link">About Raspberry Pi Press</a></li>
+          <li class="__rptl-footer-item"><a href="https://magazine.raspberrypi.com/" class="__rptl-footer-link">Raspberry Pi Official Magazine</a></li>
+          <li class="__rptl-footer-item"><a href="https://magazine.raspberrypi.com/books" class="__rptl-footer-link">Books</a></li>
+          <li class="__rptl-footer-item"><a href="https://magazine.raspberrypi.com/write-for-us" class="__rptl-footer-link">Write for us</a></li>
+          <li class="__rptl-footer-item"><a href="https://magazine.raspberrypi.com/contact" class="__rptl-footer-link">Get in touch</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+		<div id="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+			<div id="darken">&nbsp;</div>
+		</div>
+
+		<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+			<a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" class="alert_close"></a>
+			<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+		</div>
+		<div id="phpbb_confirm" class="phpbb_alert">
+			<a href="https://forums.raspberrypi.com/viewtopic.php?t=1253&amp;start=20#" class="alert_close"></a>
+			<div class="alert_text"></div>
+		</div>
+
+		<div style="display: none;">
+			<a id="bottom" class="anchor" accesskey="z"></a>
+					</div>
+</div>
+
+<script type="text/javascript" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/jquery-3.7.1.min.js.download"></script>
+<script type="text/javascript" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/core.js.download"></script>
+<script type="text/javascript" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/js.cookie.js.download"></script>
+<script type="text/javascript" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/forum_fn.js.download"></script>
+<script type="text/javascript" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/ajax.js.download"></script>
+<script type="text/javascript" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/chosen.jquery.min.js.download"></script>
+
+
+<script>
+	$(function() {
+		$("#st, #sd, #sk, #ch").chosen({
+			disable_search: true,
+			width: "auto"
+		});
+	});
+</script>
+
+<script>
+	// $(function() {
+	//
+	// 	var sidebarRecentPostDiv = document.getElementById("sidebar-recent-posts");
+	//
+	// 	$.get('/app.php/feed?sid=2388180ffd25e151dc61955c3aeb3317', function (data) {
+	// 		$(data).find("entry").each(function (i) {
+	// 			var el = $(this);
+	// 			var entryWrap = document.createElement("div");
+	//
+	// 			var entryTitle = document.createElement("a");
+	// 			var entryAuthor = document.createElement("span");
+	// 			var entryContent = document.createElement("span");
+	//
+	// 			entryTitle.className = ("sidebar-recent-title");
+	// 			entryAuthor.className = ("sidebar-recent-author");
+	// 			entryContent.className = ("sidebar-recent-content");
+	//
+	// 			function cutText(name) {
+	// 				var elementText = el.find(name).text();
+	//
+	// 				if (name == "title") {
+	// 					elementText = elementText.substring(elementText.indexOf("•") + 2);
+	// 				} else if (name == "content") {
+	// 					elementText = elementText.replace(/(<([^>]+)>)/ig,"");
+	// 				}
+	//
+	// 				if (elementText.length > 50) {
+	// 					return elementText.substr(0, 50);
+	// 				} else {
+	// 					return elementText;
+	// 				};
+	// 			};
+	//
+	// 			entryTitle.textContent = cutText("title");
+	// 			entryAuthor.textContent = "by " + cutText("author");
+	// 			entryContent.textContent = cutText("content");
+	// 			entryURL = el.find("id").text();
+	//
+	// 			$(entryTitle).attr("href", entryURL);
+	//
+	// 			entryWrap.appendChild(entryTitle);
+	// 			entryWrap.appendChild(entryAuthor);
+	// 			entryWrap.appendChild(entryContent);
+	//
+	// 			sidebarRecentPostDiv.appendChild(entryWrap);
+	//
+	// 			if (++i >= 5) {
+	// 				return false;
+	// 			}
+	// 		});
+	// 	});
+	//
+	// });
+</script>
+
+
+
+
+
+</div>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+	gtag('consent', 'default', {
+		'ad_storage': 'denied',
+		'ad_user_data': 'denied',
+		'ad_personalization': 'denied',
+		'analytics_storage': 'denied'
+	});
+  gtag('js', new Date());
+
+  gtag('config', 'G-9633Z0KS6W');
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b94fe6aefc66070',t:'MTc2NzYzNzI3MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./Smallest Linux Install - Page 1 - Raspberry Pi Forums_files/saved_resource.html"></iframe>
+
+</body></html>
