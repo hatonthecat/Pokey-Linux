@@ -10,6 +10,8 @@ Tiny SliTaz in 4MB RAM
 --
 [sli-screen0.webm](https://github.com/user-attachments/assets/c64e5586-c435-492d-9dc3-825f47b24ea3)
 
+<img width="646" height="367" alt="image" src="https://github.com/user-attachments/assets/7ea47210-64cd-4451-bc19-d2a2a0c1e455" />
+
 A VNC server with Tiny SliTaz can run in 8MB or less: https://www.youtube.com/watch?v=OqpwSDJH8rw 
 
 
