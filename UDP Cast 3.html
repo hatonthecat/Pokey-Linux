@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0051)http://www.udpcast.linux.lu/bootloader.html#theMenu -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="canonical" href="http://www.udpcast.linux.lu/bootloader.html">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" type="text/css" href="./UDP Cast 3_files/styles.css">
+    <title>UDP Cast</title>
+    <meta name="description" content="udpcast - broadcast hard disk images via UDP">
+    <meta name="keywords" content="udpcast, udp-cast, udpcaster, ghost, ghost for Linux, installation via network, installation via UDP, UDP, install, installation, duplicate, Linux, udp-sender, udp-receiver">
+    <meta name="Author" content="Alain Knaff">
+  </head>
+
+  <body>
+<div id="header">
+<a class="picture" href="http://www.lilux.lu/"><img src="./UDP Cast 3_files/lilux_02.gif" width="81" height="84" alt="link to http://www.lilux.lu"></a>
+Udpcast
+</div>
+
+<!-- the menu -->
+<div id="menu" class="box">
+
+<p><a class="picture" href="http://alain.knaff.linux.lu/"><img src="./UDP Cast 3_files/home.gif" alt="[To my homepage]" width="31" height="24"></a></p>
+
+<ul>
+ <li><a href="http://www.udpcast.linux.lu/index.html">Introduction</a></li>
+ <li><b>Documentation:</b>
+ <ul>
+  <li><a href="http://www.udpcast.linux.lu/hints.html">Prerequisites/Misc hints</a></li>
+  <li><a href="http://www.udpcast.linux.lu/bootloader.html#start">How to set up Udpcast on a bootable device</a></li>
+  <li><a href="http://www.udpcast.linux.lu/bootdoc.html">Boot menu</a></li>
+  <li><a href="http://www.udpcast.linux.lu/usb.html">Booting from USB</a></li>
+  <li><a href="http://www.udpcast.linux.lu/cmdlinedoc.html">Command line doc</a></li>
+  <li><a href="http://www.udpcast.linux.lu/mkimagedoc.html">How to generate UDPCast boot images</a></li>
+  <li><a href="http://www.udpcast.linux.lu/satellite.html">Using udpcast to transmit data via satellite</a></li>
+  <li><a href="http://www.udpcast.linux.lu/compile.html">How to compile udpcast menu system and kernel (for including new modules...)</a></li>
+  <li><a href="http://www.udpcast.linux.lu/changes.html">Recent changes/ new features</a></li>
+  <li><a href="http://www.udpcast.linux.lu/links.html">Links to other projects using udpcast</a></li>
+ </ul></li>
+ <li><b>Downloads:</b>
+ <ul>
+  <li><a href="http://www.udpcast.linux.lu/bootmedia.html">Ready-made boot images</a></li>
+  <li><a href="http://www.udpcast.linux.lu/downloads.html">Packages (RPM, Deb) and Sources</a></li>
+  <li><a href="http://www.udpcast.linux.lu/exe.html">Windows version</a></li>
+ </ul></li>
+ <li><b>Online tools:</b>
+ <ul>
+  <li><a href="http://www.udpcast.linux.lu/cast-o-matic/">Web-enabled udpcast configurator: 
+Build your own custom image online!</a></li>
+ </ul></li>
+</ul>
+
+</div> <!-- menu -->
+
+<div id="content">
+<a name="start"></a>
+
+<h1>Setting up the bootloader on a media</h1>
+
+
+<p>The bootloader of udpcast version uses busybox.</p>
+
+<p>The udpcast boot loader can be started in 5 different ways:</p>
+<ul>
+ <li>From <a href="http://www.udpcast.linux.lu/usb.html">USB</a>.</li>
+
+ <li>From <a href="http://www.udpcast.linux.lu/bootloader.html#cd">CD</a>.</li>
+
+ <li>From <a href="http://www.udpcast.linux.lu/bootloader.html#pxe">PXE</a></li>
+</ul>
+
+<p>Udpcast also has a <a href="http://www.udpcast.linux.lu/mkimagedoc.html">boot image
+generator</a>, which should make it easy to upgrade to new kernels,
+when new cards, drivers, etc. come out.</p>
+
+<p>The bootloader has a <a href="http://www.udpcast.linux.lu/bootloader.html#theMenu">menu system</a> that guides
+you through the various choices, and finally launches udcpast.</p>
+
+<p>The menu system may be <a href="http://www.udpcast.linux.lu/bootloader.html#configFile">preconfigured</a> (default
+choices, automatic starting) using a file on the boot media.</p>
+
+
+<a name="downloadBoot"></a>
+<h2>Downloadable boot images</h2>
+
+<a name="cd"></a>
+<h3>The CD image</h3>
+
+<ul>
+ <li><a href="http://www.udpcast.linux.lu/20211207/udpcd.iso">CD image</a></li>
+</ul>
+
+Burn it on CD as follows:<br>
+<pre><code>cdrecord dev=1,0,0 speed=4 udpcd.iso
+</code></pre>
+
+<a name="pxe"></a>
+<h3>PXE images</h3>
+
+<p>Make a <tt>/tftpboot/udpcast</tt> directory on your TFTP server, and
+place the following files in there (with the exception of the config
+file, which goes into a <tt>pxelinux.cfg</tt> subdirectory).</p>
+
+
+<ul>
+ <li><a href="http://www.udpcast.linux.lu/pxelinux.0">Pxelinux.0</a>, the first stage (you can also take it from your local syslinux installation)</li>
+
+ <li><a href="http://www.udpcast.linux.lu/default">default</a>, the PXE Linux configuration file. Store this into <tt>/tftpboot/udpcast/pxelinux.cfg/default</tt>. This file may contain, in the kernel's <tt>append</tt> line, config parameters as described <a href="http://www.udpcast.linux.lu/bootloader.html#configFile">below</a>.</li>
+ <li><a href="http://www.udpcast.linux.lu/20211207/linux">linux</a> the kernel (6.1.55)</li>
+ <li><a href="http://www.udpcast.linux.lu/20211207/initrd">initrd</a> the ramdisk</li>
+</ul>
+
+<p>Then, add the following to your dhcp.conf:</p>
+
+<pre><code>filename "udpcast/pxelinux.0";
+next-server 10.0.0.1;
+</code></pre>
+
+
+
+<a name="theMenu"></a>
+<h2>The menu system</h2>
+
+<ul>
+ <li>You start with chosing your language (English, French, German, Danish or Luxembourgish).</li>
+ <li>Then you chose your keyboard map (US, Swiss German, Belgian)</li>
+
+ <li>Then the system proposes you one (or more) network modules that
+ matches any PCI network cards that were autodetected. You can either
+ chose that module, or select OTHER, in which case you will get a
+ complete list of supported drivers. If no PCI cards were detected
+ (for instance, because you have only ISA or PCMCIA cards), it skips
+ directly to the complete list.</li>
+
+ <li>Once you've chosen a network module, you may optionnally add
+ parameters (mostly relevant for ISA cards...)</li>
+
+ <li>Then you are asked whether you want to autoconfigure using
+ Bootp/DHCP, or whether you want to manually enter an IP and netmask.</li>
+
+ <li>After having entered the network configuration, you get to chose
+ the port which Udpcast should use. Usually the default choice (9000)
+ is ok. You only need to chose a different port if another application
+ already uses UDP port 9000 or 9001.</li>
+
+ <li>Then you get to chose the hard disk to clone. You may chose whole
+ disks or partitions. You first get proposed a list of autodetected
+ devices, but if you chose OTHER, you can manually enter a different
+ path.</li>
+
+ <li>Then you may enter additional parameters for udpcast. Usually
+ none are needed. Udpcast's command line parameters are described <a href="http://www.udpcast.linux.lu/cmd.html">here</a>.</li>
+
+ <li>Then, you get to chose the compression mode: no compression, gzip
+ or lzop. Under normal circumstances, all participating machines
+ should use the same compression mode.  Two compressors are available:
+ gzip (better compression ratio), and lzop (faster compression
+ speed). As the whole point of using a compressed transfer is to speed
+ it up, lzop is the recommended compressor (unless you have a
+ processor fast enough that the difference in speed between gzip and
+ lzop doesn't matter).</li>
+
+ <li>Then, you get to chose the mode: receive data or send data. There
+ may only be one sender, but many receivers.</li>
+
+ <li>Finally, if running from USB media, you get the option to save
+ the answers to your questions. If so, then the next time you boot
+ from this media, no questions are asked, and everything happens fully
+ automatically. This configuration is stored in a file named
+ <tt>udpcfg.txt</tt>. You can copy this file on other floppies, or use
+ it with the <tt>-C</tt> parameter of makeImage, to include it for
+ the other boot methods (CD or network).</li>
+
+ <li>If you chose to save the config, you get to chose whether you
+ also want to save the send/receive choice. If you do not save that
+ choice, you'll get asked a single question when booting your
+ pre-configured disk: wether to send or to receive. This is useful for
+ having a same preconfigured disk for senders and receivers.</li>
+
+</ul>
+
+<p>During the whole process alert boxes may pop up. If they are grey,
+they contain informational messages only, if they are red, they mean
+an error or abnormal condition.</p>
+
+<p><b>For expert users</b>, it's possible to press <tt>Alt+F2</tt>,
+<tt>Alt+F3</tt>, <tt>Alt+F4</tt> to get a shell.</p>
+
+<p>The CD and netbootable versions are more fully featured, and include a
+shell with command line completion, a telnet client, wget, tftp, vi,
+as well as many common shell tools (cp, mv, ...). With these, the
+udpcast disk may double as a rescue disk.</p>
+
+<p>The following virtual consoles are available:</p>
+ <ul>
+  <li><tt>Alt+F6</tt> shows you the kernel messages.</li>
+  <li><tt>Alt+F7</tt> shows you the stderr of udpcdialog.</li>
+  <li><tt>Alt+F1</tt> brings you back to the interactive dialog.</li>
+</ul>
+
+<a name="configFile"></a>
+<h2>The configuration file</h2>
+
+<p>The easyest way to obtain a configuration file is to boot from USB
+media, save the config when asked for, and then just copy the config
+file (<tt>udpcfg.txt</tt>) over to the other media.</p>
+
+<p>However, you can also make it manually.</p>
+
+<table border="1">
+ <tbody><tr bgcolor="#cccccc">
+  <td>parameter</td>
+  <td>explanation</td>
+ </tr>
+ <tr>
+  <td><tt>auto</tt></td>
+  <td>If this is set to yes, everything happens automatically. The
+  dialog only stops if an error occurs, or if a parameter is missing.
+  If on the other hand auto is set to no, the user is prompted for all
+  choice, but the choice from this file is pre-selected.</td>
+ </tr>
+ <tr>
+  <td><tt>lang</tt></td>
+  <td>The language. Supported are <tt>US</tt> (English), <tt>DA</tt> (Danish),
+	<tt>DE</tt> (German) and <tt>FR</tt> (France).</td>
+ </tr>
+ <tr>
+  <td><tt>kbmap</tt></td>
+  <td>The keyboard map. Supported are <tt>US</tt>, <tt>SG</tt> (Swiss
+  German), <tt>BE</tt> (Belgian), <tt>FR</tt> (French) and <tt>DE</tt>
+  (German). Sorry for these "weird" choices, those are just the
+  keyboard types that are popular here in Luxembourg (Luxembourg
+  doesn't have an own mapping...)</td>
+ </tr>
+ <tr>
+  <td><tt>netmodule</tt></td>
+  <td>The name of the network module chosen. If this is AUTO, use the first
+  autodetected PCI module</td>
+ </tr>
+ <tr>
+  <td><tt>netmodparm</tt></td>
+  <td>Network module parameters</td>
+ </tr>
+ <tr>
+  <td><tt>dhcp</tt></td>
+  <td>If yes, configure IP with DHCP. If no, the config file should
+  also contain an <tt>ip</tt> and <tt>netmask</tt> parameter</td>
+ </tr>
+ <tr>
+  <td><tt>ip</tt></td>
+  <td>Ip address of client. Ignored if <tt>dhcp</tt> is <tt>yes</tt></td>
+ </tr>
+ <tr>
+  <td><tt>netmask</tt></td>
+  <td>Netmask. Ignored if <tt>dhcp</tt> is <tt>yes</tt></td>
+ </tr>
+ <tr>
+  <td><tt>port</tt></td>
+  <td>TCP port that udpcast should use</td>
+ </tr>
+ <tr>
+  <td><tt>enableDiskmodule</tt></td>
+  <td>if <tt>yes</tt>, enable disk module (SCSI or SATA driver), if
+  <tt>no</tt> disable it. If not set, prompt user</td>
+ </tr>
+ <tr>
+  <td><tt>diskmodule</tt></td>
+  <td>The name of an optional disk module (for SCSI or SATA).</td>
+ </tr>
+ <tr>
+  <td><tt>diskmodparm</tt></td>
+  <td>Disk module parameters</td>
+ </tr>
+ <tr>
+  <td><tt>disk</tt></td>
+  <td>disk to be cloned</td>
+ </tr>
+ <tr>
+  <td><tt>compr</tt></td>
+  <td><tt>none</tt> for no compression, <tt>gz</tt> for compressed
+  operation using gzip, <tt>lzop</tt> for compressed operation using lzop</td>
+ </tr>
+ <tr>
+  <td><tt>umode</tt></td>
+  <td><tt>rcv</tt> for receiver, and <tt>snd</tt> for sender</td>
+ </tr>
+ <tr>
+  <td><tt>udpcparam</tt></td>
+  <td>any free-form command line parameters for udpcast</td>
+ </tr>
+</tbody></table>
+
+<p>Example:</p>
+<blockquote><pre><code>auto=yes
+lang=US
+kbmap=US
+netmodule=pcnet32
+netmodparm=
+dhcp=yes
+port=9000
+disk=/dev/hda
+mode=0
+udpcparam=
+</code></pre></blockquote>
+
+<p>Editing the config file manually allows to do interesting things. For
+instance, if you just delete the mode parameter, and leave everything
+else, you get a disk which does everything automatic, except to ask
+whether to send or receive.</p>
+
+<p>Note: you can also pass the parameters that would normally go into the
+config file as kernel parameters. This is especially handy in the case
+of a boot via PXE, where the kernel parameters are in an easily
+accessible text file.</p>
+
+<p>The config file may be either:</p>
+<ul>
+ <li>stored directly on the udpcast USB media:
+<pre><code>mcopy udpcfg.txt d:/boot/udpcast/
+</code></pre></li>
+ <li>or, for other media, included using the <tt>--savefile</tt> option:
+<pre><code>/usr/lib/udpcast/makeImage -k /usr/lib/udpcast/kernel/vmlinuz-6.1.55udpcast -c t.iso --savefile udpcfg.txt
+</code></pre></li>
+</ul>
+
+<p>You may of course also use <a href="http://www.udpcast.linux.lu/cast-o-matic/">cast-o-matic</a>
+which does all of this automatically for you.</p>
+
+
+
+</div><!--content-->
+<div id="footer">
+<a rel="nofollow" class="picture" href="http://validator.w3.org/check?uri=referer">
+   <img src="./UDP Cast 3_files/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88">
+</a>
+<a rel="nofollow" class="picture" href="http://www.anybrowser.org/campaign/"><img src="./UDP Cast 3_files/viewed-globe.gif" alt="Content Enhanced - Use Any Browser" width="147" height="42"></a><br>
+
+<!-- Created: Sun Oct 24 15:44:04 MEST 1999 -->
+<!-- hhmts start -->Last modified: Wed Jan  4 00:10:39 CET 2012 <!-- hhmts end -->
+
+</div>
+  
+
+</body></html>
