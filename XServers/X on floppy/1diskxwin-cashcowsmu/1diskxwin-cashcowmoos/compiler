@@ -1,0 +1,1 @@
+CC = /usr/i386-linux-uclibc/bin/i386-uclibc-gcc -Os -mcpu=i386 -falign-functions=0 -falign-jumps=0 -falign-loops=0 -DCPU=386 -fomit-frame-pointer -fno-builtin -fno-strength-reduce -fno-inline -s -DNOERROR  -D__i386__ -L/usr/i386-linux-uclibc/lib 

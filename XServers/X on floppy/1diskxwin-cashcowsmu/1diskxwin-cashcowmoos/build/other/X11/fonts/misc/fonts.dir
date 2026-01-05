@@ -1,0 +1,18 @@
+13
+h.pcf.Z variable
+h.pcf.Z 10x20
+h.pcf.Z 12x24
+h.pcf.Z r16
+h.pcf.Z 9x15
+h.pcf.Z r14
+h.pcf.Z fixed
+h.pcf.Z 7x14
+h.pcf.Z 7x14bold
+h.pcf.Z 5x7
+h.pcf.Z cursor
+h.pcf.Z -*-courier-medium-r-normal-*-14-*-*-*-*-*-*-*
+h.pcf.Z -*-courier-bold-r-normal-*-14-*-*-*-*-*-*-*
+h.pcf.Z -*-courier-medium-r-normal-*-12-*-*-*-*-*-*-*
+h.pcf.Z -*-helvetica-bold-*-*--12-*-*-*-*-*-*-*
+h.pcf.Z -*-helvetica-*-12*
+

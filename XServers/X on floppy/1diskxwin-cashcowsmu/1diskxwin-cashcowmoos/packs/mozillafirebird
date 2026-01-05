@@ -1,0 +1,56 @@
+#!/bin/sh
+
+wget ftp://ftp.mozilla.org/pub/mozilla.org/firebird/releases/0.6.1/MozillaFirebird-source-0.6.1.tar.bz2
+
+
+
+tar xzf libIDL-0.6.8.tar.gz
+cd libIDL-0.6.8
+
+CC="/usr/i386-linux-uclibc/bin/i386-uclibc-gcc" CPP="/usr/i386-linux-uclibc/bin/i386-uclibc-c++" \
+LD="/usr/i386-linux-uclibc/bin/i386-uclibc-ld" NM="/usr/i386-linux-uclibc/bin/i386-uclibc-nm" \
+OBJDUMP="/usr/i386-linux-uclibc/bin/i386-uclibc-objdump" \
+AR="/usr/i386-linux-uclibc/bin/i386-uclibc-ar" \
+LD_LIBRARY_PATH="/usr/i386-linux-uclibc/lib:/usr/i386-linux-uclibc/gtk/lib" \
+LIBRARY_PATH="/usr/i386-linux-uclibc/lib/" LDFLAGS="-L/usr/i386-linux-uclibc/lib/" \
+LIBIDL_INCLUDEDIR="-I/usr/i386-linux-uclibc/gtk/include/" \
+GLIB_CFLAGS="-I/usr/i386-linux-uclibc/gtk/include/ " IDL_LIBRARY="-L/usr/i386-linux-uclibc/lib/" \
+./configure --host=i386
+
+
+
+
+make clean > clean.errs 2>&1
+make > make.errs 2>&1
+
+cp .libs/libIDL.* /usr/i386-linux-uclibc/lib/
+
+cd ..
+
+tar xjf MozillaFirebird-source-0.6.1.tar.bz2
+
+echo "makeing mozilla firebird"
+cd mozilla
+
+
+
+
+CXX="/usr/i386-linux-uclibc/bin/i386-uclibc-c++" \
+CC="/usr/i386-linux-uclibc/bin/i386-uclibc-gcc" LD="/usr/i386-linux-uclibc/bin/i386-uclibc-ld" \
+NM="/usr/i386-linux-uclibc/bin/i386-uclibc-nm" OBJDUMP="/usr/i386-linux-uclibc/bin/i386-uclibc-objdump" \
+AR="/usr/i386-linux-uclibc/bin/i386-uclibc-ar" \
+LD_LIBRARY_PATH="/usr/i386-linux-uclibc/lib:/usr/i386-linux-uclibc/gtk/lib" \
+LIBRARY_PATH="/usr/i386-linux-uclibc/lib/" LDFLAGS="-L/usr/i386-linux-uclibc/lib/" \
+sys_lib_search_path_spec="/usr/i386-linux-uclibc/lib/" LDFLAGS="-L/usr/i386-linux-uclibc/lib/" ./configure \
+--x-libraries=/usr/i386-linux-uclibc/lib --with-gtk-prefix=/usr/i386-linux-uclibc/gtk/ \
+ --disable-accessibility  --disable-jsd --disable-xpfe-components \
+--disable-xprint --disable-freetype2 --disable-ldap --disable-mailnews  \
+--disable-composer --disable-jsloader  --disable-debug --disable-logging \
+--enable-strip --disable-mathml --disable-xpinstall --disable-gtktest --disable-tests --disable-installer
+make clean > clean.errs 2>&1
+make > make.errs 2>&1
+
+echo "copying files to uclibc directory"
+
+exit 0
+

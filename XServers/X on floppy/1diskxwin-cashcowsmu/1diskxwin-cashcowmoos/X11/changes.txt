@@ -1,0 +1,25 @@
+
+error messages have been removed saving 21Kbytes !!!
+ErrorF in programs/Xserver/os/utils.c
+defined in X.h
+defined programs/Xserver/include/os.h
+lib/font/bitmap/bitscale removed scale functions
+remove programs/Xserver/os/Imakefile  XDMCP_DEFINES = ServerXdmcpDefines
+programs/Xserver/os/utils.c Error functions removed, defines made in X.h, os.h protos commented out 
+libs/tinyX11 ChProp.c started messing
+libs/tinyX11 XlibInt.c remove some error stuff
+
+loads of changes in lib/font
+fntfilst.h
+fntfil.h define NO_NEW_FONT_HANDLING macro removes
+removes ------ printerfont.o fontenc.o encparse.o fontscale.o filewr.o
+fileio.c --- #ifdef NO_NEW_COMPRESS_FONT_HANDLER
+
+kcmap.c
+kdrive.c
+fb.h
+vesa.c
+
+fbgc.c  some stuff in fbGCOps removed
+
+#ifdef NFB

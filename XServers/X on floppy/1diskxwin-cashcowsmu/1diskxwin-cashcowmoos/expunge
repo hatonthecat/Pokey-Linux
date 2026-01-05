@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$1" = "" ] ; then echo -e "usage:\n expunge <package-name> <arch>"
+echo -e "available packages are"
+ls ./packs/ | while read package
+do
+echo $package
+done
+exit 0
+fi
+
+./packs/$1

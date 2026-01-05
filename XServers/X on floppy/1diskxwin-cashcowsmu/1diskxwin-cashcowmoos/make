@@ -1,0 +1,212 @@
+#!/bin/sh
+RDIR=`pwd`
+
+COMPILER="/usr/i386-linux-uclibc/bin/i386-uclibc-gcc -Os -mcpu=i386 \
+-falign-functions=0 -falign-jumps=0 -falign-loops=0 -DCPU=386 \
+-fomit-frame-pointer -fno-builtin -fno-strength-reduce -fno-inline \
+-s -DNOERROR  -D__i386__ -L/usr/i386-linux-uclibc/lib"
+
+LD=/usr/i386-linux-uclibc/bin/i386-uclibc-ld
+AR=/usr/i386-linux-uclibc/bin/i386-uclibc-ar
+
+if [ "$1" = "" ]
+then
+echo -e "\n\n\n\n\n\n\n\n\n\n\n\n\nThis distribution should build a single floppy based linux system  \nwith X11 gui and many apps and utilities\n"
+echo "YOU MUST HAVE THE FOLLOWING :"
+echo "1) a linux system with either 2.2 or 2.4 kernel!!!!!"
+echo -e "\t\t\twith 2.6 you will NOT be able to \n\t\t\tuse our standard kernel so must \n\t\t\tbuild a kernel and copy it to build/bzImage"
+echo "2) gcc"
+echo "2) imake"
+echo "3) a bourne compatible shell"
+echo "4) a  floppy disk IMPORTANT YOU MUST HAVE A FLOPPY WITH NO BAD SECTORS!!!!!"
+echo -e "\n\n" 
+echo "usage ./make remake:clean:glibc:2.6"
+echo -e "\tremake \tbuilds with uclibc\n\tclean \tclean the system\n\tglibc \tbuilds with glibc\n\t2.6 \tbuild for 2.6 kernel"
+exit 1
+fi
+
+
+if [ "$1" = "clean" ]
+then
+rm -f ./My_box/disk/cloop-0.68/xmake.err~
+cd linux-lite-v1.00 ; make clean > ../clean.out 2>&1 ; rm -f .hdepend ; cd ..
+#cd uClibc ; make clean > ../clean.out 2>&1 ; rm -f xmake.err~ ; cd ..
+cd zlib ; make clean > ../clean.out 2>&1 ; cd ..
+cd X11 ; make distclean > ../clean.out 2>&1 ; cd programs ; make distclean ; cd ../lib
+make distclean ; cd ../include ; make distclean ; cd ../config ; make distclean
+cd ..
+rm -f lib/Makefile
+rm -f ./programs/Xserver/Makefile.old ; cd ..
+#cd tinylogin ; make clean >> ../clean.out 2>&1 ; cd ..
+#cd busybox ; make clean >> ../clean.out 2>&1 ; cd ..
+rm -rf busybox
+rm -rf uClibc
+#rm -rf tcc
+#cd tcc ; make clean >> ../clean.out 2>&1 ; rm -f libtcc.a ; cd ..
+#rm -f sstrip/sstrip
+#cd mdesk-1.2.0 ; ./make_all.sh clean ; cd ..
+cd My_box ; make clean  >> ../clean.out 2>&1 ;
+cd disk/cloop-0.68 ; make clean ; cd ..
+cd dosfsck ; make clean ; cd ..
+cd umsdos_progs ; make clean ; cd ../..
+# cd umsdos_progs  ; make clean >> ../../clean.out 2>&1 ; cd ../
+rm -f sstrip ; rm -f *~ ; cd ..
+#cd cloop-0.68 ; make clean ; cd ../..
+#rm -f umsdos_progs/util/*.o ; rm -f umsdos_progs/tests/*.o ; rm -f umsdos_progs/tests/gen/*.o ; cd ..
+echo "cleaning press enter"
+read
+cd build ; ./cleanup.sh ; cd ..
+rm -f clean.out
+rm -f xmake.err~
+
+exit 0
+
+fi
+
+echo "This will compile all the required applications"
+##########################################################################################
+
+echo "CC = $COMPILER " > compiler
+
+#echo "# define CppCmd			/usr/i386-linux-uclibc/bin/cpp" > Xcomp.def
+#echo "#   define CcCmd		/usr/i386-linux-uclibc/bin/gcc -Os -m386 \
+#-malign-functions=0 -malign-jumps=0 -malign-loops=0 -DCPU=386 \
+#-fomit-frame-pointer -fno-builtin -fno-strength-reduce -fno-inline \
+#-s -DNOERROR  -D__i386__ -L/usr/i386-linux-uclibc/lib" > Xcomp.def
+
+#echo "#   define AsCmd		/usr/i386-linux-uclibc/bin/as" > Xcomp.def
+#echo "#   define LdCmd		/usr/i386-linux-uclibc/bin/ld" > Xcomp.def
+#echo "#   define AsmDefines		-D__ELF__" > Xcomp.def
+#echo "#   define CplusplusCmd		/usr/i386-linux-uclibc/bin/c++" > Xcomp.def
+
+echo "Making linux kernel"
+
+
+
+if [ "$1" = "remake" ]
+then 
+cd linux-lite-v1.00 ;
+mv /usr/src/linux /usr/src/linux.old
+ln -sf `pwd` /usr/src/linux
+make dep > xmake.err~ 2>&1 ; make clean > xmake.err~ 2>&1 ; make zImage > xmake.err~ 2>&1
+make modules > xmake.err~ 2>&1
+cp arch/i386/boot/zImage $RDIR/build/vmlinuz
+cp /boot/boot.b $RDIR/build/
+cd ..
+fi
+
+if [ "$1" = "2.6" ]
+then
+mv /usr/src/linux /usr/src/linux.old
+ln -sf /usr/src/linux.old /usr/src/linux
+cp /usr/src/linux/arch/i386/boot/bzImage build/vmlinuz
+
+fi
+
+echo "Making uClibc"
+tar xjf uClibc-0.9.27.tar.bz2
+mv uClibc-0.9.27 uClibc
+#cp uclibc.conf uClibc/.config
+tar xzf uclibp.tgz
+cd uClibc ;
+#mv extra/scripts/fix_includes.sh extra/scripts/fix_includes.sh.old
+#sed "s/-o -z \"\$PATCHLEVEL\" -o -z \"\$SUBLEVEL\"//g" extra/scripts/fix_includes.sh.old > extra/scripts/fix_includes.sh
+#chmod a+x extra/scripts/fix_includes.sh
+if [ "$1" = "remake" ]
+then 
+
+make > xmake.err~ 2>&1 ; make install > xmake.err~ 2>&1
+./postinst.sh
+#cp -f lib/* /usr/i386-linux-uclibc/lib/
+fi
+cd ..
+##########################################################################################
+
+rm /usr/src/linux
+mv /usr/src/linux.old /usr/src/linux
+echo "Making zlib"
+cd zlib ; 
+if [ "$1" = "remake" ]
+then
+
+CFLAGS="-fPIC -DDYNAMIC_CRC_TABLE -DHAVE_UNISTD_H -DUSE_MMAP -Os -DCPU=386 -fomit-frame-pointer -DSLOW \
+-fno-builtin -fno-strength-reduce -fno-inline -falign-functions -falign-jumps -falign-loops -mcpu=i386 -s" CC=/usr/i386-linux-uclibc/bin/i386-uclibc-gcc AR=/usr/i386-linux-uclibc/bin/i386-uclibc-ar ./configure -s > xmake.err~ 2>&1 ; 
+make >> xmake.err~ 2>&1
+fi
+cp zlib.h /usr/i386-linux-uclibc/include/
+cp zconf.h /usr/i386-linux-uclibc/include/
+cp libz.so* /usr/i386-linux-uclibc/lib/ ; cd ..
+##########################################################################################
+
+echo "Making X window system"
+echo "You are advised to check linux.cf, kdrive.cf, site.def in X11/config/cf/" 
+cd X11
+if [ "$1" = "remake" ]
+then
+echo `pwd`
+make World > axmake.err~ 2>&1
+mv -f ./programs/Xserver/Makefile ./programs/Xserver/Makefile.old ;
+sed 's/ $@ $(LDOPTIONS) $(VESAOBJS) / $@ $(LDOPTIONS) $(VESAOBJS)  dix\/main.o /g' \
+./programs/Xserver/Makefile.old > ./programs/Xserver/Makefile
+cd ./programs/Xserver/ ; make >> xmake.err~ 2>&1 ; cd ../..
+#make Everything >> xmake.err~ 2>&1 
+fi
+
+cp lib/X11/libtinyX11* /usr/i386-linux-uclibc/lib/
+
+cd ..
+
+##########################################################################################
+echo "Making busybox"
+echo "You are advised to check Config.h in busybox/"
+tar xjf busybox-1.1.1.tar.bz2
+mv busybox-1.1.1 busybox
+cp busybox.conf busybox/.config
+cd busybox ; 
+if [ "$1" = "remake" ]
+then
+make > xmake.err~ 2>&1 ;
+fi
+cp ./busybox ../build/root/bin/
+cd ..
+##########################################################################################
+
+echo "Making sstrip"
+#cd sstrip ; make > xmake.err~ 2>&1 ; cd ..
+cd My_box ; gcc rdev.c -o ../build/rdev > xmake.err~ 2>&1 
+make > xmake.err~ 2>&1
+cd disk/cloop-0.68 ; make > xmake.err~ 2>&1 ; cd ..
+cd dosfsck ; make > xmake.err~ 2>&1 ; cd ..
+cd umsdos_progs ; make > xmake.err~ 2>&1 ; cd ../..
+cd ..
+##########################################################################################
+
+echo "Making mdesk"
+cd mdesk-1.2.0 
+if [ "$1" = "remake" ]
+then
+ ./make_all.sh 
+fi
+cp src/mdesk ../build/X11R6/bin/xinit ;
+cd ..
+
+
+##########################################################################################
+LIBCVER=0.9.27
+cp /usr/i386-linux-uclibc/lib/libuClibc-$LIBCVER.so $RDIR/build/root/lib/libc.so.0
+cp /usr/i386-linux-uclibc/lib/ld-uClibc-$LIBCVER.so $RDIR/build/root/lib/ld-uClibc.so.0
+cp /usr/i386-linux-uclibc/lib/libcrypt-$LIBCVER.so $RDIR/build/root/lib/libcrypt.so.0
+cp /usr/i386-linux-uclibc/lib/libm-$LIBCVER.so $RDIR/build/X11R6/lib/libm.so.0
+cp X11/programs/Xserver/Xvesa ./build/X11R6/bin/X
+#cp X11/lib/tinyX11/libtinyX11.so.6.2 ./build/X11R6/lib/libtinyX11.so.6
+#cp /usr/i386-linux-uclibc/lib/libz.so.1.1.4 $RDIR/build/X11R6/lib/libz.so.1
+
+##########################################################################################
+
+cd $RDIR/build
+../My_box/sstrip X11R6/bin/* > xmake.err~ 2>&1 
+../My_box/sstrip X11R6/lib/* > xmake.err~ 2>&1 
+../My_box/sstrip root/lib/* > xmake.err~ 2>&1 
+../My_box/sstrip root/bin/* > xmake.err~ 2>&1 
+
+./makeimage minix

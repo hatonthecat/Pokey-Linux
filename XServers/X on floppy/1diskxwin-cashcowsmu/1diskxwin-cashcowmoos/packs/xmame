@@ -1,0 +1,22 @@
+#!/bin/sh
+
+echo "Downloading souce code for Xmame arcade emulator"
+echo "Warning you will require 50Mb free disk to compile"
+wget http://x.mame.net/download/xmame-0.76.1.tar.bz2
+echo "Extracting files"
+tar xjf xmame-0.76.1.tar.bz2
+
+cd xmame-0.76.1
+
+CXX="/usr/i386-linux-uclibc/bin/i386-uclibc-c++" \
+CC="/usr/i386-linux-uclibc/bin/i386-uclibc-gcc" LD="/usr/i386-linux-uclibc/bin/i386-uclibc-ld" \
+NM="/usr/i386-linux-uclibc/bin/i386-uclibc-nm" OBJDUMP="/usr/i386-linux-uclibc/bin/i386-uclibc-objdump" \
+AR="/usr/i386-linux-uclibc/bin/i386-uclibc-ar" \
+LD_LIBRARY_PATH="/usr/i386-linux-uclibc/lib:/usr/i386-linux-uclibc/gtk/lib" \
+LIBRARY_PATH="/usr/i386-linux-uclibc/lib/" LDFLAGS="-L/usr/i386-linux-uclibc/lib/" ./configure
+
+make clean > clean.errs 2>&1
+make > make.errs 2>&1
+
+exit 0
+

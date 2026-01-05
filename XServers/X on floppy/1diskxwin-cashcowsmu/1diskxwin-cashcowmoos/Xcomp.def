@@ -1,0 +1,14 @@
+# define CppCmd			/usr/i386-linux-uclibc/bin/i386-uclibc-cpp
+#   define CcCmd		/usr/i386-linux-uclibc/bin/i386-uclibc-gcc -Os -m386 -falign-functions=0 -falign-jumps=0 -falign-loops=0 -DCPU=386 -fomit-frame-pointer -fno-builtin -fno-strength-reduce -fno-inline -s -DNOERROR  -D__i386__ -L/usr/i386-linux-uclibc/lib
+#   define AsCmd		/usr/i386-linux-uclibc/bin/i386-uclibc-as
+#   define LdCmd		/usr/i386-linux-uclibc/bin/i386-uclibc-ld
+#   define AsmDefines		-D__ELF__
+#   define CplusplusCmd		/usr/i386-linux-uclibc/bin/i386-uclibc-c++
+
+XCOMM ## define CppCmd			cpp
+XCOMM ##   define CcCmd		gcc
+XCOMM ## -Os -m386 -malign-functions=0 -malign-jumps=0 -malign-loops=0 -DCPU=386 -fomit-frame-pointer -fno-builtin -fno-strength-reduce -fno-inline -s -DNOERROR  -D__i386__ -L/usr/i386-linux-uclibc/lib
+XCOMM ##   define AsCmd		as
+XCOMM ###   define LdCmd		ld
+XCOMM ##   define AsmDefines		-D__ELF__
+XCOMM ##   define CplusplusCmd		c++

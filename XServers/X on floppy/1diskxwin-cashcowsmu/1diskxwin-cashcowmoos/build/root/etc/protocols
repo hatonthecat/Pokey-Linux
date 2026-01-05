@@ -1,0 +1,13 @@
+# /etc/protocols:
+ip	0	IP
+icmp	1	ICMP
+igmp	2	IGMP
+ggp	3	GGP
+ipencap	4	IP-ENCAP
+st	5	ST
+tcp	6	TCP
+egp	8	EGP
+pup	12	PUP
+udp	17	UDP
+rdp	27	RDP
+

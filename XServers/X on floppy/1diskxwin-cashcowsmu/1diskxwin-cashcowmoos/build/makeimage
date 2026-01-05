@@ -1,0 +1,179 @@
+#!/bin/sh
+. Config
+
+fstype="$1"
+
+if [ "$fstype" == "" ]
+then
+$SETCOLOR_FAILURE
+echo "wrong filesystem usage makeimage [filesystemtype]"
+$SETCOLOR_NORMAL
+exit 0
+fi
+
+dircomm=$(dirname $0)
+comm=$(basename $0)
+if [ ! -x "./$comm" ] ; then
+	echo "$comm should be executed in home: cd $dircomm"
+	cd $dircomm
+fi
+
+if [ "1" == "1" ] ; then
+rm -rf root/usr/X11R6
+
+cd other
+tar czf x.tgz X11
+cp x.tgz ../X11R6/lib/
+cd ..
+tar czf x.tgz X11R6/
+cp x.tgz root/usr/
+
+echo "You need to select one of the following keymaps"
+ls other/keymaps
+read kmp
+cp other/keymaps/$kmp root/keys.gz
+
+echo "You may require some of the following modules"
+ls ../linux-lite-v1.00/modules/
+
+
+if [ "$1" == "cram" ]
+then
+cram=cram
+echo "Creating cramfs"
+mkcramfs X11R6/ cramimg
+else
+cram=
+#cp -R X11R6 root/usr/
+sync
+fi
+
+fi
+
+if [ "$fstype" == "" ] ; then
+fstype=minix
+fi
+
+while [ "$1" != "" ] ; do
+	eval "$1"
+	shift
+done
+
+mkdir $MNTDIR 2>/dev/null
+MY_DEST_DIR=$(cd $RD_ROOT ; pwd)
+
+echo 
+echo "---------------------------------------------------"
+echo "Creating ramdisk image..."
+echo "                    --> this takes up to 2 minutes"
+
+if [ -d $RD_MODULES -a "$(ls $RD_MODULES 2> /dev/null)" ] ; then
+	echo "Copying modules to root dir... "
+	MY_DEST_DIR=$(cd $RD_ROOT ; pwd)
+	rm -R $MY_DEST_DIR/lib/modules 2> /dev/null
+	( cd $RD_LINUX ; INSTALL_MOD_PATH=$MY_DEST_DIR make modules_install )
+	find $RD_LINUX/lib/modules -name "*.o" -exec strip {} \; &> /dev/null
+	depmod -a -F $RD_LINUX/System.map -b $MY_DEST_DIR
+	chown -R 0.0 $MY_DEST_DIR/lib/modules
+	echo "done."
+fi
+
+echo ; echo "Make a file of ${RD_SIZE}k and use loop device on it"
+dd if=/dev/zero of=$TMPFILE bs=1k count=$RD_SIZE
+# > /dev/null
+if ! `losetup $LOOPDEV $TMPFILE`; then
+	echo "losetup did NOT run correctly."
+	echo "Please make sure you have loop device, losetup, and are root."
+	rm -f $TMPFILE
+	exit 0
+fi
+
+echo "Make $fstype fs on loopdev and mount it"
+mkfs.$fstype $LOOPDEV > /dev/null
+if [ "$?" != "0" ] ; then
+	echo "ERROR $? MAKING $fstype FS!"
+	exit $?
+fi
+
+
+
+mount $LOOPDEV $MNTDIR -t $fstype
+if [ "$?" != "0" ] ; then
+	echo "ERROR $? MOUNTING LOOPDEV!"
+	losetup -d $LOOPDEV
+	exit $?
+fi
+
+
+iMNTDIR=`echo $MNTDIR`
+
+if [ "$fstype" == "msdos" ] ; then
+`echo "mkdir $MNTDIR/LINUX"`
+sync	; umount $MNTDIR
+fstype=umsdos
+mount $LOOPDEV $MNTDIR -t $fstype
+iMNTDIR=`echo $MNTDIR`
+../My_box/disk/umsdos_progs/util/umssync $MNTDIR
+fi
+
+echo  "/dev/ram0	/	$fstype	defaults	0	0" > root/etc/fstab
+echo  "none	/proc	proc	defaults	0	0" >> root/etc/fstab
+echo  "none	/dev/pts devpts	gid=2,mode=620	0	0" >> root/etc/fstab
+
+echo -n "Copying ramdisk contents to loopdev... "
+cp -a $RD_SOURCE $iMNTDIR
+echo "done."
+
+echo "Umount and undo loop"
+umount $MNTDIR
+rmdir $MNTDIR 2>/dev/null
+losetup -d $LOOPDEV
+
+echo "Create rd image compressed with ${ZIP}"
+dd if=$TMPFILE | ${ZIP} -9 > $RD_IMAGE
+rm -f $TMPFILE
+
+echo -n "Waiting until everthing is written... "
+sync
+
+####################################################################################################
+
+PACKING=50
+KERNELSIZE=$(ls -s $RD_KERNEL | (read KS DUMMY; echo $KS))
+IMAGESIZE=$(ls -s $RD_IMAGE | (read IS DUMMY; echo $IS))
+BOOTBSIZE=$(ls -s $LILO_BOOT | (read BS DUMMY; echo $BS))
+
+# Look total size
+
+TOTAL=$(du -c $RD_KERNEL $RD_IMAGE $LILO_BOOT |tail -1|cut -f1)
+TOTAL=$[ $TOTAL + $PACKING ]
+echo Done
+
+
+dd if=vmlinuz of=1diskx.img bs=1k > /tmp/kernsize.mung 2>&1
+rdev 1diskx.img /dev/fd0
+rdev -R 1diskx.img 0 
+cat /tmp/kernsize.mung | while read aa; do
+set $aa
+r="$1"
+mmd=`echo $ddsize`
+ddsize="$r + 16384"
+echo "offset $r"
+eval rdev -r 1diskx.img $ddsize
+echo "offset $r"
+eval dd if=Image.gz of=1diskx.img bs=1k seek=$r
+break
+
+done
+
+if [ "$cram" = "cram" ]
+then
+echo -n "Copying cramfs image to image dir... "
+if ! cp -a cramimg $MNTDIR ; then
+	umount $MNTDIR
+	losetup -d $LOOPDEV
+	exit $?
+fi
+echo "done."
+fi
+

@@ -1,0 +1,47 @@
+#!/bin/sh
+
+echo -e "building apache"
+#exit 0
+
+wget ftp://ftp.gtk.org/pub/gtk/v1.2/glib-1.2.10.tar.gz
+wget ftp://ftp.gtk.org/pub/gtk/v1.2/gtk+-1.2.10.tar.gz
+tar xzf glib-1.2.10.tar.gz
+tar xzf gtk+-1.2.10.tar.gz
+
+echo "makeing glib library"
+cd glib-1.2.10
+
+CC="/usr/i386-linux-uclibc/bin/i386-uclibc-gcc" \
+LD="/usr/i386-linux-uclibc/bin/i386-uclibc-ld" \
+NM="/usr/i386-linux-uclibc/bin/i386-uclibc-nm" \
+OBJDUMP="/usr/i386-linux-uclibc/bin/i386-uclibc-objdump" \
+AR="/usr/i386-linux-uclibc/bin/i386-uclibc-ar" \
+LD_LIBRARY_PATH="/usr/i386-linux-uclibc/lib" \
+LIBRARY_PATH="/usr/i386-linux-uclibc/lib/" \
+LDFLAGS="-L/usr/i386-linux-uclibc/lib/" \
+sys_lib_search_path_spec="/usr/i386-linux-uclibc/lib/" \
+./configure --prefix=/usr/i386-linux-uclibc/gtk/
+
+make clean > clean.errs 2>&1
+make > make.errs 2>&1
+cd ..
+echo "makeing gtk library"
+cd gtk+-1.2.10
+
+CPP="/usr/i386-linux-uclibc/bin/i386-uclibc-c++" \
+CC="/usr/i386-linux-uclibc/bin/i386-uclibc-gcc" \
+LD="/usr/i386-linux-uclibc/bin/i386-uclibc-ld" \
+NM="/usr/i386-linux-uclibc/bin/i386-uclibc-nm" \
+OBJDUMP="/usr/i386-linux-uclibc/bin/i386-uclibc-objdump" \
+AR="/usr/i386-linux-uclibc/bin/i386-uclibc-ar" \
+LD_LIBRARY_PATH="/usr/i386-linux-uclibc/lib:/usr/i386-linux-uclibc/gtk/lib" \
+LIBRARY_PATH="/usr/i386-linux-uclibc/lib/" LDFLAGS="-L/usr/i386-linux-uclibc/lib/" \
+sys_lib_search_path_spec="/usr/i386-linux-uclibc/lib/" \
+LDFLAGS="-L/usr/i386-linux-uclibc/lib/" \
+./configure --x-libraries=/usr/i386-linux-uclibc/lib --with-glib-prefix=/usr/i386-linux-uclibc/gtk/ \
+--prefix=/usr/i386-linux-uclibc/gtk/
+
+
+make clean > clean.errs 2>&1
+make > make.errs 2>&1
+cd ..

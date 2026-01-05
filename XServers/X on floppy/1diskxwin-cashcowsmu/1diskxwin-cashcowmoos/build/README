@@ -1,0 +1,53 @@
+This is the new 1 disk vesion of 2 disk xwin
+
+It is likely to be the final release as this is now in full distribution in Mungdyne 
+thin terminals.
+
+It is now fully tested:
+rdesktop works!, out of the box
+vncviewer works!, what you havent installed mitshm rback module?
+ssh works, out of the box
+remote X11 session works! (xhost +), out of the box
+html 4.0 full compliance (https, dom(70%), css(parse plugin removed for size), javascript(removed for size), table markup is broken due to removal of javascript back parsing)
+
+It only contains the following:
+
+busybox, unix shell utils
+tinylogin, login utils    ###### deprecated for size
+linux-2.2.20, kernel
+X11, vesa server
+mdesk, web browser
+fspanel, taskbar
+mungwm, window manager
+mxpmroot, desktop graphics
+vncviewer, remote gui system
+mxvt, terminal emulator
+rdesktop, windows remote gui system
+xfm, file manager
+rsh, remote shell
+rlogin, remote login
+ssh, secure shell
+usk, text editor
+dial, dialog system
+menu, menu system
+games, 16 time wasters ###### deprecated for size
+eepro100.o 8390.o ne2k-pci.o net drivers.
+
+It is now distributed as a 1.44Mb minix floppy image you can mount the image by 
+"mount -o loop 1dskx.img -t minix mountdir/ ; gzip -d mountdir/Image.gz". 
+"mount -o loop mountdir/Image -t minix mountdir1/". 
+you may want to add different drivers or a new kernel (but that is your problem).
+
+Sorry but you have to sort any problems yourself, dont expect a reply to anything, 
+but bugs will be fixed if they are reported.
+
+Known bugs
+
+some systems dont recognise serial mice well due to int 10 overlay
+
+Installation
+
+to install you need a floppy that supports 1.4Mb disks
+a 486 cpu and 8Mb memory
+
+

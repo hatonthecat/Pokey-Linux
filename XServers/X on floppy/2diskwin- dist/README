@@ -1,0 +1,70 @@
+
+here follows the info for release 1.5 of 2-diskXwin.
+
+The system is released as a free demonstration of some of the software available in the mungkie associates armstrong embedded systems project.
+
+This release has a new build system and now uses the syslinux bootloader, it contains the root filesystem image, kernel, syslinux, and x11 tarball you  can write it by running the writedisk script(in Linux) or using writedisk.bat (under dos).
+
+This release should contain the following:
+
+*	.config			kernel compilation config
+*	vmlinuz			linux kernel
+*	image.gz		The root filesystem image
+*	README			Your reading it
+*	writedisk		The disk image writing script
+*	writedisk.bat		the dos disk writing script
+*	x11.bz2			The X11R6 directory tarball
+*	LICENSE			The licencing details of the software
+*	rawrite.exe		dos program to write the disk image
+*	rawrite.txt		the rawrite release info
+*	syslinux		the bootloader
+*	keymaps/		the keyboard maps
+*	pppd.bz2		the pppd subsystem
+
+Instructions
+
+download the tgz file. (I guess you have already done this?)
+unarchive the .tgz file. (ditto)
+format a 1.44Mb floppy. (dos or linux)
+Write the boot floppy:
+	run the writedisk script.
+copy x11.bz2 to another blank floppy.
+add optional drivers and conf.inf script to the x11 disk
+reboot from the boot flopppy.
+swap disks when prompted
+login as root when prompted.
+type 'xwin' and give your mouse then video mode when requested to start the Xserver.
+
+Editing the system
+
+As this system will generally not be supported the following info is given in order for you to be able to change the system yourself. The system is really just a collection of other peoples work, with only some minor hacks to the source code of some of the components. So if you have problems get in touch with the author of the relevant component.
+
+
+You can change the system by simply mounting and editing the root image file in linux. 'mount -o loop IMAGE_FILE mount_dir ; cp mount_dir/* hack_dir'
+then unzip the Image.gz image and again mount it. 'gzip -d Image.gz ; mount -o loop Image mount_dir ; cp -r mount_dir/* hack_root_dir/ '
+
+Kernel drivers
+
+The kernel is linux-2.4.17, therefore if you want a driver or new kernel get the sources from kernel.org. and compile what you want, then put the new stuff on the image.gz root image.
+
+to edit the x11.tbz simply untar.bz2 it and change as required.
+
+a large number of additions could be made as the images are only for 1.44Mb format disks(this is to make it simple for dos/windows users to write the disk image). You could write 1.6 or 1.7Mb formatted images in linux and have an extra 0.6Mb of space to play with.
+
+List of usefull stuff that was used in this distro (you want the sources do a search at google)
+
+linux kernel-2.4.6
+libc-2.1.3
+busybox-0.60.2
+tinylogin-1.0
+xfree86-4.1
+byld(build your linux disk)
+lmw(linux my way)
+alloywm/swm
+chimera-1.70p1
+xfm
+pppd-2.4.1
+rxvt
+udhcp
+pppd
+e3

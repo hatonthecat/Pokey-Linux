@@ -1,0 +1,47 @@
+# Net services
+tcpmux		1/tcp
+echo		7/tcp
+echo		7/udp
+discard		9/tcp		sink null
+discard		9/udp		sink null
+systat		11/tcp		users
+daytime		13/tcp
+daytime		13/udp
+netstat		15/tcp
+qotd		17/tcp		quote
+msp		18/tcp
+msp		18/udp
+chargen		19/tcp		ttytst source
+chargen		19/udp		ttytst source
+ftp-data        20/tcp
+ftp-data        20/udp
+ftp             21/tcp
+ftp             21/udp
+ssh             22/tcp
+ssh             22/udp
+telnet          23/tcp
+telnet          23/udp
+time		37/tcp		timserver
+time		37/udp		timserver
+rlp		39/udp		resource
+nameserver	42/tcp		name
+whois		43/tcp		nicname
+domain		53/tcp		nameserver
+domain		53/udp		nameserver
+www		80/tcp		http
+www		80/udp
+link		87/tcp		ttylink
+supdup		95/tcp
+hostnames	101/tcp		hostname
+auth		113/tcp		tap ident authentication
+xdmcp		177/tcp
+xdmcp		177/udp
+irc		194/tcp
+irc		194/udp
+exec		512/tcp
+login		513/tcp
+who		513/udp		whod
+shell		514/tcp		cmd
+syslog		514/udp
+route		520/udp		router routed
+uucp		540/tcp		uucpd

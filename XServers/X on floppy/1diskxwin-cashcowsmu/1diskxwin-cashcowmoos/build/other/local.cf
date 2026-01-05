@@ -1,0 +1,6 @@
+cp /mnt/*.o /lib/modules/
+insmod /lib/modules/8390
+insmod /lib/modules/ne.o 
+#io=0x240
+ifconfig eth0 169.254.190.14
+route add default gw 169.254.190.14

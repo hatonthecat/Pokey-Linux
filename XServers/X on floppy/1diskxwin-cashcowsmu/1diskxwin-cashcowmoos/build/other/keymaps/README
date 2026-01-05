@@ -1,0 +1,24 @@
+keymaps for i8n keyboards
+
+You may also want to look at X fonts as follows.
+
+on your favoured system with X
+
+dump your favourite fonts:
+fstobdf -server unix/:-1 -fn -*-helvetica-*-*-*-*-*-120-*-*-p-*-*-* > Example.bdf
+
+examine the characters defined using xfd e.g.:
+xfd -fn -*-helvetica-*-*-*-*-*-120-*-*-p-*-*-*
+
+any you dont require find the encoding number e.g. char 148 is not needed
+grep for "ENCODING 148" then delete between the STARTCHAR and ENDCHAR
+
+then fix the bdf headers CHARS, etc...
+
+then recode
+
+bdftopcf -o h.pcf Example.bdf ; gzip h.pcf ; cp ./h.pcf.gz X11/fonts/misc/h.pcf.gz
+
+its only really for those hardcore size optimizers and tweakers though.
+
+if you have any additions email the mungkie

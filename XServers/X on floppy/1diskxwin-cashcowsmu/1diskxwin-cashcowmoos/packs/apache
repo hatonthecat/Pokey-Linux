@@ -1,0 +1,40 @@
+#!/bin/sh
+
+echo -e "building apache"
+
+if [ ! -f ./httpd-2.0.47.tar.gz ]
+then
+wget http://apache.secsup.org/dist/httpd/httpd-2.0.47.tar.gz
+fi
+
+tar xzf httpd-2.0.47.tar.gz
+cd httpd-2.0.47
+CC="/usr/i386-linux-uclibc/bin/i386-uclibc-gcc" LD="/usr/i386-linux-uclibc/bin/i386-uclibc-ld" \
+NM="/usr/i386-linux-uclibc/bin/i386-uclibc-nm" OBJDUMP="/usr/i386-linux-uclibc/bin/i386-uclibc-objdump" \
+AR="/usr/i386-linux-uclibc/bin/i386-uclibc-ar" LD_LIBRARY_PATH="/usr/i386-linux-uclibc/lib" \
+LIBRARY_PATH="/usr/i386-linux-uclibc/lib/" LDFLAGS="-L/usr/i386-linux-uclibc/lib/" \
+sys_lib_search_path_spec="/usr/i386-linux-uclibc/lib/" LDFLAGS="-L/usr/i386-linux-uclibc/lib/" \
+./configure > ../configure.errors 2>&1
+
+#make clean
+make > ../compile.errors 2>&1
+cp ./srclib/apr-util/.libs/libaprutil-0.so* /usr/i386-linux-uclibc/lib/ 
+cp ./srclib/apr/.libs/libapr-0.so* /usr/i386-linux-uclibc/lib/ 
+cp ./srclib/apr-util/xml/expat/lib/.libs/libexpat.so* /usr/i386-linux-uclibc/lib/ 
+cp .libs/httpd ../../build/root/bin/
+
+cp ./srclib/apr-util/.libs/libaprutil-0.so* ../../build/root/lib/ 
+cp ./srclib/apr/.libs/libapr-0.so* ../../build/root/lib/ 
+cp ./srclib/apr-util/xml/expat/lib/.libs/libexpat.so* ../../build/root/lib/ 
+
+mkdir ../../build/root/usr/local/apache2
+mkdir ../../build/root/usr/local/apache2/conf
+cp ../httpd.conf ../../build/root/usr/local/apache2/conf/
+cp ../../uClibc/lib/libnsl-0.9.21.so ../../build/root/lib/libnsl.so.0
+cp ../../uClibc/libpthread/libpthread-0.9.21.so ../../build/root/lib/libpthread.so.0
+cp ../../uClibc/lib/libdl-0.9.21.so ../../build/root/lib/libdl.so.0
+
+cd ../build/root
+tar xzf ../../packs/apache.conf.tgz
+
+

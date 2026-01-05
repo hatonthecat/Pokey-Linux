@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "System rebooting now."
+echo -n "Syncing filesystems:"
+sync
+echo -n "Unmounting filesystems:"
+umount -a -r

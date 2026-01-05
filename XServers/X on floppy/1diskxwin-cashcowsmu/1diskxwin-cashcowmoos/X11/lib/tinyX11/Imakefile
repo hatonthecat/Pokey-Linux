@@ -1,0 +1,448 @@
+XCOMM $XConsortium: Imakefile /main/192 1996/02/02 16:15:49 kaleb $
+XCOMM $XFree86: xc/lib/X11/Imakefile,v 3.15 1996/08/26 06:23:31 dawes Exp $
+#define DoNormalLib NormalLibX11
+#define DoSharedLib SharedLibX11
+#define DoDebugLib DebugLibX11
+#define DoProfileLib ProfileLibX11
+#define LibName tinyX11
+#define SoRev SOXLIBREV
+#define HugeLibrary YES
+
+#include <Threads.tmpl>
+
+#ifndef MotifBC
+#define MotifBC NO
+#endif
+
+#ifdef SharedX11Reqs
+REQUIREDLIBS = SharedX11Reqs
+#endif
+#if defined(MacIIArchitecture) || defined(SequentArchitecture) || defined(i386ScoArchitecture)
+XBSDLIB = /**/
+#endif
+#if defined(LunaArchitecture) && defined(Mc88000Architecture)
+EXTRA_LIBRARIES = /**/
+#endif
+#if Malloc0ReturnsNull
+     MALLOC_DEFINES = -DMALLOC_0_RETURNS_NULL
+#endif
+#if HasXdmAuth
+        XDMAUTHDEFS = -DHASXDMAUTH
+        XDMAUTHOBJS = Wrap.o Wraphelp.o
+        XDMAUTHSRCS = Wrap.c Wraphelp.c
+#endif
+
+#define BuildXKBlib NO
+
+#if BuildXKBlib
+    XKB_DEFINES = -DXKB 
+        XKBSRCS = XKB.c XKBBind.c XKBCompat.c XKBCtrls.c XKBCvt.c XKBGetMap.c \
+	          XKBGetByName.c XKBNames.c XKBRdBuf.c XKBSetMap.c XKBUse.c \
+		  XKBleds.c XKBBell.c XKBGeom.c XKBSetGeom.c XKBExtDev.c \
+		  XKBList.c XKBMisc.c \
+		  XKBMAlloc.c XKBGAlloc.c XKBAlloc.c
+        XKBOBJS = XKB.o XKBBind.o XKBCompat.o XKBCtrls.o XKBCvt.o XKBGetMap.o \
+		  XKBGetByName.o XKBNames.o XKBRdBuf.o XKBSetMap.o XKBUse.o \
+		  XKBleds.o XKBBell.o XKBGeom.o XKBSetGeom.o XKBExtDev.o \
+		  XKBList.o XKBMisc.o \
+		  XKBMAlloc.o XKBGAlloc.o XKBAlloc.o
+#endif
+#if HasSecureRPC
+        RPCDEFS = -DSECURE_RPC
+#endif
+#if HasPoll
+   POLL_DEFINES = -DUSE_POLL
+#endif
+
+   CONN_DEFINES = ConnectionFlags
+   XTRANS_X_DEFINES = -DX11_t -DTRANS_CLIENT
+   XTRANS_XIM_DEFINES = -DXIM_t -DTRANS_CLIENT
+
+#if HasBSD44Sockets
+   SOCK_DEFINES = -DBSD44SOCKETS
+#endif
+     EDB_DEFINES = -DERRORDB=\"$(LIBDIR)/XErrorDB\"
+     KDB_DEFINES = -DKEYSYMDB=\"$(LIBDIR)/XKeysymDB\"
+     CMS_DEFINES = -DXCMSDB=\"$(LIBDIR)/Xcms.txt\"
+#if HasSnprintf
+    MISC_DEFINES = -DHAS_SNPRINTF -DLIBX11
+#endif
+#if MotifBC
+      BC_DEFINES = -DMOTIFBC
+#endif
+#if NoRConst
+ RCONST_DEFINES = -DNORCONST
+#endif
+    XLC_DEFINES = -DXLOCALEDIR=\"$(XLOCALEDIR)\"
+
+
+#define HasKrb5 NO
+
+#if HasKrb5
+         K5OBJS = k5encode.o
+         K5SRCS = k5encode.c
+         K5INCL = Krb5Includes
+         K5DEFS = Krb5Defines
+#endif
+#if !HasSnprintf
+       MISCSRCS = snprintf.c
+       MISCOBJS = snprintf.o
+#endif
+#if NeedLibInsideFlag
+    LIB_DEFINES = -D_XLIBINT_
+#endif
+ LIB_MT_DEFINES = LibraryMTDefines
+
+INCLUDES = -I. -I../../include -I../.. -I../../exports/include -I../Xau
+
+
+        DEFINES = $(MALLOC_DEFINES) $(LIB_DEFINES) $(MISC_DEFINES)
+   OPEN_DEFINES = -I$(EXTINCSRC) $(K5INCL) $(K5DEFS)
+ DEPEND_DEFINES = $(OPEN_DEFINES) $(TRANS_INCLUDES) $(CONN_DEFINES) $(THREADS_DEFINES) $(LIB_MT_DEFINES)
+       AUTHOBJS = AuDispose.o AuGetBest.o AuFileName.o AuRead.o
+       AUTHSRCS = AuDispose.c AuGetBest.c AuFileName.c AuRead.c
+           SRCS = $(SRCS1) $(SRCS2) $(SRCS3) /* try *.c if you have trouble */
+        HEADERS = Xlib.h Xresource.h Xutil.h cursorfont.h Xlibint.h \
+			Xlocale.h XKBlib.h
+
+       LINTLIBS =
+
+SRCS1 = 
+
+#	CopyCmap.o \
+#	CopyGC.o \
+#	InitExt.o \
+#	LiICmaps.o \
+#	LiProps.o \
+#	AllCells.o \
+
+
+OBJS1 = \
+Depths.o \
+ChGC.o \
+ChCmap.o \
+Context.o \
+ConvSel.o \
+ChkIfEv.o \
+ChWAttrs.o \
+Quarks.o \
+ParseCmd.o \
+GCMisc.o \
+Clear.o \
+ChActPGb.o \
+CrGlCur.o \
+Bell.o \
+ChProp.o \
+ChkWinEv.o \
+ChkTypEv.o \
+ClearArea.o \
+ConfWind.o \
+ConnDis.o \
+CopyArea.o \
+CopyPlane.o \
+CrBFData.o \
+CrCmap.o \
+CrCursor.o \
+CrGC.o \
+CrPFBData.o \
+CrPixmap.o \
+CrWindow.o \
+Cursor.o \
+DefCursor.o \
+DelProp.o \
+DestSubs.o \
+DrLine.o \
+DrLines.o \
+DrPoint.o \
+DrRect.o \
+EvToWire.o \
+FillRct.o \
+Flush.o \
+Font.o \
+FreeCmap.o \
+FreeCols.o \
+FreeEData.o \
+FreeGC.o \
+FreePix.o \
+GetAtomNm.o \
+GetColor.o \
+GetGeom.o \
+GetImage.o \
+GetProp.o \
+GetWAttrs.o \
+GrButton.o \
+GrKey.o \
+GrPointer.o \
+GrServer.o \
+Host.o \
+IfEvent.o \
+ImUtil.o \
+ImText.o \
+InsCmap.o \
+IntAtom.o \
+KeyBind.o \
+LiHosts.o \
+ErrHndlr.o \
+LoadFont.o \
+LookupCol.o \
+GetSOwner.o \
+GetHColor.o \
+GetFProp.o \
+GetHints.o \
+FillPoly.o \
+ChkTypWEv.o \
+ClDisplay.o \
+ChAccCon.o \
+KillCl.o \
+FetchName.o \
+GrKeybd.o \
+FreeCurs.o \
+GetIFocus.o \
+LowerWin.o \
+XShm.o \
+InitExt.o \
+QuExt.o \
+GetPntMap.o \
+	extutil.o 
+
+#FontNames.o \
+#FontInfo.o \
+#GetMoEv.o \
+#GetPntMap.o \
+#FillRcts.o \
+#Border.o \
+#DestWind.o \
+#DisName.o \
+#Geom.o \
+#extutil.o 
+#GetPntMap.o \
+#XShape.o \
+#ChClMode.o \
+#QuCurShp.c \
+#QuKeybd.c \
+#SetNrmHint.c \
+#GetNrmHint.c \
+
+SRCS2 = 
+
+
+#GetWMCMapW.c \
+#SetWMCMapW.c \
+#	TextExt16.c \
+#	QuCurShp.o \
+#	QuKeybd.o \
+#	QuTextExt.o \
+#	RestackWs.o \
+# QuExt.o \
+#UninsCmap.o \
+#StrToText.o \
+#StNColor.o \
+#SetDashes.o \
+
+OBJS2 = \
+ScrResStr.o \
+RepWindow.o \
+QuColor.o \
+QuColors.o \
+PmapBgnd.o \
+Macros.o \
+MapRaised.o \
+MapSubs.o \
+MapWindow.o \
+MaskEvent.o \
+Misc.o \
+QuTree.o \
+QuPntr.o \
+ModMap.o \
+MoveWin.o \
+NextEvent.o \
+OpenDis.o \
+ParseCol.o \
+PeekEvent.o \
+PeekIfEv.o \
+Pending.o \
+PutBEvent.o \
+PutImage.o \
+RaiseWin.o \
+RdBitF.o \
+ReconfWin.o \
+Region.o \
+SelInput.o \
+SendEvent.o \
+SetBack.o \
+SetCRects.o \
+SetClMask.o \
+SetClOrig.o \
+SetFont.o \
+SetFore.o \
+SetFunc.o \
+SetHints.o \
+SetIFocus.o \
+SetLStyle.o \
+SetPMask.o \
+SetSOwner.o \
+SetState.o \
+SetStCmap.o \
+SetTile.o \
+SetTSOrig.o \
+StBytes.o \
+StrKeysym.o \
+Sync.o \
+Synchro.o \
+Text.o \
+TextExt.o \
+TrCoords.o \
+UngrabBut.o \
+UngrabKbd.o \
+UngrabKey.o \
+UngrabPtr.o \
+UngrabSvr.o \
+UnldFont.o \
+UnmapSubs.o \
+UnmapWin.o \
+VisUtil.o \
+WarpPtr.o \
+WinEvent.o \
+Window.o \
+XlibInt.o \
+GetGCVals.o \
+GetRGBCMap.o \
+GetTxtProp.o \
+Iconify.o \
+PixFormats.o \
+PropAlloc.o \
+SetRGBCMap.o \
+SetTxtProp.o \
+SetWMProto.o \
+TextToStr.o \
+globals.o \
+StName.o \
+UndefCurs.o \
+WMGeom.o \
+StColor.o \
+WMProps.o \
+XlibAsync.o \
+Xrm.o \
+ParseGeom.o \
+RotProp.o \
+SetStip.o \
+StColors.o \
+evtomask.o \
+GetWMProto.o \
+Withdraw.o \
+GetNrmHint.o \
+SetNrmHint.o \
+$(AUTHOBJS) 
+
+#WrBitF.o \
+#SetFPath.o \
+#SetPntMap.o \
+#SetNrmHint.o \
+#GetNrmHint.o \
+#SetWMCMapW.o \
+#GetWMCMapW.o \
+#
+#	TextExt16.o \
+#	mbWMProps.c \
+#	RegstFlt.o \
+
+
+SRCS3 = 
+
+OBJS3 = \
+	lcWrap.o \
+	UNDEFINED.o \
+	FilterEv.o \
+	x11trans.o \
+	FSWrap.o \
+	$(XKBOBJS) $(LCOBJS) $(MISCOBJS)
+
+LCSRCS = 
+
+LCOBJS = 
+
+OBJS = $(OBJS1) $(OBJS2) $(OBJS3)
+
+#if !BuildServersOnly
+#include <Library.tmpl>
+
+SpecialCLibObjectRule(ErrDes,$(ICONFIGFILES),$(EDB_DEFINES))
+SpecialCLibObjectRule(StrKeysym,$(ICONFIGFILES),$(KDB_DEFINES))
+SpecialCLibObjectRule(ConnDis,$(ICONFIGFILES),$(XDMAUTHDEFS) $(RPCDEFS) $(CONN_DEFINES) $(SOCK_DEFINES) $(POLL_DEFINES) $(XTRANS_X_DEFINES) $(K5INCL) $(K5DEFS))
+SpecialCLibObjectRule(x11trans,$(ICONFIGFILES),$(TRANS_INCLUDES) $(CONN_DEFINES) $(SOCK_DEFINES) $(XTRANS_X_DEFINES) $(POLL_DEFINES))
+LinkFile(x11trans.c,$(TRANSCOMMSRC)/transport.c)
+SpecialCLibObjectRule(ximtrans,$(ICONFIGFILES),$(TRANS_INCLUDES) $(CONN_DEFINES) $(SOCK_DEFINES) $(XTRANS_XIM_DEFINES) $(POLL_DEFINES))
+LinkFile(ximtrans.c,$(TRANSCOMMSRC)/transport.c)
+SpecialCLibObjectRule(OpenDis,$(ICONFIGFILES),$(BC_DEFINES) $(OPEN_DEFINES) $(XTRANS_X_DEFINES) $(XKB_DEFINES))
+SpecialCLibObjectRule(Wrap,$(ICONFIGFILES),$(XDMAUTHDEFS))
+SpecialCLibObjectRule(XlibInt,$(ICONFIGFILES),-I$(EXTINCSRC) $(CONN_DEFINES) $(POLL_DEFINES) $(XTRANS_X_DEFINES) $(LIB_MT_DEFINES))
+SpecialCLibObjectRule(cmsColNm,$(ICONFIGFILES),$(CMS_DEFINES))
+SpecialCLibObjectRule(globals,$(ICONFIGFILES),$(CONN_DEFINES))
+SpecialCLibObjectRule(Context,$(ICONFIGFILES),$(BC_DEFINES))
+SpecialCLibObjectRule(Xrm,$(_NOOP_),$(RCONST_DEFINES))
+SpecialCLibObjectRule(imTransR,$(ICONFIGFILES),$(CONN_DEFINES) $(XTRANS_XIM_DEFINES))
+SpecialCLibObjectRule(imTrans,$(ICONFIGFILES),$(CONN_DEFINES) $(XTRANS_XIM_DEFINES))
+SpecialCLibObjectRule(lcFile,$(ICONFIGFILES),$(XLC_DEFINES))
+SpecialCLibObjectRule(locking,$(ICONFIGFILES),$(LIB_MT_DEFINES))
+#if BuildXKBlib
+SpecialCLibObjectRule(XKBCvt,$(_NOOP_),$(RCONST_DEFINES))
+SpecialCLibObjectRule(KeyBind,$(ICONFIGFILES),$(XKB_DEFINES))
+SpecialCLibObjectRule(XKBBind,$(ICONFIGFILES),$(XKB_DEFINES))
+#endif
+#if HasKrb5
+SpecialCLibObjectRule(k5encode,$(_NOOP_),$(K5INCL))
+#endif
+#ifdef MinixArchitecture
+SpecialCLibObjectRule(IMWrap,$(ICONFIGFILES),-DX11_TINY_IM)
+SpecialCLibObjectRule(lcInit,$(ICONFIGFILES),-DX11_TINY_LC)
+#endif
+
+#if InstallXcmsTxt
+InstallNonExecFile(Xcms.txt,$(LIBDIR))
+#endif
+InstallNonExecFile(XErrorDB,$(LIBDIR))
+InstallNonExecFile(XKeysymDB,$(LIBDIR))
+InstallLintLibrary(tinyX11,$(LINTLIBDIR))
+
+
+LinkSourceFile(AuDispose.c,$(XAUTHSRC))
+LinkSourceFile(AuGetBest.c,$(XAUTHSRC))
+LinkSourceFile(AuFileName.c,$(XAUTHSRC))
+LinkSourceFile(AuRead.c,$(XAUTHSRC))
+
+#if HasXdmAuth
+LinkSourceFile(Wrap.h,$(XDMCPLIBSRC))
+LinkSourceFile(Wrap.c,$(XDMCPLIBSRC))
+LinkSourceFile(Wraphelp.c,$(XDMCPLIBSRC))
+#endif
+
+#if 0
+#if !HasSnprintf
+LinkSourceFile(snprintf.c,../misc)
+SpecialCLibObjectRule(snprintf,$(ICONFIGFILES),-DLIBX11)
+#endif
+LinkSourceFile(snprintf.h,../misc)
+#endif
+
+MAKEKEYS = ./makekeys
+
+ks_tables.h: $(INCLUDESRC)/X11/keysymdef.h util/makekeys.c
+	RemoveFiles($@ ProgramTargetName(makekeys) makekeys.Osuf)
+	-HostLinkRule(ProgramTargetName(makekeys),$(CFLAGS) $(LOCAL_LDFLAGS),util/makekeys.c,$(LDLIBS))
+	RunProgram(MAKEKEYS,< $(INCLUDESRC)/X11/keysymdef.h > ks_tables_h)
+	$(MV) ks_tables_h $@
+	RemoveFiles(ProgramTargetName(makekeys) makekeys.Osuf ks_tables_h)
+
+includes:: ks_tables.h
+
+depend:: ks_tables.h
+
+clean::
+	RemoveFiles(ks_tables_h ks_tables.h ProgramTargetName(makekeys))
+
+DependTarget3($(SRCS1),$(SRCS2),$(SRCS3))
+#else
+all::
+
+BuildIncludesTop($(HEADERS))
+#endif

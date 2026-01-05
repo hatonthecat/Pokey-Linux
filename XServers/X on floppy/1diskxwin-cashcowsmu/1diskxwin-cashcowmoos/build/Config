@@ -1,0 +1,59 @@
+###################################################
+# Define here the necessary files and directories
+
+MOVE_TO_COL="echo -en \\033[${RES_COL}G"
+SETCOLOR_SUCCESS="echo -en \\033[1;32m"
+SETCOLOR_FAILURE="echo -en \\033[1;31m"
+SETCOLOR_WARNING="echo -en \\033[1;33m"
+SETCOLOR_NORMAL="echo -en \\033[0;39m"
+
+
+DIR=.
+
+RD_KERNEL=$DIR/vmlinuz
+RD_LINUX=$DIR/linux
+RD_MODULES=$RD_LINUX/modules
+RD_ROOT=$DIR/root
+RD_SOURCE=$RD_ROOT/*
+RD_IMAGE=$DIR/Image.gz
+# Use absolute path in following variables
+MNTDIR=/tmp/img.mnt
+LOOPDEV=/dev/loop1
+TMPFILE=/tmp/img.tmp
+TMPDIR=/tmp/img.dir
+
+# Define vars used by BuildRoot
+
+CLEAN_BEFORE_BUILD=true	
+CONF_DIR=$DIR/conf
+LOGFILE=$DIR/logfile
+RM_LOG=true
+
+RD_SIZE=600
+#2688
+ZIP=gzip
+
+DEST_IMG=$DIR/1disk.img
+
+DEST_DEV=/dev/fd0u1722
+MAXSIZE=1722
+
+RD_SIZE=1924
+
+#RD_SIZE=1200
+DEST_DEV=/dev/fd0u1440
+MAXSIZE=1440
+# Floppy disk geometry: BIOS Cylinders Sectors Heads
+
+DISK_GEOMETRY_1440="BIOS=0x200 CYLINDERS=80 SECTORS=18 HEADS=2"
+DISK_GEOMETRY_1600="BIOS=0x200 CYLINDERS=80 SECTORS=20 HEADS=2" # Works slow
+DISK_GEOMETRY_1680="BIOS=0x200 CYLINDERS=80 SECTORS=21 HEADS=2"
+DISK_GEOMETRY_1722="BIOS=0x200 CYLINDERS=82 SECTORS=21 HEADS=2"
+DISK_GEOMETRY_1743="BIOS=0x200 CYLINDERS=83 SECTORS=21 HEADS=2"
+DISK_GEOMETRY_1760="BIOS=0x200 CYLINDERS=80 SECTORS=22 HEADS=2" # Not tested
+DISK_GEOMETRY_1840="BIOS=0x200 CYLINDERS=80 SECTORS=23 HEADS=2"	# Not tested
+DISK_GEOMETRY_1920="BIOS=0x200 CYLINDERS=80 SECTORS=24 HEADS=2" # Not tested
+
+LILO_CONF=${DIR}/lilo.conf
+LILO_BOOT=${DIR}/boot.b
+LILO_MAP=map

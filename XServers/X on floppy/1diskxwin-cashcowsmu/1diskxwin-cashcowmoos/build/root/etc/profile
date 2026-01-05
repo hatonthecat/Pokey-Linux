@@ -1,0 +1,14 @@
+PATH="/bin:/usr/bin:/sbin:/usr/sbin:/usr/X11R6/bin"
+ulimit -c 0
+if [ `id -gn` = `id -un` -a `id -u` -gt 14 ]; then
+umask 002
+else
+umask 022
+fi
+USER=`id -un`
+PS1="[$USER]# "
+LOGNAME=$USER
+HISTSIZE=1000
+HISTFILE="$HOME/.history"
+INPUTRC=/etc/inputrc
+export PATH PS1 USER LOGNAME HISTSIZE INPUTRC EDITOR

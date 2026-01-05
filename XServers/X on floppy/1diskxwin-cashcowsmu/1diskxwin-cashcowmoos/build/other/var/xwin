@@ -1,0 +1,22 @@
+#!/bin/sh
+echo This script will run X windows for you
+if [ -f /etc/xconf ]
+then
+/etc/xconf
+exit 0;
+fi
+echo "enter Mouse type 1)ms 2)ps/2 3)bus"
+read n1
+if [ $n1 = "PS/2" ] 
+then
+rm /dev/mouse
+ln -sf /dev/psaux /dev/mouse
+fi
+X -listmodes > /tmp/X.modes 2>&1
+more /tmp/X.modes
+echo "select video mode from following list"
+echo "e.g. type '0x0103' for 800x600x8" 
+read m1
+echo -e "#!/bin/sh\nxinit /usr/X11R6/lib/X11/xinit/xinitrc -- -mode $m1 -mouse $n1 > /dev/null 2>&1" > /etc/xconf
+chmod +x /etc/xconf
+/etc/xconf

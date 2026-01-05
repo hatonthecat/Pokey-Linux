@@ -1,0 +1,62 @@
+#!/bin/sh
+#/bin/mount -o remount,rw /
+#export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin
+mount /dev/pts
+mount /proc
+#/bin/busybox cat /uuu.fs > /dev/ram1
+#mount -o rw,loop=/dev/loop1 -t squashfs /dev/ram1 /usr
+#/bin/busybox pivot_root /rw/ /boo
+exit 0
+#export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin
+
+/bin/busybox mkdir /proc /mnt /tmp /root /usr/sbin /usr/bin
+
+/bin/busybox --install -s
+echo -e "loopback 127.0.0.0\nlocalnet 0.0.0.0" > /etc/networks 
+echo -e "80	stream	tcp	nowait	nobody	/sbin/sh-httpd\n25	stream	tcp	nowait	nobody /sbin/sh-smtp" > /etc/inetd.conf
+#echo -e "root::0:0:root:/root:/bin/sh\ndaemon::1:1::/:\nnobody::65534:65534::/tmp:\napache:x:48:48:Apache:/var/www:" > /etc/passwd 
+#echo -e "root:x:0:\ndaemon:x:1:\ntty:x:2:\nguest:x:501:\napache:x:48:" > /etc/group
+
+cd /
+
+echo -e "order hosts,bind\nmulti on" > /etc/host.conf
+echo "mungkie" > /etc/hostname
+echo -e "127.0.0.1\tlocalhost.localdomain localhost\n0.0.0.0\tlocalhost" > /etc/hosts
+echo "ALL: LOCAL" > /etc/hosts.allow
+echo "ALL: ALL" > /etc/hosts.deny
+
+/bin/gzip -dc /keys.gz | /sbin/loadkmap
+rm -f /keys.gz
+
+hostname -F /etc/hostname
+
+mkdir /var
+cd /var ; 
+mkdir log run
+#portsentry  sh-www spool spool/cron spool/cron/crontabs  adm lock   log/sh-httpd.log\n
+for f in `echo -e "run/utmp\nlog/messages\nlog/wtmp"`
+do
+echo "" > $f
+done
+#echo -e "<html>\n<h2>sh-httpd test</h2>\n</html>" > sh-www/index.html
+#> /var/run/utmp
+#touch /var/log/wtmp;chmod 0664 /var/run/utmp
+#chmod 0664 /var/log/wtmp;chmod 0660 /var/log/messages
+
+
+ifconfig lo up 127.0.0.1
+echo -e "2-DiskXwin 1.2\n`uname -s` `uname -r` [`uname -m` arch]\n\n" > /etc/issue
+echo -e "nameserver 195.92.195.95\nnameserver 195.92.195.94" > /etc/resolv.conf
+.  /usr/X11R6/bin/mkln
+
+insmod /8390.o
+insmod /ne.o io=0x300 irq=3
+
+if [ -f /mnt/local.cf ]
+then
+exec /mnt/local.cf
+fi
+ifconfig eth0 192.168.0.14
+route add default gw 192.168.0.1
+
+/usr/bin/openvt 3 /bin/su root /usr/X11R6/bin/xdm

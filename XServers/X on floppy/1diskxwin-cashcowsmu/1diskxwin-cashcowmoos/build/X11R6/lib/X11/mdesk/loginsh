@@ -1,0 +1,54 @@
+#!/bin/sh
+
+Pnt(){ /bin/echo -e $1;}
+Menu(){
+Pnt "<HTML><BODY> <h1>Session Login</h1><FORM METHOD=POST ACTION=\"login:Done\">"
+Pnt "User ¬ :<input type=\"text\" NAME=\"USER\"><br>"
+Pnt "Password<input type=\"password\" NAME=\"PASS\"><br>"
+Pnt "Server :<input type=\"text\" NAME=\"SERVER\"><br> "
+Pnt "Session <select name=\"TYPE\"><option>Local<option>VNC Session<option>RDESKTOP session<option>X session<option>X ssh session</select><br>"
+Pnt "<INPUT TYPE=submit VALUE=\"Login\"><INPUT TYPE=reset VALUE=\"Reset\"></FORM>"
+Pnt "</BODY></HTML>\n"
+}
+
+REPLY=r
+read enct
+read address
+while [ -n "$REPLY" ]
+do 
+read REPLY
+rd=$rd\\n$REPLY
+done
+rd=$enct$address$rd
+Pnt "HTTP/1.0 200 OK\nContent-type: text/html\nContent-length: 200" 
+set $enct
+echo
+if [ "$1" = "POST" ]
+then
+
+aa=`echo -e "$rd" | grep -e "USER="`
+
+user=`echo $aa | sed 's/USER=//g' | sed 's/&.*//g'`
+pass=`echo $aa | sed 's/.*PASS=//g' | sed 's/&.*//g'`
+server=`echo $aa | sed 's/.*SERVER=//g' | sed 's/&.*//g'`
+t=`echo $aa | sed 's/.*TYPE=//g' | sed 's/&.*//g'`
+lhost=`hostname -i`
+echo -e "<pre>loged in     \n $t"
+
+if [ "$t" = "RDESKTOP+session" ] ; then rdesktop -u $user -p $pass $server
+fi
+if [ "$t" = "VNC+Session" ] ; then vncviewer $server
+fi
+if [ "$t" = "X+session" ] ; then echo -e "$pass\nxinit -display $lhost:0" | telnet $server 
+fi
+if [ "$t" = "X+ssh+session" ] ; then ssh -X -l $user $server
+fi
+if [ "$t" = "Local" ] ; then  echo quit > /tmp/chimera_fifo
+fi
+#bb=`echo -n 'sleep 1 ; echo "' ;echo -n $r ; echo -n '" ; sleep 1 ; echo "rxvt &" | (/root/mdesk-1.2.0/pty su '; echo -n $rr ; echo ' > doo 2>&1 ) '`
+#echo -e "#!/bin/sh\n$bb" > /tmp/llog.sh
+#chmod a+x /tmp/llog.sh
+else
+Menu
+fi
+exit 0;

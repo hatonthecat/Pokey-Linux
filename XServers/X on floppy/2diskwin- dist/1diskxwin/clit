@@ -1,0 +1,46 @@
+#!/bin/sh
+ssize=1740000
+fd_dev=/dev/fd0u1743
+
+formt()
+{
+echo "please insert a floppy to format"
+read
+fdformat $fd_dev
+
+if [ $? != 0 ]
+then
+superformat $fd_dev
+fi
+
+if [ $? != 0 ]
+then
+echo "error you dont have software to format floppy disks please install fdformat or superformat"
+fi
+}
+
+echo "about to create boot disk"
+umount /dev/fd0
+formt
+mkfs.msdos $fd_dev
+./syslinux -s $fd_dev
+sync
+sleep 2
+
+mkdir /mnt/fd
+mount -t msdos $fd_dev /mnt/fd
+c=`df --block-size=1 /mnt/fd/ | sed '1,1d' | sed 's/\/dev\/fd0//' | sed 's/.*1/1/' | sed 's/ .*//'`
+
+if [ $c -lt $ssize ]
+then
+echo "Your floppy has insufficient space please format another"
+echo "you require $ssize bytes on a floppy"
+exit 0;
+fi
+cp ./vmlinuz /mnt/fd/
+cp ./Image.gz /mnt/fd/
+cp ./syslinux.cfg /mnt/fd/
+sync
+umount /mnt/fd
+
+

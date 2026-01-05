@@ -1,0 +1,58 @@
+1st April 2006 release 1.2.27
+
+Now includes linux-lite kernel!
+
+this is a source dist to create a bootable floppy linux X window system.
+it has lots of stuff removed from the standard xfree dist to ease
+network bandwidth. it also lacks many packages from the full 2diskxwin source tree.
+On the up side it is only 8.4Mb so should download fast, and can now be self compiled 
+on a system with 64Mb of core(if you know how).
+
+it has been tested to compile OK(with minor hacks) on the following:
+redhat 5.2
+suse 6.2, 6.4
+mandrake 7.2, 8.0, 8.1
+debian >2.2
+
+it assumes you have all required build tools if you don't know how to setup your 
+build tools dont try asking me!
+
+you prolly need:
+gcc
+bison
+flex
+autoconfig
+
+you should check the README and config files in each sub dir and edit if 
+necisesary check the following:
+xc/config/cf/site.def
+busybox/Config.h
+uClibc/Config
+build/Config
+
+you may also want to edit the COMPILER, LD, and AR variables in the make script.
+make sure you have a floppy formated to 1.4Mb in /dev/fd0.
+ then:
+you can type './make remake' 
+or you can type './make clean'
+
+take your pick!
+
+then type one of the following:
+
+cd build ; ./floppy_boot.sh
+cd build ; ./humungous.sh
+cd build ; ./usb_boot.sh
+cd build ; ./cd_boot.sh
+
+you should end up with a bootable floppy!,mung image, bootable usb device, 
+or bootable cd image.
+
+but then again you may not?.
+
+obviously there are some deliberate mistakes to keep you on your toes
+and help you learn new things. also there are some mistakes due to the 
+removal of the mungconfig system and some of the packages.
+
+do not attempt to waste mungkies time by contacting him, unless you
+know what you'r talking about and have something useful to say.

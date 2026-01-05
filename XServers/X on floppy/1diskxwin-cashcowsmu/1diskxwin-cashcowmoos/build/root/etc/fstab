@@ -1,0 +1,3 @@
+/dev/ram0	/	minix	defaults	0	0
+none	/proc	proc	defaults	0	0
+none	/dev/pts devpts	gid=2,mode=620	0	0

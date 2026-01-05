@@ -1,0 +1,25 @@
+#!/bin/sh
+pth=/usr/X11R6/bin
+for f in `echo -e "calc\npaint\ngifr\npty\nmdesk\nmenu\ndial\ncscript\nrxvt\nxhost\nwm\nusk\nvncviewer\nfspanel\nrdesktop\nssh\nxpmroot\nxfm"`
+do
+ln -sf $pth/xinit $pth/$f
+done
+ln $pth/xinit /usr/bin/rsh ; ln $pth/xinit /usr/bin/rlogin
+cd $pth
+echo -e "#!/bin/sh\nexport DISPLAY=0.0.0.0:0\nX -screen 320x240x8 &\nwm & " > xdm
+echo -e "cscript -geometry 240x160-1-1 login:l ; /usr/X11R6/lib/X11/xinit/xinitrc" >> xdm
+echo -e '#!/bin/sh\nsleep 1\nif [ "$0" = `which shutdown` ]\nthen\ncscript -geometry 200x60 quit:\nfi\necho quit > /tmp/chimera_fifo' > quit
+chmod a+x xdm quit
+ln -sf quit shutdown
+pth=/usr/X11R6/lib/
+cd $pth
+tar xzf x.tgz
+rm x.tgz
+cd X11
+pth=/usr/X11R6/lib/X11
+ln -sf $pth/mdesk xinit
+ln -sf $pth/mdesk app-defaults
+cd mdesk
+./mkchim
+rm ./mkchim
+ln -sf $pth/mdesk /root/.mdesk

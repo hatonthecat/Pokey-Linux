@@ -1,0 +1,49 @@
+#!/bin/sh
+p=/usr/X11R6/lib/X11/mdesk/
+s="#!/bin/sh\n"
+cd $p
+#tar xzf p.tgz
+echo -e "mailto	"$p"ashmail\nlogin	"$p"loginsh\nquit "$p"quit" > protocol
+echo -e "$s cp \$1 /tmp/d.sh\nchmod +x /tmp/d.sh\nexec /tmp/d.sh" > run.sh
+echo -e "$s rxvt &" > rxvt.sh
+echo -e "$s menu Restore Move Size Minimize Maximize Close &"  > winop
+echo -e "$s menu 'Active Desktop' 'Arrange Icons' 'Line Up Icons' Refresh Paste 'Paste Shortcut' 'Undo Move' New Properties " > btn3
+echo -e "$s eval \`menu xfm rxvt mdesk usk vncviewer calc paint shutdown\`\n" > $p"btn1"
+echo -e '$s eval \`menu Programs Favourites Documents Settings Find Help Run "Log off" "Shut Down"\`\n' > $p"btn2"
+echo -e '$s eval \`menu Back Forward Reload Stop "Bookmark This Page" "Save Page As" "View BackgroundImage" "Select All" "View Page Source" "View Page Info"\`\n' > btn5
+ln -sf $p"btn2" $p"start"
+echo -e "text/x-gzip-html html.gz\napplication/x-sh sh\napplication/x-gzip gz\nimage/gif gif\nimage/jpeg jpeg jpg\ntext/html html\ntext/plain txt" > mime
+ln -sf btn1 menu.sh
+echo -e "application/x-sh; "$p"run.sh %s 2> /dev/null" > mailcap
+echo -e "inline image/jpeg image/gif cat /tmp/none.gif\nx-gzip * * zcat < %s\n* text/x-gzip-html text/html zcat < %s\n* message/ text/html echo '<plaintext>'; cat %s" > convert
+echo -e "\n" > cacheinfo
+echo -e "<html>\n<head></head><body bgcolor=\"#000000\" text=\"#0000ff\"><table width=\"100%\" border=0><tr><td>" > desktop.htm
+for f in `echo -e "left\nSpnl\nSpnl\nSpnl\nterm\nlock\nexit\nedit\nstrt\nbomb\nSpnl\nSpnl\nSpnl\nSpnl\nright"`
+do
+echo -e "<a href=\"menu.sh\"><img src=\"pix/$f.gif\" border=0></a>" >> desktop.htm
+done
+
+echo -e "</td></tr><tr><td><applet code=\"\" width=50 height=40></applet><applet code=\"\" width=50 height=40> </applet><applet code=\"\" title=\"\" width=120 height=40> </applet>" >> desktop.htm
+for f in `echo -e "file1\nmail\nprint\npaint\nfile2\nman\ntrsh"`
+do
+echo -e "<a href=\"menu.sh\"><img src=\"pix/$f.gif\" border=0></a>" >> desktop.htm
+done
+echo -e "</td></tr></table></body></html>" >> desktop.htm
+echo -e "<html><title>2DiskXwin</title><h1>2DiskXwin</h1><h2>Support</h2>" > home.htm
+echo -e "Support only available for registered versions. Check the <a href=http://freshmeat.net/projects/natld/> 2diskXwin Home page</a> for information. <br> " >> home.htm
+echo -e "<h2>System Information/Setup</h2><a href=login:user>user login</a> <br><a href=mailto:root@localhost>mail</a> <br><a href=netsetup:localhost>Network Setup</a><br>" >> home.htm
+echo -e "*keysym.Home: OH\n*keysym.End: OF\n<Key>Delete: ^?\n*keysym.Delete:  ^?\n~" > Rxvt
+echo -e "$s echo 'no javascript installed'" > js
+echo -e "$s grep -e $1 ~/.mdesk/cookies | sed 's/.*Set-c/C/g' | sed 's/\;.*//g' | tail -n1" > get_cookie.sh
+ln -sf btn1 urlRight
+echo -e "$s xhost +\nfspanel -geometry 640x20+0-1 -title noname" > xinitrc
+#\ncscript -geometry 538x72 -title noname ~/.mdesk/desktop.htm\n mdesk &\n
+echo -e "Xterm:::/root/.mdesk/pix/term.gif:rxvt:\nXfm:::~/.mdesk/pix/file1.gif:xfm:\n" > Apps
+echo -e '#!/bin/sh\nPnt(){ /bin/echo -e $1 ;  }\nR=r\nwhile [ -n "$R" ]\ndo\nread R\nrd=$rd\\\\n$R\ndone' > quit
+echo -e 'Pnt "HTTP/1.0 200 OK\\nContent-type: text/html\\nContent-length: 200\\n\\n"\na=`echo -e "$rd" | grep -e "Y="`' >> quit
+echo -e 'if [ "$a" = "Y=Yes" ] ; then reboot\nfi\nif [ "$a" = "Y=No" ] ; then\necho quit > /tmp/chimera_fifo\nfi' >> quit
+echo -e 'Pnt "<HTML><BODY><br> <h1>Are you sure you want to reboot</h1><FORM METHOD=POST ACTION=\"quit:Done\">"' >> quit
+echo -e 'Pnt "<INPUT TYPE=submit name=\"Y\" VALUE=\"Yes\">\n<INPUT TYPE=submit name=\"Y\" VALUE=\"No\"> </FORM>"\nPnt "</BODY></HTML>\n"' >> quit
+
+chmod a+x $p"btn1" $p"btn2" $p"btn3" $p"winop" $p"run.sh" $p"rxvt.sh" $p"xinitrc" $p"get_cookie.sh" $p"js" $p"quit"
+ln -sf $p /usr/X11R6/lib/X11/xinit

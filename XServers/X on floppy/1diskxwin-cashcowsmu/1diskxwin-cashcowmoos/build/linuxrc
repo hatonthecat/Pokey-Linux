@@ -1,0 +1,8 @@
+#!/bin/sh
+/bin/mount /dev/pts
+/bin/mount /proc
+/bin/busybox cat /rw.fs > /dev/ram1
+/bin/mount -o rw,loop=/dev/loop1 -t umsdos /dev/ram1 /rw
+/bin/busybox pivot_root /rw /boo
+rm -f /linuxrc
+exit 0

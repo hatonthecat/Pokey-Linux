@@ -1,0 +1,68 @@
+#!/bin/sh
+ssize=1450000
+
+formt()
+{
+echo "please insert a floppy to format"
+read
+
+fdformat /dev/fd0u1440
+
+if [ $? != 0 ]
+then
+superformat /dev/fd0u1440
+fi
+
+if [ $? != 0 ]
+then
+echo "error you dont have software to format floppy disks please install fdformat or
+superformat"
+fi
+}
+
+
+echo "about to create boot disk"
+umount /dev/fd0
+formt
+mkfs.msdos /dev/fd0
+./syslinux -s /dev/fd0
+sync
+sleep 2
+
+mkdir /mnt/fd
+mount -t msdos /dev/fd0 /mnt/fd
+c=`df --block-size=1 /mnt/fd/ | sed '1,1d' | sed 's/\/dev\/fd0//' | sed 's/.*1/1/' | sed 's/ .*//'`
+
+if [ $c -lt $ssize ]
+then
+echo "Your floppy has insufficient space please format another"
+echo "you require $ssize bytes on a floppy"
+exit 0;
+fi
+cp ./vmlinuz /mnt/fd/
+cp ./Image.gz /mnt/fd/
+cp ./syslinux.cfg /mnt/fd/
+
+echo "would you like to include pppd support? Y/n"
+read pppd
+if [ $pppd = "y" ]
+then
+cp ./pppd.tar.bz2 /mnt/fd/
+fi
+
+echo "please select ketboard layout"
+echo -e "be.gz\ncf.gz\ndk.gz\nfi.gz\ngr.gz\nit.gz\nno.gz\nru.gz\nuk.gz\nbr.gz\nde.gz\nes.gz\nfr.gz\nhu.gz\njp.gz\npl.gz\nse.gz\nus.gz"
+read kb
+cp ./keymaps/$kb /mnt/fd/kbd.gz
+sync
+umount /dev/fd0
+
+echo "about to create X11 disk"
+umount /mnt/fd
+formt
+mkfs.msdos /dev/fd0
+mount -t msdos /dev/fd0 /mnt/fd
+cp x11.bz2 /mnt/fd
+sync
+umount /dev/fd0
+
