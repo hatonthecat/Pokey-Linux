@@ -10,6 +10,8 @@ Tiny SliTaz in 4MB RAM
 --
 [sli-screen0.webm](https://github.com/user-attachments/assets/c64e5586-c435-492d-9dc3-825f47b24ea3)
 
+A VNC server with Tiny SliTaz can run in 8MB or less: https://www.youtube.com/watch?v=OqpwSDJH8rw 
+
 
 ![Kodak Carousel with OS analogy](https://github.com/user-attachments/assets/0bacfbd8-7d3f-4535-a2d0-73d26fb4e2f5)
 
