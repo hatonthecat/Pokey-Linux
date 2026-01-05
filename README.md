@@ -6,6 +6,11 @@ A Yocto-based distribution of distributions for embedded systems using single or
 
 Pokey Linux is a platform for developing many single-application OSes, using the fewest resources possible. It is of course a reference to the Poky tool in Yocto, and the [Earthbound](https://earthbound.fandom.com/wiki/Pokey_Minch) character for the 1995 SNES game. While I have read about Yocto for years, I just thought naming this project Pokey would be a convenient and funny mnemonic way to recall a tool. While I haven't developed any code for it, it aims to be a repository of binaries that one can search and download, but also locate the package dependencies and the Yocto methods for creating it (in other words, non-technical users can work their way from a GUI-based software manager like [Synaptic](https://en.wikipedia.org/wiki/Synaptic_(software)) or [Cubic](https://github.com/PJ-Singh-001/Cubic), and see the steps taken to develop it, or perhaps just a few steps to make a modification). I realized this might be a better approach to indecision, as indecision of what single application OS to develop first is besides the point. Someone might want a binary with just VLC, or Thunderbird, or Midori, and nothing else (and of course, a GUI for the board support). It's also a way to learn to build without knowing what OS I need to use. Why not just make a bunch?  Inspired by this tool: https://tiny.slitaz.org/index.php 
 
+SLiTaz in 4MB RAM
+--
+[sli-screen0.webm](https://github.com/user-attachments/assets/c64e5586-c435-492d-9dc3-825f47b24ea3)
+
+
 ![Kodak Carousel with OS analogy](https://github.com/user-attachments/assets/0bacfbd8-7d3f-4535-a2d0-73d26fb4e2f5)
 
 
