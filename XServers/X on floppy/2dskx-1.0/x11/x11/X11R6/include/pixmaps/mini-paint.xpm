@@ -1,0 +1,23 @@
+/* XPM */
+static char *mini-paint[] = {
+" 15 14 6 1",
+"  c None s None",
+". c black",
+"# c #808080",
+"a c red",
+"i c white",
+"o c blue",
+"########       ",
+"#iiiiii#.      ",
+"#iiiiii#i.    o",
+"#iiiiii#...  oo",
+"#iiiiiiiii. oo.",
+"#iiaiiiiii.oo. ",
+"#iiiaiiiiioo.  ",
+"#iiiaaiiioo.   ",
+"#iiiaaiioo.    ",
+"#iiaaii#...    ",
+"#iiaii#i.i.    ",
+"#iaaaaa.ii.    ",
+"#iaaaaiiii.    ",
+"...........    "};

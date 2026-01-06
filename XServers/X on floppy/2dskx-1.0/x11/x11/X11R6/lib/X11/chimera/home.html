@@ -1,0 +1,91 @@
+<html>
+<title>Tiny X Linux</title>
+<h1>Tiny X Linux</h1>
+
+<IMG src="2dskxa.gif"><br> <br>
+This linux distro is designed to be VERY compact yet give most of the
+basic functions of an Xwindows Linux system. It should be compatible with
+most kernel2.2/4/libc2.1 distros (you can just drop in binarys from
+slackware/suse/mandrake). It's really just for fun, but maybe a start
+point for developers who want to distribute their linux apps to ms-windows
+users, or people who just want to download a very quick demo of what linux
+can do. <br> <br>
+<h2>Why?</h2>
+Well I really just did it for a bit of fun as I felt most distros were too big, and thought it would be good to have a 2 disk xwindows system that was flexible and would run most recent software. <br><br> 
+It's not really meant for:<br> 
+ corporate users to reuse old PC's as X terminals (running X on any thing less than a 486dx is not advisable)<br> 
+Or: <br>
+using as an embedded OS for handhelds or settop boxes <br>
+Or: <br>
+using as a system rescue disk <br> <br>
+But it could probably be used for most of these tasks with only minor modification <br> <br>
+
+It is really just my attempt to create a absolute bare minimum linux distro. Using the tools available you should be able to do most things, with a little thought you can use chimera with shell scripts to create many gui based applets.
+you can browse the web, paint pictures, run a terminals, manage the filesystem, <br><br>
+In the good old days of unix all the tools were small, extensible,
+scriptable, and pipable. Unfortunatly things are rapidly moving towards
+the huge monolithic application structure that hogs resources, as users become
+moronic button clickers rather than programmers. I hope with this 
+distro to use only tools that follow the unix ideal yet integrate well into
+Xwindows apps. To give basic tools and allow a really compact system that
+can do almost anything, if you can write shell scripts<br> <br>
+
+<h2> Features </h2> 
+It takes less than 4Mb compressed or 6Mb installed and contains the
+following tools: <br> <br>
+<menu>
+<li> kernel2.4.12(now this is totally standard)/libc2.1
+<li> X11R6-4.1(hacked kdrive)
+<li> busybox
+<li> ppp chat and pppd
+<li> iptables support
+<li> udhcp - a small but untested dhcp client/server
+<li> chimera web browser(hacked version will replace FvwmScript)
+<li> xpaint (hacked version command line opts,pixmaps, other minor tweaks)
+<li> xfm(hacked pixmaps may integrate with chimera)
+<li> alloywm (a small and quite sane wm)
+<li> xedit(I may hack this or find a better editor)
+<li> compiled from debian2.2.3/mandrake7.2
+</menu>
+<p>
+<h2> Future devel </h2>
+
+Dunno?
+<br> <br>
+My main development effort is going on hacking chimera into a general html based X11 scripting system with other stuff integrated as multicall binary.
+<br> <br>
+I would also like to implement as many functions as possible as shell scripts:- daemons, mail, man pages, etc...... There are some already started but they need improving have a look at the mail html mail functions for chimera and the http and smtp daemons in /usr/sbin and see if you can help. <br> <br>
+I guess I will be able to prune the compressed size by about 200kb and also fix some bugs. Maybe add gcc and any other utils required to compile the system so that you can get a distro on say 5 disks that can compile it's self from source.
+
+<h2> Support </h2>
+This is Beta code so you can consider in testing, It works on my system but may not work on yours! <br>
+Sorry But I wont be supporting anything, you can send me your problems but I wont answer unless I find them particularly interesting or they help by patching something.<br>
+If you have problems with something it would probably be best to get intouch with the author of that component. If X crashes then contact XFree86.org, if the system wont boot try posting to one of the linux kernel newsgroups. obviously you must give listings of any error messages and what led upto the crash occuring. I have put some links to info about the components of the system below.
+If you want support for something in the kernel then then you will have to compile the appropriate module/kernel from the linux kernel source.
+<br><br>
+<h2> Thanx </h2>
+My thanx go to all the people that have created the free/open software that has gone into this distro. Unfortunatly I dont have time to list them all, but you know who you are.
+<br><br>
+<h2> Links </h2>
+Here are some links to linux resources that maybe useful: <br> <br>
+<menu>
+<li> <a href=http://www.unlv.edu/chimera/>Chimera Home Page</a>
+<li> <a href=http://www.busybox.lineo.com/>busybox</a>
+<li> <a href=http://www.tinylogin.lineo.com/> tinylogin</a>
+<li> <a href=http://www.xfree86.org/> X11</a>
+<li> <a href=http://www.kernel.org/> linux kernel</a>
+<li> <a href=http://www.mungkie.btinternet.co.uk/>My home page</a>
+</menu>
+<p>
+<h2> System Information/Setup </h2>
+
+<a href=login:user>user login</a> <br>
+<a href=mailto:root@localhost>mail</a> <br>
+<a href=netsetup:localhost>Network Setup</a>
+<br><br>
+
+
+
+
+
+

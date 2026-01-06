@@ -1,0 +1,216 @@
+#!/bin/sh
+# really poorly written script to grab some mail
+host=mail.btinternet.com
+user=user
+pass=pass
+list_precursor="+OK Mailbox scan listing follows"
+telnet_output=$HOME/telnet_mail
+tmpfile=$HOME/tmpfile
+banner='sh e-mail composition utility (ashmail)'
+reply=Reply:root
+len=200
+ask() { sleep 1 ; echo $1; }
+Pnt(){ /bin/echo -e $1 ;  }
+
+get_list()
+{
+( ask "user $user" ; ask "pass $pass" ; ask "list" ; ask "quit" ) | telnet $host 110 > $tmpfile
+}
+
+get_headers()
+{
+(
+sleep 2 ; echo "user $user" ; sleep 1 ; echo "pass $pass" ;
+cat $tmpfile | while read xx; do
+if [ "$prnt" = "print" ]
+then
+set $xx ; sleep 1 ; echo "top " $1 " 0"  # retr 1, dele 1
+fi
+if [ "$xx" = "$list_precursor" ]
+then
+  prnt="print" ; 
+fi
+done
+echo quit
+) | telnet $host 110 > $telnet_output
+}
+
+Menu()
+{
+#Pnt 
+Pnt "<HTML><HEAD><TITLE>Web mail system</TITLE></HEAD> \n <BODY>"
+Pnt "<h1>Web Mail</h1> This mail system is a shell script that reads mail from a server via telnet on port 110 (pop3) <br> it is alpha quality you may modifiy it in /usr/X11R6/lib/X11/chimera/ashmail, please feel free to send patches to mungkie@mungkie.btinternet.co.uk<br>"
+Pnt "we need to read possible mail servers/user/pass from file, or prompt for host/user/pass below"
+Pnt "<br> <a href=mailto:Read>Read</a> <a href=mailto:Send>Send</a>"
+if [ -a $HOME/.mailsetup ]
+then
+
+else
+Pnt "<FORM METHOD=POST ACTION=\"mailto:Done\">"
+Pnt "<TEXTAREA NAME=\"HEAD\" ROWS=4 COLS=78>mail server:\nUser: \nPassword:</TEXTAREA> <br>"
+Pnt "<INPUT TYPE=submit VALUE=\"Setup\">\n<INPUT TYPE=reset VALUE=\"Reset\"><HR></FORM>"
+fi
+Pnt "</BODY></HTML>\n"
+}
+
+
+Form()
+{
+Pnt "<HTML><HEAD><TITLE>Mailing to $address</TITLE></HEAD> \n <BODY><H5>$banner</H5>"
+Pnt "<FORM METHOD=POST ACTION=\"mailto:Done\">"
+Pnt "<TEXTAREA NAME=\"HEAD\" ROWS=4 COLS=78>To: $address\nCc: \nSubject: \n$reply</TEXTAREA>"
+Pnt "<TEXTAREA NAME=\"BODY\" ROWS=15 COLS=78> </TEXTAREA><HR>"
+Pnt "<INPUT TYPE=submit VALUE=\"Mail\">\n<INPUT TYPE=reset VALUE=\"Reset\"><HR></FORM>"
+Pnt "<P>After mailing, you will be shown the message sent, you could save it if you"
+Pnt "wish. Alternatively, you can Cc yourself before mailing it."
+Pnt "</BODY></HTML>\n"
+}
+
+PostCall()
+{
+trd=`echo $REPLY | tr '+' ' ' | sed 's/HEAD\=//g' | sed 's/%0A/\\\\n/g' | sed 's/%3A/:/g' | sed 's/\&BODY\=/\\\\n/g'`
+rrd=`echo $trd | sed 's/%40/@/g' `
+echo ; echo -e "$rrd" > $HOME/.mail_post
+/usr/sbin/sendmail -t < $HOME/.mail_post > $HOME/.posterrs 2>&1 # ; rm $HOME/.mail_post
+echo -e "Post was sent the following errors may have occured:"  # ; cat $HOME/.mail_post
+cat $HOME/.posterrs ; 
+#rm -f $HOME/.mail_post
+}
+
+Header()
+{
+Pnt "HTTP/1.0 200 OK\nContent-type: text/html\nContent-length: " 
+echo $len
+#echo
+}
+
+add()
+{
+xxt='$3' 
+vl='$2'
+df='$1'
+if [ "$xxt" = "" ]
+then 
+ return ; 
+fi
+set '$xxt'
+if [ '$1' = "$vl" ]
+then
+echo -n "'$df' '$xxt'"
+#detl[i]= echo -n "'$df' '${detl[i]}' '$xxt'"
+fi
+}
+
+gt()
+{
+echo -e `add "" "$2" "$3"` ; pff=`add "" $2 "$3"`
+if [ "$pff" != "" ]
+then
+j=" | sed 's/$2//g'" ; k='echo "$pff"'
+echo -e "\n '$1'" ; l= eval "'$k' '$j'" ; echo -e "'$l' "  # \\" ; echo -e "n"
+fi
+}
+
+sstrip(){ j=" | sed 's/$1//g'" ; k='echo "$2"' ; l= eval "$k $j" ; }
+
+html_list()
+{
+get_list
+get_headers
+
+sed 's/+OK.*//g' $telnet_output > bbg.gmhk
+sed 's/-ERR*//g' bbg.gmhk > bbg.gmh
+n=0
+echo -e "<html> \n <title>web Mail</title> \n <h1>web mail</h1>\n"
+echo -e "<table> <caption> Mailbox </caption> <tr> "
+echo -e "<th> From </th> <th> Subject </th> </tr> <tr>"
+cat bbg.gmh | while read xx
+do
+if [ "$xx" != "" ]
+then
+set $xx
+if [ "$1" = "Return-Path:" ]
+then
+l=`sstrip '<' $2` ; l=`sstrip '>' $l`
+echo "<td> <a href=mailto:$l> $l </a> </td>"
+fi
+if [ "$1" = "Subject:" ]
+then
+echo -e "<td> <a href=mailto:Done+$n>  $*   </a> </td>"
+fi
+fi
+if [ "$xx" = "." ]
+then
+#echo $ff
+n=`addint $n 1`
+echo " </tr> <tr>"   ; 
+fi
+done
+echo " </tr> </table>"
+}
+
+print_mail()
+{
+echo "getting mail '$1' from mail box"
+n=0 ; 
+msg=`addint "$1" 1`
+(
+sleep 2 ; echo "user $user" ; sleep 1 ; echo "pass $pass" ;
+sleep 1 ; echo "retr $msg" 
+sleep 1
+echo quit
+) | telnet $host 110 > trew
+cat trew | while read xx
+do
+echo  "$xx <br>"
+done
+}
+
+
+REPLY=r
+len=100
+read enct
+read address
+while [ -n "$REPLY" ]
+do read REPLY
+ rd=$rd$REPLY
+done
+
+rd=$enct$address$rd
+Header
+echo $rd > /root/ts.tx
+echo $enct > /root/crl.tx
+read enct address hd < /root/crl.tx
+
+######### post the mail
+if [ "$enct" = "POST" ]
+then 
+read trs ;  PostCall
+echo $trs > /root/pog.tx
+exit 0;
+######### create mail send form
+fi
+
+rmail=`echo $address | sed 's/+.*//g'`
+ind=`echo $address | sed 's/.*+//g'`
+if [ "$address" = "Read" ]
+then
+#rmail=`echo $address | sed 's/+.*//g'`
+#ind=`echo $address | sed 's/.*+//g'`
+echo
+html_list
+exit 0;
+elif [ "$address" = "Send" ]
+then
+echo ; Form
+elif [ "$rmail" = "Done" ]
+then
+echo ; echo "<br> <br> The following message is:  '$ind' of those in your mail box  <br> <br>"
+print_mail $ind
+else
+echo
+Menu
+exit 0;
+fi
+exit 0
+

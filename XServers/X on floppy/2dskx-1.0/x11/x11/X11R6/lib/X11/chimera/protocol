@@ -1,0 +1,4 @@
+#
+mailto	/usr/X11R6/lib/X11/chimera/ashmail
+netsetup /usr/X11R6/lib/X11/chimera/netsetup
+login /usr/X11R6/lib/X11/chimera/loginsh

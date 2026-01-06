@@ -1,0 +1,8 @@
+#XFM
+Xterm:::mini-term.xpm:exec rxvt:
+Toolbox:~/.xfm:Toolbox:mini-filemgr.xpm:LOAD:
+File Systems:~/.xfm:File Systems:mini-filemgr.xpm:LOAD:
+Web Browser:::html.xpm:exec chimera:exec chimera $1
+xman:/usr/X11R6/bin::mini-book2.xpm:xman:xman $*
+xpaint:/usr/X11R6/bin::mini-paint.xpm:xpaint:xpaint $*
+Printer:::mini-edit.xpm::exec cat $* > /dev/lp0

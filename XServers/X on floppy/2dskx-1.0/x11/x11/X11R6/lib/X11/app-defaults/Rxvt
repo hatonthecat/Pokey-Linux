@@ -1,0 +1,11 @@
+*color1: blue
+*scrollBar_right: true
+*background: black
+*foreground: white
+-fg black
+-fn fixed
+*keysym.Home: OH
+*keysym.End: OF
+<Key>Delete: ^?
+*keysym.Delete:  ^?
+~

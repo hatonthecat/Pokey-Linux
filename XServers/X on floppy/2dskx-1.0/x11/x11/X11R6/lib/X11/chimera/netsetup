@@ -1,0 +1,65 @@
+#!/bin/sh
+# really poorly written script to setup networking
+host=127.0.0.1
+tmpfile=$HOME/tmpfile
+len=200
+ask() { sleep 1 ; echo $1; }
+Pnt(){ /bin/echo -e $1 ;  }
+
+Menu()
+{
+Pnt "<HTML><HEAD><TITLE>Network setup system</TITLE></HEAD> \n <BODY>"
+Pnt "<h1>Network Setup System</h1> This web script is designed to help you setup your network configuration <br> it is alpha quality you may modifiy it in /usr/X11R6/lib/X11/chimera/netsetup, please feel free to send patches to mungkie@mungkie.btinternet.co.uk<br>"
+if [ -a $HOME/.netsetup ]
+then
+
+else
+Pnt "<FORM METHOD=POST ACTION=\"netsetup:Done\">"
+Pnt "<h2>Local Network info</h2>"
+Pnt "<TEXTAREA NAME=\"HEAD\" ROWS=4 COLS=78>Device: \nOptions: \nDNS: \nDHPC: \nIP Address:\nGateway :\n</TEXTAREA> <br>"
+Pnt "<h2>Modem Info</h2>"
+Pnt "<TEXTAREA NAME=\"HEAD\" ROWS=4 COLS=78>Device: \nOptions:\n </TEXTAREA> <br>"
+Pnt "<h2>ISP info</h2>"
+Pnt "<TEXTAREA NAME=\"HEAD\" ROWS=4 COLS=78>ISP Phone No.: \nname server:\nUser: \nPassword:\nAuthentication: </TEXTAREA> <br>"
+Pnt "<INPUT TYPE=submit VALUE=\"Setup\">\n<INPUT TYPE=reset VALUE=\"Reset\"><HR></FORM>"
+fi
+Pnt "</BODY></HTML>\n"
+
+}
+
+
+PostCall()
+{
+echo
+echo -e "This script is not yet working: <br> it will eventually write network info to a floppy and config the ppp script, ifconfig, route, and iptables. but not yet ;-)"  
+}
+
+Header()
+{
+Pnt "HTTP/1.0 200 OK\nContent-type: text/html\nContent-length: " 
+echo $len
+
+}
+
+REPLY=r
+len=100
+read enct ;read address
+while [ -n "$REPLY" ]
+do read REPLY
+ rd=$rd$REPLY
+done
+
+rd=$enct$address$rd
+Header
+echo $rd > /root/ts.tx
+echo $enct > /root/crl.tx
+read enct address hd < /root/crl.tx
+
+########## setup network
+if [ "$enct" = "POST" ]
+then 
+read trs ;  PostCall
+exit 0;
+fi
+echo ; Menu
+exit 0;

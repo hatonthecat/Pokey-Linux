@@ -1,0 +1,2 @@
+#XFM
+Printer:::/usr/X11R6/include/X11/pixmaps/vueprint.xpm:lpq -Plaser:exec lpr -Plaser $*

@@ -1,0 +1,21 @@
+! $XConsortium: rgb.txt,v 10.41 94/02/20 18:39:36 rws Exp $
+255 255 255		white
+  0   0   0		black
+190 190 190		gray
+190 190 190		grey
+255   0   0		red
+  0 255   0		green
+  0   0 255		blue
+ 64 224 208		turquoise
+  0 255 255		cyan
+240 230 140		khaki
+255 255   0		yellow
+255 215   0 		gold
+245 245 220		beige
+165  42  42		brown
+250 128 114		salmon
+255 165   0		orange
+255 192 203		pink
+176  48  96		maroon
+255   0 255		magenta
+238 130 238		violet

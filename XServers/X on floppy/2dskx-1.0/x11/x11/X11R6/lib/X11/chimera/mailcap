@@ -1,0 +1,3 @@
+application/x-telnet;	xterm -e dotelnet %s
+application/x-tn3270;	xterm -e do3270 %s
+application/x-sh;	/usr/X11R6/lib/X11/chimera/ren_run.sh %s 2> /dev/null

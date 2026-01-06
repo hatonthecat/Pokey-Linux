@@ -1,0 +1,46 @@
+*bitmapPath: /usr/include/bitmaps
+*pixmapPath: /usr/X11R6/include/pixmaps:~/.xfm/pixmaps
+
+*applicationDataFile: ~/.xfm/Apps
+*applicationDataDir: ~/.xfm
+*applicationDataClip: ~/.xfm/.XfmClip
+*configFile: ~/.xfm/xfmrc
+*devFile: ~/.xfm/xfmdev
+*magicFile: ~/.xfm/magic
+*doubleClickTime:		300
+*updateInterval:		10000
+Xfm.Geometry:			265x415+565+130
+Xfm.initGeometry:		515x345+5+130
+Xfm.file window.Geometry:	515x345
+*TransientShell.geometry: +210+295
+*.*.icon box.*.shadowWidth: 0
+*background: lightgray
+*Font:			fixed
+*confirmDeletes: 		true
+*confirmDeleteFolder: 		true
+*confirmCopies: 		true
+*confirmMoves: 			true
+*confirmOverwrite:		true
+*confirmQuit:			true
+*echoActions:			false
+*showOwner: 			true
+*showDate: 			true
+*showPermissions: 		true
+*showLength: 			true
+*initialDisplayType:	 	Icons
+*defaultSortType: 		SortByName
+*defaultEditor: 		exec xedit
+*defaultViewer: 		exec xedit
+
+*popup form*bitmap.borderWidth : 0
+*.?.Label.borderWidth : 0
+*button box.orientation: horizontal
+*button box.borderWidth: 0
+*file window*viewport.borderWidth: 0
+*viewport.icon box*Label.borderWidth : 0
+*viewport.icon box.Command.borderWidth : 0
+*viewport.icon box.Form.borderWidth : 0
+*viewport.icon box*Toggle.borderWidth : 1
+
+*Text*translations : #override \n <Key>Return: no-op() \n <Key>Linefeed : no-op() \n Ctrl<Key>J : no-op() \n
+*Text*baseTranslations : #override \n <Key>Return: no-op() \n <Key>Linefeed : no-op() \n Ctrl<Key>J : no-op() \n

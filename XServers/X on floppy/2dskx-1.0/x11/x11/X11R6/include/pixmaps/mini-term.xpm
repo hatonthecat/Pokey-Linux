@@ -1,0 +1,23 @@
+/* XPM */
+static char *mini-term[] = {
+" 16 14 6 1",
+"  c None s None",
+". c Black",
+"# c #808080",
+"a c blue",
+"b c White",
+"c c #c0c0c0",
+"     #########  ",
+"    #cccccccc#. ",
+"   #bbbbbbbb##. ",
+"   #b......b##. ",
+"   #b.aaaaab##. ",
+"   #b.aaaaab##. ",
+"   #b.aaaaab##. ",
+"   #bbbbbbbb#.##",
+"   #.........#c.",
+"  #bbbbbbbbb#c#.",
+"  ##.#.#.#.#.##.",
+" #c.c.c.c.c.c.. ",
+"#bbbbbbbbbbbc.  ",
+".............   "};

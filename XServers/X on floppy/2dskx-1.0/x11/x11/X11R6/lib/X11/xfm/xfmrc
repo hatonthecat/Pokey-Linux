@@ -1,0 +1,25 @@
+<ascii>*::EDIT:
+
+<GIF>:jpeg.xpm:exec xpaint $1:
+<JPG>:jpeg.xpm:exec xpaint $1:
+<data>*.jpg:jpeg.xpm:exec xpaint $1:
+<TIFF>:jpeg.xpm:exec xpaint $1:
+<PPM>:jpeg.xpm:exec xpaint $1:
+<XBM>:jpeg.xpm:exec xpaint $1:
+<XPM>:jpeg.xpm:exec xpaint $1:
+
+<HTML>:html.xpm:exec /apps/netscape/netscape $1:
+<ascii>*.html:html.xpm:exec chimera $1:
+<ascii>*.htm:html.xpm:exec chimera $1:
+
+<data>*.o:::
+<ascii>*.c::EDIT:
+*.tar::exec tar xvf $1:exec tar xvf $*
+<GZIP>*.tar.gz::exec tar xvzf $1:
+<GZIP>::exec gunzip -c $1 | xless:
+<COMPRESS>::exec gunzip -c $1 | xless:
+<data>*.zip::exec unzip -l $1| xless:exec zip -r $*
+
+<ascii>::EDIT:
+<data>::EDIT:
+<empty>::EDIT:

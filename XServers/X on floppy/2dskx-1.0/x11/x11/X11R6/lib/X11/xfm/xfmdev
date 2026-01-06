@@ -1,0 +1,2 @@
+/mnt/a:mount /mnt/a:umount /mnt/a
+/mnt/b:mount /mnt/b:umount /mnt/b

@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_filemgr_xpm[] = {
+"12 15 5 1",
+" 	c None",
+".	c #808080",
+"X	c #c0c0c0",
+"o	c black",
+"O	c white",
+"  ..........",
+" .XXXXXXX..o",
+"...........o",
+".OOOOOOOo..o",
+".OXXXXXXo..o",
+".OXooXXXo..o",
+".OXXXXXXo..o",
+".OXXXXXXo..o",
+".oooooooo..o",
+".OOOOOOOo..o",
+".OXXXXXXo..o",
+".OXooXXXo..o",
+".OXXXXXXo.o ",
+".OXXXXXXoo  ",
+".oooooooo   "};

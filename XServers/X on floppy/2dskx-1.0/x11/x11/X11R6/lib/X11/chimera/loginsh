@@ -1,0 +1,44 @@
+#!/bin/sh
+# really poorly written script to grab some mail
+host=127.0.0.1
+len=200
+Pnt(){ /bin/echo -e $1 ;  }
+Menu()
+{
+Pnt "<HTML><BODY>"
+Pnt "<br> <h1> &nbsp; &nbsp; X Login </h1><FORM METHOD=POST ACTION=\"login:Done\">"
+Pnt "<table> <tr> <td>&nbsp; User </td> <td> <TEXTAREA NAME=\"USER\" ROWS=1 COLS=40></TEXTAREA> </td></tr>"
+Pnt "<tr> <td>&nbsp; Password</td> <td> <TEXTAREA NAME=\"PASS\" ROWS=1 COLS=40></TEXTAREA> </td></tr> </table> <br>"
+Pnt "<INPUT TYPE=submit VALUE=\"Login\">\n<INPUT TYPE=reset VALUE=\"Reset\"> </FORM>"
+Pnt "</BODY></HTML>\n"
+}
+
+Header()
+{
+Pnt "HTTP/1.0 200 OK\nContent-type: text/html\nContent-length: " 
+echo $len
+}
+
+REPLY=r
+len=100
+read enct
+read address
+while [ -n "$REPLY" ]
+do read REPLY
+rd=$rd$REPLY
+done
+rd=$enct$address$rd
+Header
+set $enct
+if [ "$1" = "POST" ]
+then
+# we now log into system. need to verify user/pass, spawn a user session
+echo
+echo "loged in"
+exit 0;
+fi
+
+echo
+Menu
+#Pnt "$address \n $enct  \n"
+exit 0;

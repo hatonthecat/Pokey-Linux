@@ -1,0 +1,6 @@
+#!/bin/sh
+xfm &
+xpmroot /usr/X11R6/include/pixmaps/c.xpm &
+xhost +
+alloywm -fn fixed --new1 xswitch &
+cscript 580 80 /usr/X11R6/lib/X11/chimera/desktop.htm

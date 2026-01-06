@@ -1,0 +1,26 @@
+65
+
+7x14.pcf.gz variable
+7x14.pcf.gz fixed
+7x14.pcf.gz 7x14
+7x14.pcf.gz -misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-iso8859-1
+7x14.pcf.gz -misc-fixed-medium-r-normal--10-100-75-75-c-60-iso8859-1
+helvR12.pcf.gz -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
+helvR12.pcf.gz -*-helvetica-bold-*-*--12-*-*-*-*-*-*-*
+
+helvB18.pcf.gz -*-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
+helvR12.pcf.gz -*-helvetica-*-r-normal--12-120-75-75-p-70-iso8859-1
+helvB24.pcf.gz -*-helvetica-bold-r-normal--24-240-75-75-p-138-iso8859-1
+helvR12.pcf.gz -*-helvetica-*-r-normal--10-100-75-75-p-60-iso8859-1
+helvR12.pcf.gz -*-helvetica-bold-r-normal--14-140-75-75-p-82-iso8859-1
+helvR12.pcf.gz -*-helvetica-medium-r-normal--14-140-75-75-p-78-iso8859-1
+helvR12.pcf.gz -*-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1
+helvR12.pcf.gz -*-helvetica-medium-r-normal--10-100-75-75-p-57-iso8859-1
+
+courR12.pcf.gz -adobe-courier-medium-r-normal--12-120-75-75-m-70-iso8859-1
+courR12.pcf.gz -adobe-courier-bold-o-normal--14-140-75-75-m-90-iso8859-1
+courR12.pcf.gz -adobe-courier-bold-r-normal--12-120-75-75-m-70-iso8859-1
+courR12.pcf.gz -adobe-courier-medium-o-normal--12-*-*-*-*-*-*-*
+
+helvR12.pcf.gz -adobe-times-bold-r-normal--12-120-75-75-p-67-iso8859-1
+helvR12.pcf.gz -adobe-times-medium-r-normal--12-120-75-75-p-64-iso8859-1
