@@ -3,4 +3,8 @@
 
 https://github.com/user-attachments/assets/7db8e5f7-3be3-48d8-b6a5-59a8ed1f4f76
 
+Part 2 of Disk 1 (shows BusyBox command list)
+
+https://github.com/user-attachments/assets/3e224bf0-f5ef-479b-95ea-810626f2b83d
+
 
