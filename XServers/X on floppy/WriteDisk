@@ -1,0 +1,35 @@
+#!/bin/sh
+
+DEST_DEV=/dev/fd0
+
+
+if [ "$DEST_DEV" ] ; then
+	echo; echo -n "*** Insert floppy in $DEST_DEV and press [enter]..."
+	read DUMMY
+	echo
+	MINOR=$(ls -l $DEST_DEV | (read x x x x maj min x ; echo $min) )
+	if [ $MINOR -ne 0 -a "$FD_FORMAT" = "true" ] ; then
+		echo "Formatting disk... "
+		fdformat $DEST_DEV
+	fi
+	echo "Writing image..."
+	dd if=2dskxwin.img of=$DEST_DEV bs=1k conv=sync || WERR=true
+	echo "Finish."
+fi
+
+echo -n "Waiting until everthing is written... "
+sync
+
+echo "done."
+
+if [ "$DEST_DEV" -a "$WERR" = "true" ] ; then
+	echo
+	echo "*** Maybe an error occurred during writing process:"
+	echo "*** try to format devide with  fdformat  and then $0 again."
+	echo
+elif [ "$DEST_DEV" ] ; then
+	echo
+	echo "*** disk written. You can reboot the system"
+	echo
+	fi
+
