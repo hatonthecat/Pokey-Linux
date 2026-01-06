@@ -1,0 +1,22 @@
+10th Nov 2003
+
+This is the single disk 1.44Mb distribution on mungkie associates embedded/thin client linux X11 terminal client. It can be used for ssh, ssl, rdesktop, vnc, X11, http, telnet, and ftp. It has a full implementation of X11 server and many in buit apps. Support for ne2000 and eepro100 network cards.
+
+to install simple format a clean 1.44Mb floppy disk
+in linux run 'dd if=1diskx.img of=/dev/fd0'
+or from windows get a copy of a raw image writer (e.g. rawrite) and run rawrite 1diskx.img a:
+
+then reboot from the floppy
+
+once you get to the login screen select Local as the session type, then click Login.
+
+then select the console and type 
+
+for ne200 networking ) 'insmod /lib/modules/8390.o insmod /lib/modules/ne.o'
+for eepro100 networking ) 'insmod /lib/modules/eepro100.o'
+
+then you can use the system for your choice of terminal session.
+
+
+
+
