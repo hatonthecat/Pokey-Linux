@@ -1,0 +1,248 @@
+
+                     HOWTO generate your own XWOAF
+                        (X Windows On A Floppy)
+
+Nov. 2, 2005
+Copyright (C) 2005, Terry Loveall, loveall@iinet.com
+home: http://www.modest-proposals.com/
+
+------------------
+Table of Contents:
+
+ 1. Getting Started
+ 2. Configuring the kernel
+ 3. Making the test bed
+ 4. Building uClibc
+ 5. Building busybox
+ 6. Constructing a test image
+ 7. Building tinyX11
+ 8. Installing tinyX11
+ 9. Building the kernel
+10. Building the X apps
+11. Xcurses License
+12. About xcurses
+13. Special Credit
+
+--------------------
+ 1. Getting Started:
+
+To get started building your own xwoaf, get the basic source archive from:
+ftp://ftp.berlios.de/pub/natld/1diskx-1.26.tar.bz2
+
+Use version 1diskx-1.26.tar.bz2. This contains all of the source for the
+libuClibc, busybox and libtinyX11. It also contains kernel source for linux
+1.00 which I did _not_ use.
+
+--------------------
+Essential points:
+
+a. Use gcc 2.95.3. gcc 3.x will not work. Install gcc 2.95.3 _before_ any of
+the other parts.
+
+b. Build the 2.2.25 kernel with gcc-2.95.3 and the .config from
+woaf-0.2.0.g.kit.tgz
+
+b. Build and install uClibc with gcc-2.95.3 and the .config from
+woaf-0.2.0.g.kit.tgz
+
+c. Build busybox with gcc-2.95.3 and the .config from
+woaf-0.2.0.g.kit.tgz
+
+d. Build tinyX11. You will require the conventional source for the
+Xserver. Mungkie stripped the Xserver source of unneeded functions for
+his purposes. I had to put some functions back in but may not have got them
+all.
+
+Below are the source files that need to be added to the directory
+.../X11/lib/tinyX11. 
+Each file needs to be added as both a '.c' source and a '.o' obj to
+../X11/lib/tinyX11/Imakefile before running 'make World'
+in.../X11. I copied these files from a reference xc-4.30.
+
+function called		file
+-----------------------------------
+XAllowEvents		AllowEv.c
+XSetWindowBackground	Backgnd.c
+XResizeWindow		ChWindow.c
+XCheckMaskEvent		ChkMaskEv.c
+XDrawSegments		DrSegs.c
+XQueryKeymap		QuKeybd.c
+XRestackWindows		RestackWs.c
+
+You may need to add other functions as needed.
+
+---------------------------
+ 2. Configuring the kernel:
+
+Download kernel 2.2.25 (see: http://www.kernel.org/pub/linux/kernel/v2.2/)
+The bzImage that goes on to the floppy is either 404k or 432k in size. Use the
+included config.linux-0.2.0g-fb or config.linux-0.2.0g-vesa for your .config.
+Copy the desired config.linux to the linux-2.2.25 root directory as .config
+and run 'make config' without changing anything.
+
+Use the Makefile.linux to set the 'CFLAGS' variable in the resulting Makefile.
+These settings will generate minimum size, although slower code.
+
+------------------------
+ 3. Making the test bed:
+
+If you haven't done so yet, download the xwoaf archive floppy image from:
+http://www.modest-proposals.com/Hacklin.htm
+and unpack it in the 1diskx-1.26 directory. This will create a sub-directory
+named woaf-<version> which contains the floppy image ready to be put on a
+floppy, and the supporting Bash shell scripts to unpack the image. It also
+contains a shell script to generate a new floppy image after any modifications
+you make. This may be your main test engine.
+
+First, use the xwoaf disk image to make a boot floppy. Use this to get
+familiar with the structure, dynamic creation of shell scripts and soft links
+and the actual operation of xwoaf. Unpack the ramdisk image, using the
+included scripts, into a directory on your development system. That way you
+can go in and analyze the static pre-boot structure, system configuration and
+follow the building of shell scripts and creation of symbolic links.
+
+See the README in the root of 'woaf-<version>.tgz' for a detailed explanation
+of unpacking and modifying the configuration of the boot floppy image. See the
+README in the root of the floppy image 'woaf-ref/README' for general help on
+the individual apps. See the source for the individual apps for explicit
+detailed operation.
+
+--------------------
+ 4. Building uClibc:
+
+First build and install the uClibc-0.9.20 that comes in the 1diskx-1.24
+directory. This creates the tool chain for building the rest of xwoaf.
+uClibc-0.9.26 does _not_ build the tool chain but does build the tools.
+
+Then download, build and install uClibc-0.9.26 on your development system (the
+uClibc-0.9.20 that comes on 1diskxwin-1.2.6, has a buggy network getaddrinfo
+function). 
+
+Use the included config.uclibc for the config. Copy config.uclibc to the
+uClibc-0.9.26 root directory as .config and run 'make config' without changing
+anything. 
+
+The uClib installation generates a wrapper around gcc so that the correct
+includes, libs and ld programs are searched and linked.
+
+---------------------
+ 5. Building busybox:
+
+Then configure and build busybox using the uClibc build environment. Use the
+included config.busybox for the config. Copy config.busybox to the busybox
+root directory as .config and run 'make config' without changing anything.
+
+------------------------------
+ 6. Constructing a test image:
+
+Copy your installed '/usr/i386-linux-uclibc/lib/libuClibc-0.9.26.so' to
+'woaf-ref/lib/libc.so.0'. The required softlinks are already in place. Copy
+the new busybox to 'woaf-ref/bin/busybox'. You do not need or want to generate
+it's softlinks. This will be done af floppy boot-time by
+'woaf-ref/etc/rc.d/sysinit'. Test your new version by compressing the image
+and dd'ing it to a floppy using the script 'makewoaf.sh' and then booting from
+the floppy.
+
+---------------------
+ 7. Building tinyX11:
+
+See 'Essential points:' above.
+
+Once you are satisfied that you can build these, then build libtinyX11 and
+Xvesa by running the Makefile in '1diskxwin-1.2.4/X11'. The Makefile will not
+need changes unless you installed uClib some place else besides
+'/usr/i386-linux-uclibc/'.
+
+Copy the resulting libtinyX11.so.6.2 into
+'woaf-ref/usr/X11R6/lib/libtinyX11.so.6.2' (softlinks are already in place)
+and copy Xvesa to 'woaf-ref/usr/X11R6/bin/X', generate a new floppy and test
+that.
+
+-----------------------
+ 8. Installing tinyX11:
+
+After successfully testing libtinyX11, copy it and the required soft-links to
+your native '/usr/X11R6/bin' to enable the linker to find during compilation of
+xwoaf apps and so you can execute xwoaf apps on your development computer.
+
+------------------------
+ 9. Building the kernel:
+
+Then build the 2.2.25 kernel with 'make bzImage'. Test by copying bzImage into
+the 'woaf-<version>' directory containing 'makewoaf.sh', generating a new
+floppy image and then booting from it.
+
+------------------------
+10. Building the X apps:
+
+After successfully doing all of the above, Unpack the archive
+'woaf-<version>-programs.tgz' in the '1diskxwin-1.2.4/X11/programs' directory. You
+will have to go in and build the individual apps one at a time to check for
+proper Makefile configuration and operation.
+
+The Makefiles, as unpacked _should_ work on a typical installation but you may
+have to tweak them.
+
+Test the individual apps by running them first on your development system, and
+if that succeeds, copy them to 'woaf-<version>/woaf-ref/usr/X11R6/bin',
+generate a new floppy, boot and test. Repeat as necessary. (I never said this
+was going to be simple or easy!)
+
+--------------------
+11. Xcurses License:
+
+The xcurses interface was developed entirely by me, without any use of the
+ncurses, curses or PDCcurses source. It was written to the spec of the man
+pages. The xcurses interface as used in these apps are released into the
+public domain to do with as you wish. Please let me know of any apps that you
+do adapt it to for listing on my web site.
+
+------------------
+12. About xcurses:
+
+The xcurses interface that most of the X apps use was developed during the
+adaption of all of these apps. Some of them still retain the early versions
+since they worked. The most recent and comprehensive xcurses interface is the
+files xbr.c and xbr.h for txplor-1.80. 
+
+Study the adaptation for how to integrate a curses app of your choosing to run
+as an X app. By commenting out the line 'XBR = XBR' at the top of the file
+'txplor-1.80/Makefile', txplor will build and link as a normal ncurses app
+(though you will have to build it in an environment that has libncurses). To
+find all of the changes required for xcurses, execute:
+'grep -ns XBR *'
+to find the 7 files containing the string 'XBR'.
+
+The major difference between (n)curses and my xcurses is that xcurses does not
+support color.
+
+The following xcurses apps: edx, retawq, txplor and bcalc have a 
+'#define THREED' line commented out. This changes the font, disables setting
+the background color, eliminates 3D shadows on the scrollbar and came about to
+enable these apps to run on xwoaf. To restore these features for use on more
+conventional systems, uncomment it. The respective files containing this line
+are:
+bcalc-0.1.0/bcalc.c: line# 65
+edx-1.02/edx.c: line# 51
+retawq-0.2.3x/xbr.c: line# 50
+txplor-1.80/xbr.c: line# 54
+
+Right now, with all of the apps building for it, the total disk space used is
+1.28M out of 1.44M. The unused space is of a compressed nature, so there is
+actually around 200k left for expansion. Adapt your own curses based app and
+put it on xwoaf.
+
+I can't be too much more specific. It is going to take a week or two of
+dedication to install, configure, build and _understand_ the above and there
+is adequate documentation with the basic 1diskxwin package. There is also
+Google and the internet for technical info not included. I actually spent a
+month figuring it all out, but other people may be smarter.
+
+-------------------
+13. Special Credit:
+
+Mungkie (the guy who provided the base for building xwoaf) is putting out a
+_tightly_ integrated 1diskxwin floppy. Beautiful, but unmodifiable. He lumps
+all of his X apps into one binary (kindof like busybox) for library sharing.
+He claims some of his apps are proprietary so can't release the source, but
+did provide the source for a few of them.
