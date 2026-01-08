@@ -13,6 +13,7 @@ Xcurses
 https://nick-black.com/dankwiki/index.php/Xcurses 
 
 "A curses variant implemented purely with X.org objects, perhaps even OpenGL objects or something. The result ought be significantly faster than a fullscreen Ncurses program atop a terminal emulator -- not to mention worlds more attractive -- all without so much as relinking existing applications. There exists one grim central theme behind Xcurses, and I call it UNTIE:
+
 Unnecessary terminal emulation is everywhere!
 
 Whereas libaa and libcaca (beautifully) attenuate high-resolution graphics, reducing them to input suitable for low-resolution "character cell"-based displays, Xcurses (faithfully) renders programmatic character cell output as virtual vector primitives, applies optional transforms, and renders them to a high-resolution bitmap display. Xcurses will have knowledge of the input forms at the character set level, which ought allow for interesting effects...
