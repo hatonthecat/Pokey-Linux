@@ -2,7 +2,7 @@
 
 ![Pokey_Minch_suit](https://github.com/user-attachments/assets/11b0601c-d4a5-405c-83a4-de0d4cfcb70d)
 
-A Yocto-based distribution of distributions for embedded systems using single or few apps.
+A Yocto-based distribution of distributions for embedded systems using single or few apps for solar powered devices.
 
 Pokey Linux is a platform for developing many single-application OSes, using the fewest resources possible. It is of course a reference to the Poky tool in Yocto, and the [Earthbound](https://earthbound.fandom.com/wiki/Pokey_Minch) character for the 1995 SNES game. While I have read about Yocto for years, I just thought naming this project Pokey would be a convenient and funny mnemonic way to recall a tool. While I haven't developed any code for it, it aims to be a repository of binaries that one can search and download, but also locate the package dependencies and the Yocto methods for creating it (in other words, non-technical users can work their way from a GUI-based software manager like [Synaptic](https://en.wikipedia.org/wiki/Synaptic_(software)) or [Cubic](https://github.com/PJ-Singh-001/Cubic), and see the steps taken to develop it, or perhaps just a few steps to make a modification). I realized this might be a better approach to indecision, as indecision of what single application OS to develop first is besides the point. Someone might want a binary with just VLC, or Thunderbird, or Midori, and nothing else (and of course, a GUI for the board support). It's also a way to learn to build without knowing what OS I need to use. Why not just make a bunch?  Inspired by this tool: https://tiny.slitaz.org/index.php 
 
@@ -13,6 +13,15 @@ Tiny SliTaz in 4MB RAM
 <img width="646" height="367" alt="image" src="https://github.com/user-attachments/assets/7ea47210-64cd-4451-bc19-d2a2a0c1e455" />
 
 A VNC server with Tiny SliTaz can run in 8MB or less: https://www.youtube.com/watch?v=OqpwSDJH8rw 
+
+Xwoaf 1.3 in 9MB RAM
+
+
+[Xwoaf 1.3 rebuild-screen0 9MB RAM.webm](https://github.com/user-attachments/assets/5d85eba1-0274-45b3-9f83-f16bfae4b2d3)
+
+"Linux became only possible because 20 years of OS research was carefully studied, analyzed, discussed and thrown away." -Someone, sometime between 1991 & 2004 http://www.arne-thomassen.de/en/linux/links.html
+
+Solar Powered Laptops are only becoming possible because 20 years of Linux development was carefully studied, analyzed, discussed and thrown away. - Me, 2026
 
 
 ![Kodak Carousel with OS analogy](https://github.com/user-attachments/assets/0bacfbd8-7d3f-4535-a2d0-73d26fb4e2f5)
