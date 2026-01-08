@@ -6,12 +6,13 @@ XCURSES, in the strictest sense, according to the Open Group who administer the 
 
 So in English, there's a bunch of different types of curses, each with its own history and own requirements. xcurses differs from ncurses by its organisation, uses, and implementation, but at the heart of it, they're both libraries for terminal based applications. If you want your OS to be Unix, then you have to make it X/Open Curses compliant. But if you're not that bothered about being Unix, then you can ignore that and just use ncurses."
 
-https://nick-black.com/dankwiki/index.php/Xcurses 
 
 Xcurses
 --
 
-A curses variant implemented purely with X.org objects, perhaps even OpenGL objects or something. The result ought be significantly faster than a fullscreen Ncurses program atop a terminal emulator -- not to mention worlds more attractive -- all without so much as relinking existing applications. There exists one grim central theme behind Xcurses, and I call it UNTIE:
+https://nick-black.com/dankwiki/index.php/Xcurses 
+
+"A curses variant implemented purely with X.org objects, perhaps even OpenGL objects or something. The result ought be significantly faster than a fullscreen Ncurses program atop a terminal emulator -- not to mention worlds more attractive -- all without so much as relinking existing applications. There exists one grim central theme behind Xcurses, and I call it UNTIE:
 Unnecessary terminal emulation is everywhere!
 
 Whereas libaa and libcaca (beautifully) attenuate high-resolution graphics, reducing them to input suitable for low-resolution "character cell"-based displays, Xcurses (faithfully) renders programmatic character cell output as virtual vector primitives, applies optional transforms, and renders them to a high-resolution bitmap display. Xcurses will have knowledge of the input forms at the character set level, which ought allow for interesting effects...
@@ -20,6 +21,6 @@ Whereas libaa and libcaca (beautifully) attenuate high-resolution graphics, redu
     True support of GTK/QT themes
         Palette initialized with the theme palette as opposed to a bunch of useless horseshit
         Replacement of box characters (when used in ACS_VLINE etc contexts) with beautiful, properly themed vector art
-        Transparency at the
+        Transparency at the [blank]
 
-If non-automatic augmentation is considered, we can do fairly tremendous things, all at the level of ncurses complexity. 
+If non-automatic augmentation is considered, we can do fairly tremendous things, all at the level of ncurses complexity." 
