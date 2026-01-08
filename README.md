@@ -19,7 +19,7 @@ Xwoaf 1.3 in 9MB RAM
 
 [Xwoaf 1.3 rebuild-screen0 9MB RAM.webm](https://github.com/user-attachments/assets/5d85eba1-0274-45b3-9f83-f16bfae4b2d3)
 
-"Linux became only possible because 20 years of OS research was carefully studied, analyzed, discussed and thrown away." -Someone, sometime between 1991 & 2004 http://www.arne-thomassen.de/en/linux/links.html
+"Linux became only possible because 20 years of OS research was carefully studied, analyzed, discussed and thrown away." -Someone, sometime between 1991 & 2004 http://www.arne-thomassen.de/en/linux/links.html (apparently attributed to [Ingo Molnar](https://quotefancy.com/quote/1768301/Ingo-Molnar-Don-t-forget-that-Linux-became-only-possible-because-20-years-of-OS-research))
 
 Solar Powered Laptops are only becoming possible because 20 years of Linux development was carefully studied, analyzed, discussed and thrown away. - Me, 2026
 
