@@ -15,7 +15,7 @@ Tiny SliTaz in 4MB RAM
 A VNC server with Tiny SliTaz can run in 8MB or less: https://www.youtube.com/watch?v=OqpwSDJH8rw 
 
 Xwoaf 1.3 in 9MB RAM
-
+--
 
 [Xwoaf 1.3 rebuild-screen0 9MB RAM.webm](https://github.com/user-attachments/assets/5d85eba1-0274-45b3-9f83-f16bfae4b2d3)
 
