@@ -23,6 +23,9 @@ Xwoaf 1.3 in 9MB RAM
 
 Solar Powered Laptops are only becoming possible because 20 years of Linux development was carefully studied, analyzed, discussed and thrown away. - Me, 2026
 
+https://www.schoenitzer.de/lkh/lkh.html 
+
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/a3fc8713-7ca0-4261-b6fd-4a0667779525" />
 
 ![Kodak Carousel with OS analogy](https://github.com/user-attachments/assets/0bacfbd8-7d3f-4535-a2d0-73d26fb4e2f5)
 
