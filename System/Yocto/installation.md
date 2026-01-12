@@ -518,3 +518,5 @@ I got Sato to compile and load in Qemu after multiple attempts https://www.youtu
 "Installing Yocto 5.0 on Ubuntu 24.04 Part 6 of x - Compiling Sato" 
 
 Playlist: https://www.youtube.com/watch?v=mG11JOBVOtM&list=PLKvMTg3KKwP2c4D3414ua1VD9FkHAKGeO
+
+The Sato image was run to benchmark the capabilities of my mid-range PC- with 6 cores, 12 threads and recently upgraded 16GB RAM, it should be able to handle a 500-700MB image bake, but the typical images I plan to build will be less than 50MB. 
