@@ -514,7 +514,7 @@ Then I will move to a different ISA, most likely.
 --
 
 I got Sato to compile and load in Qemu after multiple attempts https://www.youtube.com/watch?v=mG11JOBVOtM
-"Installing Yocto 5.0 on Ubuntu 24.04 Part 6 of x - Compiling Sato
-"
 
-Pkaylist: https://www.youtube.com/watch?v=mG11JOBVOtM&list=PLKvMTg3KKwP2c4D3414ua1VD9FkHAKGeO
+"Installing Yocto 5.0 on Ubuntu 24.04 Part 6 of x - Compiling Sato" 
+
+Playlist: https://www.youtube.com/watch?v=mG11JOBVOtM&list=PLKvMTg3KKwP2c4D3414ua1VD9FkHAKGeO
