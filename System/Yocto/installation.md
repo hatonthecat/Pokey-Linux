@@ -503,8 +503,6 @@ It's possible either setting will allow it to run fine under 6GB but skipping th
 Compile completed around 3:30AM. Threads were limited to 2 towards the end by the software, seemingly because the memory was low or to ensure it completed. I had closed browsers and the system monitor, in case it would freeze again, but it left around 65GB after the compilation completed, and the minimal image was around 12MB, which ran in Qemu, using "$ runqemu qemux86-64" (i left out nographic, although I can try that next). 6GB RAM is probably sufficient for lighter builds, but definitely won't be compiling much larger images on it.
 
 
- 
-
 ----
 Do I even have qemu installed yet? Checking soon.
 
@@ -512,3 +510,11 @@ It's for an A5 board, the Jupiter Nano. Copying this tutorial will allow me to g
 
 Then I will move to a different ISA, most likely.
 
+1-12-2026
+--
+
+I got Sato to compile and load in Qemu after multiple attempts https://www.youtube.com/watch?v=mG11JOBVOtM
+"Installing Yocto 5.0 on Ubuntu 24.04 Part 6 of x - Compiling Sato
+"
+
+Pkaylist: https://www.youtube.com/watch?v=mG11JOBVOtM&list=PLKvMTg3KKwP2c4D3414ua1VD9FkHAKGeO
