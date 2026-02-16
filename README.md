@@ -27,6 +27,8 @@ https://www.schoenitzer.de/lkh/lkh.html
 
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/a3fc8713-7ca0-4261-b6fd-4a0667779525" />
 
+![b80eb4ca-dc06-4032-8715-701d3e28a79a_text](https://github.com/user-attachments/assets/5017aace-c11e-4ebd-8397-4aeb98b58063)
+
 ![Kodak Carousel with OS analogy](https://github.com/user-attachments/assets/0bacfbd8-7d3f-4535-a2d0-73d26fb4e2f5)
 
 
