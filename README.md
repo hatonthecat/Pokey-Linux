@@ -119,13 +119,3 @@ _The minimum RAM requirement is now 32Gbytes (previously 8Gbytes)._
 
 _These changes are mainly due to recent additions of the LLVM and other resource heavy recipes. For guidance on how to limit the resources used by the OpenEmbedded Build System, see the Limiting the Host Resources Usage guide."_
 
-Another Google search result returned this (not really related to this repo):
-
-"ML-LLVM-Tools: Towards Seamless Integration of Machine Learning in Compiler Optimizations [ Video ] [ Slides ]
-S. VenkataKeerthy, IIT Hyderabad
-
-_With the growth in usage of Machine Learning (ML) to support compiler optimization decisions, there is a need for robust tools to support both training and inference. Such tools should be scalable and independent of the underlying model, and the ML framework upon which the model is built. We propose a unified infrastructure to aid ML based compiler optimizations in LLVM at each of training and inference stages by using: (1) LLVM-gRPC, a gRPC based framework to support training, (2) LLVM-InferenceEngine, a novel ONNX based infrastructure to support ML inference within LLVM. Our infrastructure allows seamless integration of both the approaches with ML based compiler optimization passes. When our LLVM-InferenceEngine is integrated with a recently proposed approach that uses Reinforcement Learning for performing Register Allocation, it results in a 12.5x speedup in compile time."_
-
-https://llvm.org/devmtg/2023-05/#:~:text=Our%20infrastructure%20allows%20seamless%20integration%20of%20both,in%20a%2012.5x%20speedup%20in%20compile%20time.
-
-
