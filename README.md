@@ -92,7 +92,9 @@ So, it might be a productive avenue to develop lowRAM BSP packages in the [8-16M
 
 Vedula and I are also working an an ARM9 board called [FemtoTX](https://github.com/EI2030/FemtoTX) and he has recently completed Ethernet tests. We are looking into WB adapters but also FIFO drivers. Our test bench is an Arty A7 with 256MB, so smaller systems can be explored once verification/validation is complete. 
 
+The memory-based bootloader & Operating system carousel described here cannot specify every last requirement because I do not have a technical background. Nonetheless, by outlining the general requirements, it should allow a capable engineer to design the remaining percentage of the system.  I won't say that I've done 50% of the work, or even 30% of the work, but if the concept didn't exist before, or was never pursued due to the development time, then I've done more to get the concept started than an OS that would never be hardware-aware.
 
+https://semiengineering.com/all-software-is-hardware-dependent/
 
 Yocto News
 --
