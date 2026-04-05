@@ -121,3 +121,14 @@ _The minimum RAM requirement is now 32Gbytes (previously 8Gbytes)._
 
 _These changes are mainly due to recent additions of the LLVM and other resource heavy recipes. For guidance on how to limit the resources used by the OpenEmbedded Build System, see the Limiting the Host Resources Usage guide."_
 
+
+4-5-2026
+--
+
+![1775412538690](https://github.com/user-attachments/assets/cf0bc23c-e9fe-41ce-89df-975f3006a2c4)
+
+https://www.linkedin.com/posts/asloss_videogenie-trs-semiconductors-share-7446619914100158464-J-9X?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABX8q28BPYC1AsJD-snQTaCrj_2Xl01KWz0
+
+I misread this image posted - I originally thought it emphasized "What it can do" > "What it couldn't do before that." And that remains true. Just because Machine 2.0 can do more than 1.0, doesn't mean Machine 1.0 is useless (when computers didn't exist, except as people).
+
+
