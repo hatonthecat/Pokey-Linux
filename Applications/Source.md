@@ -39,3 +39,11 @@ https://web.archive.org/web/19991126125008/http://www.abisource.com/dev_build.ph
     expat. This one is treated specially, since expat itself does not seem to be widely available on Linux systems. You will need the version of expat from us, which is identical to the one available from Jim Clark, except for slight modifications to integrate it with our build system. A tarball of expat is available in the downloads directory. You can also obtain it from our CVS server under the top-level package name expat.
 
     WV. WV is a word import library written by Caolan McNamara. It is also available in tar.gz format from our downloads directory. Although this is not an official release of mswordview, it is a recent version which we know builds with our tree at the time of the latest AbiWord release. The official wv release is here. Both wv and expat must be present at the same level as the "abi" tree before you can begin building AbiWord. 
+
+Pomera released a new digital word processor in 2025. https://gbatemp.net/review/pomera-dm250us.2649/
+
+ ![tilt2](https://github.com/user-attachments/assets/f5b89918-5e49-4ae0-af4e-c951a2869162)
+
+![menu1](https://github.com/user-attachments/assets/437be1fb-5574-4543-942c-c1b8b7b28152)
+
+What this project could do is create a Pomera-like laptop that runs on very little memory- 8-16MB, and wouldn't need a very expensive laptop to purchase- it'd be more general purpose than a Pomera too. Possibly as little as $150-$200, and upgradeable+repairable. 
