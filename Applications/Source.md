@@ -46,4 +46,4 @@ Pomera released a new digital word processor in 2025. https://gbatemp.net/review
 
 ![menu1](https://github.com/user-attachments/assets/437be1fb-5574-4543-942c-c1b8b7b28152)
 
-What this project could do is create a Pomera-like laptop that runs on very little memory- 8-16MB, and wouldn't need a very expensive laptop to purchase- it'd be more general purpose than a Pomera too. Possibly as little as $150-$200, and upgradeable+repairable. 
+What this project could do is create a Pomera-like laptop that runs on very little memory- 8-16MB, and wouldn't need a very expensive laptop to purchase- it'd be more general purpose than a Pomera too. Possibly as little as $150-$200, solar powered, and upgradeable+repairable. 
