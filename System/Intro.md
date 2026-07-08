@@ -29,3 +29,11 @@ https://jaycarlson.net/embedded-linux/
 Initially, I thought Yocto had a steep learning curve. To an extent, that can be true. I stayed away from it for nearly 5 years just on what I heard from the grapevine. But at the same time, it's steep learning curve might actually have gotten easier over the years with improved adoption. It might have been harder to learn in 2015 than in 2025, but then again, knowledge and impressions can be relative. Thus the steepness might actually be relative to someone's experience with another aspect of the system building, such as transitioning from one type of programming and thinking in terms of systems rather than OS languages. And in 2026, there certainly are a lot more tools to automate even the installation process (kas may be one of them). 
 
 I have also looked at Buildroot, and it might be easier for the simplest systems. But I think consistency with a system for organizing layers makes sense when one doesn't know which platform they want to build for next- whether it's x86, ARM, or RISC-V, the Yocto assembler can accomplish all three using the same template for importing layers/instructions and recipes to begin an OS compilation. Just my thoughts.
+
+"Everything is a file" https://lwn.net/Articles/411845/
+https://en.wikipedia.org/wiki/Everything_is_a_file
+could also be written as, "every recipe is a file." therefore build instructions could be compiled with enough correct sequences:
+
+https://en.wikipedia.org/wiki/Rube_Goldberg_machine
+
+
