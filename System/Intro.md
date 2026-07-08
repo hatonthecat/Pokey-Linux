@@ -18,7 +18,7 @@ The most clear analogy to the first step of ordering this kit car, a.k.a. linux 
 
 Other software can bind to Yocto, ones that can auto build and run the OS- "bitbake" and "qemu," for example, which is included with the Yocto software. Bitbake is a core Yocto command, whereas Qemu wasn't developed by Yocto but is still important enough that it was included.
 
-That's like the laptop that you ordered having a 2nd window open and ordering not only the kit car, but a robotic arm that will assemble the parts you ordered once they are delivered. All with the press of a button. It takes some of the hobbyist effort out of it. But it's efficient, and can save time with multiple builds, kind of like a car assembly plant.
+That's like the laptop that you ordered having a 2nd window open and ordering not only the kit car, but a robotic arm that will assemble the parts you ordered once they are delivered. All with the press of a button. It takes some of the hobbyist effort out of it. But it's efficient, and can save time with multiple builds, kind of like a car assembly plant, so you can spend more time picking the trim or mods from aftermarket suppliers :)
 
 The history of the push button: https://psmag.com/environment/push-button-culture-51858/
 
