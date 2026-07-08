@@ -1,0 +1,29 @@
+AV1-SVT Encoding times, Handbrake FX8320E*
+===========================
+
+HEVC->AV1**, 3840x2160 24p, 768Kbps, MPEG-4, non Web Optimized
+ 
+Clip length -> Encoding Time
+ ----------------------------
+30 seconds= 4minutes
+1 minute= 8 minutes
+2 minutes= 16 minutes
+5 minutes= 40 minutes
+
+3fps average
+
+2 minutes = ~12MB AV1 file
+5 minutes=  ~29MB AV1 file
+
+Multi Pass***, 3840x2160 24p, 512KBps, MPEG-4, non Web Optimized
+==============================
+
+2 minutes = ~8MB AV1 file
+5 minutes=  ~20MB AV1 file
+
+*Requires 16GB-24GB of RAM for thread+memory utilization
+
+**HEVC files were encoded using a Vega 56, using Medium Quality Settings (Lowest available) in GPU Screenrecorder (~2250Kbps). Original hevc file size is 85MB for a 5 minute clip. Encoding times may not apply to Digital Camera files.
+
+***takes longer with multi pass encoding (e.g. 45-50 minutes for 5 minute clip)
+
