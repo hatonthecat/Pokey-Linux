@@ -1,0 +1,234 @@
+# Microsoft Developer Studio Project File - Name="zlib" - Package Owner=<4>
+# Microsoft Developer Studio Generated Build File, Format Version 6.00
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (x86) Static Library" 0x0104
+
+CFG=zlib - Win32 BIDI Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "zlib.mak".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "zlib.mak" CFG="zlib - Win32 BIDI Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "zlib - Win32 Release" (based on "Win32 (x86) Static Library")
+!MESSAGE "zlib - Win32 Debug" (based on "Win32 (x86) Static Library")
+!MESSAGE "zlib - Win32 BIDI Debug" (based on "Win32 (x86) Static Library")
+!MESSAGE "zlib - Win32 BIDI Release" (based on "Win32 (x86) Static Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+CPP=cl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "zlib - Win32 Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "Release\obj"
+# PROP BASE Intermediate_Dir "Release\obj\zlib"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir ".\Release\obj"
+# PROP Intermediate_Dir ".\Release\obj\zlib"
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /YX /FD /c
+# ADD CPP /nologo /MD /W3 /O2 /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "DYNAMIC_CRC_TABLE" /YX /FD /GF /c
+# ADD BASE RSC /l 0x41d /d "NDEBUG"
+# ADD RSC /l 0x41d /d "NDEBUG"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"Release\obj\zlibMT.lib"
+
+!ELSEIF  "$(CFG)" == "zlib - Win32 Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "Debug\obj"
+# PROP BASE Intermediate_Dir "Debug\obj\zlib"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "..\abi\src\WIN32_1.3.3_i386_DBG\obj"
+# PROP Intermediate_Dir "..\abi\src\WIN32_1.3.3_i386_DBG\obj\zlib"
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /YX /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Zi /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /YX /FD /GZ /GF /c
+# ADD BASE RSC /l 0x41d /d "_DEBUG"
+# ADD RSC /l 0x41d /d "_DEBUG"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"..\abi\src\WIN32_1.3.3_i386_DBG\obj\libAbi_zlib_s.lib"
+
+!ELSEIF  "$(CFG)" == "zlib - Win32 BIDI Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "zlib___Win32_BIDI_Debug"
+# PROP BASE Intermediate_Dir "zlib___Win32_BIDI_Debug"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir ".\Debug\obj"
+# PROP Intermediate_Dir ".\Debug\obj\zlib"
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /MDd /W3 /Zi /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /YX /FD /GZ /GF /c
+# ADD CPP /nologo /MDd /W3 /Zi /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /YX /FD /GZ /GF /c
+# ADD BASE RSC /l 0x41d /d "_DEBUG"
+# ADD RSC /l 0x41d /d "_DEBUG"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo /out:"Debug\obj\zlibMTD.lib"
+# ADD LIB32 /nologo /out:"Debug\obj\zlibMTD.lib"
+
+!ELSEIF  "$(CFG)" == "zlib - Win32 BIDI Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "zlib___Win32_BIDI_Release"
+# PROP BASE Intermediate_Dir "zlib___Win32_BIDI_Release"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "lib"
+# PROP Intermediate_Dir ".\Release\obj\zlib"
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /MD /W3 /O2 /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "DYNAMIC_CRC_TABLE" /YX /FD /GF /c
+# ADD CPP /nologo /MD /W3 /O2 /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "DYNAMIC_CRC_TABLE" /YX /FD /GF /c
+# ADD BASE RSC /l 0x41d /d "NDEBUG"
+# ADD RSC /l 0x41d /d "NDEBUG"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo /out:"Release\obj\zlibMT.lib"
+# ADD LIB32 /nologo /out:"Release\obj\zlibMT.lib"
+
+!ENDIF 
+
+# Begin Target
+
+# Name "zlib - Win32 Release"
+# Name "zlib - Win32 Debug"
+# Name "zlib - Win32 BIDI Debug"
+# Name "zlib - Win32 BIDI Release"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Source File
+
+SOURCE=..\zlib\ADLER32.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\COMPRESS.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\CRC32.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\DEFLATE.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\GZIO.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFBLOCK.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFCODES.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFFAST.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFLATE.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFTREES.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFUTIL.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\TREES.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\UNCOMPR.C
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\ZUTIL.C
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl"
+# Begin Source File
+
+SOURCE=..\zlib\DEFLATE.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFBLOCK.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFCODES.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFFAST.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFTREES.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\INFUTIL.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\ZCONF.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\ZLIB.H
+# End Source File
+# Begin Source File
+
+SOURCE=..\zlib\ZUTIL.H
+# End Source File
+# End Group
+# End Target
+# End Project
