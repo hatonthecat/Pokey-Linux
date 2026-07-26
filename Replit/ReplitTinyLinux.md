@@ -1,1 +1,6 @@
-<img width="751" height="961" alt="image" src="https://github.com/user-attachments/assets/cbadcb24-a7da-4d97-a6e5-e33681ba8213" />
+<img width="441" height="1932" alt="image" src="https://github.com/user-attachments/assets/63fc403b-9957-43d3-8515-eb87fd640769" />
+
+it's very likely Replit is using newer (and incompatible) buildtools to build old kernels, which may suggest why it is searching for patch files from kernel 3.7 for 2.6 (although I know little of what that means)
+
+<img width="1325" height="1628" alt="replit starter" src="https://github.com/user-attachments/assets/111e58e0-8c9f-4aea-bb1d-5c5c1c1a3f75" />
+
